@@ -1,6 +1,6 @@
 /*
 Author       : Dreamstechnologies
-Template Name: Smarthr - Bootstrap Admin Template
+Template Name: Social Web Dev - Bootstrap Admin Template
 */
 
 (function () {

@@ -324,7 +324,7 @@
       },
       {
         "type": "replace_text",
-        "search": "2014 - 2025 © SmartHR.",
+        "search": "2014 - 2025 © Social Web Dev.",
         "replace": "2014 - 2025 © ProductivityHub.",
         "description": "Update footer to reflect new branding"
       },

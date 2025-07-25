@@ -3,7 +3,7 @@
 ## Overview
 The `define-goals.html` page is a dedicated interface for digital nomads to define and create personal and professional goals within the productivity dashboard application. It builds on the refactored "Goal Categories" page (`goals.html`) and "Goal Tracking" page (`goal-tracking.html`), emphasizing human-centric, flexible goal-setting in a decentralized, remote work environment. The page should integrate project management principles (e.g., dependencies, requirements, barriers, and tasks) to make goals actionable and aligned with ongoing projects, notes, and productivity metrics from the dashboard (`productivity.html`).
 
-This page focuses on goal creation (defining new goals), while linking to tracking and categories for a cohesive experience. It uses Tailwind CSS for styling to match the SmartHR template, ensuring responsiveness and a clean, modern UI.
+This page focuses on goal creation (defining new goals), while linking to tracking and categories for a cohesive experience. It uses Tailwind CSS for styling to match the Social Web Dev template, ensuring responsiveness and a clean, modern UI.
 
 ## Key Objectives
 - **User-Centric Design**: Allow users (e.g., "Tim") to easily define goals that support personal growth, professional development, and project success, with minimal friction.
