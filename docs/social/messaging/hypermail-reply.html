@@ -2,23 +2,19 @@
 <html lang="en">
 
 <head>
-
-	<!-- Meta Tags -->
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dashboard | Social Web Dev - Advanced Bootstrap 5 Multipurpose Admin Dashboard Template for HRM, Payroll & CRM</title>
-	
-	<meta name="description" content="Social Web Dev - An advanced Bootstrap 5 admin dashboard template for HRM and CRM. Ideal for managing employee records, payroll, attendance, recruitment, and team performance with an intuitive and responsive design. Perfect for HR teams and business managers looking to streamline workforce management.">
-	<meta name="keywords" content="HR dashboard template, HRM admin template, Bootstrap 5 HR dashboard, workforce management dashboard, employee management system, payroll dashboard, HR analytics, admin dashboard, CRM admin template, human resources management, HR admin template, team management dashboard, recruitment dashboard, employee attendance system, performance management, HR CRM, HR dashboard HTML, Bootstrap HR template, employee engagement, HR software, project management dashboard">
-	<meta name="author" content="Dreams Technologies">
-	<meta name="robots" content="index, follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="Social Web Dev - Bootstrap Admin Template">
+	<meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
+	<meta name="author" content="Dreams technologies - Bootstrap Admin Template">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Social Web Dev Admin Template</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="https://mediaprophet.github.io/social-web-ui-dev/assets/img/favicon.png">
 
 	<!-- Apple Touch Icon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="https://mediaprophet.github.io/social-web-ui-dev/assets/img/apple-touch-icon.png">
-
-	<!-- Favicon -->
-	<link rel="icon" href="https://mediaprophet.github.io/social-web-ui-dev/assets/img/favicon.png" type="image/x-icon">
-	<link rel="shortcut icon" href="https://mediaprophet.github.io/social-web-ui-dev/assets/img/favicon.png" type="image/x-icon">
 
 	<!-- Theme Script js -->
 	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/theme-script.js"></script>
@@ -29,18 +25,21 @@
 	<!-- Tabler Icon CSS -->
 	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/tabler-icons/tabler-icons.css">
 
-	<!-- Select2 CSS -->
-	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/select2/css/select2.min.css">
-
 	<!-- Fontawesome CSS -->
 	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/fontawesome/css/fontawesome.min.css">
 	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/fontawesome/css/all.min.css">
 
 	<!-- Datetimepicker CSS -->
-	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/flatpickr/flatpickr.min.css">
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/css/bootstrap-datetimepicker.min.css">
 
-	<!-- Bootstrap Tagsinput CSS -->
-	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
+	<!-- Fancybox CSS -->
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/fancybox/jquery.fancybox.min.css">
+
+	<!-- Flowbite CSS -->
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/css/flowbite.min.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/select2/css/select2.min.css">
 
 	<!-- Summernote CSS -->
 	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/summernote/summernote-lite.min.css">
@@ -48,8 +47,8 @@
 	<!-- Daterangepikcer CSS -->
 	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/daterangepicker/daterangepicker.css">
 
-	<!-- Flowbite CSS -->
-	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/css/flowbite.min.css">
+	<!-- Bootstrap Tagsinput CSS -->
+    <link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
 
 	<!-- Color Picker Css -->
 	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/flatpickr/flatpickr.min.css">
@@ -60,9 +59,9 @@
 
 </head>
 
-<body class="antialiased bg-light text-default">
+<body>
 
-	<div id="global-loader">
+	<div id="global-loader" style="display: none;">
 		<div class="page-loader"></div>
 	</div>
 
@@ -111,7 +110,7 @@
 								</button>
 								<div id="crm-dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-[5px] shadow w-55 dark:bg-gray-700">
 									<div class="border-b border px-[20px] py-4">
-										<h4>Productivity</h4>
+										<h4>CRM</h4>
 									</div>
 									<div class="border-b border p-[20px] pb-1">
 										<div class="grid grid-cols-1 gap-x-6 sm:grid-cols-2 *:border *:border-borderColor *:bg-white *:p-2 *:rounded-md *:font-medium">
@@ -169,32 +168,33 @@
 											<span>Main</span>
 										</li>
 										<li class="submenu">
+											<a href="#">
+												<i class="ti ti-smart-home"></i><span>Dashboard</span>
+												<span class="menu-arrow"></span>
+											</a>
+											<ul>
+												<li><a href="index.html">Admin Dashboard</a></li>
+												<li><a href="employee-dashboard.html">Employee Dashboard</a></li>
+												<li><a href="deals-dashboard.html">Deals Dashboard</a></li>
+												<li><a href="leads-dashboard.html">Leads Dashboard</a></li>
+											</ul>
+										</li>
+										<li class="submenu">
+											<a href="#">
+												<i class="ti ti-user-star"></i><span>Super Admin</span>
+												<span class="menu-arrow"></span>
+											</a>
+											<ul>
+												<li><a href="dashboard.html">Dashboard</a></li>
+												<li><a href="companies.html">Companies</a></li>
+												<li><a href="subscription.html">Subscriptions</a></li>
+												<li><a href="packages.html">Packages</a></li>
+												<li><a href="domain.html">Domain</a></li>
+												<li><a href="purchase-transaction.html">Purchase Transaction</a></li>
+											</ul>
+										</li>
+										<li class="submenu">
 											<a href="#" class="active">
-												<i class="ti ti-smart-home"></i><span>Goals</span>
-												<span class="menu-arrow"></span>
-											</a>
-											<ul>
-												<li><a href="./dashboard/productivity.html" class="active">Productivity Dashboard</a></li>
-												<li><a href="./goals/achievements.html">Achievements</a></li>
-												<li><a href="/goals/personal-goals.html">Personal Goals Dashboard</a></li>
-												<li><a href="./goals/project-goals.html">Project Goals Dashboard</a></li>
-												<li><a href="./goals/work-goals.html">Work Goals</a></li>
-											</ul>
-										</li>
-										<li class="submenu">
-											<a href="#">
-												<i class="ti ti-user-star"></i><span>Organiser</span>
-												<span class="menu-arrow"></span>
-											</a>
-											<ul>
-												<li><a href="./calendar/calendar.html">Calendar</a></li>
-												<li><a href="./social/social-feed.html">Social Feeds</a></li>
-												<li><a href="./social/messaging/hypermail.html">Hyper Mail</a></li>
-												<li><a href="./social/chat.html">Chat</a></li>
-											</ul>
-										</li>
-										<li class="submenu">
-											<a href="#">
 												<i class="ti ti-layout-grid-add"></i><span>Applications</span>
 												<span class="menu-arrow"></span>
 											</a>
@@ -212,7 +212,7 @@
 													</ul>
 												</li>
 												<li><a href="calendar.html">Calendar</a></li>
-												<li><a href="email.html">Email</a></li>
+												<li><a href="email.html" class="active">Email</a></li>
 												<li><a href="todo.html">To Do</a></li>
 												<li><a href="notes.html">Notes</a></li>
 												<li><a href="file-manager.html">File Manager</a></li>
@@ -1211,7 +1211,7 @@
 		<!-- Sidebar -->
 		<div class="sidebar fixed top-0 left-0 bottom-0 w-sidebar bg-white border-r border-borderColor" id="sidebar">
 			<!-- Logo -->
-			<div class="sidebar-logo fixed h-[50px] w-sidebar pt-3 px-3">
+			<div class="sidebar-logo fixed h-[50px] w-sidebar pt-4 px-4">
 				<a href="index.html" class="logo logo-normal">
 					<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/logo.svg" alt="Logo">
 				</a>
@@ -1290,21 +1290,21 @@
 						<li>
 							<ul class="mb-[19px]">
 								<li class="submenu mb-[5px]">
-									<a href="javascript:void(0);" class="active subdrop relative flex item-center w-full p-2 text-sm leading-normal font-medium text-gray-900 group hover:bg-dark-transparent transition-all duration-500 ease-in-out rounded-[5px]">
+									<a href="javascript:void(0);" class="relative flex item-center w-full p-2 text-sm leading-normal font-medium text-gray-900 group hover:bg-dark-transparent transition-all duration-500 ease-in-out rounded-[5px]">
 										<i class="ti ti-smart-home text-gray-500 group-hover:text-gray-900 group-active:text-gray-900"></i>
 										<span class="ms-2">Dashboard</span>
 										<span class="ms-2 text-[10px] bg-danger rounded font-medium text-white px-1 py-0.5 inline-flex items-center">Hot</span>
 										<span class="menu-arrow absolute top-1/2 -translate-y-1/2 right-2.5 flex items-center w-4 h-4 transition-all duration-200 ease-in-out before:absolute before:top-[5px] before:left-[5px] before:w-1.5 before:h-1.5 before:border-r-2 before:border-b-2 before:border-gray-900 before:rotate-45"></span>
 									</a>
 									<ul class="relative mt-2 before:absolute before:top-0 before:left-3.5 before:w-[1.5px] before:h-full before:bg-gray-100">
-										<li><a href="index.html" class="active relative flex items-center w-full text-xs leading-normal p-2 ps-8 text-gray-500 hover:text-primary before:absolute before:left-[13px] before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-[18px] before:bg-primary before:opacity-0">Admin Dashboard</a></li>
+										<li><a href="index.html" class="relative flex items-center w-full text-xs leading-normal p-2 ps-8 text-gray-500 hover:text-primary before:absolute before:left-[13px] before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-[18px] before:bg-primary before:opacity-0">Admin Dashboard</a></li>
 										<li><a href="employee-dashboard.html" class="relative flex items-center w-full text-xs leading-normal p-2 ps-8 text-gray-500 hover:text-primary before:absolute before:left-[13px] before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-[18px] before:bg-primary before:opacity-0">Employee Dashboard</a></li>
 										<li><a href="deals-dashboard.html" class="relative flex items-center w-full text-xs leading-normal p-2 ps-8 text-gray-500 hover:text-primary before:absolute before:left-[13px] before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-[18px] before:bg-primary before:opacity-0">Deals Dashboard</a></li>
 										<li><a href="leads-dashboard.html" class="relative flex items-center w-full text-xs leading-normal p-2 ps-8 text-gray-500 hover:text-primary before:absolute before:left-[13px] before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-[18px] before:bg-primary before:opacity-0">Leads Dashboard</a></li>
 									</ul>
 								</li>
 								<li class="submenu mb-[5px]">
-									<a href="javascript:void(0);" class="relative flex item-center w-full p-2 text-sm leading-normal font-medium text-gray-900 group hover:bg-dark-transparent transition-all duration-500 ease-in-out rounded-[5px]">
+									<a href="javascript:void(0);" class="relative active subdrop flex item-center w-full p-2 text-sm leading-normal font-medium text-gray-900 group hover:bg-dark-transparent transition-all duration-500 ease-in-out rounded-[5px]">
 										<i class="ti ti-layout-grid-add"></i><span class="ms-2">Applications</span>
 										<span class="menu-arrow absolute top-1/2 -translate-y-1/2 right-2.5 flex items-center w-4 h-4 transition-all duration-200 ease-in-out before:absolute before:top-[5px] before:left-[5px] before:w-1.5 before:h-1.5 before:border-r-2 before:border-b-2 before:border-gray-900 before:rotate-45"></span>
 									</a>									
@@ -1321,7 +1321,7 @@
 											</ul>
 										</li>
 										<li><a href="calendar.html" class="relative flex items-center w-full text-xs leading-normal p-2 ps-8 text-gray-500 hover:text-primary before:absolute before:left-[13px] before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-[18px] before:bg-primary before:opacity-0">Calendar</a></li>
-										<li><a href="email.html" class="relative flex items-center w-full text-xs leading-normal p-2 ps-8 text-gray-500 hover:text-primary before:absolute before:left-[13px] before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-[18px] before:bg-primary before:opacity-0">Email</a></li>
+										<li><a href="email.html" class="relative active flex items-center w-full text-xs leading-normal p-2 ps-8 text-gray-500 hover:text-primary before:absolute before:left-[13px] before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-[18px] before:bg-primary before:opacity-0">Email</a></li>
 										<li><a href="todo.html" class="relative flex items-center w-full text-xs leading-normal p-2 ps-8 text-gray-500 hover:text-primary before:absolute before:left-[13px] before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-[18px] before:bg-primary before:opacity-0">To Do</a></li>
 										<li><a href="notes.html" class="relative flex items-center w-full text-xs leading-normal p-2 ps-8 text-gray-500 hover:text-primary before:absolute before:left-[13px] before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-[18px] before:bg-primary before:opacity-0">Notes</a></li>
 										<li><a href="social-feed.html" class="relative flex items-center w-full text-xs leading-normal p-2 ps-8 text-gray-500 hover:text-primary before:absolute before:left-[13px] before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-[18px] before:bg-primary before:opacity-0">Social Feed</a></li>
@@ -2315,12 +2315,12 @@
 							<span>Main</span>
 						</li>
 						<li class="submenu">
-							<a href="#"   class="active subdrop">
+							<a href="#"   class="subdrop">
 								<i class="ti ti-smart-home"></i><span>Dashboard</span>
 								<span class="menu-arrow"></span>
 							</a>
 							<ul>
-								<li><a href="index.html" class="active">Admin Dashboard</a></li>
+								<li><a href="index.html">Admin Dashboard</a></li>
 								<li><a href="employee-dashboard.html">Employee Dashboard</a></li>
 								<li><a href="deals-dashboard.html">Deals Dashboard</a></li>
 								<li><a href="leads-dashboard.html">Leads Dashboard</a></li>
@@ -2341,7 +2341,7 @@
 							</ul>
 						</li>
 						<li class="submenu">
-							<a href="#">
+							<a href="#" class="active">
 								<i class="ti ti-layout-grid-add"></i><span>Applications</span>
 								<span class="menu-arrow"></span>
 							</a>
@@ -2358,7 +2358,7 @@
 									</ul>
 								</li>
 								<li><a href="calendar.html">Calendar</a></li>
-								<li><a href="email.html">Email</a></li>
+								<li><a href="email.html" class="active">Email</a></li>
 								<li><a href="todo.html">To Do</a></li>
 								<li><a href="notes.html">Notes</a></li>
 								<li><a href="file-manager.html">File Manager</a></li>
@@ -3160,10 +3160,10 @@
 					</a>
 					<div class="sidebar-left slimscroll">
 						<div class="nav flex flex-col items-center nav-pills" id="sidebar-tabs" data-tabs-toggle="#two-col-tabs" data-tabs-active-classes="bg-light text-default"  role="tablist" >
-							<a href="#" class="nav-link" title="Dashboard" role="tab" data-tabs-target="#dashboard" aria-selected="true">
+							<a href="#" class="nav-link" title="Dashboard" role="tab" data-tabs-target="#dashboard" aria-selected="false">
 								<i class="ti ti-smart-home"></i>
 							</a>
-							<a href="#" class="nav-link" title="Apps" role="tab" data-tabs-target="#application" aria-selected="false">
+							<a href="#" class="nav-link" title="Apps" role="tab" data-tabs-target="#application" aria-selected="true">
 								<i class="ti ti-layout-grid-add"></i>
 							</a>
 							<a href="#" class="nav-link" title="Super Admin" role="tab" data-tabs-target="#super-admin" aria-selected="false">
@@ -3227,7 +3227,7 @@
 							<div class="hidden" id="dashboard">
 								<ul>
 									<li class="menu-title"><span>MAIN MENU</span></li>
-									<li><a href="index.html" class="active">Admin Dashboard</a></li>
+									<li><a href="index.html">Admin Dashboard</a></li>
 									<li><a href="employee-dashboard.html">Employee Dashboard</a></li>
 									<li><a href="deals-dashboard.html">Deals Dashboard</a></li>
 									<li><a href="leads-dashboard.html">Leads Dashboard</a></li>
@@ -3242,7 +3242,7 @@
 									<li><a href="incoming-call.html">Incoming Call</a></li>
 									<li><a href="call-history.html">Call History</a></li>
 									<li><a href="calendar.html">Calendar</a></li>
-									<li><a href="email.html">Email</a></li>
+									<li><a href="email.html" class="active">Email</a></li>
 									<li><a href="todo.html">To Do</a></li>
 									<li><a href="notes.html">Notes</a></li>
 									<li><a href="file-manager.html">File Manager</a></li>
@@ -3887,13 +3887,13 @@
 							<div class="nav flex-column items-center nav-pills" role="tablist" id="default-stack-styled-tab" data-tabs-toggle="#menu-stacked-bar" data-tabs-active-classes="bg-light text-default">
 								<div class="grid grid-cols-12 gap-2">
 									<div class="col-span-6">
-										<a href="#menu-dashboard" class="nav-link" title="Dashboard" role="tab" data-tabs-target="#menu-dashboard" aria-selected="true">
+										<a href="#menu-dashboard" class="nav-link" title="Dashboard" role="tab" data-tabs-target="#menu-dashboard" aria-selected="false">
 											<span><i class="ti ti-smart-home"></i></span>
 											<p>Dashboard</p>
 										</a>
 									</div>
 									<div class="col-span-6">
-										<a href="#menu-application" class="nav-link" title="Apps" role="tab" data-tabs-target="#menu-application" aria-selected="false">
+										<a href="#menu-application" class="nav-link" title="Apps" role="tab" data-tabs-target="#menu-application" aria-selected="true">
 											<span><i class="ti ti-layout-grid-add"></i></span>
 											<p>Applications</p>
 										</a>
@@ -3969,7 +3969,7 @@
 							<div class="tab-content" id="menu-stacked-bar">
 								<div class="hidden" id="menu-dashboard">
 									<ul class="stack-submenu">
-										<li><a href="index.html" class="active">Admin Dashboard</a></li>
+										<li><a href="index.html">Admin Dashboard</a></li>
 										<li><a href="employee-dashboard.html">Employee Dashboard</a></li>
 										<li><a href="deals-dashboard.html">Deals Dashboard</a></li>
 										<li><a href="leads-dashboard.html">Leads Dashboard</a></li>
@@ -4000,7 +4000,7 @@
 											</ul>
 										</li>
 										<li><a href="calendar.html">Calendar</a></li>
-										<li><a href="email.html">Email</a></li>
+										<li><a href="email.html" class="active">Email</a></li>
 										<li><a href="todo.html">To Do</a></li>
 										<li><a href="notes.html">Notes</a></li>
 										<li><a href="social-feed.html">Social Feed</a></li>
@@ -4524,2009 +4524,404 @@
 
 		<!-- Page Wrapper -->
 		<div class="page-wrapper relative pt-[50px] ml-[252px]">
-			<div class="content p-6 pb-0">
-
-				<!-- Breadcrumb -->
-				<div class="md:flex block items-center justify-between page-breadcrumb mb-4">
-					<div class="my-auto mb-2">
-						<h2 class="mb-1">Admin Dashboard</h2>
-						<nav class="flex" aria-label="Breadcrumb">
-							<ol class="inline-flex items-center space-x-1 md:space-x-2">
-								<li class="inline-flex items-center">
-									<a href="index.html" class="inline-flex items-center text-xs text-gray-500 hover:text-primary">
-										<i class="ti ti-smart-home"></i>
-									</a>
-								</li>
-								<li>
-									<span class="text-default">/</span>
-								</li>
-								<li class="text-xs text-default">Dashboard</li>
-								<li>
-									<span class="text-default">/</span>
-								</li>
-								<li aria-current="page" class="text-xs text-gray-900">Admin Dashboard</li>
-							</ol>
-						</nav>
-					</div>
-					<div class="flex my-xl-auto right-content items-center flex-wrap ">
-						<div class="me-2 mb-2">
-							<div>
-								<a href="javascript:void(0);" class="border rounded p-2 bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900" data-dropdown-toggle="export-dropdown">
-									<i class="ti ti-file-export me-1"></i>Export<i class="ti ti-chevron-down ml-1"></i>
-								</a>
-								<ul id="export-dropdown" class="hidden p-4 border rounded bg-white shadow-lg">
-									<li>
-										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900"><i class="ti ti-file-type-pdf me-1"></i>Export as PDF</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900"><i class="ti ti-file-type-xls me-1"></i>Export as Excel </a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="mb-2">
-							<div class="relative w-[120px]">
-								<div class="absolute inset-y-0 start-2 flex items-center pointer-events-none">
-									<i class="ti ti-calendar text-gray-900 text-base leading-normal"></i>
-								</div>
-								<input type="text" class="flatpickr-input flat-monthpickr bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 ps-6 px-2.5 h-[38px] placeholder:text-gray-400">
-							</div>
-						</div>
-						<div class="head-icons ml-2 mb-2">
-							<a href="javascript:void(0);" class="border flex items-center justify-center rounded bg-white w-9 h-9 hover:bg-primary hover:text-white hover:border-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Collapse" id="collapse-header">
-								<i class="ti ti-chevrons-up"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- /Breadcrumb -->
-
-				<!-- Welcome Wrap -->
-				<div class="card rounded-[5px] shadow-xs bg-white border-0 mb-6">
-					<div class="card-body flex items-center justify-between flex-wrap p-5 pb-1">
-						<div class="flex items-center mb-4">
-							<span class="flex items-center justify-center shrink-0 size-[60px]">
-								<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-31.jpg" class="rounded-full" alt="img">
-							</span>
-							<div class="ms-4">
-								<h3 class="mb-2">Welcome Back, Adrian <a href="javascript:void(0);" class="size-[22px] inline-flex items-center justify-center bg-dark-transparent text-gray-500 hover:bg-gray-300 hover:text-gray-500 rounded-full"><i class="ti ti-edit text-sm leading-none"></i></a></h3>
-								<p>You have <span class="text-primary underline">21</span> Pending Approvals & <span class="text-primary underline">14</span> Leave Requests</p>
-							</div>
-						</div>
-						<div class="flex items-center flex-wrap mb-1">
-							<a href="#" class="btn bg-secondary border border-secondary text-white text-center py-1.5 px-3 hover:bg-secondary-900 hover:text-white text-xs inline-flex items-center me-2 mb-2" data-modal-toggle="add_project" data-modal-target="add_project"><i class="ti ti-square-rounded-plus me-1"></i>Add Project</a>
-							<a href="#" class="btn bg-primary border border-primary text-white text-center py-1.5 px-3 hover:bg-primary-900 hover:text-white text-xs inline-flex items-center mb-2"  data-modal-target="add_leaves" data-modal-toggle="add_leaves"><i class="ti ti-square-rounded-plus me-1"></i>Add Requests</a>
-						</div>
-					</div>
-				</div>
-				<!-- /Welcome Wrap -->
-
-				<div class="grid grid-cols-1 xxl:grid-cols-12  gap-x-6">
-
-					<!-- Widget Info -->
-					<div class="xxl:col-span-8 flex">
-						<div class="grid grid-cols-1 md:grid-cols-12 w-full gap-x-6">
-							<div class="md:col-span-3 flex mb-6">
-								<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
-									<div class="card-body p-5">
-										<span class="size-[42px] flex items-center justify-center text-white rounded-full bg-primary mb-2">
-											<i class="ti ti-calendar-share text-base leading-none"></i>
-										</span>
-										<h6 class="text-[13px] font-medium text-default mb-1">Attendance Overview</h6>
-										<h3 class="mb-4">120/154 <span class="text-xs leading-normal font-medium text-success"><i class="fa-solid fa-caret-up me-1"></i>+2.1%</span></h3>
-										<a href="attendance-employee.html" class="text-default hover:text-primary">View Details</a>
-									</div>
-								</div>
-							</div>
-							<div class="md:col-span-3 flex mb-6">
-								<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
-									<div class="card-body p-5">
-										<span class="size-[42px] flex items-center justify-center text-white rounded-full bg-secondary mb-2">
-											<i class="ti ti-browser text-base leading-none"></i>
-										</span>
-										<h6 class="text-[13px] font-medium text-default mb-1">Total No of Project's</h6>
-										<h3 class="mb-4">90/125 <span class="text-xs leading-normal font-medium text-danger"><i class="fa-solid fa-caret-down me-1"></i>-2.1%</span></h3>
-										<a href="projects.html" class="text-default hover:text-primary">View All</a>
-									</div>
-								</div>
-							</div>
-							<div class="md:col-span-3 flex mb-6">
-								<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
-									<div class="card-body p-5">
-										<span class="size-[42px] flex items-center justify-center text-white rounded-full bg-info mb-2">
-											<i class="ti ti-users-group text-base leading-none"></i>
-										</span>
-										<h6 class="text-[13px] font-medium text-default mb-1">Total No of Clients</h6>
-										<h3 class="mb-4">69/86 <span class="text-xs leading-normal font-medium text-danger"><i class="fa-solid fa-caret-down me-1"></i>-11.2%</span></h3>
-										<a href="clients.html" class="text-default hover:text-primary">View All</a>
-									</div>
-								</div>
-							</div>
-							<div class="md:col-span-3 flex mb-6">
-								<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
-									<div class="card-body p-5">
-										<span class="size-[42px] flex items-center justify-center text-white rounded-full bg-pink mb-2">
-											<i class="ti ti-checklist text-base leading-none"></i>
-										</span>
-										<h6 class="text-[13px] font-medium text-default mb-1">Total No of Tasks</h6>
-										<h3 class="mb-4">225/28 <span class="text-xs leading-normal font-medium text-success"><i class="fa-solid fa-caret-down me-1"></i>+11.2%</span></h3>
-										<a href="tasks.html" class="text-default hover:text-primary">View All</a>
-									</div>
-								</div>
-							</div>
-							<div class="md:col-span-3 flex mb-6">
-								<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
-									<div class="card-body p-5">
-										<span class="size-[42px] flex items-center justify-center text-white rounded-full bg-purple mb-2">
-											<i class="ti ti-moneybag text-base leading-none"></i>
-										</span>
-										<h6 class="text-[13px] font-medium text-default mb-1">Earnings</h6>
-										<h3 class="mb-4">$21445 <span class="text-xs leading-normal font-medium text-success"><i class="fa-solid fa-caret-up me-1"></i>+10.2%</span></h3>
-										<a href="expenses.html" class="text-default hover:text-primary">View All</a>
-									</div>
-								</div>
-							</div>
-							<div class="md:col-span-3 flex mb-6">
-								<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
-									<div class="card-body p-5">
-										<span class="size-[42px] flex items-center justify-center text-white rounded-full bg-danger mb-2">
-											<i class="ti ti-browser text-base leading-none"></i>
-										</span>
-										<h6 class="text-[13px] font-medium text-default mb-1">Profit This Week</h6>
-										<h3 class="mb-4">$5,544 <span class="text-xs leading-normal font-medium text-success"><i class="fa-solid fa-caret-up me-1"></i>+2.1%</span></h3>
-										<a href="purchase-transaction.html" class="text-default hover:text-primary">View All</a>
-									</div>
-								</div>
-							</div>
-							<div class="md:col-span-3 flex mb-6">
-								<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
-									<div class="card-body p-5">
-										<span class="size-[42px] flex items-center justify-center text-white rounded-full bg-success mb-2">
-											<i class="ti ti-users-group text-base leading-none"></i>
-										</span>
-										<h6 class="text-[13px] font-medium text-default mb-1">Job Applicants</h6>
-										<h3 class="mb-4">98 <span class="text-xs leading-normal font-medium text-success"><i class="fa-solid fa-caret-up me-1"></i>+2.1%</span></h3>
-										<a href="job-list.html" class="text-default hover:text-primary">View All</a>
-									</div>
-								</div>
-							</div>
-							<div class="md:col-span-3 flex mb-6">
-								<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
-									<div class="card-body p-5">
-										<span class="size-[42px] flex items-center justify-center text-white rounded-full bg-dark mb-2">
-											<i class="ti ti-user-star text-base leading-none"></i>
-										</span>
-										<h6 class="text-[13px] font-medium text-default mb-1">New Hire</h6>
-										<h3 class="mb-4">45/48 <span class="text-xs leading-normal font-medium text-danger"><i class="fa-solid fa-caret-down me-1"></i>-11.2%</span></h3>
-										<a href="candidates.html" class="text-default hover:text-primary">View All</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Widget Info -->
-
-					<!-- Employees By Department -->
-					<div class="xxl:col-span-4 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full mb-6">
-							<div class="card-header px-5 pt-4 pb-2 flex items-center justify-between flex-wrap border-b border-borderColor">
-								<h5 class="mb-2">Employees By Department</h5>
-								<div class="mb-2">
-									<a href="javascript:void(0);" class="border rounded py-1 px-2 text-xs font-medium bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900"  data-dropdown-toggle="week-dropdown">
-										<i class="ti ti-calendar me-1"></i>This Week
-									</a>
-									<ul id="week-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
-										<li>
-											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Month</a>
-										</li>
-										<li>
-											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Week</a>
-										</li>
-										<li>
-											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Last Week</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="card-body p-5">
-								<div id="emp-department"></div>
-								<p class="text-[13px]"><i class="ti ti-circle-filled me-2 text-[8px] text-primary"></i>No of Employees increased by <span class="text-success font-bold">+20%</span> from last Week
-								</p>
-							</div>
-						</div>
-					</div>
-					<!-- /Employees By Department -->
-
-				</div>
-
-				<div class="grid grid-cols-1 xxl:grid-cols-12 xl:grid-cols-12 gap-x-6">
-
-					<!-- Total Employee -->
-					<div class="xxl:col-span-4 xl:col-span-12 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full mb-6">
-							<div class="card-header pt-4 px-5 pb-2 flex items-center justify-between flex-wrap border-b border-borderColor">
-								<h5 class="mb-2">Employee Status</h5>
-								<div class="mb-2">
-									<a href="javascript:void(0);" class="border rounded py-1 px-2 text-xs font-medium bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900"  data-dropdown-toggle="emp-dropdown">
-										<i class="ti ti-calendar me-1"></i>This Week
-									</a>
-									<ul id="emp-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
-										<li>
-											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Month</a>
-										</li>
-										<li>
-											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Week</a>
-										</li>
-										<li>
-											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Last Week</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="card-body p-5">
-								<div class="flex items-center justify-between mb-1">
-									<p class="text-[13px] mb-4">Total Employee</p>
-									<h3 class="mb-4">154</h3>
-								</div>
-								<div class="w-full bg-light-900 rounded flex h-6 mb-4">
-									<div class="bg-warning h-6 rounded-s" style="width: 40%"></div>
-									<div class="bg-secondary h-6" style="width: 20%"></div>
-									<div class="bg-danger h-6" style="width: 10%"></div>
-									<div class="bg-pink h-6 rounded-e" style="width: 30%"></div>
-								</div>
-								<div class="border border-borderColor mb-4">
-									<div class="grid grid-cols-2 gx-0">
-										<div>
-											<div class="p-2 flex-1 border-e border-b border-borderColor">
-												<p class="text-[13px] mb-2"><i class="ti ti-square-filled text-primary text-xs leading-normal me-2"></i>Fulltime <span class="text-gray-900">(48%)</span></p>
-												<h2 class="display-1">112</h2>
-											</div>
-										</div>
-										<div>
-											<div class="p-2 flex-1 border-b border-borderColor text-end">
-												<p class="text-[13px] mb-2"><i class="ti ti-square-filled me-2 text-secondary text-xs leading-normal"></i>Contract <span class="text-gray-900">(20%)</span></p>
-												<h2 class="display-1">112</h2>
-											</div>
-										</div>
-										<div>
-											<div class="p-2 flex-1 border-e">
-												<p class="text-[13px] mb-2"><i class="ti ti-square-filled me-2 text-danger text-xs leading-normal"></i>Probation <span class="text-gray-900">(22%)</span></p>
-												<h2 class="display-1">12</h2>
-											</div>
-										</div>
-										<div>
-											<div class="p-2 flex-1 text-end">
-												<p class="text-[13px] mb-2"><i class="ti ti-square-filled text-pink me-2 text-xs leading-normal"></i>WFH <span class="text-gray-900">(20%)</span></p>
-												<h2 class="display-1">04</h2>
-											</div>
-										</div>
-									</div>
-								</div>
-								<h6 class="mb-2">Top Performer</h6>
-								<div class="p-2 flex items-center justify-between border border-primary bg-primary-100 rounded-defaultradius mb-6">
-									<div class="flex items-center overflow-hidden">
-										<span class="me-2">
-											<i class="ti ti-award-filled text-primary text-2xl leading-none"></i>
-										</span>
-										<a href="employee-details.html" class="size-8 me-2">
-											<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-24.jpg" class="rounded-full border border-white" alt="img">
-										</a>
-										<div>
-											<h6 class="truncate mb-1 fs-14 font-medium"><a href="employee-details.html" class="hover:text-primary">Daniel Esbella</a></h6>
-											<p class="text-[13px]">IOS Developer</p>
-										</div>
-									</div>
-									<div class="text-end">
-										<p class="text-[13px] mb-1">Performance</p>
-										<h5 class="text-primary">99%</h5>
-									</div>
-								</div>
-								<a href="employees.html" class="btn bg-light border border-light text-gray-900 text-center py-1.5 px-2 hover:bg-light-900 hover:text-gray-900 text-xs leading-normal w-full">View All Employees</a>
-							</div>
-						</div>
-					</div>
-					<!-- /Total Employee -->
-
-					<!-- Attendance Overview -->
-					<div class="xxl:col-span-4 xl:col-span-6 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full mb-6">
-							<div class="card-header  pt-4 px-5 pb-2 flex items-center justify-between flex-wrap border-b border-borderColor">
-								<h5 class="mb-2">Attendance Overview</h5>
-								<div class="mb-2">
-									<a href="javascript:void(0);" class="border rounded py-1 px-2 text-xs font-medium bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900"  data-dropdown-toggle="today-dropdown">
-										<i class="ti ti-calendar me-1"></i>Today
-									</a>
-									<ul id="today-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
-										<li>
-											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Month</a>
-										</li>
-										<li>
-											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Week</a>
-										</li>
-										<li>
-											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Last Week</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="card-body p-5">
-								<div class="chartjs-wrapper-demo relative mb-4">
-									<div class="w-full h-52">
-										<canvas id="attendance" class="w-full h-full"></canvas>
-									  </div>
-									<div class="absolute text-center top-1/2 left-1/2 -translate-x-1/2 transform attendance-canvas">
-										<p class="text-[13px] mb-1">Total Attendance</p>
-										<h3>120</h3>
-									</div>
-								</div>
-								<h6 class="mb-4">Status</h6>
-								<div class="flex items-center justify-between">
-									<p class="text-[13px] mb-2"><i class="ti ti-circle-filled text-success me-1"></i>Present</p>
-									<p class="text-[13px] font-medium text-gray-900 mb-2">59%</p>
-								</div>
-								<div class="flex items-center justify-between">
-									<p class="text-[13px] mb-2"><i class="ti ti-circle-filled text-secondary me-1"></i>Late</p>
-									<p class="text-[13px] font-medium text-gray-900 mb-2">21%</p>
-								</div>
-								<div class="flex items-center justify-between">
-									<p class="text-[13px] mb-2"><i class="ti ti-circle-filled text-warning me-1"></i>Permission</p>
-									<p class="text-[13px] font-medium text-gray-900 mb-2">2%</p>
-								</div>
-								<div class="flex items-center justify-between mb-2">
-									<p class="text-[13px] mb-2"><i class="ti ti-circle-filled text-danger me-1"></i>Absent</p>
-									<p class="text-[13px] font-medium text-gray-900 mb-2">15%</p>
-								</div>
-								<div class="bg-light rounded-defaultradius box-shadow-xs p-2 pb-0 flex items-center justify-between flex-wrap">
-									<div class="flex items-center">
-										<p class="mb-2 me-2">Total Absenties</p>
-										<div class="flex -space-x-2 mb-2">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-27.jpg" alt="">
-											<img class="size-6 border border-white rounded-full  hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-30.jpg" alt="">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-14.jpg" alt="">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-29.jpg" alt="">
-											<a class="flex items-center justify-center size-6 border text-xs font-medium text-white bg-primary border-primary rounded-full hover:primary-900 shrink-0 hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" href="#">+1</a>
-										</div>
-									</div>
-									<a href="leaves.html" class="text-[13px] text-primary hover:text-primary-900 underline mb-2">View Details</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Attendance Overview -->
-
-					<!-- Clock-In/Out -->
-					<div class="xxl:col-span-4 xl:col-span-6 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full mb-6">
-							<div class="card-header pt-4 px-5 pb-2 flex items-center justify-between flex-wrap border-b border-borderColor">
-								<h5 class="mb-2">Clock-In/Out</h5>
-								<div class="flex items-center">
-									<div class="me-2 mb-2">
-										<a href="javascript:void(0);" class="border border-white rounded py-1 px-2 text-[13px] font-normal bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900"  data-dropdown-toggle="dept-dropdown">
-											All Departments
-										</a>
-										<ul id="dept-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Finance</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Development</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Marketing</a>
-											</li>
-										</ul>
-									</div>
-									<div class="mb-2">
-										<a href="javascript:void(0);" class="border rounded py-1 px-2 text-xs font-medium bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900"  data-dropdown-toggle="today-dropdown1">
-											<i class="ti ti-calendar me-1"></i>Today
-										</a>
-										<ul id="today-dropdown1" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Month</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Week</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Last Week</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="card-body p-5">
-								<div>
-									<div
-										class="flex items-center justify-between mb-4 p-2 border border-dashed rounded-defaultradius">
+			<div class="content p-0">
+				<div class="md:flex">
+					<div class="email-sidebar max-w-[300px] border-r border-b">
+						<div class="active slimscroll h-full">
+							<div class="slimscroll-active-sidebar">					
+								<div class="p-4">
+									<div class="shadow-md bg-white rounded p-2 mb-4">
 										<div class="flex items-center">
-											<a href="javascript:void(0);" class="size-[42px] flex items-center justify-center rounded-full shrink-0">
-												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-24.jpg" class="rounded-full border border-borderColor" alt="img">
+											<a href="javascript:void(0);" class="w-8 h-8 flex flex-shrink-0 me-2">
+												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-02.jpg" class="rounded-full" alt="Img">
 											</a>
-											<div class="ms-2">
-												<h6 class="fs-14 font-medium truncate">Daniel Esbella</h6>
-												<p class="text-[13px]">UI/UX Designer</p>
-											</div>
-										</div>
-										<div class="flex items-center">
-											<a href="javascript:void(0);" class="text-default hover:text-primary me-2"><i class="ti ti-clock-share"></i></a>
-											<span class="text-[10px] font-medium inline-flex items-center py-1 px-2 rounded bg-success text-white leading-none"><i class="ti ti-circle-filled text-[5px] me-1"></i>09:15</span>
-										</div>
-									</div>
-									<div class="flex items-center justify-between mb-3 p-2 border rounded-defaultradius">
-										<div class="flex items-center">
-											<a href="javascript:void(0);" class="size-[42px] flex items-center justify-center rounded-full shrink-0">
-												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-23.jpg" class="rounded-full border border-borderColor" alt="img">
-											</a>
-											<div class="ms-2">
-												<h6 class="fs-14 font-medium">Doglas Martini</h6>
-												<p class="text-[13px]">Project Manager</p>
-											</div>
-										</div>
-										<div class="flex items-center">
-											<a href="javascript:void(0);" class="text-default hover:text-primary me-2"><i class="ti ti-clock-share"></i></a>
-											<span class="text-[10px] font-medium inline-flex items-center py-1 px-2 rounded bg-success text-white leading-none"><i class="ti ti-circle-filled text-[5px] me-1"></i>09:36</span>
-										</div>
-									</div>
-									<div class="mb-4 p-2 border rounded-defaultradius">
-										<div class="flex items-center justify-between">
-											<div class="flex items-center">
-												<a href="javascript:void(0);" class="size-[42px] flex items-center justify-center rounded-full shrink-0">
-													<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-27.jpg" class="rounded-full border-borderColor border-2" alt="img">
-												</a>
-												<div class="ms-2">
-													<h6 class="fs-14 font-medium truncate">Brian Villalobos</h6>
-													<p class="text-[13px]">PHP Developer</p>
-												</div>
-											</div>
-											<div class="flex items-center">
-												<a href="javascript:void(0);" class="text-default hover:text-primary me-2"><i class="ti ti-clock-share"></i></a>
-												<span class="text-[10px] font-medium inline-flex items-center py-1 px-2 rounded bg-success text-white leading-none"><i class="ti ti-circle-filled text-[5px] me-1"></i>09:15</span>
-											</div>
-										</div>
-										<div
-											class="flex items-center justify-between flex-wrap mt-2 border rounded-defaultradius p-2 pb-0">
 											<div>
-												<p class="mb-1 inline-flex items-center"><i class="ti ti-circle-filled text-success text-[5px] me-1"></i>Clock In</p>
-												<h6 class="text-[13px] font-normal mb-2">10:30 AM</h6>
-											</div>
-											<div>
-												<p class="mb-1 inline-flex items-center"><i class="ti ti-circle-filled text-danger text-[5px] me-1"></i>Clock Out</p>
-												<h6 class="text-[13px] font-normal mb-2">09:45 AM</h6>
-											</div>
-											<div>
-												<p class="mb-1 inline-flex items-center"><i class="ti ti-circle-filled text-warning text-[5px] me-1"></i>Production</p>
-												<h6 class="text-[13px] font-normal mb-2">09:21 Hrs</h6>
+												<h6 class="mb-1"><a href="javascript:void(0);">James Hong</a></h6>
+												<p>jnh343@example.com</p>
 											</div>
 										</div>
 									</div>
-								</div>
-								<h6 class="mb-2">Late</h6>
-								<div class="flex items-center justify-between mb-4 p-2 border border-dashed rounded-defaultradius">
-									<div class="flex items-center overflow-hidden">
-										<span class="size-[42px] flex items-center justify-center rounded-full shrink-0">
-											<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-29.jpg" class="rounded-full border-borderColor border-2" alt="img">
+									<a href="javascript:void(0);" class="btn bg-primary w-full text-white text-center" id="compose_mail"><i class="ti ti-edit me-2"></i>Compose</a>
+									<div class="mt-4">
+										<h5 class="mb-2">Emails</h5>
+										<div class="block mb-4 pb-4 border-b email-tags">
+											<a href="email.html" class="flex items-center justify-between p-2 text-gray-900 rounded bg-dark-transparent hover:bg-dark-transparent active">
+												<span class="flex items-center font-medium"><i class="ti ti-inbox text-gray me-2"></i>Inbox</span>
+												<span class="bg-danger rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 text-white px-[0.45rem] inline-block">56</span>
+											</a>
+											<a href="javascript:void(0);" class="flex items-center justify-between p-2 text-gray-900 rounded hover:bg-dark-transparent">
+												<span class="flex items-center font-medium"><i class="ti ti-star text-gray me-2"></i>Starred</span>
+												<span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">46</span>
+											</a>
+											<a href="javascript:void(0);" class="flex items-center justify-between p-2 text-gray-900 rounded hover:bg-dark-transparent">
+												<span class="flex items-center font-medium"><i class="ti ti-rocket text-gray me-2"></i>Sent</span>
+												<span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">14</span>
+											</a>
+											<a href="javascript:void(0);" class="flex items-center justify-between p-2 text-gray-900 rounded hover:bg-dark-transparent">
+												<span class="flex items-center font-medium"><i class="ti ti-file text-gray me-2"></i>Drafts</span>
+												<span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">12</span>
+											</a>
+											<a href="javascript:void(0);" class="flex items-center justify-between p-2 text-gray-900 rounded hover:bg-dark-transparent">
+												<span class="flex items-center font-medium"><i class="ti ti-trash text-gray me-2"></i>Deleted</span>
+												<span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">08</span>
+											</a>
+											<a href="javascript:void(0);" class="flex items-center justify-between p-2 text-gray-900 rounded hover:bg-dark-transparent">
+												<span class="flex items-center font-medium"><i class="ti ti-info-octagon text-gray me-2"></i>Spam</span>
+												<span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">0</span>
+											</a>
+											<div>
+												<div class="more-menu">
+													<a href="javascript:void(0);" class="flex items-center justify-between text-gray-900 p-2 rounded hover:bg-dark-transparent">
+														<span class="flex items-center font-medium"><i class="ti ti-location-up text-gray me-2"></i>Important</span>
+														<span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">12</span>
+													</a>
+													<a href="javascript:void(0);" class="flex items-center justify-between text-gray-900 p-2 rounded hover:bg-dark-transparent">
+														<span class="flex items-center font-medium"><i class="ti ti-transition-top text-gray me-2"></i>All Emails</span>
+														<span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">34</span>
+													</a>
+												</div>
+												<div class="view-all mt-2">
+													<a href="javascript:void(0);" class="viewall-button font-medium"><span>Show More</span><i class="fa fa-chevron-down fs-10 ms-2"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="border-b mb-4 pb-4">
+										<div class="flex items-center justify-between mb-2">
+											<h5>Labels</h5>
+											<a href="javascript:void(0);"><i class="ti ti-square-rounded-plus-filled text-primary fs-16"></i></a>
+										</div>
+										<div>
+											<a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+												<i class="ti ti-square-rounded text-success me-2"></i>
+												Team Events
+											</a>
+											<a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+												<i class="ti ti-square-rounded text-warning me-2"></i>
+												Work
+											</a>
+											<a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+												<i class="ti ti-square-rounded text-danger me-2"></i>
+												External
+											</a>	
+											<a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+												<i class="ti ti-square-rounded text-skyblue me-2"></i>
+												Projects
+											</a>
+											<div>
+												<div class="more-menu-2">
+													<a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+														<i class="ti ti-square-rounded text-purple me-2"></i>
+														Applications
+													</a>
+													<a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+														<i class="ti ti-square-rounded text-info me-2"></i>
+														Desgin
+													</a>
+												</div>
+												<div class="view-all mt-2">
+													<a href="javascript:void(0);" class="viewall-button-2 font-medium"><span>Show More</span><i class="fa fa-chevron-down fs-10 ms-2"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="border-b mb-4 pb-4">
+										<div class="flex items-center justify-between mb-2">
+											<h5>Folders</h5>
+											<a href="javascript:void(0);"><i class="ti ti-square-rounded-plus-filled text-primary fs-16"></i></a>
+										</div>
+										<div>
+											<a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+												<i class="ti ti-folder-filled text-danger me-2"></i>
+												Projects
+											</a>
+											<a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+												<i class="ti ti-folder-filled text-warning me-2"></i>
+												Personal
+											</a>
+											<a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+												<i class="ti ti-folder-filled text-success me-2"></i>
+												Finance
+											</a>	
+											<div>
+												<div class="more-menu-3">
+													<a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+														<i class="ti ti-folder-filled text-info me-2"></i>
+														Projects
+													</a>
+													<a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+														<i class="ti ti-folder-filled text-primary me-2"></i>
+														Personal
+													</a>
+												</div>
+												<div class="view-all mt-2">
+													<a href="javascript:void(0);" class="viewall-button-3 font-medium"><span>Show More</span><i class="fa fa-chevron-down fs-10 ms-2"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="bg-dark rounded text-center relative z-[1] p-4">
+										<span class="w-11 h-11 mx-auto rounded-full flex items-center justify-center bg-white mb-2">
+											<i class="ti ti-alert-triangle text-dark"></i>
 										</span>
-										<div class="ms-2 overflow-hidden">
-											<h6 class="fs-14 font-medium truncate">Anthony Lewis <span class="text-[10px] font-medium inline-flex items-center py-1 px-2 rounded bg-success text-white leading-none"><i class="ti ti-clock-hour-11 me-1"></i>30 Min</span></h6>
-											<p class="text-[13px]">Marketing Head</p>
+										<h6 class="text-white mb-3">Enjoy Unlimited Access on a small price monthly.</h6>
+										<a href="javascript:void(0);" class="btn bg-white text-gray-900">Upgrade Now <i class="ti ti-arrow-right"></i></a>
+										<div class="box-bg">
+											<span class="absolute top-0 right-0 z-[-1]"><img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/bg/email-bg-01.png" alt="Img"></span>
+											<span class="absolute left-0 bottom-0 z-[-1]"><img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/bg/email-bg-02.png" alt="Img"></span>
 										</div>
 									</div>
-									<div class="flex items-center">
-										<a href="javascript:void(0);" class="text-default hover:text-primary me-2"><i class="ti ti-clock-share"></i></a>
-										<span class="text-[10px] font-medium inline-flex items-center py-1 px-2 rounded bg-danger text-white leading-none"><i class="ti ti-circle-filled text-[5px] me-1"></i>08:35</span>
-									</div>
 								</div>
-								<a href="attendance-report.html" class="btn bg-light border border-light text-gray-900 text-center py-1.5 px-3.5 hover:bg-light-900 hover:text-gray-900 text-[13px] leading-normal w-full">View All Attendance</a>
 							</div>
 						</div>
 					</div>
-					<!-- /Clock-In/Out -->
-
+					<div class="mail-detail bg-white border-b flex-1 p-4">
+						<div class="active slimscroll h-full">
+							<div class="slimscroll-active-sidebar">	
+								<div class="flex items-center justify-between flex-wrap gap-y-2 border-b mb-3 pb-3">
+									<div>
+										<a href="javascript:void(0);" class="border rounded p-2 bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900" data-dropdown-toggle="days-dropdown">
+											<span class="bg-dark rounded-full text-[10px] font-medium py-0.5 text-white px-[0.45rem] inline-block me-2">5</span>Peoples<i class="ti ti-chevron-down ml-1"></i>
+										</a>
+										<ul id="days-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+											<li>
+												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Peoples</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Rufana</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Sean Hill</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Cameron Drake</a>
+											</li>
+										</ul>
+									</div>
+									<div class="flex items-center">
+										<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-arrow-back-up"></i></a>
+										<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-arrow-back-up-double"></i></a>
+										<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-arrow-forward"></i></a>
+										<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-bookmarks-filled"></i></a>
+										<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-archive-filled"></i></a>
+										<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-mail-opened-filled"></i></a>
+										<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-printer"></i></a>
+										<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-star-filled text-warning"></i></a>
+									</div>
+								</div>
+								<div class="bg-light-500 rounded p-3 mb-3">
+									<div class="flex items-center flex-1 border-b mb-3 pb-3">
+										<a href="javascript:void(0);" class="w-8 h-8 flex flex-shrink-0 me-2">
+											<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-01.jpg" class="rounded-full" alt="Img">
+										</a>
+										<div class="flex-1">
+											<div class="flex items-start justify-between flex-wrap gap-y-2">
+												<div>
+													<h6 class="mb-1"><a href="javascript:void(0);">Angela Thomas</a></h6>
+													<p>Subject: Client Dashboard</p>
+												</div>
+												<div class="flex items-center">
+													<p class="me-2 mb-0">12:45 AM</p>
+													<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-arrow-back-up"></i></a>
+													<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-arrow-back-up-double"></i></a>
+													<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-printer"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="flex items-center flex-wrap gap-y-2">
+										<p class="text-[12px] mb-0 text-dark me-3"><span class="text-gray">From: </span> Arman Janes</p>
+										<p class="text-[12px] mb-0 text-dark me-3"><span class="text-gray">To: </span> Angela Thomas</p>
+										<p class="text-[12px] mb-0 text-dark"><span class="text-gray">Cc: </span> Angela Thomas, Justin Lapointe</p>
+									</div>
+								</div>
+								<div class="card border rounded shadow-none mb-4">
+									<div class="card-body p-5">
+										<div>
+											<h6 class="mb-3">Dear Angela</h6>
+											<p class="text-dark">I am writing to request a meeting to discuss the progress and next steps for Project. 
+												We have reached a critical milestone, and I believe a 
+												discussion will help align our efforts and ensure we are on track to meet our goals.
+											</p>
+											<p class="text-dark">
+												am available on Tuesday and Thursday afternoons, 
+												but I am flexible and can adjust to a time that suits you best
+											</p>
+											<p class="text-dark">
+												Looking forward to your response.
+											</p>
+											<p class="text-dark">Best regards, <br><b class="font-medium flex mt-1">Arman</b> </p>
+										</div>
+										<div class="flex items-center justify-between my-3 pt-3 border-t">
+											<h5>Attachments</h5>
+											<a href="javascript:void(0);" class="text-primary font-medium">Download All</a>
+										</div>
+										<div class="flex items-center email-attach">
+											<a href="https://mediaprophet.github.io/social-web-ui-dev/assets/img/media/email-attach-big-01.jpg" data-fancybox="gallery" class="w-16 h-16 me-3 relative gallery-item">
+												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/media/email-attach-01.jpg" class=" rounded" alt="img">
+												<span class="w-7 h-7 rounded-full items-center justify-center absolute top-0 opacity-0 bg-white left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all"><i class="ti ti-eye"></i></span>
+											</a>
+											<a href="https://mediaprophet.github.io/social-web-ui-dev/assets/img/media/email-attach-big-02.jpg" data-fancybox="gallery" class="w-16 h-16 me-3 relative gallery-item">
+												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/media/email-attach-02.jpg" class="rounded" alt="img">
+												<span class="w-7 h-7 rounded-full items-center justify-center absolute top-0 opacity-0 bg-white left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all"><i class="ti ti-eye"></i></span>
+											</a>
+											<a href="https://mediaprophet.github.io/social-web-ui-dev/assets/img/media/email-attach-big-03.jpg" data-fancybox="gallery" class="w-16 h-16 me-3 relative gallery-item"> 
+												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/media/email-attach-03.jpg" class="rounded" alt="img">
+												<span class="w-7 h-7 rounded-full items-center justify-center absolute top-0 opacity-0 bg-white left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all"><i class="ti ti-eye"></i></span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="card border rounded shadow-none mb-4">
+									<div class="card-body p-5">
+										<div class="bg-light-500 rounded p-3 mb-3">
+											<div class="flex items-center flex-wrap gap-y-2 flex-1">
+												<a href="javascript:void(0);" class="w-7 h-7 flex flex-shrink-0 me-2">
+													<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-01.jpg" class="rounded-full" alt="Img">
+												</a>
+												<div class="flex-1">
+													<div class="flex items-start justify-between flex-wrap gap-y-2">
+														<div>
+															<h6 class="mb-1"><a href="javascript:void(0);">Arman Janes</a></h6>
+															<div class="flex items-center">
+																<p class="mb-0"><span>To: </span> Me</p>
+																<div>
+																	<a href="javascript:void(0);" class="rounded-full bg-transparent inline-flex items-center justify-center  text-gray-900 ms-2" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdowns">
+																		<i class="ti ti-chevron-down"></i>
+																	</a>
+																	<ul id="grid-dropdowns" class="hidden p-4 border rounded bg-white shadow-lg w-100 z-[1]">
+																		<li>
+																			<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900"><span class="text-gray me-1">From : </span> Arman Janes arman343@example.com</a>
+																		</li>
+																		<li>
+																			<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900"><span class="text-gray me-1">To : </span> Angela Thomas ange4565@example.com</a>
+																		</li>
+																		<li>
+																			<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900"><span class="text-gray me-1">Date : </span> 12 May 2025, 09:45 PM </a>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="flex items-center">
+															<p class="me-2 mb-0">Yesterday 01:22 AM</p>
+															<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-arrow-back-up"></i></a>
+															<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-arrow-back-up-double"></i></a>
+															<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-printer"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div>
+											<h6 class="mb-2">Dear Arman</h6>
+											<p class="text-dark mb-5">Introduction Mail from Techsolutions!!!</p>
+											<p class="text-dark">Best regards <br><b class="font-medium inline-flex mt-1">Arman</b></p>
+										</div>
+										<form action="email.html">
+											<div class="border rounded mt-3">
+												<div class="p-3 relative pb-2 border-b">
+													<div class="tag-with-img flex items-center">
+														<label class="form-label me-2">To</label>
+														<input class="input-tags form-control border-0 h-100" id="inputBox" type="text" data-role="tagsinput"  name="Label" value="Angela Thomas" >
+													</div>
+													<div class="flex items-center email-cc absolute right-[10px] me-5 top-1/2 transform -translate-y-1/2">
+														<a href="javascript:void(0);" class="inline-flex me-2">Cc</a>
+														<a href="javascript:void(0);" class="inline-flex">Bcc</a>
+													</div>
+												</div>
+												<div class="p-3">
+													<div class="mb-3">
+														<textarea rows="2" class="form-control border-0 w-full focus:ring-0 outline-0 p-0"></textarea>
+													</div>
+												</div>
+												<div class="flex items-center justify-between border-t p-3">
+													<div class="flex items-center">
+														<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-paperclip"></i></a>
+														<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-photo"></i></a>
+														<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-link"></i></a>
+														<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-pencil"></i></a>
+														<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-mood-smile"></i></a>
+													</div>
+													<div class="flex items-center">
+														<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-calendar-repeat"></i></a>
+														<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-trash"></i></a>
+														<button type="submit" class="btn bg-primary inline-flex items-center text-white ms-2">Send <i class="ti ti-arrow-right ms-2"></i></button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="text-center">
+									<a href="javascript:void(0);" class="bg-dark rounded px-2 py-1 text-white text-[14px]">View Older Messages</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-
-				<div class="grid grid-cols-1 xxl:grid-cols-12 xl:grid-cols-12 gap-6 mb-6">
-
-					<!-- Jobs Applicants -->
-					<div class="xxl:col-span-4 xl:col-span-12 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full">
-							<div class="card-header pt-4 px-5 pb-2 flex items-center justify-between flex-wrap border-b border-borderColor">
-								<h5 class="mb-2">Jobs Applicants</h5>
-								<a href="job-list.html" class="btn bg-light border border-light text-gray-900 text-center py-1.5 px-3.5 hover:bg-light-900 hover:text-gray-900 text-[13px] leading-normal mb-2">View All</a>
-							</div>
-							<div class="card-body p-5">
-								<ul class="flex flex-wrap -mb-px text-sm font-medium text-center bg-gray-200 rounded-defaultradius mb-6" data-tabs-toggle="#job-tab-content" data-tabs-active-classes="bg-primary text-white hover:text-primary" data-tabs-inactive-classes="text-gray-900 hover:text-primary" role="tablist">
-									<li role="presentation" class="flex-1">
-										<button class="block py-1.5 px-3 rounded-defaultradius w-full" data-tabs-target="#openings" type="button" role="tab" aria-selected="false">Openings</button>
-									</li>
-									<li role="presentation" class="flex-1">
-										<button class="block py-1.5 px-3 rounded-defaultradius w-full" data-tabs-target="#applicants" type="button" role="tab" aria-selected="false">Applicants</button>
-									</li>
-								</ul>
-								<div id="job-tab-content">
-									<div class="hidden " id="openings" role="tabpanel">
-										<div class="flex items-center justify-between mb-6">
-											<div class="flex items-center">
-												<a href="#" class="size-[42px] flex items-center justify-center rounded overflow-hidden shrink-0 bg-gray-100">
-													<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/icons/apple.svg" class="img-fluid w-auto h-auto" alt="img">
-												</a>
-												<div class="ms-2 overflow-hidden">
-													<p class="text-title font-medium truncate mb-0"><a href="javascript:void(0);">Senior IOS Developer</a></p>
-													<span class="text-xs leading-normal">No of Openings : 25 </span>
-												</div>
-											</div>
-											<a href="javascript:void(0);" class="size-7 rounded-defaultradius flex items-center justify-center border border-light bg-light text-gray-900 hover:bg-primary hover:text-white hover:border-primary"><i class="ti ti-edit"></i></a>
-										</div>
-										<div class="flex items-center justify-between mb-6">
-											<div class="flex items-center">
-												<a href="#" class="size-[42px] flex items-center justify-center rounded overflow-hidden shrink-0 bg-gray-100">
-													<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/icons/php.svg" class="img-fluid w-auto h-auto" alt="img">
-												</a>
-												<div class="ms-2 overflow-hidden">
-													<p class="text-title font-medium truncate mb-0"><a href="javascript:void(0);">Junior PHP Developer</a></p>
-													<span class="text-xs leading-normal">No of Openings : 20 </span>
-												</div>
-											</div>
-											<a href="javascript:void(0);" class="size-7 rounded-defaultradius flex items-center justify-center border border-light bg-light text-gray-900 hover:bg-primary hover:text-white hover:border-primary"><i class="ti ti-edit"></i></a>
-										</div>
-										<div class="flex items-center justify-between mb-6">
-											<div class="flex items-center">
-												<a href="#" class="size-[42px] flex items-center justify-center rounded overflow-hidden shrink-0 bg-gray-100">
-													<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/icons/react.svg" class="img-fluid w-auto h-auto" alt="img">
-												</a>
-												<div class="ms-2 overflow-hidden">
-													<p class="text-title font-medium truncate mb-0"><a href="javascript:void(0);">Junior React Developer </a></p>
-													<span class="text-xs leading-normal">No of Openings : 30 </span>
-												</div>
-											</div>
-											<a href="javascript:void(0);" class="size-7 rounded-defaultradius flex items-center justify-center border border-light bg-light text-gray-900 hover:bg-primary hover:text-white hover:border-primary"><i class="ti ti-edit"></i></a>
-										</div>
-										<div class="flex items-center justify-between mb-0">
-											<div class="flex items-center">
-												<a href="#" class="size-[42px] flex items-center justify-center rounded overflow-hidden shrink-0 bg-gray-100">
-													<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/icons/laravel-icon.svg" class="img-fluid w-auto h-auto" alt="img">
-												</a>
-												<div class="ms-2 overflow-hidden">
-													<p class="text-title font-medium truncate mb-0"><a href="javascript:void(0);">Senior Laravel Developer</a></p>
-													<span class="text-xs leading-normal">No of Openings : 40 </span>
-												</div>
-											</div>
-											<a href="javascript:void(0);" class="size-7 rounded-defaultradius flex items-center justify-center border border-light bg-light text-gray-900 hover:bg-primary hover:text-white hover:border-primary"><i class="ti ti-edit"></i></a>
-										</div>
-									</div>
-									<div class="hidden " id="applicants" role="tabpanel">
-										<div class="flex items-center justify-between mb-6">
-											<div class="flex items-center">
-												<a href="#" class="size-[42px] flex items-center justify-center overflow-hidden shrink-0">
-													<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-09.jpg" class="rounded-full" alt="img">
-												</a>
-												<div class="ms-2 overflow-hidden">
-													<p class="text-title font-medium truncate mb-0"><a href="#">Brian Villalobos</a></p>
-													<span class="text-[13px] inline-flex items-center">Exp : 5+ Years<i class="ti ti-circle-filled text-[4px] mx-2 text-primary"></i>USA</span>
-												</div>
-											</div>
-											<span class="bg-secondary text-white text-[10px] font-medium px-[5px] leading-4 rounded">UI/UX Designer</span>
-										</div>
-										<div class="flex items-center justify-between mb-6">
-											<div class="flex items-center">
-												<a href="#" class="size-[42px] flex items-center justify-center overflow-hidden shrink-0">
-													<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-32.jpg" class="rounded-full" alt="img">
-												</a>
-												<div class="ms-2 overflow-hidden">
-													<p class="text-title font-medium truncate mb-0"><a href="#">Anthony Lewis</a></p>
-													<span class="text-[13px] inline-flex items-center">Exp : 4+ Years<i class="ti ti-circle-filled text-[4px] mx-2 text-primary"></i>USA</span>
-												</div>
-											</div>
-											<span class="bg-info text-white text-[10px] font-medium px-[5px] leading-4 rounded">Python Developer</span>
-										</div>
-										<div class="flex items-center justify-between mb-6">
-											<div class="flex items-center">
-												<a href="#" class="size-[42px] flex items-center justify-center overflow-hidden shrink-0">
-													<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-32.jpg" class="rounded-full" alt="img">
-												</a>
-												<div class="ms-2 overflow-hidden">
-													<p class="text-title font-medium truncate mb-0"><a href="#">Stephan Peralt</a></p>
-													<span class="text-[13px] inline-flex items-center">Exp : 6+ Years<i class="ti ti-circle-filled text-[4px] mx-2 text-primary"></i>USA</span>
-												</div>
-											</div>
-											<span class="bg-pink text-white text-[10px] font-medium px-[5px] leading-4 rounded">Android Developer</span>
-										</div>
-										<div class="flex items-center justify-between mb-0">
-											<div class="flex items-center">
-												<a href="javascript:void(0);" class="size-[42px] flex items-center justify-center overflow-hidden shrink-0">
-													<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-34.jpg" class="rounded-full" alt="img">
-												</a>
-												<div class="ms-2 overflow-hidden">
-													<p class="text-title font-medium truncate mb-0"><a href="javascript:void(0);">Doglas Martini</a></p>
-													<span class="text-[13px] inline-flex items-center">Exp : 2+ Years<i class="ti ti-circle-filled text-[4px] mx-2 text-primary"></i>USA</span>
-												</div>
-											</div>
-											<span class="bg-purple text-white text-[10px] font-medium px-[5px] leading-4 rounded">React Developer</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Jobs Applicants -->
-					
-					<!-- Employees -->
-					<div class="xxl:col-span-4 xl:col-span-6 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full overflow-x-auto">
-							<div class="card-header pt-4 px-5 pb-2 flex items-center justify-between flex-wrap">
-								<h5 class="mb-2">Employees</h5>
-								<a href="employees.html" class="btn bg-light border border-light text-gray-900 text-center py-1.5 px-3.5 hover:bg-light-900 hover:text-gray-900 text-[13px] leading-normal mb-2">View All</a>
-							</div>
-							<div class="card-body p-0">
-								<div class="overflow-x-auto">	
-									<table class="table w-full text-default mb-0">
-										<thead>
-											<tr>
-												<th class="font-semibold text-left py-2 px-5 bg-light-900 text-gray-900 border-b border-borderColor">Name</th>
-												<th class="font-semibold text-left py-2 px-5 bg-light-900 text-gray-900 border-b border-borderColor">Department</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr class="border-b border-borderColor">
-												<td class="py-2 px-5">
-													<div class="flex items-center">
-														<a href="javascript:void(0);" class="size-[42px] flex items-center justify-center rounded-full">
-															<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-32.jpg" class="rounded-full" alt="img">
-														</a>
-														<div class="ms-2">
-															<h6 class="font-medium"><a href="javascript:void(0);">Anthony Lewis</a></h6>
-															<span class="text-xs leading-normal">Finance</span>
-														</div>
-													</div>
-												</td>
-												<td class="py-2 px-5">
-													<span class="inline-block bg-secondary-transparent text-secondary text-[10px] font-medium px-[5px] leading-4 rounded">
-														Finance
-													</span>
-												</td>
-											</tr>
-											<tr class="border-b border-borderColor">
-												<td class="py-2 px-5">
-													<div class="flex items-center">
-														<a href="#" class="size-[42px] flex items-center justify-center rounded-full">
-															<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-09.jpg" class="rounded-full" alt="img">
-														</a>
-														<div class="ms-2">
-															<h6 class="font-medium"><a href="#">Brian Villalobos</a></h6>
-															<span class="text-xs leading-normal">PHP Developer</span>
-														</div>
-													</div>
-												</td>
-												<td class="py-2 px-5">
-													<span class="inline-block bg-danger-transparent text-danger text-[10px] font-medium px-[5px] leading-4 rounded">Development</span>
-												</td>
-											</tr>
-											<tr class="border-b border-borderColor">
-												<td class="py-2 px-5">
-													<div class="flex items-center">
-														<a href="#" class="size-[42px] flex items-center justify-center rounded-full">
-															<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-01.jpg" class="rounded-full" alt="img">
-														</a>
-														<div class="ms-2">
-															<h6 class="font-medium"><a href="#">Stephan Peralt</a></h6>
-															<span class="text-xs leading-normal">Executive</span>
-														</div>
-													</div>
-												</td>
-												<td class="py-2 px-5">
-													<span class="inline-block bg-info-transparent text-info text-[10px] font-medium px-[5px] leading-4 rounded">Marketing</span>
-												</td>
-											</tr>
-											<tr class="border-b border-borderColor">
-												<td class="py-2 px-5">
-													<div class="flex items-center">
-														<a href="javascript:void(0);" class="size-[42px] flex items-center justify-center rounded-full">
-															<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-34.jpg" class="rounded-full" alt="img">
-														</a>
-														<div class="ms-2">
-															<h6 class="font-medium"><a href="javascript:void(0);">Doglas Martini</a></h6>
-															<span class="text-xs leading-normal">Project Manager</span>
-														</div>
-													</div>
-												</td>
-												<td class="py-2 px-5">
-													<span class="inline-block bg-purple-transparent text-purple text-[10px] font-medium px-[5px] leading-4 rounded">Manager</span>
-												</td>
-											</tr>
-											<tr>
-												<td class="py-2 px-5">
-													<div class="flex items-center">
-														<a href="javascript:void(0);" class="size-[42px] flex items-center justify-center rounded-full">
-															<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-37.jpg" class="rounded-full" alt="img">
-														</a>
-														<div class="ms-2">
-															<h6 class="font-medium"><a href="javascript:void(0);">Anthony Lewis</a></h6>
-															<span class="text-xs leading-normal">UI/UX Designer</span>
-														</div>
-													</div>
-												</td>
-												<td class="py-2 px-5">
-													<span class="inline-block bg-pink-transparent text-pink text-[10px] font-medium px-[5px] leading-4 rounded">UI/UX Design</span>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Employees -->
-					
-					<!-- Todo -->
-					<div class="xxl:col-span-4 xl:col-span-6 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full">
-							<div class="card-header pt-4 px-5 pb-2 flex items-center justify-between flex-wrap border-b border-borderColor">
-								<h5 class="mb-2">Todo</h5>
-								<div class="flex items-center">									
-									<div class="me-2 mb-2">
-										<a href="javascript:void(0);" class="border rounded py-1 px-2 text-xs font-medium bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900"  data-dropdown-toggle="todo-dropdown">
-											<i class="ti ti-calendar me-1"></i>Today
-										</a>
-										<ul id="todo-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Month</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Week</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Today</a>
-											</li>
-										</ul>
-									</div>
-									<a href="#" class="size-6 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-900 hover:text-white p-0 mb-2"  data-modal-toggle="add_todo" data-modal-target="add_todo"><i class="ti ti-plus fs-16"></i></a>
-								</div>
-							</div>
-							<div class="card-body p-5">
-								<div class="flex items-center todo-item border p-2 rounded-defaultradius mb-2">
-									<i class="ti ti-grid-dots me-2"></i>
-									<div class="flex items-center">
-										<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox" id="todo1">
-										<label class="text-gray-900 font-medium ms-2" for="todo1">Add Holidays</label>
-									</div>
-								</div>
-								<div class="flex items-center todo-item border p-2 rounded-defaultradius mb-2">
-									<i class="ti ti-grid-dots me-2"></i>
-									<div class="flex items-center">
-										<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox" id="todo1">
-										<label class="text-gray-900 font-medium ms-2" for="todo12">Add Meeting  to Client</label>
-									</div>
-								</div>
-								<div class="flex items-center todo-item border p-2 rounded-defaultradius mb-2">
-									<i class="ti ti-grid-dots me-2"></i>
-									<div class="flex items-center">
-										<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox" id="todo3">
-										<label class="text-gray-900 font-medium ms-2" for="todo3">Chat with Adrian</label>
-									</div>
-								</div>
-								<div class="flex items-center todo-item border p-2 rounded-defaultradius mb-2">
-									<i class="ti ti-grid-dots me-2"></i>
-									<div class="flex items-center">
-										<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox" id="todo4">
-										<label class="text-gray-900 font-medium ms-2" for="todo4">Management Call</label>
-									</div>
-								</div>
-								<div class="flex items-center todo-item border p-2 rounded-defaultradius mb-2">
-									<i class="ti ti-grid-dots me-2"></i>
-									<div class="flex items-center">
-										<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox" id="todo5">
-										<label class="text-gray-900 font-medium ms-2" for="todo5">Add Payroll</label>
-									</div>
-								</div>
-								<div class="flex items-center todo-item border p-2 rounded-defaultradius mb-0">
-									<i class="ti ti-grid-dots me-2"></i>
-									<div class="flex items-center">
-										<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox" id="todo6">
-										<label class="text-gray-900 font-medium ms-2" for="todo6">Add Policy for Increment</label>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Todo -->
-
+				<div class="footer sm:flex items-center justify-between bg-white p-4">
+					<p class="text-default mb-0">2014 - 2025 &copy; Social Web Dev.</p>
+					<p class="text-default">Designed &amp; Developed By <a href="javascript:void(0);" class="text-primary">Dreams</a></p>
 				</div>
-
-				<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 mb-6">
-					
-					<!-- Sales Overview -->
-					<div class="xl:col-span-7 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full">
-							<div class="card-header pt-4 px-5 pb-2 flex items-center justify-between flex-wrap border-b border-borderColorr">
-								<h5 class="mb-2">Sales Overview</h5>
-								<div class="flex items-center">									
-									<div class="mb-2">
-										<a href="javascript:void(0);" class="border rounded py-1 px-2 text-xs font-medium bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900"  data-dropdown-toggle="sale-dropdown">
-											All Departments
-										</a>
-										<ul id="sale-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">UI/UX Designer</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">HR Manager</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Junior Tester</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="card-body p-5 pb-0">
-								<div class="flex items-center justify-between flex-wrap">
-									<div class="flex items-center mb-1">
-										<p class="text-[13px] text-gray-900 me-3 mb-0"><i class="ti ti-square-filled me-2 text-primary"></i>Income</p>
-										<p class="text-[13px] text-gray-900 mb-0"><i class="ti ti-square-filled me-2 text-gray-2"></i>Expenses</p>
-									</div>
-									<p class="text-[13px] mb-1">Last Updated at 11:30PM</p>
-								</div>
-								<div id="sales-income"></div>
-							</div>
-						</div>
-					</div>
-					<!-- /Sales Overview -->
-					
-					<!-- Invoices -->
-					<div class="xl:col-span-5 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full overflow-x-auto">
-							<div class="card-header pt-4 px-5 pb-2 flex items-center justify-between flex-wrap border-b border-borderColor">
-								<h5 class="mb-2">Invoices</h5>
-								<div class="flex items-center">							
-									<div class="me-2 mb-2">
-										<a href="javascript:void(0);" class="border-0 rounded py-1 px-2 bg-white inline-flex items-center focus:bg-primary focus:text-white text-gray-900"  data-dropdown-toggle="invoice-dropdown">
-											Invoices<i class="ti ti-chevron-down ml-1"></i>
-										</a>
-										<ul id="invoice-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Invoices</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Paid</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Unpaid</a>
-											</li>
-										</ul>
-									</div>															
-									<div class="mb-2">
-										<a href="javascript:void(0);" class="border rounded py-1 px-2 text-xs font-medium bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900"  data-dropdown-toggle="invoiceday-dropdown">
-											<i class="ti ti-calendar me-1"></i>This Week
-										</a>
-										<ul id="invoiceday-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Month</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Week</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Today</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="card-body p-5 pt-2">
-								<div class="overflow-x-auto pt-1">	
-									<table class="table w-full mb-0">
-										<tbody>
-											<tr>
-												<td class="py-2 px-0 text-default">
-													<div class="flex items-center">
-														<a href="invoice-details.html" class="size-[42px] flex items-center justify-center rounded-full">
-															<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-39.jpg" class="rounded-full" alt="img">
-														</a>
-														<div class="ms-2">
-															<h6 class="font-medium"><a href="invoice-details.html">Redesign Website</a></h6>
-															<span class="text-[13px] inline-flex items-center">#INVOO2<i class="ti ti-circle-filled text-[4px] mx-1 text-primary"></i>Logistics</span>
-														</div>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-default">
-													<p class="text-[13px] mb-1">Payment</p>
-													<h6 class="font-medium">$3560</h6>
-												</td>
-												<td class="py-2 px-0 text-end text-default">
-													<span class="bg-danger-transparent text-danger text-[10px] font-medium px-[5px] leading-4 rounded inline-flex items-center"><i class="ti ti-circle-filled text-[5px] me-1"></i>Unpaid</span>
-												</td>
-											</tr>
-											<tr>
-												<td class="py-2 px-0 text-default">
-													<div class="flex items-center">
-														<a href="invoice-details.html" class="size-[42px] flex items-center justify-center rounded-full">
-															<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-40.jpg" class="rounded-full" alt="img">
-														</a>
-														<div class="ms-2">
-															<h6 class="font-medium"><a href="invoice-details.html">Module Completion</a></h6>
-															<span class="text-[13px] inline-flex items-center">#INVOO5<i class="ti ti-circle-filled text-[4px] mx-1 text-primary"></i>Yip Corp</span>
-														</div>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-default">
-													<p class="text-[13px] mb-1">Payment</p>
-													<h6 class="font-medium">$4175</h6>
-												</td>
-												<td class="py-2 px-0 text-end text-default">
-													<span class="bg-danger-transparent text-danger text-[10px] font-medium px-[5px] leading-4 rounded inline-flex items-center"><i class="ti ti-circle-filled text-[5px] me-1"></i>Unpaid</span>
-												</td>
-											</tr>
-											<tr>
-												<td class="py-2 px-0 text-default">
-													<div class="flex items-center">
-														<a href="invoice-details.html" class="size-[42px] flex items-center justify-center rounded-full">
-															<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-55.jpg" class="rounded-full" alt="img">
-														</a>
-														<div class="ms-2">
-															<h6 class="font-medium"><a href="invoice-details.html">Change on Emp Module</a></h6>
-															<span class="text-[13px] inline-flex items-center">#INVOO3<i class="ti ti-circle-filled text-[4px] mx-1 text-primary"></i>Ignis LLP</span>
-														</div>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-default">
-													<p class="text-[13px] mb-1">Payment</p>
-													<h6 class="font-medium">$6985</h6>
-												</td>
-												<td class="py-2 px-0 text-end text-default">
-													<span class="bg-danger-transparent text-danger text-[10px] font-medium px-[5px] leading-4 rounded inline-flex items-center"><i class="ti ti-circle-filled text-[5px] me-1"></i>Unpaid</span>
-												</td>
-											</tr>
-											<tr>
-												<td class="py-2 px-0 text-default">
-													<div class="flex items-center">
-														<a href="invoice-details.html" class="size-[42px] flex items-center justify-center rounded-full">
-															<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-42.jpg" class="rounded-full" alt="img">
-														</a>
-														<div class="ms-2">
-															<h6 class="font-medium"><a href="invoice-details.html">Changes on the Board</a></h6>
-															<span class="text-[13px] inline-flex items-center">#INVOO2<i class="ti ti-circle-filled text-[4px] mx-1 text-primary"></i>Ignis LLP</span>
-														</div>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-default">
-													<p class="text-[13px] mb-1">Payment</p>
-													<h6 class="font-medium">$1457</h6>
-												</td>
-												<td class="px-0 text-end text-default">
-													<span class="bg-danger-transparent text-danger text-[10px] font-medium px-[5px] leading-4 rounded inline-flex items-center"><i class="ti ti-circle-filled text-[5px] me-1"></i>Unpaid</span>
-												</td>
-											</tr>
-											<tr>
-												<td class="px-0 text-default">
-													<div class="flex items-center">
-														<a href="invoice-details.html" class="size-[42px] flex items-center justify-center rounded-full">
-															<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-44.jpg" class="rounded-full" alt="img">
-														</a>
-														<div class="ms-2">
-															<h6 class="font-medium"><a href="invoice-details.html">Hospital Management</a></h6>
-															<span class="text-[13px] inline-flex items-center">#INVOO6<i class="ti ti-circle-filled text-[4px] mx-1 text-primary"></i>HCL Corp</span>
-														</div>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-default">
-													<p class="text-[13px] mb-1">Payment</p>
-													<h6 class="font-medium">$6458</h6>
-												</td>
-												<td class="px-0 text-end text-default">
-													<span class="bg-success-transparent text-success text-[10px] font-medium px-[5px] leading-4 rounded inline-flex items-center"><i class="ti ti-circle-filled text-[5px] me-1"></i>Paid</span>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<a href="invoice.html" class="btn bg-light border border-light text-gray-900 text-center py-1.5 px-3.5 hover:bg-light-900 hover:text-gray-900 text-[13px] leading-normal w-full mt-2">View All</a>
-							</div>
-						</div>
-					</div>
-					<!-- /Invoices -->
-
-				</div>
-
-				<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 mb-6">
-					
-					<!-- Projects -->
-					<div class="xl:col-span-7 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full overflow-x-auto">
-							<div class="card-header pt-4 px-5 pb-2 flex items-center justify-between flex-wrap border-b border-borderColor">
-								<h5 class="mb-2">Projects</h5>
-								<div class="flex items-center">														
-									<div class="mb-2">
-										<a href="javascript:void(0);" class="border rounded py-1 px-2 text-xs font-medium bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900"  data-dropdown-toggle="pro-dropdown">
-											<i class="ti ti-calendar me-1"></i>This Week
-										</a>
-										<ul id="pro-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Month</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Week</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Today</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="card-body p-0">
-								<div class="overflow-x-auto">	
-									<table class="table w-full text-default bg-white mb-0">
-										<thead class="bg-light-900 text-gray-900 text-left">
-											<tr>
-												<th class="font-semibold py-2 px-5">ID</th>
-												<th class="font-semibold py-2 px-5">Name</th>
-												<th class="font-semibold py-2 px-5">Team</th>
-												<th class="font-semibold py-2 px-5">Hours</th>
-												<th class="font-semibold py-2 px-5">Deadline</th>
-												<th class="font-semibold py-2 px-5">Priority</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr class="border-b border-borderColor">
-												<td class="py-2 px-5 text-nowrap"><a href="project-details.html" class="text-default hover:text-primary">PRO-001</a></td>
-												<td class="py-2 px-5 text-nowrap"><h6 class="font-medium"><a href="project-details.html">Office Management App</a></h6></td>
-												<td class="py-2 px-5 text-nowrap">
-													<div class="flex -space-x-2 rtl:space-x-reverse">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-02.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-03.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-05.jpg" alt="img">
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">
-													<p class="mb-1">15/255 Hrs</p>
-													<div class="progress progress-xs w-full" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar bg-primary" style="width: 40%"></div>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">12/09/2024</td>
-												<td class="py-2 px-5 text-nowrap">
-													<span class="bg-danger text-white inline-flex items-center text-[10px] font-medium px-[5px] leading-4 rounded">
-														<i class="ti ti-point-filled me-1"></i>High
-													</span>
-												</td>
-											</tr>
-											<tr class="border-b border-borderColor">
-												<td class="py-2 px-5 text-nowrap"><a href="project-details.html" class="text-default hover:text-primary">PRO-002</a></td>
-												<td class="py-2 px-5 text-nowrap"><h6 class="font-medium"><a href="project-details.html">Clinic Management </a></h6></td>
-												<td class="py-2 px-5 text-nowrap">
-													<div class="flex -space-x-2 rtl:space-x-reverse">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-06.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-07.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-08.jpg" alt="img">
-														<a class="size-6 bg-primary rounded-full text-white text-[10px] font-medium flex items-center justify-center hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out shrink-0" href="javascript:void(0);">
-															+1
-														</a>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">
-													<p class="mb-1">15/255 Hrs</p>
-													<div class="progress progress-xs w-full" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar bg-primary" style="width: 40%"></div>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">24/10/2024</td>
-												<td class="py-2 px-5 text-nowrap">
-													<span class="bg-success text-white inline-flex items-center text-[10px] font-medium px-[5px] leading-4 rounded">
-														<i class="ti ti-point-filled me-1"></i>Low
-													</span>
-												</td>
-											</tr>
-											<tr class="border-b border-borderColor">
-												<td class="py-2 px-5 text-nowrap"><a href="project-details.html" class="text-default hover:text-primary">PRO-003</a></td>
-												<td class="py-2 px-5 text-nowrap"><h6 class="font-medium"><a href="project-details.html">Educational Platform</a></h6></td>
-												<td class="py-2 px-5 text-nowrap">
-													<div class="flex -space-x-2 rtl:space-x-reverse">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-06.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-08.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-09.jpg" alt="img">
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">
-													<p class="mb-1">40/255 Hrs</p>
-													<div class="progress progress-xs w-full" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar bg-primary" style="width: 50%"></div>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">18/02/2024</td>
-												<td class="py-2 px-5 text-nowrap">
-													<span class="bg-pink text-white inline-flex items-center text-[10px] font-medium px-[5px] leading-4 rounded">
-														<i class="ti ti-point-filled me-1"></i>Medium
-													</span>
-												</td>
-											</tr>
-											<tr class="border-b border-borderColor">
-												<td class="py-2 px-5 text-nowrap"><a href="project-details.html" class="text-default hover:text-primary">PRO-004</a></td>
-												<td class="py-2 px-5 text-nowrap"><h6 class="font-medium"><a href="project-details.html">Chat & Call Mobile App</a></h6></td>
-												<td class="py-2 px-5 text-nowrap">
-													<div class="flex -space-x-2 rtl:space-x-reverse">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-11.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-12.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-13.jpg" alt="img">
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">
-													<p class="mb-1">35/155 Hrs</p>
-													<div class="progress progress-xs w-full" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar bg-primary" style="width: 50%"></div>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">19/02/2024</td>
-												<td class="py-2 px-5 text-nowrap">
-													<span class="bg-danger text-white inline-flex items-center text-[10px] font-medium px-[5px] leading-4 rounded">
-														<i class="ti ti-point-filled me-1"></i>High
-													</span>
-												</td>
-											</tr>
-											<tr class="border-b border-borderColor">
-												<td class="py-2 px-5 text-nowrap"><a href="project-details.html" class="text-default hover:text-primary">PRO-005</a></td>
-												<td class="py-2 px-5 text-nowrap"><h6 class="font-medium"><a href="project-details.html">Travel Planning Website</a></h6></td>
-												<td class="py-2 px-5 text-nowrap">
-													<div class="flex -space-x-2 rtl:space-x-reverse">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-17.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-18.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-19.jpg" alt="img">
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">
-													<p class="mb-1">50/235 Hrs</p>
-													<div class="progress progress-xs w-full" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar bg-primary" style="width: 50%"></div>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">18/02/2024</td>
-												<td class="py-2 px-5 text-nowrap">
-													<span class="bg-pink text-white inline-flex items-center text-[10px] font-medium px-[5px] leading-4 rounded">
-														<i class="ti ti-point-filled me-1"></i>Medium
-													</span>
-												</td>
-											</tr>
-											<tr class="border-b border-borderColor">
-												<td class="py-2 px-5 text-nowrap"><a href="project-details.html" class="text-default hover:text-primary">PRO-006</a></td>
-												<td class="py-2 px-5 text-nowrap"><h6 class="font-medium"><a href="project-details.html">Service Booking Software</a></h6></td>
-												<td class="py-2 px-5 text-nowrap">
-													<div class="flex -space-x-2 rtl:space-x-reverse">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-06.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-08.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-09.jpg" alt="img">
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">
-													<p class="mb-1">40/255 Hrs</p>
-													<div class="progress progress-xs w-full" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar bg-primary" style="width: 50%"></div>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">20/02/2024</td>
-												<td class="py-2 px-5 text-nowrap">
-													<span class="bg-success text-white inline-flex items-center text-[10px] font-medium px-[5px] leading-4 rounded">
-														<i class="ti ti-point-filled me-1"></i>Low
-													</span>
-												</td>
-											</tr>
-											<tr>
-												<td class="py-2 px-5 text-nowrap"><a href="project-details.html" class="text-default hover:text-primary">PRO-008</a></td>
-												<td class="py-2 px-5 text-nowrap"><h6 class="font-medium"><a href="project-details.html">Travel Planning Website</a></h6></td>
-												<td class="py-2 px-5 text-nowrap">
-													<div class="flex -space-x-2 rtl:space-x-reverse">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-15.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-16.jpg" alt="img">
-														<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-17.jpg" alt="img">
-														<a class="size-6 bg-primary rounded-full text-white text-[10px] font-medium flex items-center justify-center hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out shrink-0" href="javascript:void(0);">
-															+2
-														</a>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">
-													<p class="mb-1">15/255 Hrs</p>
-													<div class="progress progress-xs w-full" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar bg-primary" style="width: 45%"></div>
-													</div>
-												</td>
-												<td class="py-2 px-5 text-nowrap">17/10/2024</td>
-												<td class="py-2 px-5 text-nowrap">
-													<span class="bg-pink text-white inline-flex items-center text-[10px] font-medium px-[5px] leading-4 rounded">
-														<i class="ti ti-point-filled me-1"></i>Medium
-													</span>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Projects -->
-
-					<!-- Tasks Statistics -->
-					<div class="xl:col-span-5 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full">
-							<div class="card-header pt-4 px-5 pb-2 flex items-center justify-between flex-wrap border-b border-borderColor">
-								<h5 class="mb-2">Tasks Statistics</h5>
-								<div class="flex items-center">														
-									<div class="mb-2">
-										<a href="javascript:void(0);" class="border rounded py-1 px-2 text-xs font-medium bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900"  data-dropdown-toggle="task-dropdown">
-											<i class="ti ti-calendar me-1"></i>This Week
-										</a>
-										<ul id="task-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Month</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">This Week</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Today</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="card-body p-5">								
-								<div class="chartjs-wrapper-demo relative mb-6">
-									<div class="w-full h-48">
-										<canvas id="mySemiDonutChart" class="w-full h-full"></canvas>
-									  </div>
-									<div class="absolute text-center top-1/2 left-1/2 -translate-x-1/2 transform attendance-canvas">
-										<p class="text-[13px] mb-1">Total Tasks</p>
-										<h3>124/165</h3>
-									</div>
-								</div>
-								<div class="flex items-center flex-wrap">
-									<div class="border-e border-borderColor text-center me-2 pe-2 mb-4">
-										<p class="text-[13px] inline-flex items-center mb-1"><i class="ti ti-circle-filled fs-10 me-1 text-warning"></i>Ongoing</p>
-										<h5>24%</h5>
-									</div>
-									<div class="border-e border-borderColor text-center me-2 pe-2 mb-4">
-										<p class="text-[13px] inline-flex items-center mb-1"><i class="ti ti-circle-filled fs-10 me-1 text-info"></i>On Hold </p>
-										<h5>10%</h5>
-									</div>
-									<div class="border-e border-borderColor text-center me-2 pe-2 mb-4">
-										<p class="text-[13px] inline-flex items-center mb-1"><i class="ti ti-circle-filled fs-10 me-1 text-danger"></i>Overdue</p>
-										<h5>16%</h5>
-									</div>
-									<div class="text-center me-2 pe-2 mb-4">
-										<p class="text-[13px] inline-flex items-center mb-1"><i class="ti ti-circle-filled fs-10 me-1 text-success"></i>Ongoing</p>
-										<h5>40%</h5>
-									</div>
-								</div>
-								<div class="bg-dark text-white rounded-defaultradius p-4 pb-0 flex items-center justify-between">
-									<div class="mb-2">
-										<h4 class="text-success">389/689 hrs</h4>
-										<p class="text-[13px] mb-0">Spent on Overall Tasks This Week</p>
-									</div>
-									<a href="tasks.html" class="btn bg-light border border-light text-xs text-gray-900 text-center py-1 px-2 hover:bg-light-900 hover:text-gray-900 text-[13px] leading-normal mb-2 text-nowrap">View All</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Tasks Statistics -->
-
-				</div>
-
-				<div class="grid grid-cols-1 xxl:grid-cols-12 xl:grid-cols-12 gap-6 mb-6">
-
-					<!-- Schedules -->
-					<div class="xxl:col-span-4 xl:col-span-12 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full">
-							<div class="card-header pt-4 px-5 pb-2 flex items-center justify-between flex-wrap border-b border-borderColor">
-								<h5 class="mb-2">Schedules</h5>
-								<a href="candidates.html" class="btn bg-light border border-light text-gray-900 text-center py-1.5 px-3.5 hover:bg-light-900 hover:text-gray-900 text-[13px] leading-normal mb-2">View All</a>
-							</div>
-							<div class="card-body p-5">
-								<div class="bg-light p-4 rounded-defaultradius mb-6">
-									<span class="bg-secondary text-white text-[10px] font-medium px-[5px] leading-4 inline-block rounded mb-1">UI/ UX Designer</span>
-									<h6 class="mb-2 truncate">Interview Candidates - UI/UX Designer</h6>
-									<div class="flex items-center flex-wrap">
-										<p class="text-[13px] mb-1 me-2"><i class="ti ti-calendar-event me-2"></i>Thu, 15 Feb 2025</p>
-										<p class="text-[13px] mb-1"><i class="ti ti-clock-hour-11 me-2"></i>01:00 PM - 02:20 PM</p>
-									</div>
-									<div class="flex items-center justify-between border-t border-borderColor mt-2 pt-4">
-										<div class="flex -space-x-2 rtl:space-x-reverse">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-49.jpg" alt="img">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-13.jpg" alt="img">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-11.jpg" alt="img">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-22.jpg" alt="img">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-58.jpg" alt="img">
-											<a class="size-6 bg-primary rounded-full text-white text-[10px] font-medium flex items-center justify-center hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out shrink-0" href="javascript:void(0);">
-												+3
-											</a>
-										</div>
-										<a href="#" class="btn bg-primary border border-primary text-white text-center py-1 px-2 hover:bg-primary-900 hover:text-white text-[10px] leading-normal">Join Meeting</a>
-									</div>
-								</div>
-								<div class="bg-light p-4 rounded-defaultradius mb-0">
-									<span class="bg-dark text-white text-[10px] font-medium px-[5px] leading-4 inline-block rounded mb-1">IOS Developer</span>
-									<h6 class="mb-2 truncate">Interview Candidates - IOS Developer</h6>
-									<div class="flex items-center flex-wrap">
-										<p class="text-[13px] mb-1 me-2"><i class="ti ti-calendar-event me-2"></i>Thu, 15 Feb 2025</p>
-										<p class="text-[13px] mb-1"><i class="ti ti-clock-hour-11 me-2"></i>02:00 PM - 04:20 PM</p>
-									</div>
-									<div class="flex items-center justify-between border-t border-borderColor mt-2 pt-4">
-										<div class="flex -space-x-2 rtl:space-x-reverse">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-49.jpg" alt="img">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-13.jpg" alt="img">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-11.jpg" alt="img">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-22.jpg" alt="img">
-											<img class="size-6 border border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-58.jpg" alt="img">
-											<a class="size-6 bg-primary rounded-full text-white text-[10px] font-medium flex items-center justify-center hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out shrink-0" href="javascript:void(0);">
-												+3
-											</a>
-										</div>
-										<a href="#" class="btn bg-primary border border-primary text-white text-center py-1 px-2 hover:bg-primary-900 hover:text-white text-[10px] leading-normal">Join Meeting</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Schedules -->
-
-					<!-- Recent Activities -->
-					<div class="xxl:col-span-4 xl:col-span-6 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full">
-							<div class="card-header pt-4 px-5 pb-2 flex items-center justify-between flex-wrap border-b border-borderColor">
-								<h5 class="mb-2">Recent Activities</h5>
-								<a href="activity.html" class="btn bg-light border border-light text-gray-900 text-center py-1.5 px-3.5 hover:bg-light-900 hover:text-gray-900 text-[13px] leading-normal mb-2">View All</a>
-							</div>
-							<div class="card-body p-5">
-								<div class="mb-5">
-									<div class="flex justify-between">
-										<div class="flex items-center w-full">
-											<a href="javscript:void(0);" class="size-[42px] flex items-center justify-center rounded-full shrink-0">
-												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-38.jpg" class="rounded-full" alt="img">
-											</a>
-											<div class="ms-2 flex-1">
-												<div class="flex items-center justify-between">
-													<h6 class="font-medium truncate"><a href="javscript:void(0);">Matt Morgan</a></h6>
-													<p class="text-[13px]">05:30 PM</p>
-												</div>
-												<p class="text-[13px]">Added New Project <span class="text-primary">HRMS Dashboard</span></p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="mb-5">
-									<div class="flex justify-between">
-										<div class="flex items-center w-full">
-											<a href="javscript:void(0);" class="size-[42px] flex items-center justify-center rounded-full shrink-0">
-												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-01.jpg" class="rounded-full" alt="img">
-											</a>
-											<div class="ms-2 flex-1">
-												<div class="flex items-center justify-between">
-													<h6 class="font-medium truncate"><a href="javscript:void(0);">Jay Ze</a></h6>
-													<p class="text-[13px]">05:00 PM</p>
-												</div>
-												<p class="text-[13px]">Commented on Uploaded Document</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="mb-5">
-									<div class="flex justify-between">
-										<div class="flex items-center w-full">
-											<a href="javscript:void(0);" class="size-[42px] flex items-center justify-center rounded-full shrink-0">
-												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-19.jpg" class="rounded-full" alt="img">
-											</a>
-											<div class="ms-2 flex-1">
-												<div class="flex items-center justify-between">
-													<h6 class="font-medium truncate"><a href="javscript:void(0);">Mary Donald</a></h6>
-													<p class="text-[13px]">05:30 PM</p>
-												</div>
-												<p class="text-[13px]">Approved Task Projects</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="mb-5">
-									<div class="flex justify-between">
-										<div class="flex items-center w-full">
-											<a href="javscript:void(0);" class="size-[42px] flex items-center justify-center rounded-full shrink-0">
-												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-11.jpg" class="rounded-full" alt="img">
-											</a>
-											<div class="ms-2 flex-1">
-												<div class="flex items-center justify-between">
-													<h6 class="font-medium truncate"><a href="javscript:void(0);">George David</a></h6>
-													<p class="text-[13px]">06:00 PM</p>
-												</div>
-												<p class="text-[13px]">Requesting Access to Module Tickets</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="mb-5">
-									<div class="flex justify-between">
-										<div class="flex items-center w-full">
-											<a href="javscript:void(0);" class="size-[42px] flex items-center justify-center rounded-full shrink-0">
-												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-20.jpg" class="rounded-full" alt="img">
-											</a>
-											<div class="ms-2 flex-1">
-												<div class="flex items-center justify-between">
-													<h6 class="font-medium truncate"><a href="javscript:void(0);">Aaron Zeen</a></h6>
-													<p class="text-[13px]">06:30 PM</p>
-												</div>
-												<p class="text-[13px]">Downloaded App Reportss</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="mb-0">
-									<div class="flex justify-between">
-										<div class="flex items-center w-full">
-											<a href="javscript:void(0);" class="size-[42px] flex items-center justify-center rounded-full shrink-0">
-												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-08.jpg" class="rounded-full" alt="img">
-											</a>
-											<div class="ms-2 flex-1">
-												<div class="flex items-center justify-between">
-													<h6 class="font-medium truncate"><a href="javscript:void(0);">Hendry Daniel</a></h6>
-													<p class="text-[13px]">05:30 PM</p>
-												</div>
-												<p class="text-[13px]">Completed New Project <span>HMS</span></p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Recent Activities -->
-
-					<!-- Birthdays -->
-					<div class="xxl:col-span-4 xl:col-span-6 flex">
-						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white w-full">
-							<div class="card-header py-4 px-5 pb-2 flex items-center justify-between flex-wrap border-b border-borderColor">
-								<h5 class="mb-2">Birthdays</h5>
-								<a href="javascript:void(0);" class="btn bg-light border border-light text-gray-900 text-center py-1.5 px-3.5 hover:bg-light-900 hover:text-gray-900 text-[13px] leading-normal mb-2">View All</a>
-							</div>
-							<div class="card-body p-5 pb-1">
-								<h6 class="mb-2">Today</h6>
-								<div class="bg-light p-2 border border-borderColor border-dashed rounded-t mb-4">
-									<div class="flex items-center justify-between">
-										<div class="flex items-center">
-											<a href="javascript:void(0);" class="size-[42px] flex items-center justify-center rounded-full">
-												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-38.jpg" class="rounded-full" alt="img">
-											</a>
-											<div class="ms-2 overflow-hidden">
-												<h6 class="font-medium ">Andrew Jermia</h6>
-												<p class="text-[13px]">IOS Developer</p>
-											</div>
-										</div>
-										<a href="javascript:void(0);" class="btn bg-secondary border border-secondary text-white text-center py-1 px-2 hover:bg-secondary-900 hover:text-white text-[10px] leading-normal"><i class="ti ti-cake me-1"></i>Send</a>
-									</div>
-								</div>
-								<h6 class="mb-2">Tomorow</h6>
-								<div class="bg-light p-2 border border-borderColor border-dashed rounded-t mb-4">
-									<div class="flex items-center justify-between">
-										<div class="flex items-center">
-											<a href="javascript:void(0);" class="size-[42px] flex items-center justify-center rounded-full">
-												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-10.jpg" class="rounded-full" alt="img">
-											</a>
-											<div class="ms-2 overflow-hidden">
-												<h6 class="font-medium"><a href="javascript:void(0);">Mary Zeen</a></h6>
-												<p class="text-[13px]">UI/UX Designer</p>
-											</div>
-										</div>
-										<a href="javascript:void(0);" class="btn bg-secondary border border-secondary text-white text-center py-1 px-2 hover:bg-secondary-900 hover:text-white text-[10px] leading-normal"><i class="ti ti-cake me-1"></i>Send</a>
-									</div>
-								</div>
-								<div class="bg-light p-2 border border-borderColor border-dashed rounded-t mb-4">
-									<div class="flex items-center justify-between">
-										<div class="flex items-center">
-											<a href="javascript:void(0);" class="size-[42px] flex items-center justify-center rounded-full">
-												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-09.jpg" class="rounded-full" alt="img">
-											</a>
-											<div class="ms-2 overflow-hidden">
-												<h6 class="font-medium "><a href="javascript:void(0);">Antony Lewis</a></h6>
-												<p class="text-[13px]">Android Developer</p>
-											</div>
-										</div>
-										<a href="javascript:void(0);" class="btn bg-secondary border border-secondary text-white text-center py-1 px-2 hover:bg-secondary-900 hover:text-white text-[10px] leading-normal"><i class="ti ti-cake me-1"></i>Send</a>
-									</div>
-								</div>
-								<h6 class="mb-2">25 Jan 2025</h6>
-								<div class="bg-light p-2 border border-borderColor border-dashed rounded-t mb-4">
-									<div class="flex items-center justify-between">
-										<div class="flex items-center">
-											<span class="size-[42px] flex items-center justify-center rounded-full">
-												<img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/users/user-12.jpg" class="rounded-full" alt="img">
-											</span>
-											<div class="ms-2 overflow-hidden">
-												<h6 class="font-medium ">Doglas Martini</h6>
-												<p class="text-[13px]">.Net Developer</p>
-											</div>
-										</div>
-										<a href="javascript:void(0);" class="btn bg-secondary border border-secondary text-white text-center py-1 px-2 hover:bg-secondary-900 hover:text-white text-[10px] leading-normal"><i class="ti ti-cake me-1"></i>Send</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Birthdays -->
-
-				</div>
-
 			</div>
 
-			<div class="footer sm:flex items-center justify-between bg-white border-t border-borderColor p-4">
-				<p class="text-default mb-0">2014 - 2025 &copy; Social Web Dev.</p>
-				<p class="text-default">Designed &amp; Developed By <a href="javascript:void(0);" class="text-primary">Dreams</a></p>
-			</div>
+			
 
 		</div>
-		<!-- /Page Wrapper -->		
+		<!-- /Page Wrapper -->
 
-
-	<!-- Notify Leave -->
-	<div id="notify_leave" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4">
-		<div class="relative p-4 w-full max-w-[500px] max-h-full">
-			<div class="relative bg-white rounded-defaultradius">
-				<div class="flex items-center justify-between p-4 border-b border-borderColor">
-					<h4 class="font-semibold">Notify Leave</h4>
-					<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="notify_leave">
-						<i class="ti ti-x"></i>
-						<span class="sr-only">Close modal</span>
-					</button>
+		<!-- Compose Mail -->
+		<div id="compose-view" class="hidden z-[9999]">
+			<div class="bg-white border-0 rounded compose-view max-w-[500px] w-full absolute right-[10px] bottom-[10px] me-10">
+				<div class="compose-header flex items-center justify-between bg-dark p-3">
+					<h5 class="text-white">Compose New Email</h5>
+					<div class="flex items-center">
+						<a href="javascript:void(0);" class="inline-flex me-2 text-white fs-16"><i class="ti ti-minus"></i></a>
+						<a href="javascript:void(0);" class="inline-flex me-2 fs-16 text-white"><i class="ti ti-maximize"></i></a>
+						<button type="button" class="btn-close custom-btn-close bg-transparent fs-16 text-white position-static" id="compose-close">
+							<i class="ti ti-x"></i>
+						</button>
+					</div>
 				</div>
-				<form action="index.html">
-					<div class="p-4">
-						<div id="default-styled-tab-content">
-							<div class="grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-6">
-								<div class="md:col-span-12">
-									<label class="block mb-1 text-sm leading-normal font-medium text-title">Leave Type</label>
-									<select class="select">
-										<option>Select</option>
-										<option>Medical Leave</option>
-										<option>Casual Leave</option>
-										<option>Annual Leave</option>
-									</select>
-								</div>
-								<div class="md:col-span-6">
-									<label class="block mb-1 text-sm leading-normal font-medium text-title">From </label>
-									<div class="relative">
-										<div class="absolute inset-y-0 end-2 flex items-center pointer-events-none">
-											<i class="ti ti-calendar text-gray-600 text-base leading-normal"></i>
-										</div>
-										<input type="text" class="flatpickr-input flat-datepickr bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="dd/mm/yyyy">
-									</div>
-								</div>
-								<div class="md:col-span-6">
-									<label class="block mb-1 text-sm leading-normal font-medium text-title">To </label>
-									<div class="relative">
-										<div class="absolute inset-y-0 end-2 flex items-center pointer-events-none">
-											<i class="ti ti-calendar text-gray-600 text-base leading-normal"></i>
-										</div>
-										<input type="text" class="flatpickr-input flat-datepickr bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="dd/mm/yyyy">
-									</div>
-								</div>
-								<div class="md:col-span-6">
-									<label class="block mb-1 text-sm leading-normal font-medium text-title">No of Days </label>
-									<input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400 disabled:bg-light disabled:text-default" disabled>
-								</div>
-								<div class="md:col-span-6">
-									<label class="block mb-1 text-sm leading-normal font-medium text-title">Remaining Days </label>
-									<input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" value="8" disabled>
-								</div>
-								<div class="md:col-span-12">
-									<label class="block mb-1 text-sm leading-normal font-medium text-title">Projects Affected</label>
-									<div class="space-y-2">
-										<label class="flex items-center">
-											<input type="checkbox" id="all_projects" class="form-checkbox">
-											<span class="ml-2">All Projects</span>
-										</label>
-										<label class="flex items-center">
-											<input type="checkbox" class="form-checkbox project-checkbox">
-											<span class="ml-2">PRO-001: Office Management App</span>
-										</label>
-										<label class="flex items-center">
-											<input type="checkbox" class="form-checkbox project-checkbox">
-											<span class="ml-2">PRO-002: Clinic Management</span>
-										</label>
-										<label class="flex items-center">
-											<input type="checkbox" class="form-checkbox project-checkbox">
-											<span class="ml-2">PRO-003: Educational Platform</span>
-										</label>
-										<label class="flex items-center">
-											<input type="checkbox" class="form-checkbox project-checkbox">
-											<span class="ml-2">PRO-004: Chat & Call Mobile App</span>
-										</label>
-										<label class="flex items-center">
-											<input type="checkbox" class="form-checkbox project-checkbox">
-											<span class="ml-2">PRO-005: Travel Planning Website</span>
-										</label>
-									</div>
-								</div>
-								<div class="md:col-span-12">
-									<label for="message" class="block mb-1 text-sm leading-normal font-medium text-title">Reason </label>
-									<textarea id="message" rows="3" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
-								</div>
-							</div>
+				<form action="email.html">
+					<div class="p-3 relative pb-2 border-b">
+						<div class="tag-with-img flex items-center">
+							<label class="form-label me-2">To</label>
+							<input class="input-tags form-control border-0 h-100" id="inputBox" type="text" data-role="tagsinput"  name="Label" value="Angela Thomas" >
+						</div>
+						<div class="d-flex items-center email-cc absolute right-[10px] top-1/2 me-3">
+							<a href="javascript:void(0);" class="inline-flex me-2">Cc</a>
+							<a href="javascript:void(0);" class="inline-flex">Bcc</a>
 						</div>
 					</div>
-					<div class="flex items-center justify-end p-4 border-t border-borderColor">
-						<button data-modal-hide="notify_leave" type="button" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 font-medium me-2">Cancel</button>
-						<button type="submit" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-900 hover:text-white font-medium">Notify Leave</button>
+					<div class="p-3 border-b">
+						<div class="mb-3">
+							<input type="text" class="block flex-1 border border-borderColor bg-white rounded-[5px] py-1.5 pr-12 text-gray-900 placeholder:text-gray-400 focus:ring-0 focus:border-borderColor w-full text-xs" placeholder="Subject">
+						</div>
+						<div class="mb-0">
+							<textarea rows="7" class="block flex-1 border border-borderColor bg-white rounded-[5px] py-1.5 pr-12 text-gray-900 placeholder:text-gray-400 focus:ring-0 focus:border-borderColor w-full text-xs" placeholder="Compose Email"></textarea>
+						</div>
+					</div>
+					<div class="p-3 flex items-center justify-between">
+						<div class="flex items-center">
+							<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-paperclip"></i></a>
+							<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-photo"></i></a>
+							<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-link"></i></a>
+							<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-pencil"></i></a>
+							<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-mood-smile"></i></a>
+						</div>
+						<div class="flex items-center compose-footer">
+							<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-calendar-repeat"></i></a>
+							<a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-trash"></i></a>
+							<button type="submit" class="btn btn-primary inline-flex items-center ms-2">Send <i class="ti ti-arrow-right ms-2"></i></button>
+						</div>
 					</div>
 				</form>
-				<script>
-					document.getElementById('all_projects').addEventListener('change', function() {
-						var checkboxes = document.querySelectorAll('.project-checkbox');
-						checkboxes.forEach(function(checkbox) {
-							checkbox.checked = this.checked;
-						}, this);
-					});
-				</script>
 			</div>
-		</div>
-	</div>
-	<!-- /Notify Leave -->
-
-
-		<!-- Add Leaves -->
-		<div id="add_leaves" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4">
-			<div class="relative p-4 w-full max-w-[500px] max-h-full">
-				<div class="relative bg-white rounded-defaultradius">
-					<div class="flex items-center justify-between p-4 border-b border-borderColor">
-						<h4 class="font-semibold">Add Leaves</h4>
-						<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="add_leaves">
-							<i class="ti ti-x"></i>
-							<span class="sr-only">Close modal</span>
-						</button>
-					</div>
-					<form action="index.html">
-						<div class="p-4">
-							<div id="default-styled-tab-content">
-								<div class="grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-6">
-									<div class="md:col-span-12">
-										<label class="block mb-1 text-sm leading-normal font-medium text-title">Employee Name</label>
-										<select class="select">
-											<option>Select</option>
-											<option>Anthony Lewis</option>
-											<option>Brian Villalobos</option>
-											<option>Harvey Smith</option>
-										</select>
-									</div>
-									<div class="md:col-span-12">
-										<label class="block mb-1 text-sm leading-normal font-medium text-title">Leave Type</label>
-										<select class="select">
-											<option>Select</option>
-											<option>Medical Leave</option>
-											<option>Casual Leave</option>
-											<option>Annual Leave</option>
-										</select>
-									</div>
-									<div class="md:col-span-6">
-										<label class="block mb-1 text-sm leading-normal font-medium text-title">From </label>
-										<div class="relative">
-											<div class="absolute inset-y-0 end-2 flex items-center pointer-events-none">
-												<i class="ti ti-calendar text-gray-600 text-base leading-normal"></i>
-											</div>
-											<input type="text" class="flatpickr-input flat-datepickr bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="dd/mm/yyyy">
-										</div>
-									</div>
-									<div class="md:col-span-6">
-										<label class="block mb-1 text-sm leading-normal font-medium text-title">To </label>
-										<div class="relative">
-											<div class="absolute inset-y-0 end-2 flex items-center pointer-events-none">
-												<i class="ti ti-calendar text-gray-600 text-base leading-normal"></i>
-											</div>
-											<input type="text" class="flatpickr-input flat-datepickr bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="dd/mm/yyyy">
-										</div>
-									</div>
-									<div class="md:col-span-6">
-										<label class="block mb-1 text-sm leading-normal font-medium text-title">No of Days </label>
-										<input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400 disabled:bg-light disabled:text-default" disabled>
-									</div>
-									<div class="md:col-span-6">
-										<label class="block mb-1 text-sm leading-normal font-medium text-title">Remaining Days </label>
-										<input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" value="8" disabled>
-									</div>
-									<div class="md:col-span-12">
-										<label for="message" class="block mb-1 text-sm leading-normal font-medium text-title">Reason </label>
-										<textarea id="message" rows="3" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="flex items-center justify-end p-4 border-t border-borderColor">
-							<button data-modal-hide="add_leaves" type="button" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 font-medium me-2">Cancel
-							</button>
-							<button type="submit" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-900 hover:text-white font-medium">Add
-								Leave
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- /Add Leaves -->
-
-		<!-- Add Project -->
-		<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="add_project" role="dialog">
-			<div class="relative p-4 w-full max-w-[500px] max-h-full">
-				<div class="relative bg-white rounded-defaultradius">
-					<div class="flex items-center justify-between p-4 border-b border-borderColor">
-						<div class="flex items-center">
-							<h5 class="modal-title me-2">Add Project </h5>
-							<p class="text-dark">Project ID : PRO-0004</p>
-						</div>
-						<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="add_project">
-							<i class="ti ti-x"></i>
-							<span class="sr-only">Close modal</span>
-						</button>
-					</div>
-					<div class="add-info-fieldset">
-						<div class="add-details-wizard p-3 pb-0">
-							<ul class="progress-bar-wizard flex items-center border-b">
-								<li class="active p-2 pt-0">
-									<h6 class="fw-medium">Basic Information</h6>
-								</li>
-								<li class="p-2 pt-0">									
-									<h6 class="fw-medium">Members</h6>
-								</li>
-							</ul>
-						</div>
-						<fieldset id="first-field-file">
-							<form action="projects.html">
-								<div class="modal-body p-4">
-									<div class="grid grid-cols-1 lg:grid-cols-12">
-										<div class="col-span-12">
-											<div class="flex items-center flex-wrap gap-2 bg-light w-full rounded-defaultradius p-4">                                                
-												<div class="flex items-center justify-center size-20 rounded-full border border-dashed shrink-0 text-dark frames">
-													<i class="ti ti-photo text-gray-2 fs-16"></i>
-												</div>                                              
-												<div class="profile-upload">
-													<div class="mb-2">
-														<h6 class="mb-1">Upload Profile Image</h6>
-														<p class="text-xs leading-normal">Image should be below 4 mb</p>
-													</div>
-													<div class="profile-uploader d-flex items-center">
-														<div class="drag-upload-btn btn bg-primary border border-primary text-white text-center hover:bg-primary-900 hover:text-white text-xs leading-normal relative py-1 px-2 me-2">
-															Upload
-															<input type="file" class="w-full h-full absolute top-0 left-0 opacity-0" multiple="">
-														</div>
-														<a href="javascript:void(0);" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 text-xs leading-normal py-1 px-2">Cancel</a>
-													</div>													
-												</div>
-											</div>
-										</div>
-										<div class="col-span-12">
-											<div class="mb-3">
-												<label class="form-label">Project Name</label>
-												<input type="text" class="form-control">
-											</div>
-										</div>
-										<div class="col-span-12">
-											<div class="mb-3">
-												<label class="form-label">Client</label>
-												<select class="select">
-													<option>Select</option>
-													<option>Anthony Lewis</option>
-													<option>Brian Villalobos</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-span-12">
-											<div class="grid grid-cols-1 lg:grid-cols-12 gap-x-6">
-												<div class="col-span-6">
-													<div class="mb-3">
-														<label class="form-label">Start Date</label>
-														<div class="relative">
-															<div class="absolute inset-y-0 end-2 flex items-center pointer-events-none">
-																<i class="ti ti-calendar text-gray-600 text-base leading-normal"></i>
-															</div>
-															<input type="text" class="flatpickr-input flat-datepickr bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="dd/mm/yyyy">
-														</div>
-													</div>
-												</div>
-												<div class="col-span-6">
-													<div class="mb-3">
-														<label class="form-label">End Date</label>
-														<div class="relative">
-															<div class="absolute inset-y-0 end-2 flex items-center pointer-events-none">
-																<i class="ti ti-calendar text-gray-600 text-base leading-normal"></i>
-															</div>
-															<input type="text" class="flatpickr-input flat-datepickr bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="dd/mm/yyyy">
-														</div>
-													</div>
-												</div>
-												<div class="col-span-6">
-													<div class="mb-3">
-														<label class="form-label">Priority</label>
-														<select class="select">
-															<option>Select</option>
-															<option>High</option>
-															<option>Medium</option>
-															<option>Low</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-span-6">
-													<div class="mb-3">
-														<label class="form-label">Project Value</label>
-														<input type="text" class="form-control" value="$">
-													</div>
-												</div>
-												<div class="col-span-6">
-													<div class="mb-3">
-														<label class="form-label">Total Working Hours</label>
-														<div class="relative">
-															<div class="absolute inset-y-0 end-2 flex items-center pointer-events-none">
-																<i class="ti ti-clock text-gray-600 text-base leading-normal"></i>
-															</div>
-															<input type="text" class="flatpickr-input flat-timepickr bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="dd/mm/yyyy">
-														</div>
-													</div>
-												</div>
-												<div class="col-span-6">
-													<div class="mb-3">
-														<label class="form-label">Extra Time</label>
-														<input type="text" class="form-control">
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-span-12">
-											<div class="mb-0">
-												<label class="form-label">Description</label>
-												<div class="summernote"></div>
-											</div>
-										</div>
-									</div>								
-								</div>
-								<div class="modal-footer p-4 border-t">
-									<div class="flex items-center justify-end">
-										<button type="button" class="btn btn-outline-light border me-2" data-modal-hide="add_project">Cancel</button>
-										<button class="btn btn-primary wizard-next-btn" type="button">Add Team Member</button>
-									</div>
-								</div>
-							</form>
-						</fieldset>
-						<fieldset>
-							<form action="projects.html">
-								<div class="modal-body p-4">
-									<div class="row">
-										<div class="col-md-12">
-											<div class="mb-3">
-												<label class="form-label me-2">Team Members</label>
-												<input class="input-tags form-control" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="Jerald,Andrew,Philip,Davis">
-											</div>
-										</div>
-										<div class="col-md-12">
-											<div class="mb-3">
-												<label class="form-label me-2">Team Leader</label>
-												<input class="input-tags form-control" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="Hendry,James">
-											</div>
-										</div>
-										<div class="col-md-12">
-											<div class="mb-3">
-												<label class="form-label me-2">Project Manager</label>
-												<input class="input-tags form-control" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="Dwight">
-											</div>
-										</div>
-										<div class="col-md-12">
-											<div class="mb-3">
-												<label class="form-label">Status</label>
-												<select class="select">
-													<option>Select</option>
-													<option>Active</option>
-													<option>Inactive</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-md-12">
-											<div>
-												<label class="form-label">Tags</label>
-												<select class="select">
-													<option>Select</option>
-													<option>High</option>
-													<option>Low</option>
-													<option>Medium</option>
-												</select>
-											</div>
-										</div>
-									</div>								
-								</div>
-								<div class="modal-footer p-4 border-t">
-									<div class="flex items-center justify-end">
-										<button type="button" class="btn btn-outline-light border me-2" data-modal-hide="add_project">Cancel</button>
-										<button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#success_modal">Save</button>
-									</div>
-								</div>
-							</form>
-						</fieldset>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /Add Project -->
-
-		<!-- Add Todo -->
-		<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="add_todo">
-			<div class="relative p-4 w-full max-w-[500px] max-h-full">
-				<div class="relative bg-white rounded-defaultradius">
-					<div class="flex items-center justify-between p-4 border-b border-borderColor">
-						<h4 class="modal-title">Add New Todo</h4>
-						<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="add_todo">
-							<i class="ti ti-x"></i>
-							<span class="sr-only">Close modal</span>
-						</button>
-					</div>
-					<form action="index.html">
-						<div class="modal-body p-4">
-							<div class="grid grid-cols-1 lg:grid-cols-12 gap-x-6">
-								<div class="col-span-12">
-									<div class="mb-3">
-										<label class="form-label">Todo Title</label>
-										<input type="text" class="form-control">
-									</div>
-								</div>
-								<div class="col-span-6">
-									<div class="mb-3">
-										<label class="form-label">Tag</label>
-										<select class="select">
-											<option>Select</option>
-											<option>Internal</option>
-											<option>Projects</option>
-											<option>Meetings</option>
-											<option>Reminder</option> 	 
-										</select>
-									</div>
-								</div>
-								<div class="col-span-6">
-									<div class="mb-3">
-										<label class="form-label">Priority</label>
-										<select class="select">
-											<option>Select</option>
-											<option>Medium</option>
-											<option>High</option>
-											<option>Low</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-span-12">
-									<div class="mb-3">
-										<label class="form-label">Descriptions</label>
-										<div class="summernote"></div>
-									</div>
-								</div>
-								<div class="col-span-12">
-									<div class="mb-3">
-										<label class="form-label">Add Assignee</label>
-										<select class="select">
-											<option>Select</option>
-											<option>Sophie</option>
-											<option>Cameron</option>
-											<option>Doris</option>
-											<option>Rufana</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-span-12">
-									<div class="mb-0">
-										<label class="form-label">Status</label>
-										<select class="select">
-											<option>Select</option>
-											<option>Completed</option>
-											<option>Pending</option>
-											<option>Onhold</option>
-											<option>Inprogress</option>
-										</select>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer flex items-center justify-end p-4 border-t">
-							<button type="button" class="btn btn-light me-2" data-modal-hide="add_todo">Cancel</button>
-							<button type="submit" class="btn btn-primary">Add New Todo</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- /Add Todo -->
-
+		 </div>
+		<!-- /Compose Mail -->
+			
 	</div>
 	<!-- /Main Wrapper -->
 
@@ -6542,17 +4937,9 @@
 	<!-- Slimscroll JS -->
 	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/jquery.slimscroll.min.js"></script>
 
-	<!-- Chart JS -->
-	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/apexchart/apexcharts.min.js"></script>
-	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/apexchart/chart-data.js"></script>
-
-	<!-- Chart JS -->
-	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/chartjs/chart.min.js"></script>
-	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/chartjs/chart-data.js"></script>
-
 	<!-- Datetimepicker JS -->
 	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/moment.js"></script>
-	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/flatpickr/flatpickr.min.js"></script>
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/bootstrap-datetimepicker.min.js"></script>
 
 	<!-- Daterangepikcer JS -->
 	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/daterangepicker/daterangepicker.js"></script>
@@ -6560,8 +4947,11 @@
 	<!-- Summernote JS -->
 	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/summernote/summernote-lite.min.js"></script>
 
+	<!-- Fancybox JS -->
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/fancybox/jquery.fancybox.min.js"></script>	
+
 	<!-- Bootstrap Tagsinput JS -->
-	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+    <script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
 
 	<!-- Select2 JS -->
 	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/select2/js/select2.min.js"></script>
@@ -6570,8 +4960,8 @@
 	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
 
 	<!-- Custom JS -->
-	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/todo.js"></script>
 	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/theme-colorpicker.js"></script>
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/email.js"></script>
 	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/script.js"></script>
 
 </body>

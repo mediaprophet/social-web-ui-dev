@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="Social Web Dev - Bootstrap Admin Template">
+	<meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
+	<meta name="author" content="Dreams technologies - Bootstrap Admin Template">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Social Web Dev Admin Template</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="https://mediaprophet.github.io/social-web-ui-dev/assets/img/favicon.png">
+
+	<!-- Apple Touch Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="https://mediaprophet.github.io/social-web-ui-dev/assets/img/apple-touch-icon.png">
+
+	<!-- Theme Script js -->
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/theme-script.js"></script>
+
+	<!-- Feather CSS -->
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/icons/feather/feather.css">
+
+	<!-- Tabler Icon CSS -->
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/tabler-icons/tabler-icons.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- Flowbite CSS -->
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/css/flowbite.min.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/select2/css/select2.min.css">
+
+	<!-- Summernote CSS -->
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/summernote/summernote-lite.min.css">
+
+	<!-- Daterangepikcer CSS -->
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/daterangepicker/daterangepicker.css">
+
+	<!-- Bootstrap Tagsinput CSS -->
+    <link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
+
+	<!-- Color Picker Css -->
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/flatpickr/flatpickr.min.css">
+	<link rel="stylesheet" href="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/@simonwep/pickr/themes/nano.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="/social-web-ui-dev/dist/style.css">
+
+</head>
+
+<body>
+
+	<div id="global-loader" style="display: none;">
+		<div class="page-loader"></div>
+	</div>
+
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+		    <!-- Page Wrapper -->
+    <div class="page-wrapper relative pt-[50px] ml-[252px]">
+        <div class="content p-0">
+            <div class="md:flex">
+                <div class="email-sidebar max-w-[300px] border-r border-b">
+                    <div class="active slimscroll h-full">
+                        <div class="slimscroll-active-sidebar">                    
+                            <div class="p-4">
+                                <div class="shadow-md bg-white rounded p-2 mb-4">
+                                    <div class="flex items-center">
+                                        <a href="javascript:void(0);" class="w-8 h-8 flex flex-shrink-0 me-2">
+                                            <img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-02.jpg" class="rounded-full" alt="Img">
+                                        </a>
+                                        <div>
+                                            <h6 class="mb-1"><a href="javascript:void(0);">James Hong</a></h6>
+                                            <p>james@myhyperdomain.com</p>
+                                            <p class="text-xs">DID: did:example:james123</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="javascript:void(0);" class="btn bg-primary w-full text-white text-center" id="compose_mail"><i class="ti ti-edit me-2"></i>Compose Hypermail</a>
+                                <div class="mt-4">
+                                    <h5 class="mb-2">Hypermail</h5>
+                                    <div class="block mb-4 pb-4 border-b email-tags">
+                                        <a href="hypermail.html" class="flex items-center justify-between p-2 text-gray-900 rounded bg-dark-transparent hover:bg-dark-transparent active">
+                                            <span class="flex items-center font-medium"><i class="ti ti-inbox text-gray me-2"></i>Inbox</span>
+                                            <span class="bg-danger rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 text-white px-[0.45rem] inline-block">56</span>
+                                        </a>
+                                        <a href="javascript:void(0);" class="flex items-center justify-between p-2 text-gray-900 rounded hover:bg-dark-transparent">
+                                            <span class="flex items-center font-medium"><i class="ti ti-star text-gray me-2"></i>Starred</span>
+                                            <span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">46</span>
+                                        </a>
+                                        <a href="javascript:void(0);" class="flex items-center justify-between p-2 text-gray-900 rounded hover:bg-dark-transparent">
+                                            <span class="flex items-center font-medium"><i class="ti ti-rocket text-gray me-2"></i>Sent</span>
+                                            <span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">14</span>
+                                        </a>
+                                        <a href="javascript:void(0);" class="flex items-center justify-between p-2 text-gray-900 rounded hover:bg-dark-transparent">
+                                            <span class="flex items-center font-medium"><i class="ti ti-file text-gray me-2"></i>Drafts</span>
+                                            <span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">12</span>
+                                        </a>
+                                        <a href="javascript:void(0);" class="flex items-center justify-between p-2 text-gray-900 rounded hover:bg-dark-transparent">
+                                            <span class="flex items-center font-medium"><i class="ti ti-trash text-gray me-2"></i>Deleted</span>
+                                            <span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">08</span>
+                                        </a>
+                                        <a href="javascript:void(0);" class="flex items-center justify-between p-2 text-gray-900 rounded hover:bg-dark-transparent">
+                                            <span class="flex items-center font-medium"><i class="ti ti-info-octagon text-gray me-2"></i>Spam</span>
+                                            <span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">0</span>
+                                        </a>
+                                        <a href="javascript:void(0);" class="flex items-center justify-between p-2 text-gray-900 rounded hover:bg-dark-transparent">
+                                            <span class="flex items-center font-medium"><i class="ti ti-world text-gray me-2"></i>Hyperposts</span>
+                                            <span class="rounded-s-full rounded-e-full text-[10px] font-medium py-0.5 px-[0.45rem] inline-block">10</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="border-b mb-4 pb-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h5>Sensitivity Categories</h5>
+                                        <a href="javascript:void(0);"><i class="ti ti-square-rounded-plus-filled text-primary fs-16"></i></a>
+                                    </div>
+                                    <div>
+                                        <a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+                                            <i class="ti ti-square-rounded text-success me-2"></i>
+                                            Public
+                                        </a>
+                                        <a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+                                            <i class="ti ti-square-rounded text-warning me-2"></i>
+                                            Private
+                                        </a>
+                                        <a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+                                            <i class="ti ti-square-rounded text-danger me-2"></i>
+                                            Confidential
+                                        </a>
+                                        <a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+                                            <i class="ti ti-square-rounded text-skyblue me-2"></i>
+                                            Sensitive
+                                        </a>
+                                        <a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+                                            <i class="ti ti-square-rounded text-purple me-2"></i>
+                                            Restricted-NSFW
+                                        </a>
+                                        <a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+                                            <i class="ti ti-square-rounded text-info me-2"></i>
+                                            Child-Safe
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="border-b mb-4 pb-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h5>Folders</h5>
+                                        <a href="javascript:void(0);"><i class="ti ti-square-rounded-plus-filled text-primary fs-16"></i></a>
+                                    </div>
+                                    <div>
+                                        <a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+                                            <i class="ti ti-folder-filled text-danger me-2"></i>
+                                            Projects
+                                        </a>
+                                        <a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+                                            <i class="ti ti-folder-filled text-warning me-2"></i>
+                                            Personal
+                                        </a>
+                                        <a href="javascript:void(0);" class="font-medium flex items-center text-dark py-1">
+                                            <i class="ti ti-folder-filled text-success me-2"></i>
+                                            Finance
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white flex-1 border-b mail-notifications">
+                    <div class="active slimscroll h-full">
+                        <div class="slimscroll-active-sidebar">    
+                            <div class="p-4">
+                                <div class="flex items-center justify-between flex-wrap gap-y-3">
+                                    <div>
+                                        <h5 class="mb-1">Inbox</h5>
+                                        <div class="flex items-center">
+                                            <span>2345 Hypermails</span>
+                                            <i class="ti ti-point-filled text-primary mx-1"></i>
+                                            <span>56 Unread</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="relative input-icon me-3">
+                                            <span class="input-icon-addon absolute left-[10px] top-[10px] text-gray-400">
+                                                <i class="ti ti-search"></i>
+                                            </span>
+                                            <input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 h-[38px] ps-8 placeholder:text-gray-400" placeholder="Search Hypermail">
+                                        </div>
+                                        <div class="flex items-center">
+                                            <a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-filter-edit"></i></a>
+                                            <a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-settings"></i></a>
+                                            <a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-refresh"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group list-group-flush mails-list">
+                                <div class="list-group-item border-b p-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="flex items-center me-3">
+                                            <input class="size-5 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+                                        </div>
+                                        <div class="flex items-center flex-wrap gap-y-2 flex-1">
+                                            <a href="hypermail-reply.html" class="w-11 h-11 flex items-center justify-center text-white bg-purple rounded-full me-2">
+                                                <span class="avatar-title">JL</span>
+                                            </a>
+                                            <div class="flex-1">
+                                                <div class="flex items-start justify-between">
+                                                    <div>
+                                                        <h6 class="mb-1"><a href="hypermail-reply.html">Justin Lapointe</a></h6>
+                                                        <span class="font-semibold">justin.work@myhyperdomain.com</span>
+                                                        <span class="text-xs text-gray-400 ml-2">[Confidential]</span>
+                                                        <span class="text-xs text-success ml-2"><i class="ti ti-lock"></i> OpenPGP</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <div>
+                                                            <a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown1">
+                                                                <i class="ti ti-dots"></i>
+                                                            </a>
+                                                            <ul id="grid-dropdown1" class="hidden p-4 border rounded bg-white shadow-lg w-50 z-[1]">
+                                                                <li><a href="hypermail-reply.html" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Open Hypermail</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Reply</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Reply All</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Forward (Denied)</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Collaborate</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Verify Signature</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Mark As Unread</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Move to Junk</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Delete</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Archive</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Move To</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span><i class="ti ti-point-filled text-success"></i>3:13 PM</span>
+                                                    </div>
+                                                </div>
+                                                <p>It seems that recipients are receiving <cml:context subject="https://wikidata.org/entity/Q22687" predicate="http://schema.org/definedAs" object="Financial institution">bank</cml:context> updates...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <span class="flex items-center rounded px-2 py-1 text-gray-900 bg-dark-transparent me-2"><i class="ti ti-folder-open me-2"></i>ZIP (3 files)</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <span><i class="ti ti-star-filled text-warning"></i></span>
+                                            <span class="bg-info-100 text-info rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs mx-2"><i class="ti ti-square me-1"></i>Projects</span>
+                                            <span class="text-xs text-purple">[AI-Generated]</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item border-b p-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="flex items-center me-3">
+                                            <input class="size-5 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+                                        </div>
+                                        <div class="flex items-center flex-wrap gap-y-2 flex-1">
+                                            <a href="hypermail-reply.html" class="w-10 h-10 rounded-full me-2">
+                                                <img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-01.jpg" class="rounded-full" alt="Img">
+                                            </a>
+                                            <div class="flex-1">
+                                                <div class="flex items-start justify-between">
+                                                    <div>
+                                                        <h6 class="mb-1"><a href="hypermail-reply.html">Rufana</a></h6>
+                                                        <span class="font-semibold">rufana.projectX@myhyperdomain.com</span>
+                                                        <span class="text-xs text-success ml-2">[Child-Safe]</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <div>
+                                                            <a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown2">
+                                                                <i class="ti ti-dots"></i>
+                                                            </a>
+                                                            <ul id="grid-dropdown2" class="hidden p-4 border rounded bg-white shadow-lg w-50 z-[1]">
+                                                                <li><a href="hypermail-reply.html" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Open Hypermail</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Reply</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Reply All</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Forward</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Collaborate</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Verify Signature</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Mark As Unread</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Move to Junk</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Delete</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Archive</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Move To</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span><i class="ti ti-point-filled text-danger"></i>3:13 PM</span>
+                                                    </div>
+                                                </div>
+                                                <p>UI project update with <cml:context subject="https://wikidata.org/entity/Q7397" predicate="http://schema.org/definedAs" object="Software">software</cml:context> specs...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <span class="flex items-center rounded px-2 py-1 text-gray-900 bg-dark-transparent"><i class="ti ti-video me-2"></i>1</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <span><i class="ti ti-star-filled text-warning"></i></span>
+                                            <span class="bg-purple-100 text-purple rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs mx-2"><i class="ti ti-square me-1"></i>Applications</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item border-b p-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="flex items-center me-3">
+                                            <input class="size-5 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+                                        </div>
+                                        <div class="flex items-center flex-wrap gap-y-2 flex-1">
+                                            <a href="hypermail-reply.html" class="w-10 h-10 rounded-full me-2">
+                                                <img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-03.jpg" class="rounded-full" alt="Img">
+                                            </a>
+                                            <div class="flex-1">
+                                                <div class="flex items-start justify-between">
+                                                    <div>
+                                                        <h6 class="mb-1"><a href="hypermail-reply.html">Cameron Drake</a></h6>
+                                                        <span class="font-semibold">cameron.event@myhyperdomain.com</span>
+                                                        <span class="text-xs text-purple ml-2">[Restricted-NSFW]</span>
+                                                        <span class="text-xs text-red-500 ml-2"><i class="ti ti-lock-access"></i> Age Verification Required</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <div>
+                                                            <a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown3">
+                                                                <i class="ti ti-dots"></i>
+                                                            </a>
+                                                            <ul id="grid-dropdown3" class="hidden p-4 border rounded bg-white shadow-lg w-50 z-[1]">
+                                                                <li><a href="hypermail-reply.html" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Open Hypermail (Verify Age)</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Reply</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Reply All</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Forward (Denied)</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Mark As Unread</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Move to Junk</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Delete</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Archive</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Move To</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span><i class="ti ti-point-filled text-danger"></i>3:13 PM</span>
+                                                    </div>
+                                                </div>
+                                                <p>Event details (requires age verification)...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <span class="flex items-center rounded px-2 py-1 text-gray-900 bg-dark-transparent"><i class="ti ti-video me-2"></i>1</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <span><i class="ti ti-star-filled text-warning"></i></span>
+                                            <span class="bg-danger-100 text-danger rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs mx-2"><i class="ti ti-square me-1"></i>External</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item border-b p-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="flex items-center me-3">
+                                            <input class="size-5 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+                                        </div>
+                                        <div class="flex items-center flex-wrap gap-y-2 flex-1">
+                                            <a href="hypermail-reply.html" class="w-10 h-10 rounded-full me-2">
+                                                <img src="https://mediaprophet.github.io/social-web-ui-dev/assets/img/profiles/avatar-04.jpg" class="rounded-full" alt="Img">
+                                            </a>
+                                            <div class="flex-1">
+                                                <div class="flex items-start justify-between">
+                                                    <div>
+                                                        <h6 class="mb-1"><a href="hypermail-reply.html">Sean Hill</a></h6>
+                                                        <span class="font-semibold">sean.team@myhyperdomain.com</span>
+                                                        <span class="text-xs text-success ml-2">[Child-Safe]</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <div>
+                                                            <a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown4">
+                                                                <i class="ti ti-dots"></i>
+                                                            </a>
+                                                            <ul id="grid-dropdown4" class="hidden p-4 border rounded bg-white shadow-lg w-50 z-[1]">
+                                                                <li><a href="hypermail-reply.html" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Open Hypermail</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Reply</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Reply All</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Forward</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Collaborate</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Verify Signature</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Mark As Unread</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Move to Junk</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Delete</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Archive</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Move To</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span><i class="ti ti-point-filled text-danger"></i>3:13 PM</span>
+                                                    </div>
+                                                </div>
+                                                <p>Team progress update...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <span class="flex items-center rounded px-2 py-1 text-gray-900 bg-dark-transparent"><i class="ti ti-photo me-2"></i>1</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <span class="bg-success-100 text-success rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs"><i class="ti ti-square me-1"></i>Team Events</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item border-b p-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="flex items-center me-3">
+                                            <input class="size-5 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+                                        </div>
+                                        <div class="flex items-center flex-wrap gap-y-2 flex-1">
+                                            <a href="hypermail-post.html" class="w-11 h-11 rounded-full flex items-center justify-center bg-success text-white me-2">
+                                                <span class="avatar-title">HP</span>
+                                            </a>
+                                            <div class="flex-1">
+                                                <div class="flex items-start justify-between">
+                                                    <div>
+                                                        <h6 class="mb-1"><a href="hypermail-post.html">Public Hyperpost</a></h6>
+                                                        <span class="font-semibold">public@myhyperdomain.com</span>
+                                                        <span class="text-xs text-success ml-2">[Public]</span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <div>
+                                                            <a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown5">
+                                                                <i class="ti ti-dots"></i>
+                                                            </a>
+                                                            <ul id="grid-dropdown5" class="hidden p-4 border rounded bg-white shadow-lg w-50 z-[1]">
+                                                                <li><a href="hypermail-post.html" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Open Hyperpost</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Share</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Comment</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Forward</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Mark As Unread</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Delete</a></li>
+                                                                <li><a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Archive</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span><i class="ti ti-point-filled text-danger"></i>3:13 PM</span>
+                                                    </div>
+                                                </div>
+                                                <p>Announcing our new <cml:context subject="https://wikidata.org/entity/Q7397" predicate="http://schema.org/definedAs" object="Software">software</cml:context> release...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <span class="flex items-center rounded px-2 py-1 text-gray-900 bg-dark-transparent"><i class="ti ti-link me-2"></i>1</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <span class="bg-info-100 text-info rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs"><i class="ti ti-square me-1"></i>Projects</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer sm:flex items-center justify-between bg-white p-4">
+                <p class="text-default mb-0">2014 - 2025 © Hypermail Network.</p>
+                <p class="text-default">Designed & Developed By <a href="javascript:void(0);" class="text-primary">Dreams</a></p>
+            </div>
+        </div>
+        <!-- /Page Wrapper -->
+
+        <!-- Compose Hypermail -->
+        <div id="compose-view" class="hidden z-[9999]">
+            <div class="bg-white border-0 rounded compose-view max-w-[500px] w-full absolute right-[10px] bottom-[10px] me-10">
+                <div class="compose-header flex items-center justify-between bg-dark p-3">
+                    <h5 class="text-white">Compose New Hypermail</h5>
+                    <div class="flex items-center">
+                        <a href="javascript:void(0);" class="inline-flex me-2 text-white fs-16"><i class="ti ti-minus"></i></a>
+                        <a href="javascript:void(0);" class="inline-flex me-2 fs-16 text-white"><i class="ti ti-maximize"></i></a>
+                        <button type="button" class="btn-close custom-btn-close bg-transparent fs-16 text-white position-static" id="compose-close">
+                            <i class="ti ti-x"></i>
+                        </button>
+                    </div>
+                </div>
+                <form action="hypermail.html">
+                    <div class="p-3 relative pb-2 border-b">
+                        <div class="tag-with-img flex items-center">
+                            <label class="form-label me-2">To</label>
+                            <input class="input-tags form-control border-0 h-100" id="inputBox" type="text" data-role="tagsinput" name="Label" value="angela.work@myhyperdomain.com" placeholder="e.g., name.relationship@myhyperdomain.com">
+                        </div>
+                        <div class="d-flex items-center email-cc absolute right-[10px] top-1/2 me-3">
+                            <a href="javascript:void(0);" class="inline-flex me-2">Cc</a>
+                            <a href="javascript:void(0);" class="inline-flex">Bcc</a>
+                        </div>
+                    </div>
+                    <div class="p-3 border-b">
+                        <div class="mb-3">
+                            <input type="text" class="block flex-1 border border-borderColor bg-white rounded-[5px] py-1.5 pr-12 text-gray-900 placeholder:text-gray-400 focus:ring-0 focus:border-borderColor w-full text-xs" placeholder="Subject">
+                        </div>
+                        <div class="mb-3">
+                            <select class="block flex-1 border border-borderColor bg-white rounded-[5px] py-1.5 text-gray-900 focus:ring-0 focus:border-borderColor w-full text-xs" name="sensitivity">
+                                <option value="public">Public</option>
+                                <option value="private">Private</option>
+                                <option value="confidential">Confidential</option>
+                                <option value="sensitive">Sensitive</option>
+                                <option value="restricted-nsfw">Restricted-NSFW</option>
+                                <option value="child-safe">Child-Safe</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <select class="block flex-1 border border-borderColor bg-white rounded-[5px] py-1.5 text-gray-900 focus:ring-0 focus:border-borderColor w-full text-xs" name="encryption">
+                                <option value="none">No Encryption</option>
+                                <option value="openpgp">OpenPGP</option>
+                            </select>
+                        </div>
+                        <div class="mb-0">
+                            <textarea rows="7" class="block flex-1 border border-borderColor bg-white rounded-[5px] py-1.5 pr-12 text-gray-900 placeholder:text-gray-400 focus:ring-0 focus:border-borderColor w-full text-xs" placeholder="Compose Hypermail (use <cml:context> for semantic tags)"></textarea>
+                        </div>
+                    </div>
+                    <div class="p-3 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-paperclip"></i></a>
+                            <a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-photo"></i></a>
+                            <a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-link"></i></a>
+                            <a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-pencil"></i></a>
+                            <a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-users"></i></a>
+                        </div>
+                        <div class="flex items-center compose-footer">
+                            <a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-calendar-repeat"></i></a>
+                            <a href="javascript:void(0);" class="w-7 h-7 flex items-center justify-center rounded-full hover:bg-dark-transparent"><i class="ti ti-trash"></i></a>
+                            <button type="submit" class="btn btn-primary inline-flex items-center ms-2">Send <i class="ti ti-arrow-right ms-2"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /Compose Hypermail -->
+			
+	</div>
+	<!-- /Main Wrapper -->
+
+	<!-- jQuery -->
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/jquery-3.7.1.min.js"></script>
+
+	<!-- Flowbite JS -->
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/flowbite.min.js"></script>
+
+	<!-- Feather Icon JS -->
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/feather.min.js"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/jquery.slimscroll.min.js"></script>
+
+	<!-- Datetimepicker JS -->
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/moment.js"></script>
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Daterangepikcer JS -->
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+	<!-- Summernote JS -->
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/summernote/summernote-lite.min.js"></script>
+
+	<!-- Bootstrap Tagsinput JS -->
+    <script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+	<!-- Select2 JS -->
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/select2/js/select2.min.js"></script>
+
+	<!-- Color Picker JS -->
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/theme-colorpicker.js"></script>
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/email.js"></script>
+	<script src="https://mediaprophet.github.io/social-web-ui-dev/assets/js/script.js"></script>
+
+</body>
+
+</html>

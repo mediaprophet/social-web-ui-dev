@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <meta name="description" content="Social Web Dev - Relationship Graph Interface">
+  <meta name="keywords" content="social web, relationships, graph, tailwind, vis.js, responsive, dark mode">
+  <meta name="author" content="Dreams technologies - Bootstrap Admin Template">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Relationships - Social Web Dev</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/src/assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/img/apple-touch-icon.png">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- vis.js CDN for Graph View -->
+  <script type="text/javascript" src="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.js"></script>
+  <link href="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+  <style>
+    .fade-in { animation: fadeIn 0.7s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: none; } }
+    .card-hover:hover { transform: scale(1.03); box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+    .transition { transition: all 0.2s cubic-bezier(.4,0,.2,1); }
+    .vis-network { background: var(--tw-bg-opacity,1) theme('colors.gray.100'); border-radius: 0.5rem; }
+    .dark .vis-network { background: #1f2937; }
+    .tag-chip { @apply inline-block bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-blue-200 rounded px-2 py-0.5 text-xs mr-1 mb-1; }
+    .entity-badge { @apply px-2 py-0.5 rounded text-xs font-semibold; }
+    .entity-person { @apply bg-blue-500 text-white; }
+    .entity-website { @apply bg-green-500 text-white; }
+    .entity-product { @apply bg-purple-500 text-white; }
+    .entity-service { @apply bg-yellow-500 text-white; }
+    .entity-agent { @apply bg-pink-500 text-white; }
+    .entity-bookmark { @apply bg-gray-500 text-white; }
+  </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen transition">
+  <div class="main-wrapper min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
+      <div class="flex items-center gap-2">
+        <button id="sidebarToggle" class="md:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+        <h1 class="text-2xl font-bold tracking-tight">Relationships</h1>
+      </div>
+      <div class="flex items-center gap-4">
+        <button id="darkModeToggle" class="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500 transition" aria-label="Toggle dark mode">
+          <svg id="darkIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 6.66l-.71-.71M4.05 4.05l-.71-.71"></path></svg>
+          <svg id="lightIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.293 17.293A8 8 0 016.707 6.707a8 8 0 1010.586 10.586z"></path></svg>
+        </button>
+        <button id="addRelationshipBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow transition font-semibold flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg> Add New Relationship</button>
+      </div>
+    </header>
+    <!-- /Header -->
+
+    <!-- Breadcrumb -->
+    <nav class="flex px-6 py-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
+      <ol class="inline-flex items-center space-x-1 md:space-x-2">
+        <li class="inline-flex items-center"><a href="index.html" class="inline-flex items-center hover:text-blue-500"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 2v8m4-8v8m5 0h-2a2 2 0 01-2-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v8a2 2 0 01-2 2H3"></path></svg> Home</a></li>
+        <li><span class="mx-2">/</span></li>
+        <li><a href="#" class="hover:text-blue-500">Social Web</a></li>
+        <li><span class="mx-2">/</span></li>
+        <li class="text-gray-900 dark:text-gray-100 font-semibold" aria-current="page">Relationship List</li>
+      </ol>
+    </nav>
+    <!-- /Breadcrumb -->
+
+    <!-- Filters & Actions -->
+    <section class="px-6 py-2 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="flex flex-wrap gap-2 items-center">
+        <input id="searchInput" type="text" placeholder="Search name, tag, location..." class="form-control border p-2 rounded w-48 dark:bg-gray-800 dark:border-gray-700" aria-label="Search relationships">
+        <select id="typeFilter" class="form-control border p-2 rounded dark:bg-gray-800 dark:border-gray-700">
+          <option value="">All Types</option>
+          <option value="Person">Person</option>
+          <option value="Website">Website</option>
+          <option value="Product">Product</option>
+          <option value="Service">Service</option>
+          <option value="Agent">Agent</option>
+          <option value="Bookmark">Bookmark</option>
+        </select>
+        <select id="statusFilter" class="form-control border p-2 rounded dark:bg-gray-800 dark:border-gray-700">
+          <option value="">All Statuses</option>
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+          <option value="Proposed">Proposed</option>
+          <option value="Signed">Signed</option>
+        </select>
+        <input id="dateFilter" type="date" class="form-control border p-2 rounded dark:bg-gray-800 dark:border-gray-700" aria-label="Filter by date">
+        <button id="resetFilters" class="text-blue-500 hover:underline ml-2">Reset</button>
+      </div>
+      <div class="flex gap-2 items-center">
+        <div class="relative">
+          <button id="exportDropdownBtn" class="border rounded p-2 bg-white dark:bg-gray-800 inline-flex items-center hover:bg-blue-100 dark:hover:bg-blue-700 text-gray-900 dark:text-gray-100" aria-haspopup="true" aria-expanded="false"><svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>Export<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+          <ul id="exportDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-lg z-10">
+            <li><a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-blue-700">Export as PDF</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-blue-700">Export as Excel</a></li>
+          </ul>
+        </div>
+        <div class="flex gap-1 ml-2">
+          <button id="cardViewBtn" class="px-3 py-2 rounded-l bg-blue-500 text-white font-semibold hover:bg-blue-600 transition">Cards</button>
+          <button id="tableViewBtn" class="px-3 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-semibold hover:bg-blue-500 hover:text-white transition">Table</button>
+          <button id="graphViewBtn" class="px-3 py-2 rounded-r bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-semibold hover:bg-blue-500 hover:text-white transition">Graph</button>
+        </div>
+      </div>
+    </section>
+    <!-- /Filters & Actions -->
+
+    <!-- Main Content -->
+    <main class="flex-1 px-6 py-4 fade-in">
+      <!-- Card View (default) -->
+      <section id="cardView" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Cards will be rendered here by JS -->
+      </section>
+      <!-- Table View -->
+      <section id="tableView" class="hidden overflow-x-auto">
+        <table class="w-full table-auto text-left border-collapse">
+          <thead>
+            <tr class="bg-gray-200 dark:bg-gray-700">
+              <th class="p-2 border">Name</th>
+              <th class="p-2 border">Type</th>
+              <th class="p-2 border">Role/URL</th>
+              <th class="p-2 border">Email/Phone</th>
+              <th class="p-2 border">Location</th>
+              <th class="p-2 border">Rating</th>
+              <th class="p-2 border">Owner</th>
+              <th class="p-2 border">Last Interaction</th>
+              <th class="p-2 border">Tags</th>
+              <th class="p-2 border">Status</th>
+              <th class="p-2 border">Agreements</th>
+              <th class="p-2 border">Relations</th>
+              <th class="p-2 border"></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Table rows will be rendered here by JS -->
+          </tbody>
+        </table>
+      </section>
+      <!-- Graph View -->
+      <section id="graphView" class="hidden">
+        <div id="network" class="w-full h-[500px] rounded-lg shadow-md bg-white dark:bg-gray-800"></div>
+      </section>
+    </main>
+    <!-- /Main Content -->
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 p-4 flex flex-col sm:flex-row items-center justify-between">
+      <p class="text-gray-500 dark:text-gray-400 mb-2 sm:mb-0">2014 - 2025 &copy; Social Web Dev.</p>
+      <p class="text-gray-500 dark:text-gray-400">Designed &amp; Developed By <a href="javascript:void(0);" class="text-blue-500 hover:underline">Dreams</a></p>
+    </footer>
+  </div>
+
+  <!-- Modals (Add/Edit Relationship, Add Agreement, etc.) -->
+  <div id="modalBackdrop" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  <div id="relationshipModal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg w-full max-w-2xl p-6 relative">
+      <button id="closeRelationshipModal" class="absolute top-2 right-2 text-gray-500 hover:text-red-500" aria-label="Close modal"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+      <h2 class="text-xl font-bold mb-4" id="relationshipModalTitle">Add New Relationship</h2>
+      <form id="relationshipForm">
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Entity Type</label>
+          <select id="entityType" class="form-control border p-2 rounded w-full dark:bg-gray-700 dark:border-gray-600">
+            <option value="Person">Person</option>
+            <option value="Website">Website</option>
+            <option value="Product">Product</option>
+            <option value="Service">Service</option>
+            <option value="Agent">Agent</option>
+            <option value="Bookmark">Bookmark</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Name</label>
+          <input id="entityName" type="text" class="form-control border p-2 rounded w-full dark:bg-gray-700 dark:border-gray-600" required>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Role/URL</label>
+          <input id="entityRole" type="text" class="form-control border p-2 rounded w-full dark:bg-gray-700 dark:border-gray-600" placeholder="Role or URL">
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Email/Phone</label>
+          <input id="entityContact" type="text" class="form-control border p-2 rounded w-full dark:bg-gray-700 dark:border-gray-600" placeholder="Email or Phone">
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Location</label>
+          <input id="entityLocation" type="text" class="form-control border p-2 rounded w-full dark:bg-gray-700 dark:border-gray-600" placeholder="Location">
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Tags (comma separated)</label>
+          <input id="entityTags" type="text" class="form-control border p-2 rounded w-full dark:bg-gray-700 dark:border-gray-600" placeholder="e.g. friend, work, project">
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Status</label>
+          <select id="entityStatus" class="form-control border p-2 rounded w-full dark:bg-gray-700 dark:border-gray-600">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+            <option value="Proposed">Proposed</option>
+            <option value="Signed">Signed</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Owner</label>
+          <input id="entityOwner" type="text" class="form-control border p-2 rounded w-full dark:bg-gray-700 dark:border-gray-600" placeholder="Owner">
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Last Interaction</label>
+          <input id="entityLastInteraction" type="date" class="form-control border p-2 rounded w-full dark:bg-gray-700 dark:border-gray-600">
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Rating</label>
+          <input id="entityRating" type="number" min="0" max="5" step="0.1" class="form-control border p-2 rounded w-full dark:bg-gray-700 dark:border-gray-600" placeholder="0-5">
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Agreements (comma separated)</label>
+          <input id="entityAgreements" type="text" class="form-control border p-2 rounded w-full dark:bg-gray-700 dark:border-gray-600" placeholder="e.g. NDA:Signed, Contract:Proposed">
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Relations (comma separated, e.g. FRIEND_OF:John, VISITED:Example Blog)</label>
+          <input id="entityRelations" type="text" class="form-control border p-2 rounded w-full dark:bg-gray-700 dark:border-gray-600">
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Visibility</label>
+          <div class="flex gap-4">
+            <label><input type="radio" name="entityVisibility" value="Public" checked> Public</label>
+            <label><input type="radio" name="entityVisibility" value="Private"> Private</label>
+            <label><input type="radio" name="entityVisibility" value="Select"> Select People</label>
+          </div>
+        </div>
+        <div class="flex justify-end gap-2">
+          <button type="button" id="cancelRelationshipBtn" class="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-4 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600">Cancel</button>
+          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JS: Data, Rendering, Interactivity -->
+  <script>
+    // --- Mock Data ---
+    const relationships = [
+      {
+        id: 1,
+        type: 'Person',
+        name: 'Darlee Robertson',
+        role: 'Facility Manager',
+        contact: 'darlee@example.com',
+        location: 'Germany',
+        rating: 4.2,
+        owner: 'Hendry',
+        lastInteraction: '2024-05-01',
+        tags: ['friend', 'work'],
+        status: 'Active',
+        agreements: [{ name: 'NDA', status: 'Signed', date: '2024-01-10', assignee: 'Hendry', description: 'Non-disclosure agreement' }],
+        relations: [{ type: 'FRIEND_OF', target: 'Sharon Roy' }, { type: 'COLLABORATED_WITH', target: 'Quantum Nexus' }],
+        image: '/src/assets/img/users/user-49.jpg',
+      },
+      {
+        id: 2,
+        type: 'Website',
+        name: 'Example Blog',
+        role: 'https://example.com',
+        contact: '',
+        location: 'Internet',
+        rating: 5.0,
+        owner: 'Guilory',
+        lastInteraction: '2024-04-20',
+        tags: ['bookmark', 'blog'],
+        status: 'Active',
+        agreements: [],
+        relations: [{ type: 'VISITED', target: 'Darlee Robertson' }],
+        image: '/src/assets/img/websites/blog.png',
+      },
+      {
+        id: 3,
+        type: 'Product',
+        name: 'SmartWidget',
+        role: 'IoT Device',
+        contact: '',
+        location: 'USA',
+        rating: 3.8,
+        owner: 'Jami Carlile',
+        lastInteraction: '2024-03-15',
+        tags: ['product', 'iot'],
+        status: 'Inactive',
+        agreements: [{ name: 'Warranty', status: 'Proposed', date: '2024-03-01', assignee: 'Jami Carlile', description: '1-year warranty' }],
+        relations: [{ type: 'OWNED_BY', target: 'Darlee Robertson' }],
+        image: '/src/assets/img/products/widget.png',
+      },
+      {
+        id: 4,
+        type: 'Person',
+        name: 'Sharon Roy',
+        role: 'Facility Manager',
+        contact: 'sharon@example.com',
+        location: 'Germany',
+        rating: 5.0,
+        owner: 'Guilory',
+        lastInteraction: '2024-05-02',
+        tags: ['colleague'],
+        status: 'Active',
+        agreements: [],
+        relations: [{ type: 'FRIEND_OF', target: 'Darlee Robertson' }],
+        image: '/src/assets/img/users/user-50.jpg',
+      },
+      {
+        id: 5,
+        type: 'Bookmark',
+        name: 'Solid Project',
+        role: 'https://solidproject.org',
+        contact: '',
+        location: 'Internet',
+        rating: 4.7,
+        owner: 'Smith Cooper',
+        lastInteraction: '2024-04-10',
+        tags: ['bookmark', 'web'],
+        status: 'Active',
+        agreements: [],
+        relations: [{ type: 'VISITED', target: 'Darlee Robertson' }],
+        image: '/src/assets/img/websites/solid.png',
+      },
+      // Add more mock entities as needed
+    ];
+
+    // --- State ---
+    let currentView = 'card';
+    let filteredRelationships = [...relationships];
+
+    // --- Utility Functions ---
+    function renderCards() {
+      const cardView = document.getElementById('cardView');
+      cardView.innerHTML = '';
+      filteredRelationships.forEach(entity => {
+        const card = document.createElement('div');
+        card.className = 'bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 mb-2 fade-in card-hover transition flex flex-col';
+        card.tabIndex = 0;
+        card.setAttribute('aria-label', entity.name + ' card');
+        card.innerHTML = `
+          <div class="flex items-center gap-3 mb-2">
+            <img src="${entity.image || '/src/assets/img/users/user-49.jpg'}" alt="${entity.name}" class="w-14 h-14 rounded-full object-cover border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-700">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-lg font-bold">${entity.name}</span>
+                <span class="entity-badge entity-${entity.type.toLowerCase()}">${entity.type}</span>
+              </div>
+              <div class="text-sm text-gray-500 dark:text-gray-400">${entity.role || ''}</div>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400"><b>Owner:</b> ${entity.owner || ''}</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400"><b>Location:</b> ${entity.location || ''}</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400"><b>Last:</b> ${entity.lastInteraction || ''}</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400"><b>Contact:</b> ${entity.contact || ''}</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400"><b>Status:</b> <span class="px-2 py-0.5 rounded text-xs font-semibold ${entity.status === 'Active' ? 'bg-green-500 text-white' : 'bg-gray-400 text-white'}">${entity.status}</span></span>
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400"><b>Rating:</b></span>
+            <div class="flex items-center gap-0.5">${renderStars(entity.rating)}</div>
+            <span class="text-xs text-gray-500 dark:text-gray-400">${entity.rating}</span>
+          </div>
+          <div class="flex flex-wrap mb-2">
+            ${entity.tags.map(tag => `<span class="tag-chip">${tag}</span>`).join('')}
+          </div>
+          <div class="mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-semibold">Agreements:</span>
+            <ul class="list-disc ml-5">
+              ${entity.agreements.map(a => `<li class="text-xs">${a.name} <span class="${a.status === 'Signed' ? 'text-green-500' : 'text-yellow-500'}">${a.status}</span></li>`).join('') || '<li class="text-xs text-gray-400">None</li>'}
+            </ul>
+          </div>
+          <div class="mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-semibold">Relations:</span>
+            <ul class="list-disc ml-5">
+              ${entity.relations.map(r => `<li class="text-xs">${r.type} <span class="text-blue-500">${r.target}</span></li>`).join('') || '<li class="text-xs text-gray-400">None</li>'}
+            </ul>
+          </div>
+          <div class="flex gap-2 mt-auto">
+            <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 text-xs" onclick="openEditModal(${entity.id})">Edit</button>
+            <button class="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-3 py-1 rounded hover:bg-gray-300 dark:hover:bg-gray-600 text-xs">Message</button>
+            <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 text-xs">Add to Project</button>
+          </div>
+        `;
+        cardView.appendChild(card);
+      });
+    }
+
+    function renderStars(rating) {
+      let stars = '';
+      for (let i = 1; i <= 5; i++) {
+        if (rating >= i) stars += '<svg class="w-4 h-4 text-yellow-400 inline" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>';
+        else if (rating > i - 1) stars += '<svg class="w-4 h-4 text-yellow-400 inline" fill="currentColor" viewBox="0 0 20 20"><defs><linearGradient id="half"><stop offset="50%" stop-color="#facc15"/><stop offset="50%" stop-color="#e5e7eb"/></linearGradient></defs><path fill="url(#half)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>';
+        else stars += '<svg class="w-4 h-4 text-gray-300 inline" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>';
+      }
+      return stars;
+    }
+
+    function renderTable() {
+      const tableBody = document.getElementById('tableBody');
+      tableBody.innerHTML = '';
+      filteredRelationships.forEach(entity => {
+        const row = document.createElement('tr');
+        row.className = 'border-b dark:border-gray-700';
+        row.innerHTML = `
+          <td class="p-2 border">${entity.name}</td>
+          <td class="p-2 border">${entity.type}</td>
+          <td class="p-2 border">${entity.role || ''}</td>
+          <td class="p-2 border">${entity.contact || ''}</td>
+          <td class="p-2 border">${entity.location || ''}</td>
+          <td class="p-2 border">${renderStars(entity.rating)} ${entity.rating}</td>
+          <td class="p-2 border">${entity.owner || ''}</td>
+          <td class="p-2 border">${entity.lastInteraction || ''}</td>
+          <td class="p-2 border">${entity.tags.map(tag => `<span class='tag-chip'>${tag}</span>`).join('')}</td>
+          <td class="p-2 border">${entity.status}</td>
+          <td class="p-2 border">${entity.agreements.map(a => `${a.name} (${a.status})`).join(', ')}</td>
+          <td class="p-2 border">${entity.relations.map(r => `${r.type} → ${r.target}`).join(', ')}</td>
+          <td class="p-2 border"><button class="bg-blue-500 text-white px-2 py-1 rounded text-xs" onclick="openEditModal(${entity.id})">Edit</button></td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function renderGraph() {
+      const nodes = filteredRelationships.map(entity => ({
+        id: entity.id,
+        label: entity.name,
+        group: entity.type,
+        title: entity.type,
+        color: getNodeColor(entity.type),
+        shape: 'dot',
+        size: 20
+      }));
+      const edges = [];
+      filteredRelationships.forEach(entity => {
+        if (entity.relations) {
+          entity.relations.forEach(rel => {
+            const target = relationships.find(e => e.name === rel.target);
+            if (target) {
+              edges.push({ from: entity.id, to: target.id, label: rel.type, font: { align: 'middle' } });
+            }
+          });
+        }
+      });
+      const container = document.getElementById('network');
+      container.innerHTML = '';
+      const data = { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) };
+      const options = {
+        nodes: { borderWidth: 2, shadow: true },
+        edges: { arrows: 'to', shadow: true, color: { color: '#3b82f6' }, font: { color: '#374151', size: 12, face: 'arial' } },
+        groups: {
+          Person: { color: { background: '#3b82f6', border: '#1e40af' } },
+          Website: { color: { background: '#22c55e', border: '#166534' } },
+          Product: { color: { background: '#a21caf', border: '#6d28d9' } },
+          Service: { color: { background: '#eab308', border: '#b45309' } },
+          Agent: { color: { background: '#ec4899', border: '#be185d' } },
+          Bookmark: { color: { background: '#6b7280', border: '#374151' } },
+        },
+        layout: { improvedLayout: true },
+        physics: { stabilization: true },
+        interaction: { hover: true, tooltipDelay: 100, navigationButtons: true, keyboard: true }
+      };
+      new vis.Network(container, data, options);
+    }
+    function getNodeColor(type) {
+      switch(type) {
+        case 'Person': return '#3b82f6';
+        case 'Website': return '#22c55e';
+        case 'Product': return '#a21caf';
+        case 'Service': return '#eab308';
+        case 'Agent': return '#ec4899';
+        case 'Bookmark': return '#6b7280';
+        default: return '#64748b';
+      }
+    }
+
+    // --- Filtering ---
+    function applyFilters() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const type = document.getElementById('typeFilter').value;
+      const status = document.getElementById('statusFilter').value;
+      const date = document.getElementById('dateFilter').value;
+      filteredRelationships = relationships.filter(entity => {
+        let match = true;
+        if (search) {
+          match = [entity.name, entity.role, entity.location, ...(entity.tags || [])].some(val => val && val.toLowerCase().includes(search));
+        }
+        if (match && type) match = entity.type === type;
+        if (match && status) match = entity.status === status;
+        if (match && date) match = entity.lastInteraction === date;
+        return match;
+      });
+      renderCurrentView();
+    }
+    function resetFilters() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('typeFilter').value = '';
+      document.getElementById('statusFilter').value = '';
+      document.getElementById('dateFilter').value = '';
+      filteredRelationships = [...relationships];
+      renderCurrentView();
+    }
+
+    // --- View Switching ---
+    function renderCurrentView() {
+      document.getElementById('cardView').classList.toggle('hidden', currentView !== 'card');
+      document.getElementById('tableView').classList.toggle('hidden', currentView !== 'table');
+      document.getElementById('graphView').classList.toggle('hidden', currentView !== 'graph');
+      if (currentView === 'card') renderCards();
+      if (currentView === 'table') renderTable();
+      if (currentView === 'graph') renderGraph();
+    }
+
+    // --- Modal Logic ---
+    function openRelationshipModal(editId = null) {
+      document.getElementById('modalBackdrop').classList.remove('hidden');
+      document.getElementById('relationshipModal').classList.remove('hidden');
+      if (editId) {
+        const entity = relationships.find(e => e.id === editId);
+        document.getElementById('relationshipModalTitle').textContent = 'Edit Relationship';
+        document.getElementById('entityType').value = entity.type;
+        document.getElementById('entityName').value = entity.name;
+        document.getElementById('entityRole').value = entity.role;
+        document.getElementById('entityContact').value = entity.contact;
+        document.getElementById('entityLocation').value = entity.location;
+        document.getElementById('entityTags').value = (entity.tags || []).join(', ');
+        document.getElementById('entityStatus').value = entity.status;
+        document.getElementById('entityOwner').value = entity.owner;
+        document.getElementById('entityLastInteraction').value = entity.lastInteraction;
+        document.getElementById('entityRating').value = entity.rating;
+        document.getElementById('entityAgreements').value = (entity.agreements || []).map(a => `${a.name}:${a.status}`).join(', ');
+        document.getElementById('entityRelations').value = (entity.relations || []).map(r => `${r.type}:${r.target}`).join(', ');
+        // Visibility radio not implemented in mock data
+        document.getElementById('relationshipForm').setAttribute('data-edit-id', editId);
+      } else {
+        document.getElementById('relationshipModalTitle').textContent = 'Add New Relationship';
+        document.getElementById('relationshipForm').reset();
+        document.getElementById('relationshipForm').removeAttribute('data-edit-id');
+      }
+    }
+    function closeRelationshipModal() {
+      document.getElementById('modalBackdrop').classList.add('hidden');
+      document.getElementById('relationshipModal').classList.add('hidden');
+    }
+    function openEditModal(id) { openRelationshipModal(id); }
+    window.openEditModal = openEditModal;
+
+    // --- Event Listeners ---
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCurrentView();
+      document.getElementById('searchInput').addEventListener('input', applyFilters);
+      document.getElementById('typeFilter').addEventListener('change', applyFilters);
+      document.getElementById('statusFilter').addEventListener('change', applyFilters);
+      document.getElementById('dateFilter').addEventListener('change', applyFilters);
+      document.getElementById('resetFilters').addEventListener('click', resetFilters);
+      document.getElementById('cardViewBtn').addEventListener('click', () => { currentView = 'card'; renderCurrentView(); });
+      document.getElementById('tableViewBtn').addEventListener('click', () => { currentView = 'table'; renderCurrentView(); });
+      document.getElementById('graphViewBtn').addEventListener('click', () => { currentView = 'graph'; renderCurrentView(); });
+      document.getElementById('addRelationshipBtn').addEventListener('click', () => openRelationshipModal());
+      document.getElementById('closeRelationshipModal').addEventListener('click', closeRelationshipModal);
+      document.getElementById('cancelRelationshipBtn').addEventListener('click', closeRelationshipModal);
+      document.getElementById('modalBackdrop').addEventListener('click', closeRelationshipModal);
+      document.getElementById('relationshipForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const editId = this.getAttribute('data-edit-id');
+        const newEntity = {
+          id: editId ? Number(editId) : relationships.length + 1,
+          type: document.getElementById('entityType').value,
+          name: document.getElementById('entityName').value,
+          role: document.getElementById('entityRole').value,
+          contact: document.getElementById('entityContact').value,
+          location: document.getElementById('entityLocation').value,
+          rating: Number(document.getElementById('entityRating').value) || 0,
+          owner: document.getElementById('entityOwner').value,
+          lastInteraction: document.getElementById('entityLastInteraction').value,
+          tags: document.getElementById('entityTags').value.split(',').map(t => t.trim()).filter(Boolean),
+          status: document.getElementById('entityStatus').value,
+          agreements: document.getElementById('entityAgreements').value.split(',').map(a => {
+            const [name, status] = a.split(':').map(s => s.trim());
+            return name ? { name, status: status || '' } : null;
+          }).filter(Boolean),
+          relations: document.getElementById('entityRelations').value.split(',').map(r => {
+            const [type, target] = r.split(':').map(s => s.trim());
+            return type && target ? { type, target } : null;
+          }).filter(Boolean),
+          image: '/src/assets/img/users/user-49.jpg', // Default image
+        };
+        if (editId) {
+          const idx = relationships.findIndex(e => e.id === Number(editId));
+          relationships[idx] = newEntity;
+        } else {
+          relationships.push(newEntity);
+        }
+        closeRelationshipModal();
+        applyFilters();
+      });
+      // Export dropdown
+      document.getElementById('exportDropdownBtn').addEventListener('click', function() {
+        document.getElementById('exportDropdown').classList.toggle('hidden');
+      });
+      document.addEventListener('click', function(e) {
+        if (!document.getElementById('exportDropdownBtn').contains(e.target) && !document.getElementById('exportDropdown').contains(e.target)) {
+          document.getElementById('exportDropdown').classList.add('hidden');
+        }
+      });
+      // Dark mode toggle
+      document.getElementById('darkModeToggle').addEventListener('click', function() {
+        document.documentElement.classList.toggle('dark');
+        document.getElementById('darkIcon').classList.toggle('hidden');
+        document.getElementById('lightIcon').classList.toggle('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
