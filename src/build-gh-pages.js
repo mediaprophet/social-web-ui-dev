@@ -20,8 +20,8 @@ glob.sync('**/*.html', { cwd: srcPieces }).forEach(file => {
   const destFile = path.join(docsDir, file);
   let html = fs.readFileSync(srcFile, 'utf8');
   // Replace CSS link
-  html = html.replace(/<link rel="stylesheet" href="[^"]*style\.css"/g, '<link rel="stylesheet" href="dist/style.css"');
-  html = html.replace(/src\/(assets\/[^"']+)/g, 'https://mediaprophet.github.io/social-web-ui-dev/$1');
+  html = html.replace(/<link rel="stylesheet" href="[^"]*dist\/style\.css"/g, '<link rel="stylesheet" href="/social-web-ui-dev/dist/style.css"');
+  html = html.replace(/\/src\/(assets\/[^"']+)/g, 'https://mediaprophet.github.io/social-web-ui-dev/$1');
   fs.ensureDirSync(path.dirname(destFile));
   fs.writeFileSync(destFile, html);
 });
