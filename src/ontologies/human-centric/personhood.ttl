@@ -1,0 +1,58 @@
+@prefix : <http://example.org/personhood#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Personhood Ontology
+:Personhood a owl:Class ;
+	rdfs:label "Personhood" ;
+	rdfs:comment "The state or condition of being a person, including legal and social identity." .
+
+:Person a owl:Class ;
+	rdfs:subClassOf foaf:Person ;
+	rdfs:label "Person" ;
+	rdfs:comment "A human individual with personhood." .
+
+:LegalPerson a owl:Class ;
+	rdfs:label "Legal Person" ;
+	rdfs:comment "An entity recognized by law as a person (e.g., corporation, organization)." .
+
+# Object Properties
+:hasPersonhood a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :Personhood ;
+	rdfs:label "has personhood" .
+
+:hasLegalStatus a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :LegalPerson ;
+	rdfs:label "has legal status" .
+
+# Data Properties
+:birthDate a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:date ;
+	rdfs:label "birth date" .
+
+:nationality a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string ;
+	rdfs:label "nationality" .
+
+:legalName a owl:DatatypeProperty ;
+	rdfs:domain :LegalPerson ;
+	rdfs:range xsd:string ;
+	rdfs:label "legal name" .
+
+# Example Individuals
+:alice a :Person ;
+	foaf:name "Alice Example" ;
+	:birthDate "1990-01-01"^^xsd:date ;
+	:nationality "Wonderlandian" ;
+	:hasPersonhood :personhood1 ;
+	:hasLegalStatus :corp1 .
+
+:personhood1 a :Personhood .
+:corp1 a :LegalPerson ; :legalName "Wonderland Corp" .

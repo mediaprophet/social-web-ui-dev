@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="Smarthr - Bootstrap Admin Template">
+	<meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
+	<meta name="author" content="Dreams technologies - Bootstrap Admin Template">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Smarthr Admin Template - Work Goals</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="/src/assets/img/favicon.png">
+
+	<!-- Apple Touch Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/src/assets/img/apple-touch-icon.png">
+
+	<!-- Theme Script js -->
+	<script src="/src/assets/js/theme-script.js"></script>
+
+	<!-- Feather CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/icons/feather/feather.css">
+
+	<!-- Tabler Icon CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/tabler-icons/tabler-icons.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="/src/assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="/src/assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- Flowbite CSS -->
+	<link rel="stylesheet" href="/src/assets/css/flowbite.min.css">
+
+	<!-- Datatable CSS -->
+	<link rel="stylesheet" href="/src/assets/css/dataTables.tailwindcss.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/select2/css/select2.min.css">
+
+	<!-- Summernote CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/summernote/summernote-lite.min.css">
+
+	<!-- Daterangepikcer CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/daterangepicker/daterangepicker.css">
+
+	<!-- Bootstrap Tagsinput CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
+
+	<!-- Color Picker Css -->
+	<link rel="stylesheet" href="/src/assets/plugins/flatpickr/flatpickr.min.css">
+	<link rel="stylesheet" href="/src/assets/plugins/@simonwep/pickr/themes/nano.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="/dist/style.css">
+
+</head>
+
+
+<body>
+
+   <div id="global-loader" style="display: none;">
+	   <div class="page-loader"></div>
+   </div>
+
+   <!-- Main Wrapper -->
+   <div class="main-wrapper">
+
+   <!-- Page Wrapper -->
+	   <div class="page-wrapper relative pt-[50px] ml-[252px]">
+		   <div class="content p-6">
+
+			   <!-- Breadcrumb -->
+			   <div class="md:flex block items-center justify-between page-breadcrumb mb-4">
+				   <div class="my-auto mb-2">
+					   <h2 class="mb-1">Work Goals</h2>
+					   <nav class="flex" aria-label="Breadcrumb">
+						   <ol class="inline-flex items-center space-x-1 md:space-x-2">
+							   <li class="inline-flex items-center">
+								   <a href="index.html"
+									   class="inline-flex items-center text-xs text-gray-500 hover:text-primary">
+									   <i class="ti ti-smart-home"></i>
+								   </a>
+							   </li>
+							   <li>
+								   <span class="text-default">/</span>
+							   </li>
+							   <li class="text-xs text-default"> Performance
+								</li>
+							   <li>
+								   <span class="text-default">/</span>
+							   </li>
+							   <li aria-current="page" class="text-xs text-gray-900">Work Goals</li>
+						   </ol>
+					   </nav>
+				   </div>
+				   <div class="flex my-xl-auto right-content items-center flex-wrap ">
+					   <div class="me-2 mb-2">
+						   <div>
+							   <a href="javascript:void(0);"
+								   class="border rounded p-2 bg-white inline-flex items-center"
+								   data-dropdown-toggle="export-dropdown">
+								   <i class="ti ti-file-export me-1"></i>Export<i class="ti ti-chevron-down ml-1"></i>
+							   </a>
+							   <ul id="export-dropdown" class="hidden p-4 border rounded bg-white shadow-lg">
+								   <li>
+									   <a href="javascript:void(0);"
+										   class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary"><i
+											   class="ti ti-file-type-pdf me-1"></i>Export as PDF</a>
+								   </li>
+								   <li>
+									   <a href="javascript:void(0);"
+										   class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary"><i
+											   class="ti ti-file-type-xls me-1"></i>Export as Excel </a>
+								   </li>
+							   </ul>
+						   </div>
+					   </div>
+						<div class="mb-2">
+						   <a href="#" data-modal-target="add_work_goal_type" data-modal-toggle="add_work_goal_type"
+							   class="flex items-center bg-primary text-sm font-medium py-2 rounded text-white px-3 hover:bg-primary-900 hover:text-white"><i
+								   class="ti ti-circle-plus me-2"></i>Add Work Goal Type </a>
+					   </div>
+					   <!-- Add Work Goal Button -->
+					   <div class="mb-2">
+						   <a href="#" data-modal-target="add_work_goal_modal" data-modal-toggle="add_work_goal_modal"
+							   class="flex items-center bg-success text-sm font-medium py-2 rounded text-white px-3 hover:bg-success-900 hover:text-white"><i
+								   class="ti ti-target-arrow me-2"></i>Add Work Goal</a>
+					   </div>
+					   <div class="head-icons ml-2 mb-2">
+						   <a href="javascript:void(0);"
+							   class="border flex items-center justify-center rounded bg-white w-9 h-9 hover:bg-primary hover:text-white hover:border-primary"
+							   data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Collapse"
+							   id="collapse-header">
+							   <i class="ti ti-chevrons-up"></i>
+						   </a>
+					   </div>
+				   </div>
+			   </div>
+			   <!-- /Breadcrumb -->
+
+			   <!-- AI Suggestion Banner -->
+			   <div class="bg-yellow-100 p-4 rounded-lg mb-4">
+				   <p class="text-sm font-medium text-yellow-800">
+					   AI Suggestion: Your project goal in PRO-001 is overdue. Prioritize completing the milestone to advance.
+				   </p>
+			   </div>
+
+			   <!-- Metrics Cards -->
+			   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+				   <div class="bg-white p-4 rounded-lg shadow-md">
+					   <h3 class="text-lg font-semibold">Professional Goals</h3>
+					   <p class="text-2xl font-bold">15/20 <span class="text-green-500 text-sm">+4.5%</span></p>
+					   <a href="#" class="text-blue-500 text-sm hover:underline">View Details</a>
+				   </div>
+				   <div class="bg-white p-4 rounded-lg shadow-md">
+					   <h3 class="text-lg font-semibold">Community Projects</h3>
+					   <p class="text-2xl font-bold">5/8 <span class="text-red-500 text-sm">-1.2%</span></p>
+					   <a href="#" class="text-blue-500 text-sm hover:underline">View Details</a>
+				   </div>
+				   <div class="bg-white p-4 rounded-lg shadow-md">
+					   <h3 class="text-lg font-semibold">Civics Projects</h3>
+					   <p class="text-2xl font-bold">3/5 <span class="text-green-500 text-sm">+2.0%</span></p>
+					   <a href="#" class="text-blue-500 text-sm hover:underline">View Details</a>
+				   </div>
+				   <div class="bg-white p-4 rounded-lg shadow-md">
+					   <h3 class="text-lg font-semibold">Project Milestones</h3>
+					   <p class="text-2xl font-bold">10/15 <span class="text-green-500 text-sm">+3.8%</span></p>
+					   <a href="#" class="text-blue-500 text-sm hover:underline">View Details</a>
+				   </div>
+			   </div>
+
+			   <!-- Goals by Project -->
+			   <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+				   <h3 class="text-lg font-semibold mb-2">Goals by Project</h3>
+				   <p class="text-sm text-gray-500 mb-2">Project goals increased by +12% from last week</p>
+				   <p class="text-2xl font-bold mb-4">Total Project Goals: 45</p>
+				   <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+					   <div>
+						   <p class="text-sm">PRO-001 (25%)</p>
+						   <div class="bg-gray-200 h-2 rounded-full">
+							   <div class="bg-blue-500 h-2 rounded-full" style="width: 25%"></div>
+						   </div>
+						   <p class="text-sm font-medium">11 Goals</p>
+					   </div>
+					   <div>
+						   <p class="text-sm">PRO-002 (30%)</p>
+						   <div class="bg-gray-200 h-2 rounded-full">
+							   <div class="bg-green-500 h-2 rounded-full" style="width: 30%"></div>
+						   </div>
+						   <p class="text-sm font-medium">13 Goals</p>
+					   </div>
+					   <div>
+						   <p class="text-sm">PRO-003 (20%)</p>
+						   <div class="bg-gray-200 h-2 rounded-full">
+							   <div class="bg-yellow-500 h-2 rounded-full" style="width: 20%"></div>
+						   </div>
+						   <p class="text-sm font-medium">9 Goals</p>
+					   </div>
+					   <div>
+						   <p class="text-sm">Other Projects (25%)</p>
+						   <div class="bg-gray-200 h-2 rounded-full">
+							   <div class="bg-purple-500 h-2 rounded-full" style="width: 25%"></div>
+						   </div>
+						   <p class="text-sm font-medium">12 Goals</p>
+					   </div>
+				   </div>
+				   <a href="#" class="text-blue-500 text-sm hover:underline mt-4 inline-block">View All</a>
+			   </div>
+
+			   <!-- Top Project Goal -->
+			   <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+				   <h3 class="text-lg font-semibold mb-2">Top Project Goal</h3>
+				   <div class="flex items-center">
+					   <img src="/src/assets/img/avatar-01.jpg" alt="Project Icon" class="w-12 h-12 rounded-full mr-3">
+					   <div>
+						   <p class="text-sm font-medium">Complete UI for PRO-001</p>
+						   <p class="text-sm text-gray-500">Project Success</p>
+						   <p class="text-sm">Progress: 75%</p>
+					   </div>
+				   </div>
+				   <a href="#" class="text-blue-500 text-sm hover:underline mt-2 inline-block">View All Project Goals</a>
+			   </div>
+
+			   <!-- Work Goal Tracking Overview -->
+			   <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+				   <h3 class="text-lg font-semibold mb-2">Work Goal Tracking Overview</h3>
+				   <p class="text-2xl font-bold mb-2">Total Work Goals: 45</p>
+				   <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+					   <div>
+						   <p class="text-sm">Active: 55%</p>
+						   <div class="bg-gray-200 h-2 rounded-full">
+							   <div class="bg-blue-500 h-2 rounded-full" style="width: 55%"></div>
+						   </div>
+					   </div>
+					   <div>
+						   <p class="text-sm">Completed: 25%</p>
+						   <div class="bg-gray-200 h-2 rounded-full">
+							   <div class="bg-green-500 h-2 rounded-full" style="width: 25%"></div>
+						   </div>
+					   </div>
+					   <div>
+						   <p class="text-sm">Overdue: 15%</p>
+						   <div class="bg-gray-200 h-2 rounded-full">
+							   <div class="bg-red-500 h-2 rounded-full" style="width: 15%"></div>
+						   </div>
+					   </div>
+					   <div>
+						   <p class="text-sm">On Hold: 5%</p>
+						   <div class="bg-gray-200 h-2 rounded-full">
+							   <div class="bg-yellow-500 h-2 rounded-full" style="width: 5%"></div>
+						   </div>
+					   </div>
+				   </div>
+				   <div class="space-y-2">
+					   <div class="flex justify-between text-sm">
+						   <p>UI Completion for PRO-001 (Started: 09:00)</p>
+						   <p>Due: 15/08/2025</p>
+					   </div>
+					   <div class="flex justify-between text-sm">
+						   <p>Funding for PRO-002 (Started: 10:30)</p>
+						   <p>Due: 20/09/2025</p>
+					   </div>
+				   </div>
+				   <a href="goal-tracking.html" class="text-blue-500 text-sm hover:underline mt-2 inline-block">View Details</a>
+			   </div>
+
+			   <!-- Work Goals Table -->
+			   <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+				   <h3 class="text-lg font-semibold mb-2">Work Goals List</h3>
+				   <table class="w-full border-collapse">
+					   <thead>
+						   <tr class="bg-gray-100">
+							   <th class="p-2 text-left text-sm font-medium">ID</th>
+							   <th class="p-2 text-left text-sm font-medium">Name</th>
+							   <th class="p-2 text-left text-sm font-medium">Project</th>
+							   <th class="p-2 text-left text-sm font-medium">Milestone</th>
+							   <th class="p-2 text-left text-sm font-medium">Priority</th>
+							   <th class="p-2 text-left text-sm font-medium">Progress</th>
+							   <th class="p-2 text-left text-sm font-medium">Deadline</th>
+						   </tr>
+					   </thead>
+					   <tbody>
+						   <tr class="border-b">
+							   <td class="p-2 text-sm">WG-001</td>
+							   <td class="p-2 text-sm">Complete UI Design</td>
+							   <td class="p-2 text-sm"><a href="#" class="text-blue-500 hover:underline">PRO-001</a></td>
+							   <td class="p-2 text-sm">UI Milestone</td>
+							   <td class="p-2 text-sm">High</td>
+							   <td class="p-2 text-sm">75%</td>
+							   <td class="p-2 text-sm">15/08/2025</td>
+						   </tr>
+						   <tr class="border-b">
+							   <td class="p-2 text-sm">WG-002</td>
+							   <td class="p-2 text-sm">Secure Funding</td>
+							   <td class="p-2 text-sm"><a href="#" class="text-blue-500 hover:underline">PRO-002</a></td>
+							   <td class="p-2 text-sm">Funding Milestone</td>
+							   <td class="p-2 text-sm">Medium</td>
+							   <td class="p-2 text-sm">40%</td>
+							   <td class="p-2 text-sm">20/09/2025</td>
+						   </tr>
+						   <tr class="border-b">
+							   <td class="p-2 text-sm">WG-003</td>
+							   <td class="p-2 text-sm">Launch Campaign</td>
+							   <td class="p-2 text-sm"><a href="#" class="text-blue-500 hover:underline">PRO-003</a></td>
+							   <td class="p-2 text-sm">Launch Milestone</td>
+							   <td class="p-2 text-sm">High</td>
+							   <td class="p-2 text-sm">60%</td>
+							   <td class="p-2 text-sm">10/10/2025</td>
+						   </tr>
+					   </tbody>
+				   </table>
+				   <a href="#" class="text-blue-500 text-sm hover:underline mt-2 inline-block">View All</a>
+			   </div>
+
+			   <!-- Project Goals Discovery Panel -->
+			   <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+				   <h3 class="text-lg font-semibold mb-2">Discover Project Goals & Tasks</h3>
+				   <ul class="space-y-2">
+					   <li class="p-2 bg-gray-50 rounded shadow-sm hover:bg-blue-50 cursor-pointer">
+						   Join PRO-004: Chat App Development
+					   </li>
+					   <li class="p-2 bg-gray-50 rounded shadow-sm hover:bg-blue-50 cursor-pointer">
+						   Contribute to Community Project: Local Cleanup
+					   </li>
+					   <li class="p-2 bg-gray-50 rounded shadow-sm hover:bg-blue-50 cursor-pointer">
+						   Civics Goal: Voter Education Initiative
+					   </li>
+				   </ul>
+				   <a href="#" class="text-blue-500 text-sm hover:underline mt-2 inline-block">Explore More</a>
+			   </div>
+
+			   <!-- Add Work Goal Modal -->
+			   <div id="add_work_goal_modal" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out modal p-4">
+				   <div class="relative p-4 w-full max-w-2xl max-h-full">
+					   <div class="relative bg-white rounded-defaultradius">
+						   <div class="flex items-center justify-between p-4 border-b border-borderColor">
+							   <h4 class="font-semibold">Add Work Goal</h4>
+							   <button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="add_work_goal_modal">
+								   <i class="ti ti-x"></i>
+								   <span class="sr-only">Close modal</span>
+							   </button>
+						   </div>
+						   <form id="workGoalForm" class="p-4">
+							   <div class="grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-6">
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Goal Category (Maslow) <span class="text-danger">*</span></label>
+									   <select class="select w-full" id="workGoalCategory" required>
+										   <option value="">Select</option>
+										   <option value="Physiological">Physiological</option>
+										   <option value="Safety">Safety</option>
+										   <option value="Belonging">Belonging</option>
+										   <option value="Esteem">Esteem</option>
+										   <option value="Cognitive">Cognitive</option>
+										   <option value="Aesthetic">Aesthetic</option>
+										   <option value="Self-Actualization">Self-Actualization</option>
+										   <option value="Transcendence">Transcendence</option>
+									   </select>
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Goal Type <span class="text-danger">*</span></label>
+									   <select class="select w-full" id="workGoalType" required>
+										   <option value="">Select</option>
+										   <option value="Professional">Professional Goal</option>
+										   <option value="Socioeconomic">Socioeconomic Goal</option>
+										   <option value="Humanitarian">Humanitarian Goal</option>
+										   <option value="CommunityProject">Community Project</option>
+										   <option value="CivicsProject">Civics Project</option>
+									   </select>
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Linked Project <span class="text-danger">*</span></label>
+									   <select class="select w-full" id="linkedProject" required>
+										   <option value="">Select Project</option>
+										   <option value="PRO-001">PRO-001: Office Management App</option>
+										   <option value="PRO-002">PRO-002: Clinic Management</option>
+										   <option value="PRO-003">PRO-003: Educational Platform</option>
+										   <option value="PRO-004">PRO-004: Chat & Call Mobile App</option>
+									   </select>
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Goal Name <span class="text-danger">*</span></label>
+									   <input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" id="workGoalName" placeholder="e.g., Complete UI for PRO-001" required>
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Objective <span class="text-danger">*</span></label>
+									   <textarea class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 placeholder:text-gray-400" id="workGoalObjective" rows="2" placeholder="e.g., Design and implement user interface" required></textarea>
+								   </div>
+								   <div class="md:col-span-6">
+									   <label class="block mb-1 text-sm font-medium text-title">Start Date <span class="text-danger">*</span></label>
+									   <input type="text" class="flatpickr bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" id="workStartDate" placeholder="dd/mm/yyyy" required>
+								   </div>
+								   <div class="md:col-span-6">
+									   <label class="block mb-1 text-sm font-medium text-title">End Date <span class="text-danger">*</span></label>
+									   <input type="text" class="flatpickr bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" id="workEndDate" placeholder="dd/mm/yyyy" required>
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Milestone</label>
+									   <input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" id="workMilestone" placeholder="e.g., UI Completion Milestone">
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Outcome</label>
+									   <textarea class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 placeholder:text-gray-400" id="workOutcome" rows="2" placeholder="e.g., Fully functional UI ready for testing"></textarea>
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Resource Requirements</label>
+									   <input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" id="workRequirements" placeholder="e.g., Design tools, 20 hrs/week">
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Dependencies</label>
+									   <input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" id="workDependencies" placeholder="e.g., Requirements from PRO-001 team">
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Barriers</label>
+									   <input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" id="workBarriers" placeholder="e.g., Resource shortages, timeline delays">
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Impact</label>
+									   <textarea class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 placeholder:text-gray-400" id="workImpact" rows="2" placeholder="e.g., Improved project efficiency and team productivity"></textarea>
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Assignee (Optional)</label>
+									   <select class="select w-full" id="workGoalAssignee">
+										   <option value="">Select Contributor</option>
+										   <option>Daniel Esbella (IOS Developer)</option>
+										   <option>Doglas Martini (Coordinator)</option>
+										   <option>Brian Villalobos (PHP Developer)</option>
+										   <option>Anthony Lewis (Marketing Head)</option>
+										   <option>Stephan Peralt (Executive)</option>
+									   </select>
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Status</label>
+									   <select class="select w-full" id="workGoalStatus">
+										   <option>Active</option>
+										   <option>Inactive</option>
+									   </select>
+								   </div>
+								   <div class="md:col-span-12">
+									   <label class="block mb-1 text-sm font-medium text-title">Initial Progress</label>
+									   <input type="number" class="w-full border border-borderColor rounded-input py-2 px-3 text-sm" id="workGoalProgress" placeholder="e.g., 0" value="0" min="0" max="100">
+								   </div>
+							   </div>
+							   <div class="flex justify-end mt-4 border-t border-borderColor pt-4">
+								   <button type="button" class="btn bg-light border border-light text-gray-900 py-2 px-4 rounded mr-2" data-modal-hide="add_work_goal_modal">Cancel</button>
+								   <button type="submit" class="btn bg-primary border border-primary text-white py-2 px-4 rounded" data-modal-target="confirm_work_goal">Define Work Goal</button>
+							   </div>
+						   </form>
+					   </div>
+				   </div>
+			   </div>
+			   <!-- /Add Work Goal Modal -->
+
+			   <!-- Confirm Work Goal Creation Modal -->
+			   <div id="confirm_work_goal" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out modal p-4 bg-black bg-opacity-50">
+				   <div class="relative p-4 w-full max-w-md max-h-full">
+					   <div class="relative bg-white rounded-defaultradius p-6">
+						   <h4 class="text-lg font-semibold mb-4">Work Goal Defined Successfully</h4>
+						   <p class="mb-4">Your work goal has been created. Would you like to track it now?</p>
+						   <div class="flex justify-end">
+							   <button type="button" class="btn bg-light border border-light text-gray-900 py-2 px-4 rounded mr-2" data-modal-hide="confirm_work_goal">Close</button>
+							   <a href="goal-tracking.html" class="btn bg-primary border border-primary text-white py-2 px-4 rounded">Track Work Goal</a>
+						   </div>
+					   </div>
+				   </div>
+			   </div>
+			   <!-- /Confirm Work Goal Creation Modal -->
+
+			   <!-- Add Work Goal Type -->
+			   <div id="add_work_goal_type" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out modal p-4">
+				   <div class="relative p-4 w-full max-w-[500px] max-h-full">
+					   <div class="relative bg-white rounded-defaultradius">
+						   <div class="flex items-center justify-between p-4 border-b border-borderColor">
+							   <h4 class="font-semibold">Add Work Goal Type</h4>
+							   <button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="add_work_goal_type">
+								   <i class="ti ti-x"></i>
+								   <span class="sr-only">Close modal</span>
+							   </button>
+						   </div>
+						   <form action="work-goal-type.html">
+							   <div class="p-4">
+								   <div class="grid grid-cols-1 md:grid-cols-12 gap-x-6">
+									   <div class="md:col-span-12">
+										   <div class="mb-3">
+											   <label class="block mb-1 text-sm leading-normal font-medium text-title">Work Goal Type <span class="text-danger">*</span></label>
+											   <select class="select w-full" required>
+												   <option value="">Select</option>
+												   <option value="Professional">Professional Goal</option>
+												   <option value="Socioeconomic">Socioeconomic Goal</option>
+												   <option value="Humanitarian">Humanitarian Goal</option>
+												   <option value="CommunityProject">Community Project</option>
+												   <option value="CivicsProject">Civics Project</option>
+											   </select>
+										   </div>
+									   </div>
+									   <div class="md:col-span-12">
+										   <div class="mb-3">
+											   <label class="block mb-1 text-sm leading-normal font-medium text-title">Maslow Need Level <span class="text-danger">*</span></label>
+											   <select class="select w-full" required>
+												   <option value="">Select</option>
+												   <option value="Physiological">Physiological</option>
+												   <option value="Safety">Safety</option>
+												   <option value="Belonging">Belonging</option>
+												   <option value="Esteem">Esteem</option>
+												   <option value="Cognitive">Cognitive</option>
+												   <option value="Aesthetic">Aesthetic</option>
+												   <option value="Self-Actualization">Self-Actualization</option>
+												   <option value="Transcendence">Transcendence</option>
+											   </select>
+										   </div>
+									   </div>
+									   <div class="md:col-span-12">
+										   <div class="mb-3">
+											   <label class="block mb-1 text-sm leading-normal font-medium text-title">Description</label>
+											   <textarea class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 placeholder:text-gray-400" rows="3" placeholder="e.g., Goals for project milestones and outcomes"></textarea>
+										   </div>
+									   </div>
+									   <div class="md:col-span-12">
+										   <div class="mb-3">
+											   <label class="block mb-1 text-sm leading-normal font-medium text-title">Status</label>
+											   <select class="select w-full">
+												   <option value="">Select</option>
+												   <option>Active</option>
+												   <option>Inactive</option>
+											   </select>
+										   </div>
+									   </div>
+								   </div>
+							   </div>
+							   <div class="flex items-center justify-end p-4 border-t border-borderColor">
+								   <button data-modal-hide="add_work_goal_type" type="button" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 font-medium me-2">Cancel</button>
+								   <button type="submit" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-900 hover:text-white font-medium">Add Work Goal Type</button>
+							   </div>
+						   </form>
+					   </div>
+				   </div>
+			   </div>
+			   <!-- /Add Work Goal Type -->
+
+			   <!-- Edit Work Goal Type -->
+			   <div id="edit_work_goal_type" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out modal p-4">
+				   <div class="relative p-4 w-full max-w-[500px] max-h-full">
+					   <div class="relative bg-white rounded-defaultradius">
+						   <div class="flex items-center justify-between p-4 border-b border-borderColor">
+							   <h4 class="font-semibold">Edit Work Goal Type</h4>
+							   <button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="edit_work_goal_type">
+								   <i class="ti ti-x"></i>
+								   <span class="sr-only">Close modal</span>
+							   </button>
+						   </div>
+						   <form action="work-goal-type.html">
+							   <div class="p-4">
+								   <div class="grid grid-cols-1 md:grid-cols-12 gap-x-6">
+									   <div class="md:col-span-12">
+										   <div class="mb-3">
+											   <label class="block mb-1 text-sm leading-normal font-medium text-title">Work Goal Type <span class="text-danger">*</span></label>
+											   <select class="select w-full" required>
+												   <option value="">Select</option>
+												   <option value="Professional" selected>Professional Goal</option>
+												   <option value="Socioeconomic">Socioeconomic Goal</option>
+												   <option value="Humanitarian">Humanitarian Goal</option>
+												   <option value="CommunityProject">Community Project</option>
+												   <option value="CivicsProject">Civics Project</option>
+											   </select>
+										   </div>
+									   </div>
+									   <div class="md:col-span-12">
+										   <div class="mb-3">
+											   <label class="block mb-1 text-sm leading-normal font-medium text-title">Maslow Need Level <span class="text-danger">*</span></label>
+											   <select class="select w-full" required>
+												   <option value="">Select</option>
+												   <option value="Physiological">Physiological</option>
+												   <option value="Safety">Safety</option>
+												   <option value="Belonging">Belonging</option>
+												   <option value="Esteem">Esteem</option>
+												   <option value="Cognitive">Cognitive</option>
+												   <option value="Aesthetic">Aesthetic</option>
+												   <option value="Self-Actualization" selected>Self-Actualization</option>
+												   <option value="Transcendence">Transcendence</option>
+											   </select>
+										   </div>
+									   </div>
+									   <div class="md:col-span-12">
+										   <div class="mb-3">
+											   <label class="block mb-1 text-sm leading-normal font-medium text-title">Description</label>
+											   <textarea class="bg-white border-borderColor text-gray-900 text-sm rounded-input block w-full py-2 px-2.5 placeholder:text-gray-400" rows="3">Goals aimed at achieving key project milestones and outcomes in a professional setting.</textarea>
+										   </div>
+									   </div>
+									   <div class="md:col-span-12">
+										   <div class="mb-3">
+											   <label class="block mb-1 text-sm leading-normal font-medium text-title">Status</label>
+											   <select class="select w-full">
+												   <option value="">Select</option>
+												   <option selected>Active</option>
+												   <option>Inactive</option>
+											   </select>
+										   </div>
+									   </div>
+								   </div>
+							   </div>
+							   <div class="flex items-center justify-end p-4 border-t border-borderColor">
+								   <button data-modal-hide="edit_work_goal_type" type="button" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 font-medium me-2">Cancel</button>
+								   <button type="submit" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-900 hover:text-white font-medium">Save Changes</button>
+							   </div>
+						   </form>
+					   </div>
+				   </div>
+			   </div>
+			   <!-- /Edit Work Goal Type -->
+
+			   <!-- Delete Modal -->
+			   <div id="delete_modal" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full  transition-all duration-300 ease-in-out modal p-4">
+				   <div class="relative p-4 w-full max-w-sm max-h-full">
+					 <div class="relative bg-white rounded-defaultradius">
+						  <div class="p-4 text-center">
+							  <span class="size-[60px] rounded bg-danger-100 text-danger inline-flex items-center justify-center mb-4">
+								  <i class="ti ti-trash-x text-4xl leading-normal"></i>
+							  </span>
+							  <h4 class="mb-1">Confirm Delete</h4>
+							  <p class="mb-4">You want to delete all the marked items, this cant be undone once you delete.</p>
+							  <div class="flex justify-center">
+								  <a href="javascript:void(0);" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 me-4" data-modal-hide="delete_modal">Cancel</a>
+								  <a href="work-goal-type.html" class="btn bg-danger border border-danger text-white text-center hover:bg-danger-900 hover:text-white">Yes, Delete</a>
+							  </div>
+						  </div>
+					  </div>
+				   </div>
+			   </div>
+			   <!-- /Delete Modal -->
+
+			</div>
+		</div>
+		<!-- /Page Wrapper -->
+
+	</div>
+	<!-- /Main Wrapper -->
+
+	<!-- jQuery -->
+	<script src="/src/assets/js/jquery-3.7.1.min.js"></script>
+
+	<!-- Flowbite JS -->
+	<script src="/src/assets/js/flowbite.min.js"></script>
+
+	<!-- Feather Icon JS -->
+	<script src="/src/assets/js/feather.min.js"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="/src/assets/js/jquery.slimscroll.min.js"></script>
+
+	<!-- Datetimepicker JS -->
+	<script src="/src/assets/js/moment.js"></script>
+	<script src="/src/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Daterangepikcer JS -->
+	<script src="/src/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+	<!-- Datatable JS -->
+	<script src="/src/assets/js/dataTables.js"></script>
+	<script src="/src/assets/js/dataTables.tailwindcss.js"></script>
+
+	<!-- Summernote JS -->
+	<script src="/src/assets/plugins/summernote/summernote-lite.min.js"></script>
+
+	<!-- Bootstrap Tagsinput JS -->
+	<script src="/src/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+	<!-- Select2 JS -->
+	<script src="/src/assets/plugins/select2/js/select2.min.js"></script>
+
+	<!-- Color Picker JS -->
+	<script src="/src/assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="/src/assets/js/theme-colorpicker.js"></script>
+	<script src="/src/assets/js/script.js"></script>
+
+</body>
+
+</html>

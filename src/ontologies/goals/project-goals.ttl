@@ -1,0 +1,146 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix goals: <http://example.org/goals#> .
+@prefix proj: <http://example.org/project-goals#> .
+@prefix maslow: <http://example.org/maslow#> .
+
+proj:Ontology rdf:type owl:Ontology ;
+    owl:imports goals:Ontology ;
+    rdfs:label "Project Goals Ontology" ;
+    rdfs:comment "An ontology extending the Goals Ontology to address goals for projects, including community and civics projects, and general project-associated goals that individuals or groups work to achieve." ;
+    owl:versionInfo "1.0" .
+
+# Classes
+
+proj:ProjectGoal rdf:type owl:Class ;
+    rdfs:label "Project Goal" ;
+    rdfs:comment "A goal specifically associated with a project, such as milestones, outcomes, or objectives within a project context." ;
+    rdfs:subClassOf goals:Goal .
+
+proj:CommunityProject rdf:type owl:Class ;
+    rdfs:label "Community Project" ;
+    rdfs:comment "A project focused on local or group-based initiatives, often involving collaboration for social or communal benefits." ;
+    rdfs:subClassOf goals:Project .
+
+proj:CivicsProject rdf:type owl:Class ;
+    rdfs:label "Civics Project" ;
+    rdfs:comment "A project related to public affairs, governance, citizenship, or societal improvement, such as policy advocacy or public service initiatives." ;
+    rdfs:subClassOf goals:Project .
+
+proj:Milestone rdf:type owl:Class ;
+    rdfs:label "Milestone" ;
+    rdfs:comment "A significant achievement or checkpoint within a project that marks progress toward the overall goal." ;
+    rdfs:subClassOf owl:Thing .
+
+proj:Outcome rdf:type owl:Class ;
+    rdfs:label "Outcome" ;
+    rdfs:comment "The expected or achieved result of a project, such as impact metrics or deliverables." ;
+    rdfs:subClassOf owl:Thing .
+
+proj:ResourceRequirement rdf:type owl:Class ;
+    rdfs:label "Resource Requirement" ;
+    rdfs:comment "Resources needed for a project, such as funding, materials, or human effort." ;
+    rdfs:subClassOf owl:Thing .
+
+proj:Impact rdf:type owl:Class ;
+    rdfs:label "Impact" ;
+    rdfs:comment "The broader effect or change resulting from achieving project goals, especially in community or civics contexts." ;
+    rdfs:subClassOf owl:Thing .
+
+# Properties
+
+proj:hasProjectGoal rdf:type owl:ObjectProperty ;
+    rdfs:label "has Project Goal" ;
+    rdfs:domain goals:Project ;
+    rdfs:range proj:ProjectGoal ;
+    rdfs:comment "Links a project to its specific goals." .
+
+proj:achievesMilestone rdf:type owl:ObjectProperty ;
+    rdfs:label "achieves Milestone" ;
+    rdfs:domain proj:ProjectGoal ;
+    rdfs:range proj:Milestone ;
+    rdfs:comment "Indicates a project goal that leads to a milestone." .
+
+proj:hasOutcome rdf:type owl:ObjectProperty ;
+    rdfs:label "has Outcome" ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf (goals:Project proj:ProjectGoal) ] ;
+    rdfs:range proj:Outcome ;
+    rdfs:comment "Associates a project or goal with its expected outcomes." .
+
+proj:requiresResource rdf:type owl:ObjectProperty ;
+    rdfs:label "requires Resource" ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf (goals:Project proj:ProjectGoal goals:Task) ] ;
+    rdfs:range proj:ResourceRequirement ;
+    rdfs:comment "Specifies resources needed for a project, goal, or task." .
+
+proj:measuresImpact rdf:type owl:ObjectProperty ;
+    rdfs:label "measures Impact" ;
+    rdfs:domain proj:Outcome ;
+    rdfs:range proj:Impact ;
+    rdfs:comment "Links an outcome to its measurable impact." .
+
+proj:isCommunityOriented rdf:type owl:DatatypeProperty ;
+    rdfs:label "is Community Oriented" ;
+    rdfs:domain goals:Project ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Indicates if the project is focused on community benefits." .
+
+proj:isCivicsOriented rdf:type owl:DatatypeProperty ;
+    rdfs:label "is Civics Oriented" ;
+    rdfs:domain goals:Project ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Indicates if the project involves civics or public good." .
+
+proj:hasStakeholder rdf:type owl:ObjectProperty ;
+    rdfs:label "has Stakeholder" ;
+    rdfs:domain goals:Project ;
+    rdfs:range owl:Thing ;  # Could be refined to a Person or Organization class
+    rdfs:comment "Identifies individuals or groups with interest in the project." .
+
+proj:alignsWithNeed rdf:type owl:ObjectProperty ;
+    rdfs:label "aligns With Need" ;
+    rdfs:domain proj:ProjectGoal ;
+    rdfs:range maslow:NeedLevel ;
+    rdfs:comment "Links project goals to Maslow's hierarchy levels for human-centric alignment." .
+
+# Example Instances (Optional, for illustration)
+
+proj:ExampleCommunityProject rdf:type proj:CommunityProject ;
+    goals:hasTitle "Local Park Cleanup" ;
+    goals:hasDescription "Organize volunteers to clean and maintain a community park." ;
+    proj:isCommunityOriented true ;
+    goals:involvesCollaboration goals:Collaboration .
+
+proj:ExampleCivicsProject rdf:type proj:CivicsProject ;
+    goals:hasTitle "Voter Education Campaign" ;
+    goals:hasDescription "Educate citizens on voting rights and processes." ;
+    proj:isCivicsOriented true ;
+    goals:achievesNeed maslow:Transcendence .
+
+proj:ExampleProjectGoal1 rdf:type proj:ProjectGoal ;
+    goals:hasTitle "Secure Funding for Park Tools" ;
+    goals:hasDescription "Raise $500 through community donations." ;
+    proj:achievesMilestone proj:MilestoneFunding ;
+    goals:hasPriority goals:HighPriority ;
+    proj:requiresResource proj:FundingResource .
+
+proj:ExampleCommunityProject proj:hasProjectGoal proj:ExampleProjectGoal1 .
+
+proj:MilestoneFunding rdf:type proj:Milestone ;
+    rdfs:label "Funding Milestone" ;
+    rdfs:comment "Achievement of securing necessary funds." .
+
+proj:FundingResource rdf:type proj:ResourceRequirement ;
+    rdfs:label "Funding Requirement" ;
+    rdfs:comment "Monetary resources needed." .
+
+proj:ExampleImpact rdf:type proj:Impact ;
+    rdfs:label "Improved Community Health" ;
+    rdfs:comment "Enhanced local environment leading to better well-being." .
+
+proj:ExampleProjectGoal1 proj:hasOutcome proj:ExampleOutcome1 .
+
+proj:ExampleOutcome1 rdf:type proj:Outcome ;
+    proj:measuresImpact proj:ExampleImpact .

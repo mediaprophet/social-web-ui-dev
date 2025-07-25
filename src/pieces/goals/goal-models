@@ -1,0 +1,145 @@
+Beyond Maslow's hierarchy of needs, several other models and frameworks can be used to define and structure goals, each offering unique perspectives on motivation, prioritization, and organization. These models can complement or replace Maslow’s categories depending on the context of the Goals Module (personal, professional, work, or project goals) and the desired user experience. Below, I’ll outline key alternative models, their core principles, and how they could be applied to structure goals in the social web app. I’ll keep it concise but comprehensive, drawing on the app’s human-centric, semantic web focus and the SmartHR template’s dashboard-driven design.
+
+### 1. **SMART Goals Framework**
+- **Overview**: SMART is an acronym for Specific, Measurable, Achievable, Relevant, and Time-bound. It’s a widely used model for setting clear, actionable goals across personal and professional contexts.
+- **Core Principles**:
+  - **Specific**: Goals should be clear and well-defined (e.g., “Complete a Python course” vs. “Learn coding”).
+  - **Measurable**: Include criteria to track progress (e.g., “Complete 80% of course modules”).
+  - **Achievable**: Goals should be realistic given resources and constraints.
+  - **Relevant**: Align with broader objectives or values (e.g., career advancement).
+  - **Time-bound**: Set a deadline (e.g., “Finish by December 2025”).
+- **Application in Goals Module**:
+  - **Structure**: Replace Maslow categories with SMART attributes in the goal creation modal (`goals.html`). Fields like “Objective” (Specific), “Progress” (Measurable), “Resource Requirements” (Achievable), “Goal Type” (Relevant), and “Deadline” (Time-bound) can map directly.
+  - **UI**: Dashboard cards could display SMART progress (e.g., “80% of Specific goals met”) or filter goals by SMART criteria (e.g., “Show Time-bound goals due this month”).
+  - **API**: Add SMART attributes to the `/goals` endpoint response (e.g., `"specificity": "Complete Python course", "measurable": 80, "achievable": true`).
+- **Advantages**: Encourages clarity and accountability; widely understood and easy to implement.
+- **Limitations**: Lacks deep motivational or psychological context compared to Maslow; may feel rigid for creative or long-term goals.
+
+### 2. **OKR (Objectives and Key Results)**
+- **Overview**: OKR is a goal-setting framework popularized by Google, focusing on ambitious objectives and measurable key results to track progress.
+- **Core Principles**:
+  - **Objectives**: Qualitative, inspirational goals (e.g., “Become a skilled web developer”).
+  - **Key Results**: Quantitative, measurable outcomes (e.g., “Complete 3 web projects”, “Earn React certification”).
+- **Application in Goals Module**:
+  - **Structure**: Goals could be organized into Objectives (e.g., “Advance career”) with linked Key Results (e.g., “Publish 5 blog posts”, “Attend 2 networking events”). The modal in `work-goals.html` could include fields for Objectives and multiple Key Results.
+  - **UI**: Dashboard (`goals.html`) could show Objectives with progress bars for Key Results completion. Tables in `project-goals.html` could list Key Results tied to project milestones (`proj:achievesMilestone`).
+  - **API**: Extend `/goals` with `"objective": string, "keyResults": [{id: string, description: string, progress: integer}]`.
+- **Advantages**: Aligns ambitious vision with measurable outcomes; ideal for professional and project goals (`work-goals.html`, `project-goals.html`).
+- **Limitations**: May be complex for personal goals (`personal-goals.html`); requires discipline to define measurable results.
+
+### 3. **Self-Determination Theory (SDT)**
+- **Overview**: SDT is a psychological framework focusing on intrinsic motivation through three needs: Autonomy, Competence, and Relatedness.
+- **Core Principles**:
+  - **Autonomy**: Goals driven by personal choice (e.g., “Learn guitar for enjoyment”).
+  - **Competence**: Goals that build skills or mastery (e.g., “Master JavaScript”).
+  - **Relatedness**: Goals fostering connection (e.g., “Join a community project”).
+- **Application in Goals Module**:
+  - **Structure**: Categorize goals by SDT needs instead of Maslow levels. The goal creation modal could include a “Motivation Type” field (Autonomy, Competence, Relatedness). Task discovery in `goals.html` could prioritize tasks matching these needs (e.g., community tasks for Relatedness).
+  - **UI**: Cards in `personal-goals.html` could show goals by SDT category (e.g., “Competence Goals: 10/12”). The AI suggestion banner could recommend tasks based on user motivation (e.g., “Boost Competence with this coding task”).
+  - **API**: Add `"motivationType": string (Autonomy, Competence, Relatedness)` to `/goals` response.
+- **Advantages**: Emphasizes intrinsic motivation, aligning with human-centric design; flexible for personal and social goals.
+- **Limitations**: Less structured for project-specific goals; may require user education on SDT concepts.
+
+### 4. **GROW Model**
+- **Overview**: GROW (Goal, Reality, Options, Will) is a coaching framework for goal-setting and problem-solving, often used in personal development and leadership.
+- **Core Principles**:
+  - **Goal**: Define the desired outcome (e.g., “Run a marathon”).
+  - **Reality**: Assess current situation (e.g., “I run 5km weekly”).
+  - **Options**: Identify possible strategies (e.g., “Join a running club”, “Hire a coach”).
+  - **Will**: Commit to actions (e.g., “Train 4 days/week”).
+- **Application in Goals Module**:
+  - **Structure**: Goal creation modal could include fields for Reality (current state), Options (strategies), and Will (action plan) alongside Goal. The ontologies could extend to include `reality`, `options`, and `will` properties.
+  - **UI**: `personal-goals.html` could display a GROW progress card (e.g., “Will Actions Completed: 3/5”). The table in `goals.html` could include a column for “Next Action” (Will).
+  - **API**: Add `"reality": string, "options": string[], "will": string[]` to `/goals` endpoint.
+- **Advantages**: Supports reflective goal-setting; ideal for personal growth and coaching scenarios.
+- **Limitations**: More process-oriented; may be cumbersome for quick goal entry or project goals.
+
+### 5. **PERMA Model**
+- **Overview**: Developed by Martin Seligman, PERMA is a positive psychology framework focusing on well-being through Positive Emotion, Engagement, Relationships, Meaning, and Accomplishment.
+- **Core Principles**:
+  - **Positive Emotion**: Goals that enhance joy (e.g., “Plan a family vacation”).
+  - **Engagement**: Goals that promote flow (e.g., “Master painting techniques”).
+  - **Relationships**: Goals building connections (e.g., “Mentor a colleague”).
+  - **Meaning**: Goals tied to purpose (e.g., “Volunteer for a cause”).
+  - **Accomplishment**: Goals for achievement (e.g., “Earn a promotion”).
+- **Application in Goals Module**:
+  - **Structure**: Categorize goals by PERMA elements instead of Maslow. The modal in `goals.html` could include a “Well-Being Focus” field (Positive Emotion, etc.). Task discovery could suggest tasks matching PERMA (e.g., volunteering for Meaning).
+  - **UI**: `personal-goals.html` could show PERMA-based metrics (e.g., “Meaning Goals: 5/7”). The AI banner could nudge users toward balanced well-being (e.g., “Add a Relationships goal”).
+  - **API**: Add `"wellBeingFocus": string (PositiveEmotion, Engagement, etc.)` to `/goals` response.
+- **Advantages**: Holistic focus on well-being; aligns with human-centric design.
+- **Limitations**: Less focus on project-specific metrics; may overlap with Maslow for some categories.
+
+### 6. **Wheel of Life**
+- **Overview**: A coaching tool dividing life into categories (e.g., Career, Health, Relationships, Finances, Personal Growth) to assess balance and set goals.
+- **Core Principles**:
+  - Goals are set for each life area to achieve balance (e.g., “Improve fitness” for Health, “Save $5000” for Finances).
+  - Users rate satisfaction (1-10) in each area to identify priorities.
+- **Application in Goals Module**:
+  - **Structure**: Replace Maslow with Wheel of Life categories. The goal creation modal could include a “Life Area” field and a satisfaction rating. The ontology could define `lifeArea` and `satisfactionScore`.
+  - **UI**: `goals.html` could visualize a Wheel of Life chart (using Chart.js, as per your guidelines) showing satisfaction scores and goal counts per area. Tables could filter by life area.
+  - **API**: Add `"lifeArea": string (Career, Health, etc.), "satisfactionScore": integer (1-10)` to `/goals`.
+  - **Example Chart** (if requested):
+    ```chartjs
+    {
+      "type": "radar",
+      "data": {
+        "labels": ["Career", "Health", "Relationships", "Finances", "Personal Growth"],
+        "datasets": [{
+          "label": "Satisfaction Score",
+          "data": [8, 6, 7, 4, 9],
+          "backgroundColor": "rgba(54, 162, 235, 0.2)",
+          "borderColor": "#36A2EB",
+          "borderWidth": 2
+        }]
+      },
+      "options": {
+        "scale": {
+          "ticks": { "beginAtZero": true, "max": 10 }
+        },
+        "responsive": true
+      }
+    }
+    ```
+- **Advantages**: Visual and intuitive for balancing life areas; user-friendly for personal goals.
+- **Limitations**: Less suited for project-specific goals; requires user input for satisfaction ratings.
+
+### 7. **Value-Based Goal Setting (Schwartz’s Theory of Basic Values)**
+- **Overview**: Based on Shalom Schwartz’s theory, goals are aligned with universal human values like Achievement, Benevolence, Security, Self-Direction, or Universalism.
+- **Core Principles**:
+  - Goals reflect core values (e.g., “Volunteer for charity” for Benevolence, “Start a business” for Self-Direction).
+  - Prioritization depends on the user’s dominant values.
+- **Application in Goals Module**:
+  - **Structure**: Categorize goals by Schwartz’s values. The modal could include a “Core Value” field. The ontology could define `coreValue`.
+  - **UI**: `personal-goals.html` could show value-based metrics (e.g., “Benevolence Goals: 3/5”). Task discovery could match tasks to values (e.g., charity tasks for Universalism).
+  - **API**: Add `"coreValue": string (Achievement, Benevolence, etc.)` to `/goals`.
+- **Advantages**: Deeply personalizes goals; supports diverse motivations.
+- **Limitations**: Complex for users unfamiliar with value theory; less project-focused.
+
+### 8. **Time-Based Framework (Short-Term, Mid-Term, Long-Term)**
+- **Overview**: Goals are categorized by time horizon to balance immediate and future aspirations.
+- **Core Principles**:
+  - **Short-Term**: Achievable within weeks/months (e.g., “Complete a course”).
+  - **Mid-Term**: 6 months to 2 years (e.g., “Earn a promotion”).
+  - **Long-Term**: 2+ years (e.g., “Become a senior developer”).
+- **Application in Goals Module**:
+  - **Structure**: Categorize goals by time horizon. The modal could include a “Time Horizon” field. The ontology could define `timeHorizon`.
+  - **UI**: `goals.html` could show time-based metrics (e.g., “Short-Term Goals: 20/25”). The table could sort by deadline proximity.
+  - **API**: Add `"timeHorizon": string (ShortTerm, MidTerm, LongTerm)` to `/goals`.
+- **Advantages**: Simple and intuitive; supports planning across timeframes.
+- **Limitations**: Lacks motivational depth; may not address project complexity.
+
+### Comparison and Recommendations
+- **For Personal Goals (`personal-goals.html`)**: SDT, PERMA, or Wheel of Life are ideal due to their focus on well-being and balance, aligning with the app’s human-centric design.
+- **For Work/Professional Goals (`work-goals.html`)**: OKR or SMART are best for measurable outcomes and alignment with project milestones.
+- **For Project Goals (`project-goals.html`)**: OKR or GROW suit structured initiatives with milestones (`proj:achievesMilestone`) and outcomes (`proj:hasOutcome`).
+- **Hybrid Approach**: Combine frameworks (e.g., SMART for structure, SDT for motivation) to create a flexible system. The modal could allow users to select a framework or mix attributes (e.g., Maslow + SMART).
+
+### API Implications
+To support alternative models, the `/goals` endpoint should include a flexible `"framework"` field (e.g., `"framework": "SMART"`) and model-specific attributes (e.g., `"keyResults"` for OKR, `"motivationType"` for SDT). The `/goal-types` endpoint could define framework-specific types (e.g., `"type": "CompetenceGoal", "framework": "SDT"`).
+
+### Next Steps
+If you’d like, I can:
+- Deep-dive into one model (e.g., OKR) with detailed UI/API changes.
+- Update the ontologies (`goals.ttl`, `project-goals.ttl`) to include a specific model’s properties.
+- Modify `goals.html` or other pages to implement a chosen framework.
+Which model resonates most with your vision for the Goals Module, or do you want to explore a hybrid approach?

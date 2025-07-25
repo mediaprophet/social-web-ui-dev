@@ -1,0 +1,90 @@
+# IPFS as a subclass and instance of Protocol
+:IPFS a owl:Class ;
+	rdfs:subClassOf :Protocol ;
+	rdfs:label "IPFS Protocol" ;
+	rdfs:comment "InterPlanetary File System protocol for distributed file storage and sharing." .
+
+:ipfs a :IPFS, :Protocol ;
+	:protocolName "IPFS" ;
+	:description "InterPlanetary File System protocol for distributed file storage and sharing." ;
+	:hasSpecification :ipfsSpec .
+
+:ipfsSpec a :Specification ;
+	:specificationURL <https://specs.ipfs.tech/> .
+
+# OrbitDB as a subclass and instance of Protocol
+:OrbitDB a owl:Class ;
+	rdfs:subClassOf :Protocol ;
+	rdfs:label "OrbitDB Protocol" ;
+	rdfs:comment "A distributed peer-to-peer database protocol built on top of IPFS." .
+
+:orbitdb a :OrbitDB, :Protocol ;
+	:protocolName "OrbitDB" ;
+	:description "A distributed peer-to-peer database protocol built on top of IPFS." ;
+	:hasSpecification :orbitdbSpec .
+
+:orbitdbSpec a :Specification ;
+	:specificationURL <https://github.com/orbitdb/orbit-db/blob/main/DEVELOPMENT.md> .
+
+@prefix : <http://example.org/protocol#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# Top-level Protocol Ontology
+#
+
+# Classes
+:Protocol a owl:Class ;
+	rdfs:label "Protocol" ;
+	rdfs:comment "A formal set of rules for communication or interaction between entities." .
+
+:Specification a owl:Class ;
+	rdfs:label "Specification" ;
+	rdfs:comment "A document or resource that describes a protocol." .
+
+# Object Properties
+:hasSpecification a owl:ObjectProperty ;
+	rdfs:domain :Protocol ;
+	rdfs:range :Specification ;
+	rdfs:label "has specification" .
+
+:extendsProtocol a owl:ObjectProperty ;
+	rdfs:domain :Protocol ;
+	rdfs:range :Protocol ;
+	rdfs:label "extends protocol" ;
+	rdfs:comment "Indicates that a protocol is an extension or specialization of another protocol." .
+
+# Data Properties
+:protocolName a owl:DatatypeProperty ;
+	rdfs:domain :Protocol ;
+	rdfs:range xsd:string ;
+	rdfs:label "protocol name" .
+
+:description a owl:DatatypeProperty ;
+	rdfs:domain :Protocol ;
+	rdfs:range xsd:string ;
+	rdfs:label "description" .
+
+:specificationURL a owl:DatatypeProperty ;
+	rdfs:domain :Specification ;
+	rdfs:range xsd:anyURI ;
+	rdfs:label "specification URL" .
+
+# Example Individuals
+
+# WebRTC as a subclass and instance of Protocol
+:WebRTC a owl:Class ;
+	rdfs:subClassOf :Protocol ;
+	rdfs:label "WebRTC Protocol" ;
+	rdfs:comment "Web Real-Time Communication protocol for peer-to-peer audio, video, and data." .
+
+:webrtc a :WebRTC, :Protocol ;
+	:protocolName "WebRTC" ;
+	:description "Web Real-Time Communication protocol for peer-to-peer audio, video, and data." ;
+	:hasSpecification :webrtcSpec .
+
+:webrtcSpec a :Specification ;
+	:specificationURL <https://www.w3.org/TR/webrtc/> .

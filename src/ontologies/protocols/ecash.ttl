@@ -1,0 +1,90 @@
+@prefix : <http://example.org/ecash#> .
+@prefix proto: <http://example.org/protocol#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# eCash (Bitcoin ABC) Protocol Ontology
+:eCash a owl:Class ;
+	rdfs:subClassOf proto:Protocol ;
+	rdfs:label "eCash Protocol" ;
+	rdfs:comment "A blockchain protocol for eCash (Bitcoin ABC), incorporating Avalanche consensus." .
+
+# Core Entities
+:Node a owl:Class ;
+	rdfs:label "Node" ;
+	rdfs:comment "A node in the eCash network." .
+
+:Block a owl:Class ;
+	rdfs:label "Block" ;
+	rdfs:comment "A block in the eCash blockchain." .
+
+:Transaction a owl:Class ;
+	rdfs:label "Transaction" ;
+	rdfs:comment "A transaction in the eCash blockchain." .
+
+:Address a owl:Class ;
+	rdfs:label "Address" ;
+	rdfs:comment "A blockchain address in eCash." .
+
+:AvalancheVote a owl:Class ;
+	rdfs:label "Avalanche Vote" ;
+	rdfs:comment "A vote in the Avalanche consensus protocol." .
+
+# Object Properties
+:hasNode a owl:ObjectProperty ;
+	rdfs:domain :eCash ;
+	rdfs:range :Node ;
+	rdfs:label "has node" .
+
+:hasBlock a owl:ObjectProperty ;
+	rdfs:domain :Node ;
+	rdfs:range :Block ;
+	rdfs:label "has block" .
+
+:hasTransaction a owl:ObjectProperty ;
+	rdfs:domain :Block ;
+	rdfs:range :Transaction ;
+	rdfs:label "has transaction" .
+
+:hasAddress a owl:ObjectProperty ;
+	rdfs:domain :Transaction ;
+	rdfs:range :Address ;
+	rdfs:label "has address" .
+
+:hasAvalancheVote a owl:ObjectProperty ;
+	rdfs:domain :Node ;
+	rdfs:range :AvalancheVote ;
+	rdfs:label "has avalanche vote" .
+
+# Data Properties
+:blockHash a owl:DatatypeProperty ;
+	rdfs:domain :Block ;
+	rdfs:range xsd:string ;
+	rdfs:label "block hash" .
+
+:txId a owl:DatatypeProperty ;
+	rdfs:domain :Transaction ;
+	rdfs:range xsd:string ;
+	rdfs:label "transaction id" .
+
+:addressString a owl:DatatypeProperty ;
+	rdfs:domain :Address ;
+	rdfs:range xsd:string ;
+	rdfs:label "address string" .
+
+:voteId a owl:DatatypeProperty ;
+	rdfs:domain :AvalancheVote ;
+	rdfs:range xsd:string ;
+	rdfs:label "vote id" .
+
+# Example Individuals
+:node1 a :Node ;
+	:hasBlock :block1 ;
+	:hasAvalancheVote :vote1 .
+
+:block1 a :Block ; :blockHash "000000000000..." ; :hasTransaction :tx1 .
+:tx1 a :Transaction ; :txId "tx123" ; :hasAddress :addr1 .
+:addr1 a :Address ; :addressString "ecash:qq..." .
+:vote1 a :AvalancheVote ; :voteId "avalanche-vote-001" .

@@ -1,0 +1,199 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix goals: <http://example.org/goals#> .
+@prefix maslow: <http://example.org/maslow#> .
+
+goals:Ontology rdf:type owl:Ontology ;
+    rdfs:label "Goals Ontology" ;
+    rdfs:comment "An ontology for defining and structuring goals, incorporating Maslow's hierarchy of needs, with support for personal, professional, tasks, projects, and collaborations." ;
+    owl:versionInfo "1.0" .
+
+# Classes
+
+goals:Goal rdf:type owl:Class ;
+    rdfs:label "Goal" ;
+    rdfs:comment "A desired outcome or objective that a person or group aims to achieve." ;
+    rdfs:subClassOf owl:Thing .
+
+goals:PersonalGoal rdf:type owl:Class ;
+    rdfs:label "Personal Goal" ;
+    rdfs:comment "A goal related to individual life, health, welfare, or self-improvement." ;
+    rdfs:subClassOf goals:Goal .
+
+goals:ProfessionalGoal rdf:type owl:Class ;
+    rdfs:label "Professional Goal" ;
+    rdfs:comment "A goal related to work, income, learning, or career development." ;
+    rdfs:subClassOf goals:Goal .
+
+goals:SocioeconomicGoal rdf:type owl:Class ;
+    rdfs:label "Socioeconomic Goal" ;
+    rdfs:comment "A goal considering economic and social factors, such as equity or community impact." ;
+    rdfs:subClassOf goals:Goal .
+
+goals:HumanitarianGoal rdf:type owl:Class ;
+    rdfs:label "Humanitarian Goal" ;
+    rdfs:comment "A goal aimed at alleviating suffering or promoting global good." ;
+    rdfs:subClassOf goals:Goal .
+
+goals:Task rdf:type owl:Class ;
+    rdfs:label "Task" ;
+    rdfs:comment "A specific action or set of actions required to achieve a goal." ;
+    rdfs:subClassOf owl:Thing .
+
+goals:Project rdf:type owl:Class ;
+    rdfs:label "Project" ;
+    rdfs:comment "A collection of tasks and goals, often collaborative, with a defined scope and timeline." ;
+    rdfs:subClassOf owl:Thing .
+
+goals:Collaboration rdf:type owl:Class ;
+    rdfs:label "Collaboration" ;
+    rdfs:comment "A joint effort between individuals or groups on tasks or projects." ;
+    rdfs:subClassOf owl:Thing .
+
+goals:Priority rdf:type owl:Class ;
+    rdfs:label "Priority" ;
+    rdfs:comment "The level of importance assigned to a goal or task." .
+
+goals:HighPriority rdf:type goals:Priority ;
+    rdfs:label "High Priority" .
+
+goals:MediumPriority rdf:type goals:Priority ;
+    rdfs:label "Medium Priority" .
+
+goals:LowPriority rdf:type goals:Priority ;
+    rdfs:label "Low Priority" .
+
+goals:Dependency rdf:type owl:Class ;
+    rdfs:label "Dependency" ;
+    rdfs:comment "A relationship where one goal or task relies on the completion of another." .
+
+maslow:NeedLevel rdf:type owl:Class ;
+    rdfs:label "Maslow Need Level" ;
+    rdfs:comment "Levels from Maslow's hierarchy of needs." .
+
+maslow:Physiological rdf:type maslow:NeedLevel ;
+    rdfs:label "Physiological" ;
+    rdfs:comment "Basic biological requirements for survival." .
+
+maslow:Safety rdf:type maslow:NeedLevel ;
+    rdfs:label "Safety" ;
+    rdfs:comment "Need for security and stability." .
+
+maslow:Belonging rdf:type maslow:NeedLevel ;
+    rdfs:label "Belonging" ;
+    rdfs:comment "Need for interpersonal relationships and connection." .
+
+maslow:Esteem rdf:type maslow:NeedLevel ;
+    rdfs:label "Esteem" ;
+    rdfs:comment "Need for respect, self-esteem, and achievement." .
+
+maslow:Cognitive rdf:type maslow:NeedLevel ;
+    rdfs:label "Cognitive" ;
+    rdfs:comment "Need for knowledge and understanding." .
+
+maslow:Aesthetic rdf:type maslow:NeedLevel ;
+    rdfs:label "Aesthetic" ;
+    rdfs:comment "Need for beauty and harmony." .
+
+maslow:SelfActualization rdf:type maslow:NeedLevel ;
+    rdfs:label "Self-Actualization" ;
+    rdfs:comment "Realization of one's full potential." .
+
+maslow:Transcendence rdf:type maslow:NeedLevel ;
+    rdfs:label "Transcendence" ;
+    rdfs:comment "Going beyond oneself, altruism, spirituality." .
+
+# Properties
+
+goals:hasTitle rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Title" ;
+    rdfs:domain goals:Goal ;
+    rdfs:range xsd:string .
+
+goals:hasDescription rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Description" ;
+    rdfs:domain goals:Goal ;
+    rdfs:range xsd:string .
+
+goals:achievesNeed rdf:type owl:ObjectProperty ;
+    rdfs:label "achieves Need" ;
+    rdfs:domain goals:Goal ;
+    rdfs:range maslow:NeedLevel ;
+    rdfs:comment "Links a goal to the Maslow need level it fulfills." .
+
+goals:hasPriority rdf:type owl:ObjectProperty ;
+    rdfs:label "has Priority" ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf (goals:Goal goals:Task) ] ;
+    rdfs:range goals:Priority .
+
+goals:dependsOn rdf:type owl:ObjectProperty ;
+    rdfs:label "depends On" ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf (goals:Goal goals:Task) ] ;
+    rdfs:range goals:Dependency ;
+    rdfs:comment "Indicates a dependency on another goal or task." .
+
+goals:hasTask rdf:type owl:ObjectProperty ;
+    rdfs:label "has Task" ;
+    rdfs:domain goals:Goal ;
+    rdfs:range goals:Task ;
+    rdfs:comment "Associates tasks with a goal." .
+
+goals:partOfProject rdf:type owl:ObjectProperty ;
+    rdfs:label "part Of Project" ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf (goals:Goal goals:Task) ] ;
+    rdfs:range goals:Project .
+
+goals:involvesCollaboration rdf:type owl:ObjectProperty ;
+    rdfs:label "involves Collaboration" ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf (goals:Project goals:Task) ] ;
+    rdfs:range goals:Collaboration .
+
+goals:hasProgress rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Progress" ;
+    rdfs:domain goals:Goal ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Progress percentage (0-100)." .
+
+goals:hasDeadline rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Deadline" ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf (goals:Goal goals:Task goals:Project) ] ;
+    rdfs:range xsd:dateTime .
+
+goals:isPersonal rdf:type owl:DatatypeProperty ;
+    rdfs:label "is Personal" ;
+    rdfs:domain goals:Goal ;
+    rdfs:range xsd:boolean .
+
+goals:isProfessional rdf:type owl:DatatypeProperty ;
+    rdfs:label "is Professional" ;
+    rdfs:domain goals:Goal ;
+    rdfs:range xsd:boolean .
+
+goals:isSocioeconomic rdf:type owl:DatatypeProperty ;
+    rdfs:label "is Socioeconomic" ;
+    rdfs:domain goals:Goal ;
+    rdfs:range xsd:boolean .
+
+goals:isHumanitarian rdf:type owl:DatatypeProperty ;
+    rdfs:label "is Humanitarian" ;
+    rdfs:domain goals:Goal ;
+    rdfs:range xsd:boolean .
+
+# Example Instances (Optional, for illustration)
+
+goals:ExampleGoal1 rdf:type goals:PersonalGoal ;
+    goals:hasTitle "Improve Physical Health" ;
+    goals:hasDescription "Exercise daily and eat balanced meals." ;
+    goals:achievesNeed maslow:Physiological ;
+    goals:hasPriority goals:HighPriority ;
+    goals:hasProgress 50 ;
+    goals:isPersonal true .
+
+goals:ExampleTask1 rdf:type goals:Task ;
+    goals:hasTitle "Run 5km" ;
+    goals:hasDescription "Daily jogging routine." ;
+    goals:hasPriority goals:MediumPriority .
+
+goals:ExampleGoal1 goals:hasTask goals:ExampleTask1 .

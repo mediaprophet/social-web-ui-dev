@@ -1,0 +1,122 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix goals: <http://example.org/goals#> .
+@prefix slicingpie: <http://example.org/slicingpie-goals#> .
+
+slicingpie:Ontology rdf:type owl:Ontology ;
+    owl:imports goals:Ontology ;
+    rdfs:label "Slicing Pie Goals Ontology" ;
+    rdfs:comment "An ontology for structuring goals using the Slicing Pie model for dynamic equity allocation based on contributions." ;
+    owl:versionInfo "1.0" .
+
+# Classes
+slicingpie:SlicingPieGoal rdf:type owl:Class ;
+    rdfs:label "Slicing Pie Goal" ;
+    rdfs:comment "A goal structured using the Slicing Pie model, focusing on contribution-based equity." ;
+    rdfs:subClassOf goals:Goal .
+
+slicingpie:Contribution rdf:type owl:Class ;
+    rdfs:label "Contribution" ;
+    rdfs:comment "An input to the project, such as time, cash, IP, etc., valued at fair market rate." ;
+    rdfs:subClassOf owl:Thing .
+
+slicingpie:Contributor rdf:type owl:Class ;
+    rdfs:label "Contributor" ;
+    rdfs:comment "An individual or entity making contributions to the goal." ;
+    rdfs:subClassOf owl:Thing .
+
+slicingpie:Slice rdf:type owl:Class ;
+    rdfs:label "Slice" ;
+    rdfs:comment "A proportional share of equity based on contributions." ;
+    rdfs:subClassOf owl:Thing .
+
+slicingpie:ContributionType rdf:type owl:Class ;
+    rdfs:label "Contribution Type" ;
+    rdfs:comment "Types of contributions in Slicing Pie." .
+
+slicingpie:Time rdf:type slicingpie:ContributionType ;
+    rdfs:label "Time" .
+
+slicingpie:Cash rdf:type slicingpie:ContributionType ;
+    rdfs:label "Cash" .
+
+slicingpie:IntellectualProperty rdf:type slicingpie:ContributionType ;
+    rdfs:label "Intellectual Property" .
+
+slicingpie:Facilities rdf:type slicingpie:ContributionType ;
+    rdfs:label "Facilities" .
+
+slicingpie:Supplies rdf:type slicingpie:ContributionType ;
+    rdfs:label "Supplies" .
+
+slicingpie:Ideas rdf:type slicingpie:ContributionType ;
+    rdfs:label "Ideas" .
+
+# Properties
+slicingpie:hasContribution rdf:type owl:ObjectProperty ;
+    rdfs:label "has Contribution" ;
+    rdfs:domain slicingpie:SlicingPieGoal ;
+    rdfs:range slicingpie:Contribution ;
+    rdfs:comment "Links the goal to its contributions." .
+
+slicingpie:madeBy rdf:type owl:ObjectProperty ;
+    rdfs:label "made By" ;
+    rdfs:domain slicingpie:Contribution ;
+    rdfs:range slicingpie:Contributor ;
+    rdfs:comment "The contributor who made the contribution." .
+
+slicingpie:hasContributionType rdf:type owl:ObjectProperty ;
+    rdfs:label "has Contribution Type" ;
+    rdfs:domain slicingpie:Contribution ;
+    rdfs:range slicingpie:ContributionType ;
+    rdfs:comment "The type of contribution." .
+
+slicingpie:hasFairMarketValue rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Fair Market Value" ;
+    rdfs:domain slicingpie:Contribution ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The fair market value of the contribution." .
+
+slicingpie:hasGruntValue rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Grunt Value" ;
+    rdfs:domain slicingpie:Contribution ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The grunt unit value of the contribution." .
+
+slicingpie:calculatesSlice rdf:type owl:ObjectProperty ;
+    rdfs:label "calculates Slice" ;
+    rdfs:domain slicingpie:SlicingPieGoal ;
+    rdfs:range slicingpie:Slice ;
+    rdfs:comment "The equity slice calculated based on contributions." .
+
+slicingpie:sliceProportion rdf:type owl:DatatypeProperty ;
+    rdfs:label "slice Proportion" ;
+    rdfs:domain slicingpie:Slice ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The proportional share of equity (0-1)." .
+
+slicingpie:hasBuyoutProvision rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Buyout Provision" ;
+    rdfs:domain slicingpie:SlicingPieGoal ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Provisions for buyouts or breakups." .
+
+# Example Instance
+slicingpie:ExampleSlicingPieGoal rdf:type slicingpie:SlicingPieGoal ;
+    goals:hasTitle "Startup Equity Allocation" ;
+    slicingpie:hasContribution slicingpie:ExampleContribution1 ;
+    slicingpie:calculatesSlice slicingpie:ExampleSlice1 .
+
+slicingpie:ExampleContribution1 rdf:type slicingpie:Contribution ;
+    slicingpie:madeBy slicingpie:ExampleContributor1 ;
+    slicingpie:hasContributionType slicingpie:Time ;
+    slicingpie:hasFairMarketValue "50000"^^xsd:decimal ;
+    slicingpie:hasGruntValue "100000"^^xsd:decimal .
+
+slicingpie:ExampleContributor1 rdf:type slicingpie:Contributor ;
+    rdfs:label "John Doe" .
+
+slicingpie:ExampleSlice1 rdf:type slicingpie:Slice ;
+    slicingpie:sliceProportion "0.5"^^xsd:decimal .

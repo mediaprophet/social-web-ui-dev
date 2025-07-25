@@ -1,0 +1,128 @@
+
+@prefix : <http://example.org/todo#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:ToDoItem a owl:Class ;
+	rdfs:label "To-Do Item" ;
+	rdfs:comment "A task or item to be completed." .
+
+:User a owl:Class ;
+	rdfs:label "User" ;
+	rdfs:comment "A person who creates or is assigned to a to-do item." .
+
+:Priority a owl:Class ;
+	rdfs:label "Priority" ;
+	rdfs:comment "The importance level of a to-do item." .
+
+:Status a owl:Class ;
+	rdfs:label "Status" ;
+	rdfs:comment "The state of a to-do item (e.g., Open, In Progress, Done)." .
+
+:Category a owl:Class ;
+	rdfs:label "Category" ;
+	rdfs:comment "The category of a to-do item (e.g., Personal, Project, Professional, Shopping, Errand, etc.)." .
+
+:Dependency a owl:Class ;
+	rdfs:label "Dependency" ;
+	rdfs:comment "A dependency between to-do items." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:assignedTo a owl:ObjectProperty ;
+	rdfs:domain :ToDoItem ;
+	rdfs:range :User ;
+	rdfs:label "assigned to" .
+
+:hasPriority a owl:ObjectProperty ;
+	rdfs:domain :ToDoItem ;
+	rdfs:range :Priority ;
+	rdfs:label "has priority" .
+
+:hasStatus a owl:ObjectProperty ;
+	rdfs:domain :ToDoItem ;
+	rdfs:range :Status ;
+	rdfs:label "has status" .
+
+:hasCategory a owl:ObjectProperty ;
+	rdfs:domain :ToDoItem ;
+	rdfs:range :Category ;
+	rdfs:label "has category" .
+
+:dependsOn a owl:ObjectProperty ;
+	rdfs:domain :ToDoItem ;
+	rdfs:range :ToDoItem ;
+	rdfs:label "depends on" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:title a owl:DatatypeProperty ;
+	rdfs:domain :ToDoItem ;
+	rdfs:range xsd:string ;
+	rdfs:label "title" .
+
+:description a owl:DatatypeProperty ;
+	rdfs:domain :ToDoItem ;
+	rdfs:range xsd:string ;
+	rdfs:label "description" .
+
+:dueDate a owl:DatatypeProperty ;
+	rdfs:domain :ToDoItem ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "due date" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+# Priorities
+:High a :Priority ; rdfs:label "High" .
+:Medium a :Priority ; rdfs:label "Medium" .
+:Low a :Priority ; rdfs:label "Low" .
+
+# Statuses
+:Open a :Status ; rdfs:label "Open" .
+:InProgress a :Status ; rdfs:label "In Progress" .
+:Done a :Status ; rdfs:label "Done" .
+
+# Categories
+:Personal a :Category ; rdfs:label "Personal" .
+:Project a :Category ; rdfs:label "Project" .
+:Professional a :Category ; rdfs:label "Professional" .
+:Shopping a :Category ; rdfs:label "Shopping" .
+:Errand a :Category ; rdfs:label "Errand" .
+:Health a :Category ; rdfs:label "Health" .
+:Finance a :Category ; rdfs:label "Finance" .
+
+# Users
+:alice a :User ; rdfs:label "Alice" .
+
+# Example To-Do Items
+:todo1 a :ToDoItem ;
+	:title "Buy groceries" ;
+	:description "Milk, eggs, bread, and fruit." ;
+	:dueDate "2025-07-25T18:00:00Z"^^xsd:dateTime ;
+	:assignedTo :alice ;
+	:hasPriority :High ;
+	:hasStatus :Open ;
+	:hasCategory :Shopping .
+
+:todo2 a :ToDoItem ;
+	:title "Prepare project report" ;
+	:description "Compile and submit the monthly project report." ;
+	:dueDate "2025-07-28T12:00:00Z"^^xsd:dateTime ;
+	:assignedTo :alice ;
+	:hasPriority :Medium ;
+	:hasStatus :InProgress ;
+	:hasCategory :Project ;
+	:dependsOn :todo1 .

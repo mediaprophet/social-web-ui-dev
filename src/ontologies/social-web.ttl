@@ -1,0 +1,69 @@
+
+@prefix : <http://example.org/social-web#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Agent a owl:Class ;
+	rdfs:label "Agent" ;
+	rdfs:comment "A user, bot, or system acting on the social web." .
+
+:Protocol a owl:Class ;
+	rdfs:label "Protocol" ;
+	rdfs:comment "A protocol enabling social interactions (e.g., ActivityPub, WebRTC, Matrix, etc.)." .
+
+:Interaction a owl:Class ;
+	rdfs:label "Interaction" ;
+	rdfs:comment "A social action or event mediated by a protocol." .
+
+:Capability a owl:Class ;
+	rdfs:label "Capability" ;
+	rdfs:comment "A feature or permission enabled by a protocol or agent." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:usesProtocol a owl:ObjectProperty ;
+	rdfs:domain :Agent ;
+	rdfs:range :Protocol ;
+	rdfs:label "uses protocol" .
+
+:enablesInteraction a owl:ObjectProperty ;
+	rdfs:domain :Protocol ;
+	rdfs:range :Interaction ;
+	rdfs:label "enables interaction" .
+
+:hasCapability a owl:ObjectProperty ;
+	rdfs:domain :Agent ;
+	rdfs:range :Capability ;
+	rdfs:label "has capability" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:protocolName a owl:DatatypeProperty ;
+	rdfs:domain :Protocol ;
+	rdfs:range xsd:string ;
+	rdfs:label "protocol name" .
+
+:capabilityName a owl:DatatypeProperty ;
+	rdfs:domain :Capability ;
+	rdfs:range xsd:string ;
+	rdfs:label "capability name" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:activitypub a :Protocol ;
+	:protocolName "ActivityPub" .
+
+:alice a :Agent ;
+	:usesProtocol :activitypub .

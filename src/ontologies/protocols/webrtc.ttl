@@ -1,0 +1,117 @@
+
+@prefix : <http://example.org/webrtc#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# WebRTC Ontology: Concepts for Real-Time Communication Protocols
+#
+
+# Classes
+@prefix proto: <http://example.org/protocol#> .
+
+:WebRTC a owl:Class ;
+	rdfs:subClassOf proto:Protocol ;
+	rdfs:label "WebRTC Protocol" ;
+	rdfs:comment "Web Real-Time Communication protocol for peer-to-peer audio, video, and data." .
+
+:WebRTCConnection a owl:Class ;
+	rdfs:label "WebRTC Connection" ;
+	rdfs:comment "A peer-to-peer connection established using WebRTC." .
+
+:Peer a owl:Class ;
+	rdfs:label "Peer" ;
+	rdfs:comment "A participant in a WebRTC connection." .
+
+:MediaStream a owl:Class ;
+	rdfs:label "Media Stream" ;
+	rdfs:comment "A stream of audio, video, or data in a WebRTC session." .
+
+:ICECandidate a owl:Class ;
+	rdfs:label "ICE Candidate" ;
+	rdfs:comment "A network candidate for establishing a WebRTC connection." .
+
+:SDP a owl:Class ;
+	rdfs:label "Session Description Protocol (SDP)" ;
+	rdfs:comment "A session description used in WebRTC signaling." .
+
+:SignalingMessage a owl:Class ;
+	rdfs:label "Signaling Message" ;
+	rdfs:comment "A message exchanged to establish or modify a WebRTC connection." .
+
+# Object Properties
+:hasPeer a owl:ObjectProperty ;
+	rdfs:domain :WebRTCConnection ;
+	rdfs:range :Peer ;
+	rdfs:label "has peer" .
+
+:hasMediaStream a owl:ObjectProperty ;
+	rdfs:domain :WebRTCConnection ;
+	rdfs:range :MediaStream ;
+	rdfs:label "has media stream" .
+
+:hasICECandidate a owl:ObjectProperty ;
+	rdfs:domain :WebRTCConnection ;
+	rdfs:range :ICECandidate ;
+	rdfs:label "has ICE candidate" .
+
+:hasSDP a owl:ObjectProperty ;
+	rdfs:domain :WebRTCConnection ;
+	rdfs:range :SDP ;
+	rdfs:label "has SDP" .
+
+:hasSignalingMessage a owl:ObjectProperty ;
+	rdfs:domain :WebRTCConnection ;
+	rdfs:range :SignalingMessage ;
+	rdfs:label "has signaling message" .
+
+# Data Properties
+:connectionId a owl:DatatypeProperty ;
+	rdfs:domain :WebRTCConnection ;
+	rdfs:range xsd:string ;
+	rdfs:label "connection id" .
+
+:peerId a owl:DatatypeProperty ;
+	rdfs:domain :Peer ;
+	rdfs:range xsd:string ;
+	rdfs:label "peer id" .
+
+:streamType a owl:DatatypeProperty ;
+	rdfs:domain :MediaStream ;
+	rdfs:range xsd:string ;
+	rdfs:label "stream type" ;
+	rdfs:comment "audio, video, or data" .
+
+:candidate a owl:DatatypeProperty ;
+	rdfs:domain :ICECandidate ;
+	rdfs:range xsd:string ;
+	rdfs:label "candidate" .
+
+:sdp a owl:DatatypeProperty ;
+	rdfs:domain :SDP ;
+	rdfs:range xsd:string ;
+	rdfs:label "SDP string" .
+
+:messageType a owl:DatatypeProperty ;
+	rdfs:domain :SignalingMessage ;
+	rdfs:range xsd:string ;
+	rdfs:label "message type" ;
+	rdfs:comment "offer, answer, candidate, etc." .
+
+# Example Individuals
+:conn1 a :WebRTCConnection ;
+	:connectionId "abc123" ;
+	:hasPeer :peerA, :peerB ;
+	:hasMediaStream :stream1 ;
+	:hasICECandidate :ice1 ;
+	:hasSDP :sdp1 ;
+	:hasSignalingMessage :msg1 .
+
+:peerA a :Peer ; :peerId "peerA" .
+:peerB a :Peer ; :peerId "peerB" .
+:stream1 a :MediaStream ; :streamType "video" .
+:ice1 a :ICECandidate ; :candidate "candidate:1 1 UDP 2122252543 192.0.2.1 54400 typ host" .
+:sdp1 a :SDP ; :sdp "v=0..." .
+:msg1 a :SignalingMessage ; :messageType "offer" .

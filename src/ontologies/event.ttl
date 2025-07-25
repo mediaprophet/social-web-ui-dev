@@ -1,0 +1,99 @@
+
+@prefix : <http://example.org/event#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Event a owl:Class ;
+	rdfs:label "Event" ;
+	rdfs:comment "A scheduled occurrence, such as a meeting, appointment, or holiday." .
+
+:Location a owl:Class ;
+	rdfs:label "Location" ;
+	rdfs:comment "The place where an event occurs." .
+
+:Participant a owl:Class ;
+	rdfs:label "Participant" ;
+	rdfs:comment "A person or entity involved in an event." .
+
+:Reminder a owl:Class ;
+	rdfs:label "Reminder" ;
+	rdfs:comment "A notification related to an event." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:hasLocation a owl:ObjectProperty ;
+	rdfs:domain :Event ;
+	rdfs:range :Location ;
+	rdfs:label "has location" .
+
+:hasParticipant a owl:ObjectProperty ;
+	rdfs:domain :Event ;
+	rdfs:range :Participant ;
+	rdfs:label "has participant" .
+
+:hasReminder a owl:ObjectProperty ;
+	rdfs:domain :Event ;
+	rdfs:range :Reminder ;
+	rdfs:label "has reminder" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:title a owl:DatatypeProperty ;
+	rdfs:domain :Event ;
+	rdfs:range xsd:string ;
+	rdfs:label "title" .
+
+:description a owl:DatatypeProperty ;
+	rdfs:domain :Event ;
+	rdfs:range xsd:string ;
+	rdfs:label "description" .
+
+:startTime a owl:DatatypeProperty ;
+	rdfs:domain :Event ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "start time" .
+
+:endTime a owl:DatatypeProperty ;
+	rdfs:domain :Event ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "end time" .
+
+:remindAt a owl:DatatypeProperty ;
+	rdfs:domain :Reminder ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "remind at" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:alice a :Participant ;
+	rdfs:label "Alice" .
+
+:bob a :Participant ;
+	rdfs:label "Bob" .
+
+:room101 a :Location ;
+	rdfs:label "Room 101" .
+
+:reminder1 a :Reminder ;
+	:remindAt "2025-07-25T08:45:00Z"^^xsd:dateTime .
+
+:event1 a :Event ;
+	:title "Team Meeting" ;
+	:description "Weekly sync with the team." ;
+	:startTime "2025-07-25T09:00:00Z"^^xsd:dateTime ;
+	:endTime "2025-07-25T10:00:00Z"^^xsd:dateTime ;
+	:hasParticipant :alice, :bob ;
+	:hasLocation :room101 ;
+	:hasReminder :reminder1 .

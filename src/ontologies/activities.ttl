@@ -1,0 +1,108 @@
+
+@prefix : <http://example.org/activity#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Activity a owl:Class ;
+	rdfs:label "Activity" ;
+	rdfs:comment "An action or set of actions performed by a user or system." .
+
+:User a owl:Class ;
+	rdfs:label "User" ;
+	rdfs:comment "A person or agent performing an activity." .
+
+:ActivityType a owl:Class ;
+	rdfs:label "Activity Type" ;
+	rdfs:comment "The type or category of an activity (e.g., Work, Leisure, Exercise, Social, Digital, etc.)." .
+
+:Context a owl:Class ;
+	rdfs:label "Context" ;
+	rdfs:comment "The context or environment in which an activity occurs." .
+
+:Resource a owl:Class ;
+	rdfs:label "Resource" ;
+	rdfs:comment "A resource used or produced by an activity." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:performedBy a owl:ObjectProperty ;
+	rdfs:domain :Activity ;
+	rdfs:range :User ;
+	rdfs:label "performed by" .
+
+:hasType a owl:ObjectProperty ;
+	rdfs:domain :Activity ;
+	rdfs:range :ActivityType ;
+	rdfs:label "has type" .
+
+:hasContext a owl:ObjectProperty ;
+	rdfs:domain :Activity ;
+	rdfs:range :Context ;
+	rdfs:label "has context" .
+
+:usesResource a owl:ObjectProperty ;
+	rdfs:domain :Activity ;
+	rdfs:range :Resource ;
+	rdfs:label "uses resource" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:title a owl:DatatypeProperty ;
+	rdfs:domain :Activity ;
+	rdfs:range xsd:string ;
+	rdfs:label "title" .
+
+:description a owl:DatatypeProperty ;
+	rdfs:domain :Activity ;
+	rdfs:range xsd:string ;
+	rdfs:label "description" .
+
+:startTime a owl:DatatypeProperty ;
+	rdfs:domain :Activity ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "start time" .
+
+:endTime a owl:DatatypeProperty ;
+	rdfs:domain :Activity ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "end time" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+# Activity Types
+:Work a :ActivityType ; rdfs:label "Work" .
+:Leisure a :ActivityType ; rdfs:label "Leisure" .
+:Exercise a :ActivityType ; rdfs:label "Exercise" .
+:Social a :ActivityType ; rdfs:label "Social" .
+:Digital a :ActivityType ; rdfs:label "Digital" .
+
+# Contexts
+:Home a :Context ; rdfs:label "Home" .
+:Office a :Context ; rdfs:label "Office" .
+:Outdoor a :Context ; rdfs:label "Outdoor" .
+:Online a :Context ; rdfs:label "Online" .
+
+# Users
+:alice a :User ; rdfs:label "Alice" .
+
+# Example Activity
+:activity1 a :Activity ;
+	:title "Morning Run" ;
+	:description "Jogging in the park." ;
+	:startTime "2025-07-24T06:30:00Z"^^xsd:dateTime ;
+	:endTime "2025-07-24T07:00:00Z"^^xsd:dateTime ;
+	:performedBy :alice ;
+	:hasType :Exercise ;
+	:hasContext :Outdoor .

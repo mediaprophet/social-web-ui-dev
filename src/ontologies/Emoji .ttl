@@ -1,0 +1,88 @@
+
+@prefix : <http://example.org/emoji#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# Emoji Ontology: Relating Unicode Emojis to Human Sentiments (RDFS)
+#
+
+# Classes
+:Emoji a rdfs:Class ;
+	rdfs:label "Emoji" ;
+	rdfs:comment "A pictographic symbol from the Unicode emoji set." .
+
+:Sentiment a rdfs:Class ;
+	rdfs:label "Sentiment" ;
+	rdfs:comment "A human sentiment or emotion (e.g., joy, sadness, anger, love, surprise, etc.)." .
+
+# Properties
+:representsSentiment a rdfs:Property ;
+	rdfs:domain :Emoji ;
+	rdfs:range :Sentiment ;
+	rdfs:label "represents sentiment" ;
+	rdfs:comment "Relates an emoji to the human sentiment it expresses." .
+
+:unicodeCodepoint a rdfs:Property ;
+	rdfs:domain :Emoji ;
+	rdfs:range xsd:string ;
+	rdfs:label "unicode codepoint" ;
+	rdfs:comment "The Unicode codepoint for the emoji." .
+
+:emojiChar a rdfs:Property ;
+	rdfs:domain :Emoji ;
+	rdfs:range xsd:string ;
+	rdfs:label "emoji character" ;
+	rdfs:comment "The actual emoji character." .
+
+# Example Sentiments
+:Joy a :Sentiment ; rdfs:label "Joy" .
+:Sadness a :Sentiment ; rdfs:label "Sadness" .
+:Anger a :Sentiment ; rdfs:label "Anger" .
+:Love a :Sentiment ; rdfs:label "Love" .
+:Surprise a :Sentiment ; rdfs:label "Surprise" .
+:Fear a :Sentiment ; rdfs:label "Fear" .
+:Disgust a :Sentiment ; rdfs:label "Disgust" .
+
+# Example Emojis
+:grinningFace a :Emoji ;
+	rdfs:label "Grinning Face" ;
+	:emojiChar "😀" ;
+	:unicodeCodepoint "U+1F600" ;
+	:representsSentiment :Joy .
+
+:cryingFace a :Emoji ;
+	rdfs:label "Crying Face" ;
+	:emojiChar "😢" ;
+	:unicodeCodepoint "U+1F622" ;
+	:representsSentiment :Sadness .
+
+:angryFace a :Emoji ;
+	rdfs:label "Angry Face" ;
+	:emojiChar "😠" ;
+	:unicodeCodepoint "U+1F620" ;
+	:representsSentiment :Anger .
+
+:heart a :Emoji ;
+	rdfs:label "Red Heart" ;
+	:emojiChar "❤️" ;
+	:unicodeCodepoint "U+2764" ;
+	:representsSentiment :Love .
+
+:astonishedFace a :Emoji ;
+	rdfs:label "Astonished Face" ;
+	:emojiChar "😲" ;
+	:unicodeCodepoint "U+1F632" ;
+	:representsSentiment :Surprise .
+
+:fearfulFace a :Emoji ;
+	rdfs:label "Fearful Face" ;
+	:emojiChar "😨" ;
+	:unicodeCodepoint "U+1F628" ;
+	:representsSentiment :Fear .
+
+:nauseatedFace a :Emoji ;
+	rdfs:label "Nauseated Face" ;
+	:emojiChar "🤢" ;
+	:unicodeCodepoint "U+1F922" ;
+	:representsSentiment :Disgust .

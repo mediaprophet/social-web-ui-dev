@@ -1,0 +1,112 @@
+
+@prefix : <http://example.org/calendar#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Calendar a owl:Class ;
+	rdfs:label "Calendar" ;
+	rdfs:comment "A collection of events, tasks, and reminders." .
+
+:Event a owl:Class ;
+	rdfs:label "Event" ;
+	rdfs:comment "A scheduled occurrence on a calendar." .
+
+:Reminder a owl:Class ;
+	rdfs:label "Reminder" ;
+	rdfs:comment "A notification for an upcoming event or task." .
+
+:User a owl:Class ;
+	rdfs:label "User" ;
+	rdfs:comment "A person who owns or shares a calendar." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:hasEvent a owl:ObjectProperty ;
+	rdfs:domain :Calendar ;
+	rdfs:range :Event ;
+	rdfs:label "has event" .
+
+:hasReminder a owl:ObjectProperty ;
+	rdfs:domain :Calendar ;
+	rdfs:range :Reminder ;
+	rdfs:label "has reminder" .
+
+:ownedBy a owl:ObjectProperty ;
+	rdfs:domain :Calendar ;
+	rdfs:range :User ;
+	rdfs:label "owned by" .
+
+:sharedWith a owl:ObjectProperty ;
+	rdfs:domain :Calendar ;
+	rdfs:range :User ;
+	rdfs:label "shared with" .
+
+:eventFor a owl:ObjectProperty ;
+	rdfs:domain :Event ;
+	rdfs:range :User ;
+	rdfs:label "event for" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:title a owl:DatatypeProperty ;
+	rdfs:domain :Event ;
+	rdfs:range xsd:string ;
+	rdfs:label "title" .
+
+:description a owl:DatatypeProperty ;
+	rdfs:domain :Event ;
+	rdfs:range xsd:string ;
+	rdfs:label "description" .
+
+:startTime a owl:DatatypeProperty ;
+	rdfs:domain :Event ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "start time" .
+
+:endTime a owl:DatatypeProperty ;
+	rdfs:domain :Event ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "end time" .
+
+:remindAt a owl:DatatypeProperty ;
+	rdfs:domain :Reminder ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "remind at" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:alice a :User ;
+	rdfs:label "Alice" .
+
+:bob a :User ;
+	rdfs:label "Bob" .
+
+:workCalendar a :Calendar ;
+	rdfs:label "Work Calendar" ;
+	:ownedBy :alice ;
+	:sharedWith :bob .
+
+:event1 a :Event ;
+	:title "Team Meeting" ;
+	:description "Weekly sync with the team." ;
+	:startTime "2025-07-25T09:00:00Z"^^xsd:dateTime ;
+	:endTime "2025-07-25T10:00:00Z"^^xsd:dateTime ;
+	:eventFor :alice, :bob .
+
+:reminder1 a :Reminder ;
+	:remindAt "2025-07-25T08:45:00Z"^^xsd:dateTime .
+
+:workCalendar :hasEvent :event1 ;
+	:hasReminder :reminder1 .

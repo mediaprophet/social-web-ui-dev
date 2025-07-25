@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="Smarthr - Bootstrap Admin Template">
+	<meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
+	<meta name="author" content="Dreams technologies - Bootstrap Admin Template">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Smarthr Admin Template - Achievements Dashboard</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="/src/assets/img/favicon.png">
+
+	<!-- Apple Touch Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/src/assets/img/apple-touch-icon.png">
+
+	<!-- Theme Script js -->
+	<script src="/src/assets/js/theme-script.js"></script>
+
+	<!-- Feather CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/icons/feather/feather.css">
+
+	<!-- Tabler Icon CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/tabler-icons/tabler-icons.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="/src/assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="/src/assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- Flowbite CSS -->
+	<link rel="stylesheet" href="/src/assets/css/flowbite.min.css">
+
+	<!-- Datatable CSS -->
+	<link rel="stylesheet" href="/src/assets/css/dataTables.tailwindcss.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/select2/css/select2.min.css">
+
+	<!-- Summernote CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/summernote/summernote-lite.min.css">
+
+	<!-- Daterangepicker CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/daterangepicker/daterangepicker.css">
+
+	<!-- Bootstrap Tagsinput CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
+
+	<!-- Color Picker CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/flatpickr/flatpickr.min.css">
+	<link rel="stylesheet" href="/src/assets/plugins/@simonwep/pickr/themes/nano.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="/dist/style.css">
+</head>
+
+<body>
+	<div id="global-loader" style="display: none;">
+		<div class="page-loader"></div>
+	</div>
+
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+	<!-- Page Wrapper -->
+		<div class="page-wrapper relative pt-[50px] ml-[252px]">
+			<div class="content p-6">
+
+				<!-- Breadcrumb -->
+				<div class="md:flex block items-center justify-between page-breadcrumb mb-4">
+					<div class="my-auto mb-2">
+						<h2 class="mb-1">Achievements Dashboard</h2>
+						<nav class="flex" aria-label="Breadcrumb">
+							<ol class="inline-flex items-center space-x-1 md:space-x-2">
+								<li class="inline-flex items-center">
+									<a href="index.html" class="inline-flex items-center text-xs text-gray-500 hover:text-primary">
+										<i class="ti ti-smart-home"></i>
+									</a>
+								</li>
+								<li>
+									<span class="text-default">/</span>
+								</li>
+								<li class="text-xs text-gray-900">Achievements</li>
+							</ol>
+						</nav>
+					</div>
+					<div class="flex my-xl-auto right-content items-center flex-wrap">
+						<div class="me-2 mb-2">
+							<a href="javascript:void(0);" class="border rounded p-2 bg-white inline-flex items-center" data-dropdown-toggle="export-dropdown">
+								<i class="ti ti-file-export me-1"></i>Export<i class="ti ti-chevron-down ml-1"></i>
+							</a>
+							<ul id="export-dropdown" class="hidden p-4 border rounded bg-white shadow-lg">
+								<li>
+									<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">
+										<i class="ti ti-file-type-pdf me-1"></i>Export as PDF
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">
+										<i class="ti ti-file-type-xls me-1"></i>Export as Excel
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="mb-2">
+							<a href="goals.html" class="flex items-center bg-primary text-sm font-medium py-2 rounded text-white px-3 hover:bg-primary-900 hover:text-white">
+								<i class="ti ti-target me-2"></i>All Goals
+							</a>
+						</div>
+						<div class="mb-2">
+							<a href="personal-goals.html" class="flex items-center bg-primary text-sm font-medium py-2 rounded text-white px-3 hover:bg-primary-900 hover:text-white">
+								<i class="ti ti-user me-2"></i>Personal Goals
+							</a>
+						</div>
+						<div class="mb-2">
+							<a href="work-goals.html" class="flex items-center bg-primary text-sm font-medium py-2 rounded text-white px-3 hover:bg-primary-900 hover:text-white">
+								<i class="ti ti-briefcase me-2"></i>Work Goals
+							</a>
+						</div>
+						<div class="mb-2">
+							<a href="project-goals.html" class="flex items-center bg-primary text-sm font-medium py-2 rounded text-white px-3 hover:bg-primary-900 hover:text-white">
+								<i class="ti ti-clipboard me-2"></i>Project Goals
+							</a>
+						</div>
+						<div class="head-icons ml-2 mb-2">
+							<a href="javascript:void(0);" class="border flex items-center justify-center rounded bg-white w-9 h-9 hover:bg-primary hover:text-white hover:border-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Collapse" id="collapse-header">
+								<i class="ti ti-chevrons-up"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- /Breadcrumb -->
+
+				<!-- AI Suggestion Banner -->
+				<div class="bg-yellow-100 p-4 rounded-lg mb-4">
+					<p class="text-sm font-medium text-yellow-800">
+						AI Suggestion: You’re close to earning the “Team Leader” achievement for PRO-001. Complete one more milestone to unlock it!
+					</p>
+				</div>
+
+				<!-- Metrics Cards -->
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+					<div class="bg-white p-4 rounded-lg shadow-md">
+						<h3 class="text-lg font-semibold">Total Achievements</h3>
+						<p class="text-2xl font-bold">25/30 <span class="text-green-500 text-sm">+8.0%</span></p>
+						<a href="#" class="text-blue-500 text-sm hover:underline">View Details</a>
+					</div>
+					<div class="bg-white p-4 rounded-lg shadow-md">
+						<h3 class="text-lg font-semibold">Personal Achievements</h3>
+						<p class="text-2xl font-bold">10/12 <span class="text-green-500 text-sm">+5.0%</span></p>
+						<a href="personal-goals.html" class="text-blue-500 text-sm hover:underline">View Details</a>
+					</div>
+					<div class="bg-white p-4 rounded-lg shadow-md">
+						<h3 class="text-lg font-semibold">Work Achievements</h3>
+						<p class="text-2xl font-bold">8/10 <span class="text-red-500 text-sm">-2.0%</span></p>
+						<a href="work-goals.html" class="text-blue-500 text-sm hover:underline">View Details</a>
+					</div>
+					<div class="bg-white p-4 rounded-lg shadow-md">
+						<h3 class="text-lg font-semibold">Project Achievements</h3>
+						<p class="text-2xl font-bold">7/8 <span class="text-green-500 text-sm">+3.5%</span></p>
+						<a href="project-goals.html" class="text-blue-500 text-sm hover:underline">View Details</a>
+					</div>
+				</div>
+
+				<!-- Achievements by Type -->
+				<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+					<h3 class="text-lg font-semibold mb-2">Achievements by Type</h3>
+					<p class="text-sm text-gray-500 mb-2">Achievements earned increased by +12% from last week</p>
+					<p class="text-2xl font-bold mb-4">Total Achievements: 25</p>
+					<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+						<div>
+							<p class="text-sm">Goal Completion (40%)</p>
+							<div class="bg-gray-200 h-2 rounded-full">
+								<div class="bg-blue-500 h-2 rounded-full" style="width: 40%"></div>
+							</div>
+							<p class="text-sm font-medium">10 Achievements</p>
+						</div>
+						<div>
+							<p class="text-sm">Milestone Achieved (28%)</p>
+							<div class="bg-gray-200 h-2 rounded-full">
+								<div class="bg-green-500 h-2 rounded-full" style="width: 28%"></div>
+							</div>
+							<p class="text-sm font-medium">7 Achievements</p>
+						</div>
+						<div>
+							<p class="text-sm">Contribution Recognized (20%)</p>
+							<div class="bg-gray-200 h-2 rounded-full">
+								<div class="bg-yellow-500 h-2 rounded-full" style="width: 20%"></div>
+							</div>
+							<p class="text-sm font-medium">5 Achievements</p>
+						</div>
+						<div>
+							<p class="text-sm">Team Success (12%)</p>
+							<div class="bg-gray-200 h-2 rounded-full">
+								<div class="bg-purple-500 h-2 rounded-full" style="width: 12%"></div>
+							</div>
+							<p class="text-sm font-medium">3 Achievements</p>
+						</div>
+					</div>
+					<a href="#" class="text-blue-500 text-sm hover:underline mt-4 inline-block">View All</a>
+				</div>
+
+				<!-- Top Achievement -->
+				<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+					<h3 class="text-lg font-semibold mb-2">Top Achievement</h3>
+					<div class="flex items-center">
+						<img src="/src/assets/img/avatar-01.jpg" alt="Achievement Icon" class="w-12 h-12 rounded-full mr-3">
+						<div>
+							<p class="text-sm font-medium">Python Course Completion</p>
+							<p class="text-sm text-gray-500">Goal Completion (SMART)</p>
+							<p class="text-sm">Reward: Python Proficiency Badge</p>
+						</div>
+					</div>
+					<a href="#" class="text-blue-500 text-sm hover:underline mt-2 inline-block">View All Achievements</a>
+				</div>
+
+				<!-- Achievements Table -->
+				<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+					<h3 class="text-lg font-semibold mb-2">Achievements List</h3>
+					<table class="w-full border-collapse">
+						<thead>
+							<tr class="bg-gray-100">
+								<th class="p-2 text-left text-sm font-medium">ID</th>
+								<th class="p-2 text-left text-sm font-medium">Name</th>
+								<th class="p-2 text-left text-sm font-medium">Type</th>
+								<th class="p-2 text-left text-sm font-medium">Framework</th>
+								<th class="p-2 text-left text-sm font-medium">Reward</th>
+								<th class="p-2 text-left text-sm font-medium">Recognition</th>
+								<th class="p-2 text-left text-sm font-medium">Achieved At</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="border-b">
+								<td class="p-2 text-sm">ACH-001</td>
+								<td class="p-2 text-sm">Python Course Completion</td>
+								<td class="p-2 text-sm">Goal Completion</td>
+								<td class="p-2 text-sm">SMART</td>
+								<td class="p-2 text-sm">Python Proficiency Badge</td>
+								<td class="p-2 text-sm">Personal</td>
+								<td class="p-2 text-sm">10/10/2025</td>
+							</tr>
+							<tr class="border-b">
+								<td class="p-2 text-sm">ACH-002</td>
+								<td class="p-2 text-sm">Community Funding Milestone</td>
+								<td class="p-2 text-sm">Milestone Achieved</td>
+								<td class="p-2 text-sm">MMC</td>
+								<td class="p-2 text-sm">Community Impact Award</td>
+								<td class="p-2 text-sm">Public</td>
+								<td class="p-2 text-sm">25/09/2025</td>
+							</tr>
+							<tr class="border-b">
+								<td class="p-2 text-sm">ACH-003</td>
+								<td class="p-2 text-sm">Equity Slice Earned</td>
+								<td class="p-2 text-sm">Contribution Recognized</td>
+								<td class="p-2 text-sm">Slicing Pie</td>
+								<td class="p-2 text-sm">10% Equity Slice</td>
+								<td class="p-2 text-sm">Team</td>
+								<td class="p-2 text-sm">15/08/2025</td>
+							</tr>
+						</tbody>
+					</table>
+					<a href="#" class="text-blue-500 text-sm hover:underline mt-2 inline-block">View All</a>
+				</div>
+
+				<!-- Task Discovery Panel -->
+				<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+					<h3 class="text-lg font-semibold mb-2">Discover Tasks to Earn Achievements</h3>
+					<ul class="space-y-2">
+						<li class="p-2 bg-gray-50 rounded shadow-sm hover:bg-blue-50 cursor-pointer">
+							Complete PRO-001 Task: Earn “Team Leader” Achievement
+						</li>
+						<li class="p-2 bg-gray-50 rounded shadow-sm hover:bg-blue-50 cursor-pointer">
+							Join Community Project: Earn “Volunteer Star” Achievement
+						</li>
+						<li class="p-2 bg-gray-50 rounded shadow-sm hover:bg-blue-50 cursor-pointer">
+							Contribute Code to PRO-003: Earn “Code Master” Achievement
+						</li>
+					</ul>
+					<a href="#" class="text-blue-500 text-sm hover:underline mt-2 inline-block">Explore More</a>
+				</div>
+
+			</div>
+		</div>
+		<!-- /Page Wrapper -->
+
+	</div>
+	<!-- /Main Wrapper -->
+
+	<!-- jQuery -->
+	<script src="/src/assets/js/jquery-3.7.1.min.js"></script>
+
+	<!-- Flowbite JS -->
+	<script src="/src/assets/js/flowbite.min.js"></script>
+
+	<!-- Feather Icon JS -->
+	<script src="/src/assets/js/feather.min.js"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="/src/assets/js/jquery.slimscroll.min.js"></script>
+
+	<!-- Datetimepicker JS -->
+	<script src="/src/assets/js/moment.js"></script>
+	<script src="/src/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Daterangepicker JS -->
+	<script src="/src/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+	<!-- Datatable JS -->
+	<script src="/src/assets/js/dataTables.js"></script>
+	<script src="/src/assets/js/dataTables.tailwindcss.js"></script>
+
+	<!-- Summernote JS -->
+	<script src="/src/assets/plugins/summernote/summernote-lite.min.js"></script>
+
+	<!-- Bootstrap Tagsinput JS -->
+	<script src="/src/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+	<!-- Select2 JS -->
+	<script src="/src/assets/plugins/select2/js/select2.min.js"></script>
+
+	<!-- Color Picker JS -->
+	<script src="/src/assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="/src/assets/js/theme-colorpicker.js"></script>
+	<script src="/src/assets/js/script.js"></script>
+</body>
+</html>

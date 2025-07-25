@@ -1,0 +1,115 @@
+
+@prefix : <http://example.org/chat#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Chat a owl:Class ;
+	rdfs:label "Chat" ;
+	rdfs:comment "A conversation between two or more participants." .
+
+:Message a owl:Class ;
+	rdfs:label "Message" ;
+	rdfs:comment "A message sent in a chat." .
+
+:Participant a owl:Class ;
+	rdfs:label "Participant" ;
+	rdfs:comment "A user participating in a chat." .
+
+:Attachment a owl:Class ;
+	rdfs:label "Attachment" ;
+	rdfs:comment "A file or media attached to a message." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:hasParticipant a owl:ObjectProperty ;
+	rdfs:domain :Chat ;
+	rdfs:range :Participant ;
+	rdfs:label "has participant" .
+
+:hasMessage a owl:ObjectProperty ;
+	rdfs:domain :Chat ;
+	rdfs:range :Message ;
+	rdfs:label "has message" .
+
+:sentBy a owl:ObjectProperty ;
+	rdfs:domain :Message ;
+	rdfs:range :Participant ;
+	rdfs:label "sent by" .
+
+:hasAttachment a owl:ObjectProperty ;
+	rdfs:domain :Message ;
+	rdfs:range :Attachment ;
+	rdfs:label "has attachment" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:content a owl:DatatypeProperty ;
+	rdfs:domain :Message ;
+	rdfs:range xsd:string ;
+	rdfs:label "content" .
+
+:timestamp a owl:DatatypeProperty ;
+	rdfs:domain :Message ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "timestamp" .
+
+:fileName a owl:DatatypeProperty ;
+	rdfs:domain :Attachment ;
+	rdfs:range xsd:string ;
+	rdfs:label "file name" .
+
+:fileType a owl:DatatypeProperty ;
+	rdfs:domain :Attachment ;
+	rdfs:range xsd:string ;
+	rdfs:label "file type" .
+
+:fileSize a owl:DatatypeProperty ;
+	rdfs:domain :Attachment ;
+	rdfs:range xsd:integer ;
+	rdfs:label "file size (bytes)" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:alice a :Participant ;
+	rdfs:label "Alice" .
+
+:bob a :Participant ;
+	rdfs:label "Bob" .
+
+:chat1 a :Chat ;
+	:hasParticipant :alice, :bob .
+
+:msg1 a :Message ;
+	:content "Hello, Bob!" ;
+	:timestamp "2025-07-24T12:00:00Z"^^xsd:dateTime ;
+	:sentBy :alice .
+
+:msg2 a :Message ;
+	:content "Hi, Alice!" ;
+	:timestamp "2025-07-24T12:01:00Z"^^xsd:dateTime ;
+	:sentBy :bob .
+
+:file1 a :Attachment ;
+	:fileName "agenda.pdf" ;
+	:fileType "application/pdf" ;
+	:fileSize 102400 .
+
+:msg3 a :Message ;
+	:content "See attached file." ;
+	:timestamp "2025-07-24T12:02:00Z"^^xsd:dateTime ;
+	:sentBy :alice ;
+	:hasAttachment :file1 .
+
+:chat1 :hasMessage :msg1, :msg2, :msg3 .

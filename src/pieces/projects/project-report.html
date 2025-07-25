@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="Smarthr - Bootstrap Admin Template">
+	<meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
+	<meta name="author" content="Dreams technologies - Bootstrap Admin Template">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Smarthr Admin Template</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="/src/assets/img/favicon.png">
+
+	<!-- Apple Touch Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/src/assets/img/apple-touch-icon.png">
+
+	<!-- Theme Script js -->
+	<script src="/src/assets/js/theme-script.js"></script>
+
+	<!-- Feather CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/icons/feather/feather.css">
+
+	<!-- Tabler Icon CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/tabler-icons/tabler-icons.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="/src/assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="/src/assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- Flowbite CSS -->
+	<link rel="stylesheet" href="/src/assets/css/flowbite.min.css">
+
+	<!-- Datatable CSS -->
+	<link rel="stylesheet" href="/src/assets/css/dataTables.tailwindcss.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/select2/css/select2.min.css">
+
+	<!-- Summernote CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/summernote/summernote-lite.min.css">
+
+	<!-- Daterangepikcer CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/daterangepicker/daterangepicker.css">
+
+	<!-- Bootstrap Tagsinput CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
+
+	<!-- Color Picker Css -->
+	<link rel="stylesheet" href="/src/assets/plugins/flatpickr/flatpickr.min.css">
+	<link rel="stylesheet" href="/src/assets/plugins/@simonwep/pickr/themes/nano.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="/dist/style.css">
+
+</head>
+
+<body>
+
+	<div id="global-loader" style="display: none;">
+		<div class="page-loader"></div>
+	</div>
+
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+		<!-- Page Wrapper -->
+		<div class="page-wrapper relative pt-[50px] ml-[252px]">
+			<div class="content p-6">
+
+				<!-- Breadcrumb -->
+				<div class="md:flex block items-center justify-between page-breadcrumb mb-4">
+					<div class="my-auto mb-2">
+						<h2 class="mb-1">Project Report</h2>
+						<nav class="flex" aria-label="Breadcrumb">
+							<ol class="inline-flex items-center space-x-1 md:space-x-2">
+								<li class="inline-flex items-center">
+									<a href="index.html"
+										class="inline-flex items-center text-xs text-gray-500 hover:text-primary">
+										<i class="ti ti-smart-home"></i>
+									</a>
+								</li>
+								<li>
+									<span class="text-default">/</span>
+								</li>
+								<li class="text-xs text-default">HR</li>
+								<li>
+									<span class="text-default">/</span>
+								</li>
+								<li aria-current="page" class="text-xs text-gray-900">Project Report</li>
+							</ol>
+						</nav>
+					</div>
+					<div class="flex my-xl-auto right-content items-center flex-wrap ">
+						<div class="me-2 mb-2">
+							<div>
+								<a href="javascript:void(0);"
+									class="border rounded p-2 bg-white inline-flex items-center"
+									data-dropdown-toggle="export-dropdown">
+									<i class="ti ti-file-export me-1"></i>Export<i class="ti ti-chevron-down ml-1"></i>
+								</a>
+								<ul id="export-dropdown" class="hidden p-4 border rounded bg-white shadow-lg">
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary"><i
+												class="ti ti-file-type-pdf me-1"></i>Export as PDF</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary"><i
+												class="ti ti-file-type-xls me-1"></i>Export as Excel </a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="head-icons ml-2 mb-2">
+							<a href="javascript:void(0);"
+								class="border flex items-center justify-center rounded bg-white w-9 h-9 hover:bg-primary hover:text-white hover:border-primary"
+								data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Collapse"
+								id="collapse-header">
+								<i class="ti ti-chevrons-up"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- /Breadcrumb -->
+				<div class="grid grid-cols-1 xxl:grid-cols-12  gap-6 mb-6">
+
+					<!-- Total Exponses -->
+					<div class="xxl:col-span-6 md:col-span-6 ">
+						<div class="grid grid-cols-1 xxl:grid-cols-12  gap-6 flex-fill">
+							<div class="xxl:col-span-6 md:col-span-6 flex">
+								<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
+									<div class="card-body p-5 ">
+										<div>
+												<div class="mb-2">
+													<span class="text-[14px] font-normal text-truncate mb-1">Total Projects</span>
+													<h5>300</h5>
+												</div>
+												<div class="w-full bg-light-900 rounded-full h-1" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%;height: 5px;">
+													<div class="h-1 rounded-full bg-pink" style="width: 70%"></div>
+												</div>
+										</div>
+										<div class="flex mt-2">
+											<p class="text-[12px] font-normal flex items-center text-truncate"><span class="text-success text-[12px] flex items-center me-1"><i class="ti ti-arrow-wave-right-up me-1"></i>+10.54%</span>from last month</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="xxl:col-span-6 md:col-span-6 flex">
+								<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
+									<div class="card-body p-5 ">
+										<div>
+												<div class="mb-2">
+													<span class="text-[14px] font-normal text-truncate mb-1">Completed Projects</span>
+													<h5>250</h5>
+												</div>
+												<div class="w-full bg-light-900 rounded-full h-1" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%;height: 5px;">
+													<div class="h-1 rounded-full bg-success" style="width: 80%"></div>
+												</div>
+										</div>
+										<div class="flex mt-2">
+											<p class="text-[12px] font-normal flex items-center text-truncate"><span class="text-success text-[12px] flex items-center me-1"><i class="ti ti-arrow-wave-right-up me-1"></i>+12.84%</span>from last month</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="xxl:col-span-6 md:col-span-6 flex">
+								<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
+									<div class="card-body p-5 ">
+										<div>
+												<div class="mb-2">
+													<span class="text-[14px] font-normal text-truncate mb-1">Pending Projects</span>
+													<h5>50</h5>
+												</div>
+												<div class="w-full bg-light-900 rounded-full h-1" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%;height: 5px;">
+													<div class="h-1 rounded-full bg-danger" style="width: 20%"></div>
+												</div>
+										</div>
+										<div class="flex mt-2">
+											<p class="text-[12px] font-normal flex items-center text-truncate"><span class="text-danger text-[12px] flex items-center me-1"><i class="ti ti-arrow-wave-right-up me-1"></i>-10.75%</span>from last month</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="xxl:col-span-6 md:col-span-6 flex">
+								<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
+									<div class="card-body p-5 ">
+										<div>
+												<div class="mb-2">
+													<span class="text-[14px] font-normal text-truncate mb-1">New Projects</span>
+													<h5>30</h5>
+												</div>
+												<div class="w-full bg-light-900 rounded-full h-1" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%;height: 5px;">
+													<div class="h-1 rounded-full bg-purple" style="width: 60%"></div>
+												</div>
+										</div>
+										<div class="flex mt-2">
+											<p class="text-[12px] font-normal flex items-center text-truncate"><span class="text-success text-[12px] flex items-center me-1"><i class="ti ti-arrow-wave-right-up me-1"></i>+15.74%</span>from last month</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- /Total Exponses -->
+
+					<!-- Total Exponses -->
+					<div class="xxl:col-span-6 md:col-span-6 ">
+						<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white flex-1">
+							<div class="card-header border-0 pb-0 pt-4 px-5">
+								<div class="flex flex-wrap justify-between items-center">
+									<div class="flex items-center ">
+										<span class="me-2"><i class="ti ti-chart-pie text-danger"></i></span>
+										<h5>Projects By Tasks</h5>
+									</div>
+									
+									<a href="javascript:void(0);"
+									class="border rounded p-2 bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white"
+									data-dropdown-toggle="chart-dropdown">
+									Office Management App<i class="ti ti-chevron-down ml-1"></i>
+									</a>
+									<ul id="chart-dropdown"
+										class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);"
+												class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">PRO-001</a>
+										</li>
+										<li>
+											<a href="javascript:void(0);"
+												class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">PRO-002</a>
+										</li>
+										<li>
+											<a href="javascript:void(0);"
+												class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">PRO-003</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="card-body flex items-center justify-between px-5 pt-0">
+								<div class="grid grid-cols-1 md:grid-cols-12 w-full gap-6 flex items-center">
+									<div class="md:col-span-6 flex justify-center">
+										<div id="project-report">
+										</div>
+									</div>
+									<div class="md:col-span-6">
+										<div class="grid grid-cols-1 md:grid-cols-12 w-full gap-4 ">
+											<div class="md:col-span-6">
+												<p class="text-[16px] relative before:content-[''] before:w-[14px] before:h-[14px] before:rounded before:bg-skyblue before:absolute before:left-[-22px] before:top-[4px] font-normal mb-0 text-gray-5">Pending </p>
+												<p class="text-[20px] font-bold text-dark ">30%</p>
+											</div>
+											<div class="md:col-span-6">
+												<p class="text-[16px] relative before:content-[''] before:w-[14px] before:h-[14px] before:rounded before:bg-purple before:absolute before:left-[-22px] before:top-[4px] mb-0  font-normal text-gray-5">On Hold</p>
+												<p class="text-[20px] font-bold text-dark ">10%</p>
+											</div>
+											<div class="md:col-span-6">
+												<p class="text-[16px] relative before:content-[''] before:w-[14px] before:h-[14px] before:rounded before:bg-warning before:absolute before:left-[-22px] before:top-[4px]  mb-0 font-normal text-gray-5">Inprogress </p>
+												<p class="text-[20px] font-bold text-dark ">20%</p>
+											</div>
+											<div class="md:col-span-6">
+												<p class="text-[16px] relative before:content-[''] before:w-[14px] before:h-[14px] before:rounded before:bg-success before:absolute before:left-[-22px] before:top-[4px]  mb-0 font-normal text-gray-5">Completed</p>
+												<p class="text-[20px] font-bold text-dark ">40%</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+
+							</div>
+						</div>
+					</div>
+					<!-- /Total Exponses -->
+
+
+				</div>
+				<!-- Payment List -->
+				<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+					<div
+						class="card-header py-4 px-5 border-b border-borderColor flex items-center justify-between flex-wrap gap-3">
+						<h5>Payment List</h5>
+						<div class="flex my-xl-auto right-content items-center flex-wrap">
+							<div class="me-3">
+								<div class="relative">
+									<input type="text"
+										class="block flex-1 border border-borderColor bg-white rounded-[5px] py-1.5 pl-2.5 pr-8 text-gray-900 placeholder:text-gray-400 focus:ring-0 focus:border-borderColor h-[38px] text-sm date-range bookingrange"
+										placeholder="dd/mm/yyyy - dd/mm/yyyy">
+									<span
+										class="absolute inset-y-1/2 end-0 flex items-center me-2.5 pointer-events-none">
+										<i class="ti ti-chevron-down"></i>
+									</span>
+								</div>
+							</div>
+							<div class="me-3">
+								<a href="javascript:void(0);"
+									class="border rounded p-2 bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white"
+									data-dropdown-toggle="priority-dropdown">
+									Select Priority<i class="ti ti-chevron-down ml-1"></i>
+								</a>
+								<ul id="priority-dropdown"
+									class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">Low</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">Medium</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">High</a>
+									</li>
+								</ul>
+							</div>
+							<div class="me-3">
+								<a href="javascript:void(0);"
+									class="border rounded p-2 bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white"
+									data-dropdown-toggle="status-dropdown">
+									Select Status<i class="ti ti-chevron-down ml-1"></i>
+								</a>
+								<ul id="status-dropdown"
+									class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">Active</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">Inactive</a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<a href="javascript:void(0);"
+									class="border rounded p-2 bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white"
+									data-dropdown-toggle="days-dropdown">
+									Sort By : Last 7 Days<i class="ti ti-chevron-down ml-1"></i>
+								</a>
+								<ul id="days-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">Recently
+											Added</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">Ascending</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">Desending</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">Last
+											Month</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary">Last
+											7 Days</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card-body p-0">
+						<div class="custom-datatable-filter">
+							<table class="table datatable w-full border-b border-borderColor">
+								<thead class="thead-light">
+									<tr>
+										<th
+											class="no-sort text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor hover:outline-none">
+											<div class="flex items-center">
+												<input
+													class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0"
+													type="checkbox" id="select-all">
+											</div>
+										</th>
+										<th
+											class="text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor">
+											Project ID</th>
+										<th
+											class="text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor">
+											Project Name</th>
+										<th
+											class="text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor">
+											Leader</th>
+										<th
+											class="text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor">
+											Team</th>
+										<th
+											class="text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor">
+											Deadline</th>
+										<th
+											class="text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor">
+											Priority</th>
+										<th
+											class="text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor">
+											Status</th>
+									</tr>
+								</thead>
+								<tbody class="bg-white divide-y divide-borderColor">
+									<tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input
+													class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0"
+													type="checkbox">
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">PRO-001</td>
+										<td class="px-5 py-2.5 text-gray-900">Office Management App</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center file-name-icon">
+												<a href="#"
+													class="size-8 rounded-full border border-borderColor">
+													<img src="/src/assets/img/users/user-32.jpg"
+														class="rounded-full size-8 img-fluid" alt="img">
+												</a>
+												<div class="ms-2">
+													<p >Anthony Lewis</p>
+												</div>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex -space-x-4 rtl:space-x-reverse">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-09.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full  hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-47.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-44.jpg" alt="">
+												<a class="flex items-center justify-center w-8 h-8 text-xs font-medium text-white bg-primary border-2 border-white rounded-full  shrink-0 hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" href="#">+2</a>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">12/09/2024 </td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success-100 text-success text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-success"><i class="ti ti-point-filled me-1"></i>Low</span>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span
+												class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+									</tr>
+									<tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input
+													class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0"
+													type="checkbox">
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">PRO-002</td>
+										<td class="px-5 py-2.5 text-gray-900">Clinic Management </td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center file-name-icon">
+												<a href="#"
+													class="size-8 rounded-full border border-borderColor">
+													<img src="/src/assets/img/users/user-09.jpg"
+														class="rounded-full size-8 img-fluid" alt="img">
+												</a>
+												<div class="ms-2">
+													<p >Brian Villalobos</p>
+												</div>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex -space-x-4 rtl:space-x-reverse">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-17.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-08.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-18.jpg" alt="">
+												<a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+3</a>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">24 Oct 2024   </td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-warning-100 text-warning text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-success"><i class="ti ti-point-filled me-1"></i>Medium</span>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span
+												class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+									</tr>
+									<tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input
+													class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0"
+													type="checkbox">
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">PRO-003</td>
+										<td class="px-5 py-2.5 text-gray-900">Educational Platform</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center file-name-icon">
+												<a href="#"
+													class="size-8 rounded-full border border-borderColor">
+													<img src="/src/assets/img/users/user-01.jpg"
+														class="rounded-full size-8 img-fluid" alt="img">
+												</a>
+												<div class="ms-2">
+													<p >Harvey Smith</p>
+												</div>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex -space-x-4 rtl:space-x-reverse">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-21.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-22.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-33.jpg" alt="">
+												<a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+1</a>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">18/02/2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-danger-100 text-danger text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-success"><i class="ti ti-point-filled me-1"></i>High</span>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span
+												class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+									</tr>
+									<tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input
+													class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0"
+													type="checkbox">
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">PRO-004</td>
+										<td class="px-5 py-2.5 text-gray-900"> Chat & Call  Mobile App</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center file-name-icon">
+												<a href="#"
+													class="size-8 rounded-full border border-borderColor">
+													<img src="/src/assets/img/users/user-33.jpg"
+														class="rounded-full size-8 img-fluid" alt="img">
+												</a>
+												<div class="ms-2">
+													<p >Stephan Peralt</p>
+												</div>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex -space-x-4 rtl:space-x-reverse">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-16.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-26.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-35.jpg" alt="">
+												<a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+3</a>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">17/10/2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success-100 text-success text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-success"><i class="ti ti-point-filled me-1"></i>Low</span>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span
+												class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+									</tr>
+									<tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input
+													class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0"
+													type="checkbox">
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">PRO-005</td>
+										<td class="px-5 py-2.5 text-gray-900"> Travel Planning Website</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center file-name-icon">
+												<a href="#"
+													class="size-8 rounded-full border border-borderColor">
+													<img src="/src/assets/img/users/user-34.jpg"
+														class="rounded-full size-8 img-fluid" alt="img">
+												</a>
+												<div class="ms-2">
+													<p >Doglas Martini</p>
+												</div>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex -space-x-4 rtl:space-x-reverse">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-16.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-36.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-10.jpg" alt="">
+												<a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+4</a>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">20/07/2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-danger-100 text-danger text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-success"><i class="ti ti-point-filled me-1"></i>High</span>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span
+												class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+									</tr>
+									<tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input
+													class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0"
+													type="checkbox">
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">PRO-006</td>
+										<td class="px-5 py-2.5 text-gray-900"> Service Booking Software</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center file-name-icon">
+												<a href="#"
+													class="size-8 rounded-full border border-borderColor">
+													<img src="/src/assets/img/users/user-02.jpg"
+														class="rounded-full size-8 img-fluid" alt="img">
+												</a>
+												<div class="ms-2">
+													<p >Linda Ray</p>
+												</div>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex -space-x-4 rtl:space-x-reverse">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-11.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-19.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-20.jpg" alt="">
+												<a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+5</a>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">20/07/2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success-100 text-success text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-success"><i class="ti ti-point-filled me-1"></i>Low</span>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span
+												class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+									</tr>
+									<tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input
+													class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0"
+													type="checkbox">
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">PRO-007</td>
+										<td class="px-5 py-2.5 text-gray-900"> Hotel Booking App</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center file-name-icon">
+												<a href="#"
+													class="size-8 rounded-full border border-borderColor">
+													<img src="/src/assets/img/users/user-22.jpg"
+														class="rounded-full size-8 img-fluid" alt="img">
+												</a>
+												<div class="ms-2">
+													<p >Elliot Murray</p>
+												</div>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex -space-x-4 rtl:space-x-reverse">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-14.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-29.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-22.jpg" alt="">
+												<a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+4</a>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">29 Aug 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-warning-100 text-warning text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-success"><i class="ti ti-point-filled me-1"></i>Medium</span>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span
+												class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+									</tr>
+									<tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input
+													class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0"
+													type="checkbox">
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">PRO-008</td>
+										<td class="px-5 py-2.5 text-gray-900"> Car & Bike Rental Software</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center file-name-icon">
+												<a href="#"
+													class="size-8 rounded-full border border-borderColor">
+													<img src="/src/assets/img/users/user-36.jpg"
+														class="rounded-full size-8 img-fluid" alt="img">
+												</a>
+												<div class="ms-2">
+													<p >Rebecca Smtih</p>
+												</div>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex -space-x-4 rtl:space-x-reverse">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-08.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-38.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-42.jpg" alt="">
+												<a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+2</a>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">22 Feb 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success-100 text-success text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-success"><i class="ti ti-point-filled me-1"></i>Low</span>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span
+												class="bg-danger text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Inactive
+											</span>
+										</td>
+										
+									</tr>
+									<tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input
+													class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0"
+													type="checkbox">
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">PRO-009</td>
+										<td class="px-5 py-2.5 text-gray-900"> Food Order App</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center file-name-icon">
+												<a href="#"
+													class="size-8 rounded-full border border-borderColor">
+													<img src="/src/assets/img/users/user-37.jpg"
+														class="rounded-full size-8 img-fluid" alt="img">
+												</a>
+												<div class="ms-2">
+													<p >Connie Waters</p>
+												</div>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex -space-x-4 rtl:space-x-reverse">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-26.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-02.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-40.jpg" alt="">
+												<a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+1</a>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">03 Nov 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-warning-100 text-warning text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-success"><i class="ti ti-point-filled me-1"></i>Medium</span>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span
+												class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+									</tr>
+									<tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input
+													class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0"
+													type="checkbox">
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">PRO-010</td>
+										<td class="px-5 py-2.5 text-gray-900"> POS Admin Software</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center file-name-icon">
+												<a href="#"
+													class="size-8 rounded-full border border-borderColor">
+													<img src="/src/assets/img/users/user-38.jpg"
+														class="rounded-full size-8 img-fluid" alt="img">
+												</a>
+												<div class="ms-2">
+													<p >Lori Broaddus</p>
+												</div>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex -space-x-4 rtl:space-x-reverse">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-13.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-11.jpg" alt="">
+												<img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/users/user-18.jpg" alt="">
+												<a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+3</a>
+											</div>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">17 Dec 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success-100 text-success text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-success"><i class="ti ti-point-filled me-1"></i>Low</span>
+										</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span
+												class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+									</tr>
+									
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- /Payment List -->
+
+			</div>
+
+			<div class="footer sm:flex items-center justify-between bg-white border-t border-borderColor p-4">
+				<p class="text-default mb-0">2014 - 2025 &copy; SmartHR.</p>
+				<p class="text-default">Designed &amp; Developed By <a href="javascript:void(0);"
+						class="text-primary">Dreams</a></p>
+			</div>
+
+		</div>
+		<!-- /Page Wrapper -->
+
+
+
+
+	</div>
+	<!-- /Main Wrapper -->
+
+	<!-- jQuery -->
+	<script src="/src/assets/js/jquery-3.7.1.min.js"></script>
+
+	<!-- Flowbite JS -->
+	<script src="/src/assets/js/flowbite.min.js"></script>
+
+	<!-- Feather Icon JS -->
+	<script src="/src/assets/js/feather.min.js"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="/src/assets/js/jquery.slimscroll.min.js"></script>
+
+	<!-- Datetimepicker JS -->
+	<script src="/src/assets/js/moment.js"></script>
+	<script src="/src/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Daterangepikcer JS -->
+	<script src="/src/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+	<!-- Chart JS -->
+	<script src="/src/assets/plugins/apexchart/apexcharts.min.js"></script>
+	<script src="/src/assets/plugins/apexchart/chart-data.js"></script>
+
+	<!-- Datatable JS -->
+	<script src="/src/assets/js/dataTables.js"></script>
+	<script src="/src/assets/js/dataTables.tailwindcss.js"></script>
+
+	<!-- Summernote JS -->
+	<script src="/src/assets/plugins/summernote/summernote-lite.min.js"></script>
+
+	<!-- Bootstrap Tagsinput JS -->
+	<script src="/src/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+	<!-- Select2 JS -->
+	<script src="/src/assets/plugins/select2/js/select2.min.js"></script>
+
+	<!-- Color Picker JS -->
+	<script src="/src/assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="/src/assets/js/theme-colorpicker.js"></script>
+	<script src="/src/assets/js/script.js"></script>
+
+</body>
+
+</html>

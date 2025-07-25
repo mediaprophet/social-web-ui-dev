@@ -1,0 +1,114 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix goals: <http://example.org/goals#> .
+@prefix mmc: <http://example.org/mmc-goals#> .
+
+mmc:Ontology rdf:type owl:Ontology ;
+    owl:imports goals:Ontology ;
+    rdfs:label "Mission Model Canvas Goals Ontology" ;
+    rdfs:comment "An ontology for structuring goals using Steve Blank's Mission Model Canvas framework." ;
+    owl:versionInfo "1.0" .
+
+# Classes
+mmc:MMCGoal rdf:type owl:Class ;
+    rdfs:label "MMC Goal" ;
+    rdfs:comment "A goal structured using the Mission Model Canvas components." ;
+    rdfs:subClassOf goals:Goal .
+
+mmc:Beneficiary rdf:type owl:Class ;
+    rdfs:label "Beneficiary" ;
+    rdfs:comment "Groups that benefit from the mission." .
+
+mmc:ValueProposition rdf:type owl:Class ;
+    rdfs:label "Value Proposition" ;
+    rdfs:comment "The mission impact delivered." .
+
+mmc:DeliveryChannel rdf:type owl:Class ;
+    rdfs:label "Delivery Channel" ;
+    rdfs:comment "How the mission is delivered." .
+
+mmc:StakeholderRelationship rdf:type owl:Class ;
+    rdfs:label "Stakeholder Relationship" ;
+    rdfs:comment "Relationships with stakeholders." .
+
+mmc:MissionAchievement rdf:type owl:Class ;
+    rdfs:label "Mission Achievement" ;
+    rdfs:comment "Metrics for mission success." .
+
+mmc:KeyResource rdf:type owl:Class ;
+    rdfs:label "Key Resource" ;
+    rdfs:comment "Essential assets for the mission." .
+
+mmc:KeyActivity rdf:type owl:Class ;
+    rdfs:label "Key Activity" ;
+    rdfs:comment "Critical actions for the mission." .
+
+mmc:KeyPartner rdf:type owl:Class ;
+    rdfs:label "Key Partner" ;
+    rdfs:comment "Essential collaborators." .
+
+mmc:CostStructure rdf:type owl:Class ;
+    rdfs:label "Cost Structure" ;
+    rdfs:comment "Costs to achieve the mission." .
+
+# Properties
+mmc:hasBeneficiary rdf:type owl:ObjectProperty ;
+    rdfs:label "has Beneficiary" ;
+    rdfs:domain mmc:MMCGoal ;
+    rdfs:range mmc:Beneficiary .
+
+mmc:hasValueProposition rdf:type owl:ObjectProperty ;
+    rdfs:label "has Value Proposition" ;
+    rdfs:domain mmc:MMCGoal ;
+    rdfs:range mmc:ValueProposition .
+
+mmc:hasDeliveryChannel rdf:type owl:ObjectProperty ;
+    rdfs:label "has Delivery Channel" ;
+    rdfs:domain mmc:MMCGoal ;
+    rdfs:range mmc:DeliveryChannel .
+
+mmc:hasStakeholderRelationship rdf:type owl:ObjectProperty ;
+    rdfs:label "has Stakeholder Relationship" ;
+    rdfs:domain mmc:MMCGoal ;
+    rdfs:range mmc:StakeholderRelationship .
+
+mmc:hasMissionAchievement rdf:type owl:ObjectProperty ;
+    rdfs:label "has Mission Achievement" ;
+    rdfs:domain mmc:MMCGoal ;
+    rdfs:range mmc:MissionAchievement .
+
+mmc:hasKeyResource rdf:type owl:ObjectProperty ;
+    rdfs:label "has Key Resource" ;
+    rdfs:domain mmc:MMCGoal ;
+    rdfs:range mmc:KeyResource .
+
+mmc:hasKeyActivity rdf:type owl:ObjectProperty ;
+    rdfs:label "has Key Activity" ;
+    rdfs:domain mmc:MMCGoal ;
+    rdfs:range mmc:KeyActivity .
+
+mmc:hasKeyPartner rdf:type owl:ObjectProperty ;
+    rdfs:label "has Key Partner" ;
+    rdfs:domain mmc:MMCGoal ;
+    rdfs:range mmc:KeyPartner .
+
+mmc:hasCostStructure rdf:type owl:ObjectProperty ;
+    rdfs:label "has Cost Structure" ;
+    rdfs:domain mmc:MMCGoal ;
+    rdfs:range mmc:CostStructure .
+
+# Example Instance
+mmc:ExampleMMCGoal rdf:type mmc:MMCGoal ;
+    goals:hasTitle "Clean Water Initiative" ;
+    mmc:hasBeneficiary mmc:ExampleBeneficiary ;
+    mmc:hasMissionAchievement mmc:ExampleAchievement .
+
+mmc:ExampleBeneficiary rdf:type mmc:Beneficiary ;
+    rdfs:label "Rural Communities" ;
+    rdfs:comment "Target beneficiaries." .
+
+mmc:ExampleAchievement rdf:type mmc:MissionAchievement ;
+    rdfs:label "1000 Wells Built" ;
+    rdfs:comment "Measure of mission success." .

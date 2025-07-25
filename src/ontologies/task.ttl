@@ -1,0 +1,131 @@
+
+@prefix : <http://example.org/task#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Task a owl:Class ;
+	rdfs:label "Task" ;
+	rdfs:comment "A unit of work to be completed." .
+
+:Project a owl:Class ;
+	rdfs:label "Project" ;
+	rdfs:comment "A collection of related tasks." .
+
+:User a owl:Class ;
+	rdfs:label "User" ;
+	rdfs:comment "A person who can be assigned tasks." .
+
+:Status a owl:Class ;
+	rdfs:label "Status" ;
+	rdfs:comment "The state of a task (e.g., Open, In Progress, Done)." .
+
+:Priority a owl:Class ;
+	rdfs:label "Priority" ;
+	rdfs:comment "The importance level of a task." .
+
+:Comment a owl:Class ;
+	rdfs:label "Comment" ;
+	rdfs:comment "A comment on a task." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:assignedTo a owl:ObjectProperty ;
+	rdfs:domain :Task ;
+	rdfs:range :User ;
+	rdfs:label "assigned to" .
+
+:hasStatus a owl:ObjectProperty ;
+	rdfs:domain :Task ;
+	rdfs:range :Status ;
+	rdfs:label "has status" .
+
+:hasPriority a owl:ObjectProperty ;
+	rdfs:domain :Task ;
+	rdfs:range :Priority ;
+	rdfs:label "has priority" .
+
+:partOfProject a owl:ObjectProperty ;
+	rdfs:domain :Task ;
+	rdfs:range :Project ;
+	rdfs:label "part of project" .
+
+:hasComment a owl:ObjectProperty ;
+	rdfs:domain :Task ;
+	rdfs:range :Comment ;
+	rdfs:label "has comment" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:title a owl:DatatypeProperty ;
+	rdfs:domain :Task ;
+	rdfs:range xsd:string ;
+	rdfs:label "title" .
+
+:description a owl:DatatypeProperty ;
+	rdfs:domain :Task ;
+	rdfs:range xsd:string ;
+	rdfs:label "description" .
+
+:dueDate a owl:DatatypeProperty ;
+	rdfs:domain :Task ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "due date" .
+
+:createdDate a owl:DatatypeProperty ;
+	rdfs:domain :Task ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "created date" .
+
+:updatedDate a owl:DatatypeProperty ;
+	rdfs:domain :Task ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "updated date" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:Open a :Status ;
+	rdfs:label "Open" .
+
+:InProgress a :Status ;
+	rdfs:label "In Progress" .
+
+:Done a :Status ;
+	rdfs:label "Done" .
+
+:High a :Priority ;
+	rdfs:label "High" .
+
+:Medium a :Priority ;
+	rdfs:label "Medium" .
+
+:Low a :Priority ;
+	rdfs:label "Low" .
+
+:alice a :User ;
+	rdfs:label "Alice" .
+
+:project1 a :Project ;
+	rdfs:label "Website Redesign" .
+
+:task1 a :Task ;
+	:title "Design homepage" ;
+	:description "Create a new homepage design." ;
+	:dueDate "2025-08-01T17:00:00Z"^^xsd:dateTime ;
+	:createdDate "2025-07-24T10:00:00Z"^^xsd:dateTime ;
+	:updatedDate "2025-07-24T11:00:00Z"^^xsd:dateTime ;
+	:assignedTo :alice ;
+	:hasStatus :InProgress ;
+	:hasPriority :High ;
+	:partOfProject :project1 .

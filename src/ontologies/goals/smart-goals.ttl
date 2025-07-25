@@ -1,0 +1,58 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix goals: <http://example.org/goals#> .
+@prefix smart: <http://example.org/smart-goals#> .
+
+smart:Ontology rdf:type owl:Ontology ;
+    owl:imports goals:Ontology ;
+    rdfs:label "SMART Goals Ontology" ;
+    rdfs:comment "An ontology for structuring goals using the SMART framework (Specific, Measurable, Achievable, Relevant, Time-bound)." ;
+    owl:versionInfo "1.0" .
+
+# Classes
+smart:SMARTGoal rdf:type owl:Class ;
+    rdfs:label "SMART Goal" ;
+    rdfs:comment "A goal defined by Specific, Measurable, Achievable, Relevant, and Time-bound criteria." ;
+    rdfs:subClassOf goals:Goal .
+
+# Properties
+smart:hasSpecificity rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Specificity" ;
+    rdfs:domain smart:SMARTGoal ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The specific description of the goal." .
+
+smart:hasMeasurableCriterion rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Measurable Criterion" ;
+    rdfs:domain smart:SMARTGoal ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The measurable outcome or progress metric." .
+
+smart:isAchievable rdf:type owl:DatatypeProperty ;
+    rdfs:label "is Achievable" ;
+    rdfs:domain smart:SMARTGoal ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Indicates if the goal is realistic given resources." .
+
+smart:hasRelevance rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Relevance" ;
+    rdfs:domain smart:SMARTGoal ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The alignment with broader objectives or values." .
+
+smart:hasTimeBound rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Time Bound" ;
+    rdfs:domain smart:SMARTGoal ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "The deadline for achieving the goal." .
+
+# Example Instance
+smart:ExampleSMARTGoal rdf:type smart:SMARTGoal ;
+    goals:hasTitle "Complete Python Course" ;
+    smart:hasSpecificity "Finish an online Python course" ;
+    smart:hasMeasurableCriterion "Complete 80% of modules" ;
+    smart:isAchievable true ;
+    smart:hasRelevance "Career advancement in tech" ;
+    smart:hasTimeBound "2025-12-31T23:59:59Z" .

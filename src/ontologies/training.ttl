@@ -1,0 +1,151 @@
+
+@prefix : <http://example.org/training#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Training a owl:Class ;
+	rdfs:label "Training" ;
+	rdfs:comment "A structured program or session for learning new skills or knowledge." .
+
+:Learning a owl:Class ;
+	rdfs:label "Learning" ;
+	rdfs:comment "The process of acquiring knowledge or skills." .
+
+:LearningOutcome a owl:Class ;
+	rdfs:label "Learning Outcome" ;
+	rdfs:comment "A statement of what a learner is expected to know, understand, or be able to do after training." .
+
+:User a owl:Class ;
+	rdfs:label "User" ;
+	rdfs:comment "A person participating in training or making knowledge claims." .
+
+:RecognitionOfPriorLearning a owl:Class ;
+	rdfs:label "Recognition of Prior Learning" ;
+	rdfs:comment "Assessment of a person's existing skills and knowledge, regardless of how they were acquired." .
+
+:KnowledgeClaim a owl:Class ;
+	rdfs:label "Knowledge Claim" ;
+	rdfs:comment "A claim that a person possesses certain knowledge or skills." .
+
+:SelfClaim a owl:Class ;
+	rdfs:subClassOf :KnowledgeClaim ;
+	rdfs:label "Self Claim" ;
+	rdfs:comment "A knowledge claim made by the individual themselves." .
+
+:SocialClaim a owl:Class ;
+	rdfs:subClassOf :KnowledgeClaim ;
+	rdfs:label "Social Claim" ;
+	rdfs:comment "A knowledge claim made by peers or social networks." .
+
+:InstitutionalClaim a owl:Class ;
+	rdfs:subClassOf :KnowledgeClaim ;
+	rdfs:label "Institutional Claim" ;
+	rdfs:comment "A knowledge claim made by an institution (e.g., school, company)." .
+
+:Evidence a owl:Class ;
+	rdfs:label "Evidence" ;
+	rdfs:comment "Proof supporting a knowledge claim, such as certificates, work samples, or activity logs." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:hasLearningOutcome a owl:ObjectProperty ;
+	rdfs:domain :Training ;
+	rdfs:range :LearningOutcome ;
+	rdfs:label "has learning outcome" .
+
+:attendedBy a owl:ObjectProperty ;
+	rdfs:domain :Training ;
+	rdfs:range :User ;
+	rdfs:label "attended by" .
+
+:hasRecognitionOfPriorLearning a owl:ObjectProperty ;
+	rdfs:domain :User ;
+	rdfs:range :RecognitionOfPriorLearning ;
+	rdfs:label "has recognition of prior learning" .
+
+:makesClaim a owl:ObjectProperty ;
+	rdfs:domain :User ;
+	rdfs:range :KnowledgeClaim ;
+	rdfs:label "makes claim" .
+
+:supportedBy a owl:ObjectProperty ;
+	rdfs:domain :KnowledgeClaim ;
+	rdfs:range :Evidence ;
+	rdfs:label "supported by" .
+
+:relatesToOutcome a owl:ObjectProperty ;
+	rdfs:domain :KnowledgeClaim ;
+	rdfs:range :LearningOutcome ;
+	rdfs:label "relates to outcome" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:title a owl:DatatypeProperty ;
+	rdfs:domain :Training ;
+	rdfs:range xsd:string ;
+	rdfs:label "title" .
+
+:description a owl:DatatypeProperty ;
+	rdfs:domain :Training ;
+	rdfs:range xsd:string ;
+	rdfs:label "description" .
+
+:date a owl:DatatypeProperty ;
+	rdfs:domain :Training ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "date" .
+
+:outcomeDescription a owl:DatatypeProperty ;
+	rdfs:domain :LearningOutcome ;
+	rdfs:range xsd:string ;
+	rdfs:label "outcome description" .
+
+:evidenceType a owl:DatatypeProperty ;
+	rdfs:domain :Evidence ;
+	rdfs:range xsd:string ;
+	rdfs:label "evidence type" .
+
+:evidenceValue a owl:DatatypeProperty ;
+	rdfs:domain :Evidence ;
+	rdfs:range xsd:string ;
+	rdfs:label "evidence value" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:alice a :User ;
+	rdfs:label "Alice" .
+
+:training1 a :Training ;
+	:title "Advanced JavaScript" ;
+	:description "A course on advanced JavaScript concepts." ;
+	:date "2025-07-01T09:00:00Z"^^xsd:dateTime ;
+	:attendedBy :alice ;
+	:hasLearningOutcome :outcome1 .
+
+:outcome1 a :LearningOutcome ;
+	:outcomeDescription "Can build complex web applications using JavaScript." .
+
+:rpl1 a :RecognitionOfPriorLearning ;
+	rdfs:label "RPL for JavaScript" .
+
+:claim1 a :SelfClaim ;
+	:relatesToOutcome :outcome1 ;
+	:supportedBy :evidence1 .
+
+:evidence1 a :Evidence ;
+	:evidenceType "Certificate" ;
+	:evidenceValue "Certificate of Completion: Advanced JavaScript" .
+
+# Note: In the future, AI may help generate or validate evidence based on user activity logs or project contributions.

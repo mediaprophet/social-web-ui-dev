@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="Smarthr - Bootstrap Admin Template">
+	<meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
+	<meta name="author" content="Dreams technologies - Bootstrap Admin Template">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Smarthr Admin Template</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="/src/assets/img/favicon.png">
+
+	<!-- Apple Touch Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/src/assets/img/apple-touch-icon.png">
+
+	<!-- Theme Script js -->
+	<script src="/src/assets/js/theme-script.js"></script>
+
+	<!-- Feather CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/icons/feather/feather.css">
+
+	<!-- Tabler Icon CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/tabler-icons/tabler-icons.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="/src/assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="/src/assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- Flatpickr CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/flatpickr/flatpickr.min.css">
+
+	<!-- Flowbite CSS -->
+	<link rel="stylesheet" href="/src/assets/css/flowbite.min.css">
+
+	<!-- Datatable CSS -->
+	<link rel="stylesheet" href="/src/assets/css/dataTables.tailwindcss.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/select2/css/select2.min.css">
+
+	<!-- Summernote CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/summernote/summernote-lite.min.css">
+
+	<!-- Daterangepikcer CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/daterangepicker/daterangepicker.css">
+
+	<!-- Bootstrap Tagsinput CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
+
+	<!-- Color Picker Css -->
+	<link rel="stylesheet" href="/src/assets/plugins/flatpickr/flatpickr.min.css">
+	<link rel="stylesheet" href="/src/assets/plugins/@simonwep/pickr/themes/nano.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="/dist/style.css">
+
+</head>
+
+<body>
+
+	<div id="global-loader" style="display: none;">
+		<div class="page-loader"></div>
+	</div>
+
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+		<!-- Page Wrapper -->
+		<div class="page-wrapper relative pt-[50px] ml-[252px]">
+			<div class="content p-6">
+
+				<!-- Breadcrumb -->
+				<div class="md:flex block items-center justify-between page-breadcrumb mb-4">
+					<div class="my-auto mb-2">
+						<h2 class="mb-1">Projects</h2>
+						<nav class="flex" aria-label="Breadcrumb">
+							<ol class="inline-flex items-center space-x-1 md:space-x-2">
+								<li class="inline-flex items-center">
+									<a href="index.html"
+										class="inline-flex items-center text-xs text-gray-500 hover:text-primary">
+										<i class="ti ti-smart-home"></i>
+									</a>
+								</li>
+								<li>
+									<span class="text-default">/</span>
+								</li>
+								<li class="text-xs text-default">Employee</li>
+								<li>
+									<span class="text-default">/</span>
+								</li>
+								<li aria-current="page" class="text-xs text-gray-900">Projects Grid</li>
+							</ol>
+						</nav>
+					</div>
+					<div class="flex my-xl-auto right-content items-center flex-wrap ">
+						<div class="me-2 mb-2">
+							<div class="flex items-center border bg-white rounded p-1 icon-list">
+								<a href="projects.html"
+									class="w-7 h-7 flex items-center justify-center rounded text-default"><i
+										class="ti ti-list-tree"></i></a>
+								<a href="projects-grid.html"
+									class="w-7 h-7 flex items-center justify-center rounded active bg-primary text-white me-1"><i
+										class="ti ti-layout-grid"></i></a>
+							</div>
+						</div>
+						<div class="me-2 mb-2">
+							<div>
+								<a href="javascript:void(0);"
+									class="border rounded p-2 bg-white inline-flex items-center"
+									data-dropdown-toggle="export-dropdown">
+									<i class="ti ti-file-export me-1"></i>Export<i class="ti ti-chevron-down ml-1"></i>
+								</a>
+								<ul id="export-dropdown" class="hidden p-4 border rounded bg-white shadow-lg">
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary"><i
+												class="ti ti-file-type-pdf me-1"></i>Export as PDF</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);"
+											class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary"><i
+												class="ti ti-file-type-xls me-1"></i>Export as Excel </a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="mb-2">
+							<a href="#" data-modal-target="add_project" data-modal-toggle="add_project"
+								class="flex items-center bg-primary text-sm font-medium py-2 rounded text-white px-3 hover:bg-primary-900 hover:text-white"><i
+									class="ti ti-circle-plus me-2"></i>Add Project</a>
+						</div>
+						<div class="head-icons ml-2 mb-2">
+							<a href="javascript:void(0);"
+								class="border flex items-center justify-center rounded bg-white w-9 h-9 hover:bg-primary hover:text-white hover:border-primary"
+								data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Collapse"
+								id="collapse-header">
+								<i class="ti ti-chevrons-up"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- /Breadcrumb -->
+
+				<!-- Employees Grid -->
+				<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+					<div class="card-header py-4 px-5 border-b border-borderColor flex items-center justify-between flex-wrap gap-3">
+						<h5>Projects Grid</h5>
+						<div class="flex my-xl-auto right-content items-center flex-wrap gap-3">
+							<div class="me-3">
+								<a href="javascript:void(0);" class="border rounded p-2 bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900" data-dropdown-toggle="stage-dropdown">
+									Select Status<i class="ti ti-chevron-down ml-1"></i>
+								</a>
+								<ul id="stage-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-50 z-[1]">
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Select Status</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Active</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">InActive</a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<a href="javascript:void(0);" class="border rounded p-2 bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900" data-dropdown-toggle="days-dropdown">
+									Sort By : Last 7 Days<i class="ti ti-chevron-down ml-1"></i>
+								</a>
+								<ul id="days-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Recently Added</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Ascending</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Desending</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Last Month</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Last 7 Days</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Employees Grid -->
+
+                <div class="grid grid-cols-1 gap-6  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-4">
+					<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+						<div class="card-body p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <h6><a href="project-details.html">Office Management</a></h6>
+                                <div>
+									<a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown1">
+										<i class="ti ti-dots-vertical"></i>
+									</a>
+									<ul id="grid-dropdown1" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-target="edit_project" data-modal-toggle="edit_project"><i class="ti ti-edit me-1"></i>Edit</a>
+										</li>
+										<li>
+											<a href="#" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-toggle="delete_modal" data-modal-target="delete_modal"><i class="ti ti-trash me-1"></i>Delete </a>	
+										</li>
+									</ul>
+								</div>
+                            </div>
+                            <div class="mb-3 pb-3 border-b">
+                                <p class="text-truncate line-clamp-3 mb-0">
+                                    An office management app project streamlines administrative tasks by integrating 
+                                    tools for scheduling, communication, and 
+                                    task management, enhancing overall productivity and efficiency.
+                                </p>
+                            </div>                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b">
+                                <div class="flex items-center">
+                                    <a href="javascript:void(0);" class="avatar avatar-sm avatar-rounded flex-shrink-0">
+                                        <img src="/src/assets/img/users/user-39.jpg" class="w-6 h-6 rounded-full flex-shrink-0" alt="img">
+                                    </a>
+                                    <div class="ml-2">
+                                        <h6 class="font-normal text-xs text-dark"><a href="javascript:void(0);">Anthony Lewis</a></h6>
+                                        <span class="text-xs text-gray-500">Project Leader</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs text-gray-500">Deadline</span>
+                                        <p class="mb-0 text-xs text-gray-700">14 Jan 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <!-- Tasks -->
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-sm rounded-full flex justify-center items-center bg-green-100 flex-shrink-0 me-2">
+                                        <i class="ti ti-checklist text-green-500 text-lg"></i>
+                                    </span>
+                                    <p class="text-sm text-gray-700">
+                                        <small class="text-gray-500">Tasks:</small>
+                                        <span class="font-medium">6</span>/10
+                                    </p>
+                                </div>
+                                <div class="flex -space-x-4 rtl:space-x-reverse">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-02.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-03.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-05.jpg" alt="">
+                                    <a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+1</a>
+                                </div>
+                            </div>                            
+						</div>
+					</div>
+					<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+						<div class="card-body p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <h6><a href="project-details.html">Clinic Management</a></h6>
+                                <div>
+									<a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown2">
+										<i class="ti ti-dots-vertical"></i>
+									</a>
+									<ul id="grid-dropdown2" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-target="edit_project" data-modal-toggle="edit_project"><i class="ti ti-edit me-1"></i>Edit</a>
+										</li>
+										<li>
+											<a href="#" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-toggle="delete_modal" data-modal-target="delete_modal"><i class="ti ti-trash me-1"></i>Delete </a>	
+										</li>
+									</ul>
+								</div>
+                            </div>
+                            <div class="mb-3 pb-3 border-b">
+                                <p class="text-truncate line-clamp-3 mb-0">A clinic management project streamlines patient records, appointments, and billing processes to improve operational efficiency
+                                </p>
+                            </div>                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b">
+                                <div class="flex items-center">
+                                    <a href="javascript:void(0);" class="avatar avatar-sm avatar-rounded flex-shrink-0">
+                                        <img src="/src/assets/img/users/user-40.jpg" class="w-6 h-6 rounded-full flex-shrink-0" alt="img">
+                                    </a>
+                                    <div class="ml-2">
+                                        <h6 class="font-normal text-xs text-dark"><a href="javascript:void(0);">Sophie Headrick</a></h6>
+                                        <span class="text-xs text-gray-500">Project Leader</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs text-gray-500">Deadline</span>
+                                        <p class="mb-0 text-xs text-gray-700">15 Jan 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <!-- Tasks -->
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-sm rounded-full flex justify-center items-center bg-green-100 flex-shrink-0 me-2">
+                                        <i class="ti ti-checklist text-green-500 text-lg"></i>
+                                    </span>
+                                    <p class="text-sm text-gray-700">
+                                        <small class="text-gray-500">Tasks:</small>
+                                        <span class="font-medium">7</span>/10
+                                    </p>
+                                </div>
+                                <div class="flex -space-x-4 rtl:space-x-reverse">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-06.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-07.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-08.jpg" alt="">
+                                    <a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+2</a>
+                                </div>
+                            </div>                            
+						</div>
+					</div>
+					<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+						<div class="card-body p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <h6><a href="project-details.html">Educational Platform</a></h6>
+                                <div>
+									<a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown3">
+										<i class="ti ti-dots-vertical"></i>
+									</a>
+									<ul id="grid-dropdown3" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-target="edit_project" data-modal-toggle="edit_project"><i class="ti ti-edit me-1"></i>Edit</a>
+										</li>
+										<li>
+											<a href="#" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-toggle="delete_modal" data-modal-target="delete_modal"><i class="ti ti-trash me-1"></i>Delete </a>	
+										</li>
+									</ul>
+								</div>
+                            </div>
+                            <div class="mb-3 pb-3 border-b">
+                                <p class="text-truncate line-clamp-3 mb-0">An educational platform project provides a centralized space for delivering online courses, tracking progress, and managing student assessments.
+                                </p>
+                            </div>                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b">
+                                <div class="flex items-center">
+                                    <a href="javascript:void(0);" class="avatar avatar-sm avatar-rounded flex-shrink-0">
+                                        <img src="/src/assets/img/users/user-41.jpg" class="w-6 h-6 rounded-full flex-shrink-0" alt="img">
+                                    </a>
+                                    <div class="ml-2">
+                                        <h6 class="font-normal text-xs text-dark"><a href="javascript:void(0);">Cameron Drake</a></h6>
+                                        <span class="text-xs text-gray-500">Project Leader</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs text-gray-500">Deadline</span>
+                                        <p class="mb-0 text-xs text-gray-700">16 Jan 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <!-- Tasks -->
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-sm rounded-full flex justify-center items-center bg-green-100 flex-shrink-0 me-2">
+                                        <i class="ti ti-checklist text-green-500 text-lg"></i>
+                                    </span>
+                                    <p class="text-sm text-gray-700">
+                                        <small class="text-gray-500">Tasks:</small>
+                                        <span class="font-medium">5</span>/10
+                                    </p>
+                                </div>
+                                <div class="flex -space-x-4 rtl:space-x-reverse">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-09.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-10.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-11.jpg" alt="">
+                                    <a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+2</a>
+                                </div>
+                            </div>                            
+						</div>
+					</div>
+					<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+						<div class="card-body p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <h6><a href="project-details.html">Chat & Call  Mobile App</a></h6>
+                                <div>
+									<a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown4">
+										<i class="ti ti-dots-vertical"></i>
+									</a>
+									<ul id="grid-dropdown4" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-target="edit_project" data-modal-toggle="edit_project"><i class="ti ti-edit me-1"></i>Edit</a>
+										</li>
+										<li>
+											<a href="#" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-toggle="delete_modal" data-modal-target="delete_modal"><i class="ti ti-trash me-1"></i>Delete </a>	
+										</li>
+									</ul>
+								</div>
+                            </div>
+                            <div class="mb-3 pb-3 border-b">
+                                <p class="text-truncate line-clamp-3 mb-0">A chat and call mobile app enables users to send messages, make voice and video calls, and share media seamlessly across devices.
+                                </p>
+                            </div>                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b">
+                                <div class="flex items-center">
+                                    <a href="javascript:void(0);" class="avatar avatar-sm avatar-rounded flex-shrink-0">
+                                        <img src="/src/assets/img/users/user-42.jpg" class="w-6 h-6 rounded-full flex-shrink-0" alt="img">
+                                    </a>
+                                    <div class="ml-2">
+                                        <h6 class="font-normal text-xs text-dark"><a href="javascript:void(0);">Doris Crowley</a></h6>
+                                        <span class="text-xs text-gray-500">Project Leader</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs text-gray-500">Deadline</span>
+                                        <p class="mb-0 text-xs text-gray-700">17 Jan 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <!-- Tasks -->
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-sm rounded-full flex justify-center items-center bg-green-100 flex-shrink-0 me-2">
+                                        <i class="ti ti-checklist text-green-500 text-lg"></i>
+                                    </span>
+                                    <p class="text-sm text-gray-700">
+                                        <small class="text-gray-500">Tasks:</small>
+                                        <span class="font-medium">6</span>/10
+                                    </p>
+                                </div>
+                                <div class="flex -space-x-4 rtl:space-x-reverse">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-12.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-13.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-14.jpg" alt="">
+                                    <a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+2</a>
+                                </div>
+                            </div>                            
+						</div>
+					</div>
+					<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+						<div class="card-body p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <h6><a href="project-details.html">Travel Planning Website</a></h6>
+                                <div>
+									<a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown5">
+										<i class="ti ti-dots-vertical"></i>
+									</a>
+									<ul id="grid-dropdown5" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-target="edit_project" data-modal-toggle="edit_project"><i class="ti ti-edit me-1"></i>Edit</a>
+										</li>
+										<li>
+											<a href="#" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-toggle="delete_modal" data-modal-target="delete_modal"><i class="ti ti-trash me-1"></i>Delete </a>	
+										</li>
+									</ul>
+								</div>
+                            </div>
+                            <div class="mb-3 pb-3 border-b">
+                                <p class="text-truncate line-clamp-3 mb-0">A travel planning website helps users explore destinations, compare flights and accommodations, and create personalized itineraries.
+                                </p>
+                            </div>                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b">
+                                <div class="flex items-center">
+                                    <a href="javascript:void(0);" class="avatar avatar-sm avatar-rounded flex-shrink-0">
+                                        <img src="/src/assets/img/users/user-43.jpg" class="w-6 h-6 rounded-full flex-shrink-0" alt="img">
+                                    </a>
+                                    <div class="ml-2">
+                                        <h6 class="font-normal text-xs text-dark"><a href="javascript:void(0);">Thomas Bordelon</a></h6>
+                                        <span class="text-xs text-gray-500">Manager</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs text-gray-500">Deadline</span>
+                                        <p class="mb-0 text-xs text-gray-700">18 Jan 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <!-- Tasks -->
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-sm rounded-full flex justify-center items-center bg-green-100 flex-shrink-0 me-2">
+                                        <i class="ti ti-checklist text-green-500 text-lg"></i>
+                                    </span>
+                                    <p class="text-sm text-gray-700">
+                                        <small class="text-gray-500">Tasks:</small>
+                                        <span class="font-medium">8</span>/10
+                                    </p>
+                                </div>
+                                <div class="flex -space-x-4 rtl:space-x-reverse">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-15.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-16.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-17.jpg" alt="">
+                                    <a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+2</a>
+                                </div>
+                            </div>                            
+						</div>
+					</div>
+					<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+						<div class="card-body p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <h6><a href="project-details.html">Service Booking Software</a></h6>
+                                <div>
+									<a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown6">
+										<i class="ti ti-dots-vertical"></i>
+									</a>
+									<ul id="grid-dropdown6" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-target="edit_project" data-modal-toggle="edit_project"><i class="ti ti-edit me-1"></i>Edit</a>
+										</li>
+										<li>
+											<a href="#" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-toggle="delete_modal" data-modal-target="delete_modal"><i class="ti ti-trash me-1"></i>Delete </a>	
+										</li>
+									</ul>
+								</div>
+                            </div>
+                            <div class="mb-3 pb-3 border-b">
+                                <p class="text-truncate line-clamp-3 mb-0">Service booking software enables users to schedule appointments, manage bookings, and handle payments for various services.
+                                </p>
+                            </div>                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b">
+                                <div class="flex items-center">
+                                    <a href="javascript:void(0);" class="avatar avatar-sm avatar-rounded flex-shrink-0">
+                                        <img src="/src/assets/img/users/user-45.jpg" class="w-6 h-6 rounded-full flex-shrink-0" alt="img">
+                                    </a>
+                                    <div class="ml-2">
+                                        <h6 class="font-normal text-xs text-dark"><a href="javascript:void(0);">Kathleen Gutierrez</a></h6>
+                                        <span class="text-xs text-gray-500">Project Leader</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs text-gray-500">Deadline</span>
+                                        <p class="mb-0 text-xs text-gray-700">19 Jan 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <!-- Tasks -->
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-sm rounded-full flex justify-center items-center bg-green-100 flex-shrink-0 me-2">
+                                        <i class="ti ti-checklist text-green-500 text-lg"></i>
+                                    </span>
+                                    <p class="text-sm text-gray-700">
+                                        <small class="text-gray-500">Tasks:</small>
+                                        <span class="font-medium">8</span>/10
+                                    </p>
+                                </div>
+                                <div class="flex -space-x-4 rtl:space-x-reverse">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-18.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-19.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-20.jpg" alt="">
+                                    <a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+2</a>
+                                </div>
+                            </div>                            
+						</div>
+					</div>
+					<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+						<div class="card-body p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <h6><a href="project-details.html">Hotel Booking App</a></h6>
+                                <div>
+									<a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown7">
+										<i class="ti ti-dots-vertical"></i>
+									</a>
+									<ul id="grid-dropdown7" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-target="edit_project" data-modal-toggle="edit_project"><i class="ti ti-edit me-1"></i>Edit</a>
+										</li>
+										<li>
+											<a href="#" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-toggle="delete_modal" data-modal-target="delete_modal"><i class="ti ti-trash me-1"></i>Delete </a>	
+										</li>
+									</ul>
+								</div>
+                            </div>
+                            <div class="mb-3 pb-3 border-b">
+                                <p class="text-truncate line-clamp-3 mb-0">A hotel booking app allows users to search, compare, and book accommodations with ease, offering a wide range of options.
+                                </p>
+                            </div>                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b">
+                                <div class="flex items-center">
+                                    <a href="javascript:void(0);" class="avatar avatar-sm avatar-rounded flex-shrink-0">
+                                        <img src="/src/assets/img/users/user-46.jpg" class="w-6 h-6 rounded-full flex-shrink-0" alt="img">
+                                    </a>
+                                    <div class="ml-2">
+                                        <h6 class="font-normal text-xs text-dark"><a href="javascript:void(0);">Bruce Wright</a></h6>
+                                        <span class="text-xs text-gray-500">Project Leader</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs text-gray-500">Deadline</span>
+                                        <p class="mb-0 text-xs text-gray-700">20 Jan 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <!-- Tasks -->
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-sm rounded-full flex justify-center items-center bg-green-100 flex-shrink-0 me-2">
+                                        <i class="ti ti-checklist text-green-500 text-lg"></i>
+                                    </span>
+                                    <p class="text-sm text-gray-700">
+                                        <small class="text-gray-500">Tasks:</small>
+                                        <span class="font-medium">8</span>/10
+                                    </p>
+                                </div>
+                                <div class="flex -space-x-4 rtl:space-x-reverse">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-24.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-23.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-22.jpg" alt="">
+                                    <a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+1</a>
+                                </div>
+                            </div>                            
+						</div>
+					</div>
+					<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+						<div class="card-body p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <h6><a href="project-details.html">Car & Bike Rental Software</a></h6>
+                                <div>
+									<a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown8">
+										<i class="ti ti-dots-vertical"></i>
+									</a>
+									<ul id="grid-dropdown8" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-target="edit_project" data-modal-toggle="edit_project"><i class="ti ti-edit me-1"></i>Edit</a>
+										</li>
+										<li>
+											<a href="#" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-toggle="delete_modal" data-modal-target="delete_modal"><i class="ti ti-trash me-1"></i>Delete </a>	
+										</li>
+									</ul>
+								</div>
+                            </div>
+                            <div class="mb-3 pb-3 border-b">
+                                <p class="text-truncate line-clamp-3 mb-0">Car and bike rental software allows users to browse, reserve, and rent vehicles efficiently through an online platform.
+                                </p>
+                            </div>                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b">
+                                <div class="flex items-center">
+                                    <a href="javascript:void(0);" class="avatar avatar-sm avatar-rounded flex-shrink-0">
+                                        <img src="/src/assets/img/users/user-47.jpg" class="w-6 h-6 rounded-full flex-shrink-0" alt="img">
+                                    </a>
+                                    <div class="ml-2">
+                                        <h6 class="font-normal text-xs text-dark"><a href="javascript:void(0);">Rebecca Smtih</a></h6>
+                                        <span class="text-xs text-gray-500">Project Leader</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs text-gray-500">Deadline</span>
+                                        <p class="mb-0 text-xs text-gray-700">17 Jan 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <!-- Tasks -->
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-sm rounded-full flex justify-center items-center bg-green-100 flex-shrink-0 me-2">
+                                        <i class="ti ti-checklist text-green-500 text-lg"></i>
+                                    </span>
+                                    <p class="text-sm text-gray-700">
+                                        <small class="text-gray-500">Tasks:</small>
+                                        <span class="font-medium">6</span>/10
+                                    </p>
+                                </div>
+                                <div class="flex -space-x-4 rtl:space-x-reverse">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-12.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-13.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-14.jpg" alt="">
+                                    <a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+2</a>
+                                </div>
+                            </div>                            
+						</div>
+					</div>
+					<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+						<div class="card-body p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <h6><a href="project-details.html">Navigation and Safety App</h6>
+                                <div>
+									<a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown9">
+										<i class="ti ti-dots-vertical"></i>
+									</a>
+									<ul id="grid-dropdown9" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-target="edit_project" data-modal-toggle="edit_project"><i class="ti ti-edit me-1"></i>Edit</a>
+										</li>
+										<li>
+											<a href="#" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-toggle="delete_modal" data-modal-target="delete_modal"><i class="ti ti-trash me-1"></i>Delete </a>	
+										</li>
+									</ul>
+								</div>
+                            </div>
+                            <div class="mb-3 pb-3 border-b">
+                                <p class="text-truncate line-clamp-3 mb-0">A navigation and safety app provides real-time GPS guidance, traffic updates, and route optimization to help users reach their destinations efficiently.A navigation and safety app provides real-time GPS guidance, traffic updates, and route optimization to help users reach their destinations efficiently.
+                                </p>
+                            </div>                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b">
+                                <div class="flex items-center">
+                                    <a href="javascript:void(0);" class="avatar avatar-sm avatar-rounded flex-shrink-0">
+                                        <img src="/src/assets/img/users/user-28.jpg" class="w-6 h-6 rounded-full flex-shrink-0" alt="img">
+                                    </a>
+                                    <div class="ml-2">
+                                        <h6 class="font-normal text-xs text-dark"><a href="javascript:void(0);">Connie Waters</a></h6>
+                                        <span class="text-xs text-gray-500">Project Leader</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs text-gray-500">Deadline</span>
+                                        <p class="mb-0 text-xs text-gray-700">14 Jan 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <!-- Tasks -->
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-sm rounded-full flex justify-center items-center bg-green-100 flex-shrink-0 me-2">
+                                        <i class="ti ti-checklist text-green-500 text-lg"></i>
+                                    </span>
+                                    <p class="text-sm text-gray-700">
+                                        <small class="text-gray-500">Tasks:</small>
+                                        <span class="font-medium">6</span>/10
+                                    </p>
+                                </div>
+                                <div class="flex -space-x-4 rtl:space-x-reverse">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-02.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-03.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-05.jpg" alt="">
+                                    <a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+1</a>
+                                </div>
+                            </div>                            
+						</div>
+					</div>
+					<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+						<div class="card-body p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <h6><a href="project-details.html">Food Order App</h6>
+                                <div>
+									<a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown10">
+										<i class="ti ti-dots-vertical"></i>
+									</a>
+									<ul id="grid-dropdown10" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-target="edit_project" data-modal-toggle="edit_project"><i class="ti ti-edit me-1"></i>Edit</a>
+										</li>
+										<li>
+											<a href="#" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-toggle="delete_modal" data-modal-target="delete_modal"><i class="ti ti-trash me-1"></i>Delete </a>	
+										</li>
+									</ul>
+								</div>
+                            </div>
+                            <div class="mb-3 pb-3 border-b">
+                                <p class="text-truncate line-clamp-3 mb-0">A food order app allows users to browse menus, place orders, and track delivery from their favorite restaurants with ease.
+                                </p>
+                            </div>                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b">
+                                <div class="flex items-center">
+                                    <a href="javascript:void(0);" class="avatar avatar-sm avatar-rounded flex-shrink-0">
+                                        <img src="/src/assets/img/users/user-42.jpg" class="w-6 h-6 rounded-full flex-shrink-0" alt="img">
+                                    </a>
+                                    <div class="ml-2">
+                                        <h6 class="font-normal text-xs text-dark"><a href="javascript:void(0);">Lori Broaddus</a></h6>
+                                        <span class="text-xs text-gray-500">Project Leader</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs text-gray-500">Deadline</span>
+                                        <p class="mb-0 text-xs text-gray-700">15 Jan 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <!-- Tasks -->
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-sm rounded-full flex justify-center items-center bg-green-100 flex-shrink-0 me-2">
+                                        <i class="ti ti-checklist text-green-500 text-lg"></i>
+                                    </span>
+                                    <p class="text-sm text-gray-700">
+                                        <small class="text-gray-500">Tasks:</small>
+                                        <span class="font-medium">7</span>/10
+                                    </p>
+                                </div>
+                                <div class="flex -space-x-4 rtl:space-x-reverse">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-06.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-07.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-08.jpg" alt="">
+                                    <a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+2</a>
+                                </div>
+                            </div>                            
+						</div>
+					</div>
+					<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+						<div class="card-body p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <h6><a href="project-details.html">POS Admin Software</h6>
+                                <div>
+									<a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown11">
+										<i class="ti ti-dots-vertical"></i>
+									</a>
+									<ul id="grid-dropdown11" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-target="edit_project" data-modal-toggle="edit_project"><i class="ti ti-edit me-1"></i>Edit</a>
+										</li>
+										<li>
+											<a href="#" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-toggle="delete_modal" data-modal-target="delete_modal"><i class="ti ti-trash me-1"></i>Delete </a>	
+										</li>
+									</ul>
+								</div>
+                            </div>
+                            <div class="mb-3 pb-3 border-b">
+                                <p class="text-truncate line-clamp-3 mb-0">POS admin software enables businesses to manage sales, track inventory, and process transactions efficiently through a centralized platform.
+                                </p>
+                            </div>                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b">
+                                <div class="flex items-center">
+                                    <a href="javascript:void(0);" class="avatar avatar-sm avatar-rounded flex-shrink-0">
+                                        <img src="/src/assets/img/users/user-48.jpg" class="w-6 h-6 rounded-full flex-shrink-0" alt="img">
+                                    </a>
+                                    <div class="ml-2">
+                                        <h6 class="font-normal text-xs text-dark"><a href="javascript:void(0);">Stephen Dias</a></h6>
+                                        <span class="text-xs text-gray-500">CEO</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs text-gray-500">Deadline</span>
+                                        <p class="mb-0 text-xs text-gray-700">22 Jan 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <!-- Tasks -->
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-sm rounded-full flex justify-center items-center bg-green-100 flex-shrink-0 me-2">
+                                        <i class="ti ti-checklist text-green-500 text-lg"></i>
+                                    </span>
+                                    <p class="text-sm text-gray-700">
+                                        <small class="text-gray-500">Tasks:</small>
+                                        <span class="font-medium">5</span>/10
+                                    </p>
+                                </div>
+                                <div class="flex -space-x-4 rtl:space-x-reverse">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-26.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-27.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-28.jpg" alt="">
+                                    <a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+2</a>
+                                </div>
+                            </div>                            
+						</div>
+					</div>
+					<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+						<div class="card-body p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <h6><a href="project-details.html">Invoicing & Billing Software</h6>
+                                <div>
+									<a href="javascript:void(0);" class="size-7 rounded-full bg-white inline-flex items-center justify-center hover:bg-dark-transparent hover:text-dark focus:bg-primary focus:text-white text-gray-900 text-xs" data-dropdown-placement="bottom-end" data-dropdown-toggle="grid-dropdown12">
+										<i class="ti ti-dots-vertical"></i>
+									</a>
+									<ul id="grid-dropdown12" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+										<li>
+											<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-target="edit_project" data-modal-toggle="edit_project"><i class="ti ti-edit me-1"></i>Edit</a>
+										</li>
+										<li>
+											<a href="#" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900" data-modal-toggle="delete_modal" data-modal-target="delete_modal"><i class="ti ti-trash me-1"></i>Delete </a>	
+										</li>
+									</ul>
+								</div>
+                            </div>
+                            <div class="mb-3 pb-3 border-b">
+                                <p class="text-truncate line-clamp-3 mb-0">Invoicing and billing software automates the creation, sending, and tracking of invoices, making payment processes quicker and more efficient.
+                                </p>
+                            </div>                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b">
+                                <div class="flex items-center">
+                                    <a href="javascript:void(0);" class="avatar avatar-sm avatar-rounded flex-shrink-0">
+                                        <img src="/src/assets/img/users/user-50.jpg" class="w-6 h-6 rounded-full flex-shrink-0" alt="img">
+                                    </a>
+                                    <div class="ml-2">
+                                        <h6 class="font-normal text-xs text-dark"><a href="javascript:void(0);">Angela Thomas</a></h6>
+                                        <span class="text-xs text-gray-500">Project Leader</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div>
+                                        <span class="text-xs text-gray-500">Deadline</span>
+                                        <p class="mb-0 text-xs text-gray-700">23 Jan 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <!-- Tasks -->
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-sm rounded-full flex justify-center items-center bg-green-100 flex-shrink-0 me-2">
+                                        <i class="ti ti-checklist text-green-500 text-lg"></i>
+                                    </span>
+                                    <p class="text-sm text-gray-700">
+                                        <small class="text-gray-500">Tasks:</small>
+                                        <span class="font-medium">8</span>/10
+                                    </p>
+                                </div>
+                                <div class="flex -space-x-4 rtl:space-x-reverse">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-29.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-30.jpg" alt="">
+                                    <img class="w-7 h-7 border-2 border-white rounded-full hover:-translate-y-[0.188rem] hover:z-[1] transition-transform duration-150 ease-in-out" src="/src/assets/img/profiles/avatar-03.jpg" alt="">
+                                    <a class="flex items-center justify-center w-7 h-7 text-xs font-medium text-white bg-primary border-2 border-white rounded-full dark:border-gray-800 shrink-0" href="#">+2</a>
+                                </div>
+                            </div>                            
+						</div>
+					</div>
+                </div>
+                <div class="grid grid-cols-12 gap-6 mt-3">
+                    <div class="col-span-12 text-center flex items-center justify-center mb-4">
+                        <a href="#" class="bg-primary text-white px-4 py-2 rounded hover:bg-primary font-medium">
+                            <i class="ti ti-loader-3 mr-2"></i>Load More
+                        </a>
+                    </div>
+                </div>
+                
+			</div>
+			<div class="footer sm:flex items-center justify-between bg-white border-t border-borderColor p-4">
+				<p class="text-default mb-0">2014 - 2025 &copy; SmartHR.</p>
+				<p class="text-default">Designed &amp; Developed By <a href="javascript:void(0);"
+						class="text-primary">Dreams</a></p>
+			</div>
+
+		</div>
+		<!-- /Page Wrapper -->
+
+		<!-- Add Project -->
+		<div id="add_project" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full  transition-all duration-300 ease-in-out modal p-4">
+			<div class="relative p-4 w-full max-w-[800px] max-h-full">
+				<div class="relative bg-white rounded-defaultradius">
+					<div class="flex items-center justify-between p-4 border-b border-borderColor">
+						<h4 class="font-semibold me-2">Add Project</h4>
+                        <p class="text-dark">Project ID : PRO-0004</p>
+						<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="add_project">
+							<i class="ti ti-x"></i>
+							<span class="sr-only">Close modal</span>
+						</button>
+					</div>
+					<form action="projects-grid.html">
+						<div class="p-4">
+							<div class="mb-4 border-b border-gray-200">
+								<ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTabContent" data-tabs-toggle="#myTabContent" data-tabs-active-classes="text-primary hover:text-primary border-primary" data-tabs-inactive-classes="text-gray-500 hover:text-primary border-transparent hover:border-primary" role="tablist">
+									<li class="me-6" role="presentation">
+										<button class="inline-block py-2 border-b-2" id="info-tab" data-tabs-target="#basic-info" type="button" role="tab" aria-selected="false">Basic Information</button>
+									</li>
+									<li class="me-6" role="presentation">
+										<button class="inline-block py-2 border-b-2" id="address-tab" data-tabs-target="#address" type="button" role="tab" aria-selected="false">Members</button>
+									</li>
+								</ul>
+							</div>
+							<div id="myTabContent">
+								<div class="hidden" id="basic-info" role="tabpanel">
+                                    <div class="grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-6">
+                                        <div class="md:col-span-12">
+                                            <div class="flex items-center flex-wrap gap-2 bg-light w-full rounded-defaultradius p-4">                                                
+                                                <div class="flex items-center justify-center size-20 rounded-full border border-dashed shrink-0 text-dark frames">
+                                                    <i class="ti ti-photo text-gray-2 fs-16"></i>
+                                                </div>                                              
+                                                <div class="profile-upload">
+                                                    <div class="mb-2">
+                                                        <h6 class="mb-1">Upload Project Logo</h6>
+                                                        <p class="text-xs leading-normal">Image should be below 4 mb</p>
+                                                    </div>
+                                                    <div class="profile-uploader d-flex items-center">
+                                                        <div class="drag-upload-btn btn bg-primary border border-primary text-white text-center hover:bg-primary-900 hover:text-white text-xs leading-normal relative py-1 px-2 me-2">
+                                                            Upload
+                                                            <input type="file" class="w-full h-full absolute top-0 left-0 opacity-0" multiple="">
+                                                        </div>
+                                                        <a href="javascript:void(0);" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 text-xs leading-normal py-1 px-2">Cancel</a>
+                                                    </div>													
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Project Name</label>
+                                                <input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400">
+                                            </div>									
+                                        </div>
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Client</label>
+                                                <select class="select">
+													<option>Select</option>
+													<option>Anthony Lewis</option>
+													<option>Brian Villalobos</option>
+												</select>
+                                            </div>									
+                                        </div>
+                                        <div class="md:col-span-6">
+                                            <label class="block mb-1 text-sm leading-normal font-medium text-title">Start Date</label>
+                                            <div class="relative">
+                                                <div class="absolute inset-y-0 end-2 flex items-center pointer-events-none">
+                                                    <i class="ti ti-calendar text-gray-600 text-base leading-normal"></i>
+                                                </div>
+                                                <input type="text" placeholder="dd/mm/yyyy" class="flatpickr-input flat-datepickr bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400">
+                                            </div>
+                                        </div>
+                                        <div class="md:col-span-6">
+                                            <label class="block mb-1 text-sm leading-normal font-medium text-title">End Date</label>
+                                            <div class="relative">
+                                                <div class="absolute inset-y-0 end-2 flex items-center pointer-events-none">
+                                                    <i class="ti ti-calendar text-gray-600 text-base leading-normal"></i>
+                                                </div>
+                                                <input type="text" placeholder="dd/mm/yyyy" class="flatpickr-input flat-datepickr bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400">
+                                            </div>
+                                        </div>
+                                        <div class="md:col-span-4">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Priority</label>
+                                                <select class="select">
+                                                    <option>Select</option>
+                                                    <option>High</option>
+                                                    <option>Medium</option>
+                                                    <option>Low</option>
+                                                </select>
+                                            </div>									
+                                        </div>
+                                        <div class="md:col-span-4">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Project Value</label>
+                                                <input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" value="$">
+                                            </div>									
+                                        </div>
+                                        <div class="md:col-span-4">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Price Type</label>
+                                                <input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400">
+                                            </div>		
+                                        </div>
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Description</label>
+                                                <div class="summernote"></div>
+                                            </div>		
+                                        </div>
+                                        <div class="md:col-span-12">
+                                            <div class="mb-0">                                                
+                                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
+                                                <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+								<div class="hidden" id="address">
+									<div class="grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-6">
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Project Name</label>
+                                                <input class="input-tags bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="Jerald,Andrew,Philip,Davis">
+                                            </div>									
+                                        </div>
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Team Leader</label>
+                                                <input class="input-tags bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="Hendry,James">
+                                            </div>									
+                                        </div>                                        
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Project Manager</label>
+                                                <input class="input-tags bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="Dwight">
+                                            </div>									
+                                        </div>                                        
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Tags</label>
+                                                <input class="input-tags bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="Collab,Promotion,Rated">
+                                            </div>									
+                                        </div>
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Status</label>
+                                                <select class="select">
+													<option>Select</option>
+													<option>Active</option>
+													<option>Inactive</option>
+												</select>
+                                            </div>									
+                                        </div>                                 
+                                    </div>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center justify-end p-4 border-t border-borderColor">
+							<button data-modal-hide="add_project" type="button" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 font-medium me-2">Cancel</button>
+							<a href="#" data-modal-hide="add_project" data-modal-target="success_modal" data-modal-toggle="success_modal" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-900 hover:text-white font-medium">Save</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- /Add Project -->
+
+        <!-- Edit employee -->
+        <div id="edit_project" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full  transition-all duration-300 ease-in-out modal p-4">
+            <div class="relative p-4 w-full max-w-[800px] max-h-full">
+                <div class="relative bg-white rounded-defaultradius">
+                    <div class="flex items-center justify-between p-4 border-b border-borderColor">
+                        <h4 class="font-semibold me-2">Edit Project</h4>
+                        <p class="text-dark">Project ID : PRO-0004</p>
+                        <button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="edit_project">
+                            <i class="ti ti-x"></i>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <form action="projects-grid.html">
+                        <div class="p-4">
+                            <div class="mb-4 border-b border-gray-200">
+                                <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTabContentone" data-tabs-toggle="#myTabContentone" data-tabs-active-classes="text-primary hover:text-primary border-primary" data-tabs-inactive-classes="text-gray-500 hover:text-primary border-transparent hover:border-primary" role="tablist">
+                                    <li class="me-6" role="presentation">
+                                        <button class="inline-block py-2 border-b-2" id="info-tabone" data-tabs-target="#basic-infoone" type="button" role="tab" aria-selected="false">Basic Information</button>
+                                    </li>
+                                    <li class="me-6" role="presentation">
+                                        <button class="inline-block py-2 border-b-2" id="address-tabone" data-tabs-target="#addressone" type="button" role="tab" aria-selected="false">Members</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="myTabContentone">
+                                <div class="hidden" id="basic-infoone" role="tabpanel">
+                                    <div class="grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-6">
+                                        <div class="md:col-span-12">
+                                            <div class="flex items-center flex-wrap gap-2 bg-light w-full rounded-defaultradius p-4">                                                
+                                                <div class="flex items-center justify-center size-20 rounded-full border border-dashed shrink-0 text-dark frames">
+                                                    <i class="ti ti-photo text-gray-2 fs-16"></i>
+                                                </div>                                              
+                                                <div class="profile-upload">
+                                                    <div class="mb-2">
+                                                        <h6 class="mb-1">Upload Project Logo</h6>
+                                                        <p class="text-xs leading-normal">Image should be below 4 mb</p>
+                                                    </div>
+                                                    <div class="profile-uploader d-flex items-center">
+                                                        <div class="drag-upload-btn btn bg-primary border border-primary text-white text-center hover:bg-primary-900 hover:text-white text-xs leading-normal relative py-1 px-2 me-2">
+                                                            Upload
+                                                            <input type="file" class="w-full h-full absolute top-0 left-0 opacity-0" multiple="">
+                                                        </div>
+                                                        <a href="javascript:void(0);" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 text-xs leading-normal py-1 px-2">Cancel</a>
+                                                    </div>													
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Project Name</label>
+                                                <input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" value="Office Management">
+                                            </div>									
+                                        </div>
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Client</label>
+                                                <select class="select">
+                                                    <option>Select</option>
+                                                    <option selected>Anthony Lewis</option>
+                                                    <option>Brian Villalobos</option>
+                                                </select>
+                                            </div>									
+                                        </div>
+                                        <div class="md:col-span-6">
+                                            <label class="block mb-1 text-sm leading-normal font-medium text-title">Start Date</label>
+                                            <div class="relative">
+                                                <div class="absolute inset-y-0 end-2 flex items-center pointer-events-none">
+                                                    <i class="ti ti-calendar text-gray-600 text-base leading-normal"></i>
+                                                </div>
+                                                <input type="text" placeholder="dd/mm/yyyy" class="flatpickr-input flat-datepickr bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" value="02-05-2024">
+                                            </div>
+                                        </div>
+                                        <div class="md:col-span-6">
+                                            <label class="block mb-1 text-sm leading-normal font-medium text-title">End Date</label>
+                                            <div class="relative">
+                                                <div class="absolute inset-y-0 end-2 flex items-center pointer-events-none">
+                                                    <i class="ti ti-calendar text-gray-600 text-base leading-normal"></i>
+                                                </div>
+                                                <input type="text" placeholder="dd/mm/yyyy" class="flatpickr-input flat-datepickr bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" value="02-05-2024">
+                                            </div>
+                                        </div>
+                                        <div class="md:col-span-4">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Priority</label>
+                                                <select class="select">
+                                                    <option>Select</option>
+                                                    <option>High</option>
+                                                    <option>Medium</option>
+                                                    <option>Low</option>
+                                                </select>
+                                            </div>									
+                                        </div>
+                                        <div class="md:col-span-4">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Project Value</label>
+                                                <input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" value="$">
+                                            </div>									
+                                        </div>
+                                        <div class="md:col-span-4">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Price Type</label>
+                                                <input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400">
+                                            </div>		
+                                        </div>
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Description</label>
+                                                <div class="summernote"></div>
+                                            </div>		
+                                        </div>
+                                        <div class="md:col-span-12">
+                                            <div class="mb-0">                                                
+                                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
+                                                <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="hidden" id="addressone">
+                                    <div class="grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-6">
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Project Name</label>
+                                                <input class="input-tags bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="Jerald,Andrew,Philip,Davis">
+                                            </div>									
+                                        </div>
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Team Leader</label>
+                                                <input class="input-tags bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="Hendry,James">
+                                            </div>									
+                                        </div>                                        
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Project Manager</label>
+                                                <input class="input-tags bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="Dwight">
+                                            </div>									
+                                        </div>                                        
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Tags</label>
+                                                <input class="input-tags bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="Collab,Promotion,Rated">
+                                            </div>									
+                                        </div> 
+                                        <div class="md:col-span-12">
+                                            <div class="mb-3">
+                                                <label class="block mb-1 text-sm leading-normal font-medium text-title">Status</label>
+                                                <select class="select">
+													<option>Select</option>
+													<option selected>Active</option>
+													<option>Inactive</option>
+												</select>
+                                            </div>									
+                                        </div>                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end p-4 border-t border-borderColor">
+                            <button data-modal-hide="add_project" type="button" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 font-medium me-2">Cancel</button>
+                            <a href="#" data-modal-hide="edit_project" data-modal-target="success_modal" data-modal-toggle="success_modal" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-900 hover:text-white font-medium">Save</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /Edit employee -->
+
+		<!-- Success Modal -->
+		<div id="success_modal" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full  transition-all duration-300 ease-in-out modal p-4" role="dialog">
+			<div class="bg-white rounded-lg w-full max-w-xs p-6">
+				<div class="text-center">
+					<div class="flex items-center justify-center">
+						<span class="inline-block w-12 h-12 rounded-full bg-success text-white mb-3 flex items-center justify-center">
+							<i class="ti ti-check text-2xl"></i>
+						</span>
+					</div>					
+					<h5 class="text-lg font-semibold mb-2">Project Added Successfully</h5>
+					<p class="text-sm mb-3 px-2">Stephan Peralt has been added with Client ID : <span class="text-primary">#pro - 00041</span></p>
+					<div>
+						<div class="grid grid-cols-2 gap-2">
+							<div>
+								<a href="projects.html" class="btn btn-dark w-full bg-gray-800 text-white py-2 rounded-md hover:bg-gray-700 text-center">Back to List</a>
+							</div>
+							<div>
+								<a href="projects-grid.html" class="btn btn-primary w-full bg-primary text-white py-2 rounded-md hover:bg-primary text-center">Detail Page</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<!-- /Success Modal -->
+
+			<!-- Delete Modal -->
+			<div id="delete_modal" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full  transition-all duration-300 ease-in-out modal p-4">
+				<div class="relative p-4 w-full max-w-sm max-h-full">
+				  <div class="relative bg-white rounded-defaultradius">
+						  <div class="p-4 text-center">
+							<span class="size-[60px] rounded bg-danger-100 text-danger inline-flex items-center justify-center mb-4">
+								<i class="ti ti-trash-x text-4xl leading-normal"></i>
+							</span>
+							<h4 class="mb-1">Confirm Delete</h4>
+							<p class="mb-4">You want to delete all the marked items, this cant be undone once you delete.</p>
+							<div class="flex justify-center">
+								<a href="javascript:void(0);" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 me-4" data-modal-hide="delete_modal">Cancel</a>
+								<a href="contact-details.html" class="btn bg-danger border border-danger text-white text-center hover:bg-danger-900 hover:text-white">Yes, Delete</a>
+							</div>
+						  </div>
+					</div>
+				</div>
+			</div>
+			<!-- /Delete Modal -->
+
+	</div>
+	<!-- /Main Wrapper -->
+
+	<!-- jQuery -->
+	<script src="/src/assets/js/jquery-3.7.1.min.js"></script>
+
+	<!-- Flowbite JS -->
+	<script src="/src/assets/js/flowbite.min.js"></script>
+
+	<!-- Feather Icon JS -->
+	<script src="/src/assets/js/feather.min.js"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="/src/assets/js/jquery.slimscroll.min.js"></script>
+
+	<!-- Datetimepicker JS -->
+	<script src="/src/assets/js/moment.js"></script>
+	<script src="/src/assets/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="/src/assets/plugins/flatpickr/flatpickr.min.js"></script>
+
+	<!-- Daterangepikcer JS -->
+	<script src="/src/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+	<!-- Datatable JS -->
+	<script src="/src/assets/js/dataTables.js"></script>
+	<script src="/src/assets/js/dataTables.tailwindcss.js"></script>
+
+	<!-- Summernote JS -->
+	<script src="/src/assets/plugins/summernote/summernote-lite.min.js"></script>
+
+	<!-- Bootstrap Tagsinput JS -->
+	<script src="/src/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+	<!-- Select2 JS -->
+	<script src="/src/assets/plugins/select2/js/select2.min.js"></script>
+
+	<!-- Color Picker JS -->
+	<script src="/src/assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="/src/assets/js/theme-colorpicker.js"></script>
+	<script src="/src/assets/js/script.js"></script>
+
+</body>
+
+</html>

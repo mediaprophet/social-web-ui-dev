@@ -1,0 +1,89 @@
+@prefix : <http://example.org/orbitdb#> .
+@prefix proto: <http://example.org/protocol#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# OrbitDB Protocol Ontology
+:OrbitDB a owl:Class ;
+	rdfs:subClassOf proto:Protocol ;
+	rdfs:label "OrbitDB Protocol" ;
+	rdfs:comment "A distributed peer-to-peer database protocol built on top of IPFS." .
+
+# Database Types
+:Database a owl:Class ;
+	rdfs:label "Database" ;
+	rdfs:comment "A generic OrbitDB database instance." .
+
+:KeyValueDatabase a owl:Class ;
+	rdfs:subClassOf :Database ;
+	rdfs:label "Key-Value Database" ;
+	rdfs:comment "A key-value store database in OrbitDB." .
+
+:DocumentStore a owl:Class ;
+	rdfs:subClassOf :Database ;
+	rdfs:label "Document Store" ;
+	rdfs:comment "A document store database in OrbitDB." .
+
+:EventLog a owl:Class ;
+	rdfs:subClassOf :Database ;
+	rdfs:label "Event Log" ;
+	rdfs:comment "An event log database in OrbitDB." .
+
+:Counter a owl:Class ;
+	rdfs:subClassOf :Database ;
+	rdfs:label "Counter" ;
+	rdfs:comment "A counter database in OrbitDB." .
+
+# Operations
+:Operation a owl:Class ;
+	rdfs:label "Operation" ;
+	rdfs:comment "A database operation (put, get, add, set, inc, etc.)." .
+
+# Access Control
+:AccessController a owl:Class ;
+	rdfs:label "Access Controller" ;
+	rdfs:comment "Controls access to an OrbitDB database." .
+
+# Object Properties
+:hasDatabase a owl:ObjectProperty ;
+	rdfs:domain :OrbitDB ;
+	rdfs:range :Database ;
+	rdfs:label "has database" .
+
+:hasType a owl:ObjectProperty ;
+	rdfs:domain :Database ;
+	rdfs:range rdfs:Class ;
+	rdfs:label "has type" .
+
+:hasOperation a owl:ObjectProperty ;
+	rdfs:domain :Database ;
+	rdfs:range :Operation ;
+	rdfs:label "has operation" .
+
+:hasAccessController a owl:ObjectProperty ;
+	rdfs:domain :Database ;
+	rdfs:range :AccessController ;
+	rdfs:label "has access controller" .
+
+# Data Properties
+:dbAddress a owl:DatatypeProperty ;
+	rdfs:domain :Database ;
+	rdfs:range xsd:string ;
+	rdfs:label "database address" .
+
+:operationName a owl:DatatypeProperty ;
+	rdfs:domain :Operation ;
+	rdfs:range xsd:string ;
+	rdfs:label "operation name" .
+
+# Example Individuals
+:myKeyValueDB a :KeyValueDatabase ;
+	:dbAddress "/orbitdb/Qm.../kvdb" ;
+	:hasOperation :put, :get ;
+	:hasAccessController :ac1 .
+
+:put a :Operation ; :operationName "put" .
+:get a :Operation ; :operationName "get" .
+:ac1 a :AccessController .

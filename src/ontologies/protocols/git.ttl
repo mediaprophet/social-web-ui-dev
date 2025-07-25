@@ -1,0 +1,110 @@
+@prefix : <http://example.org/git#> .
+@prefix proto: <http://example.org/protocol#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Git Protocol Ontology
+:Git a owl:Class ;
+	rdfs:subClassOf proto:Protocol ;
+	rdfs:label "Git Protocol" ;
+	rdfs:comment "A distributed version control protocol (git)." .
+
+# Core Entities
+:Repository a owl:Class ;
+	rdfs:label "Repository" ;
+	rdfs:comment "A Git repository." .
+
+:Commit a owl:Class ;
+	rdfs:label "Commit" ;
+	rdfs:comment "A commit in a Git repository." .
+
+:Branch a owl:Class ;
+	rdfs:label "Branch" ;
+	rdfs:comment "A branch in a Git repository." .
+
+:Tag a owl:Class ;
+	rdfs:label "Tag" ;
+	rdfs:comment "A tag in a Git repository." .
+
+:Remote a owl:Class ;
+	rdfs:label "Remote" ;
+	rdfs:comment "A remote repository in Git." .
+
+# Operations
+:GitOperation a owl:Class ;
+	rdfs:label "Git Operation" ;
+	rdfs:comment "An operation performed in Git (clone, fetch, pull, push, commit, etc.)." .
+
+# Object Properties
+:hasRepository a owl:ObjectProperty ;
+	rdfs:domain :Git ;
+	rdfs:range :Repository ;
+	rdfs:label "has repository" .
+
+:hasCommit a owl:ObjectProperty ;
+	rdfs:domain :Repository ;
+	rdfs:range :Commit ;
+	rdfs:label "has commit" .
+
+:hasBranch a owl:ObjectProperty ;
+	rdfs:domain :Repository ;
+	rdfs:range :Branch ;
+	rdfs:label "has branch" .
+
+:hasTag a owl:ObjectProperty ;
+	rdfs:domain :Repository ;
+	rdfs:range :Tag ;
+	rdfs:label "has tag" .
+
+:hasRemote a owl:ObjectProperty ;
+	rdfs:domain :Repository ;
+	rdfs:range :Remote ;
+	rdfs:label "has remote" .
+
+:performsOperation a owl:ObjectProperty ;
+	rdfs:domain :Repository ;
+	rdfs:range :GitOperation ;
+	rdfs:label "performs operation" .
+
+# Data Properties
+:commitHash a owl:DatatypeProperty ;
+	rdfs:domain :Commit ;
+	rdfs:range xsd:string ;
+	rdfs:label "commit hash" .
+
+:branchName a owl:DatatypeProperty ;
+	rdfs:domain :Branch ;
+	rdfs:range xsd:string ;
+	rdfs:label "branch name" .
+
+:tagName a owl:DatatypeProperty ;
+	rdfs:domain :Tag ;
+	rdfs:range xsd:string ;
+	rdfs:label "tag name" .
+
+:remoteUrl a owl:DatatypeProperty ;
+	rdfs:domain :Remote ;
+	rdfs:range xsd:string ;
+	rdfs:label "remote URL" .
+
+:operationName a owl:DatatypeProperty ;
+	rdfs:domain :GitOperation ;
+	rdfs:range xsd:string ;
+	rdfs:label "operation name" .
+
+# Example Individuals
+:repo1 a :Repository ;
+	:hasCommit :commit1 ;
+	:hasBranch :main ;
+	:hasTag :v1 ;
+	:hasRemote :origin ;
+	:performsOperation :clone, :commitOp .
+
+:commit1 a :Commit ; :commitHash "abc123" .
+:main a :Branch ; :branchName "main" .
+:v1 a :Tag ; :tagName "v1.0.0" .
+:origin a :Remote ; :remoteUrl "https://github.com/example/repo.git" .
+:clone a :GitOperation ; :operationName "clone" .
+:commitOp a :GitOperation ; :operationName "commit" .

@@ -1,0 +1,121 @@
+
+@prefix : <http://example.org/ticket#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Ticket a owl:Class ;
+	rdfs:label "Ticket" ;
+	rdfs:comment "A support or issue ticket." .
+
+:User a owl:Class ;
+	rdfs:label "User" ;
+	rdfs:comment "A person who creates or is assigned to a ticket." .
+
+:Status a owl:Class ;
+	rdfs:label "Status" ;
+	rdfs:comment "The state of a ticket (e.g., Open, In Progress, Closed)." .
+
+:Priority a owl:Class ;
+	rdfs:label "Priority" ;
+	rdfs:comment "The importance level of a ticket." .
+
+:Comment a owl:Class ;
+	rdfs:label "Comment" ;
+	rdfs:comment "A comment on a ticket." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:createdBy a owl:ObjectProperty ;
+	rdfs:domain :Ticket ;
+	rdfs:range :User ;
+	rdfs:label "created by" .
+
+:assignedTo a owl:ObjectProperty ;
+	rdfs:domain :Ticket ;
+	rdfs:range :User ;
+	rdfs:label "assigned to" .
+
+:hasStatus a owl:ObjectProperty ;
+	rdfs:domain :Ticket ;
+	rdfs:range :Status ;
+	rdfs:label "has status" .
+
+:hasPriority a owl:ObjectProperty ;
+	rdfs:domain :Ticket ;
+	rdfs:range :Priority ;
+	rdfs:label "has priority" .
+
+:hasComment a owl:ObjectProperty ;
+	rdfs:domain :Ticket ;
+	rdfs:range :Comment ;
+	rdfs:label "has comment" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:title a owl:DatatypeProperty ;
+	rdfs:domain :Ticket ;
+	rdfs:range xsd:string ;
+	rdfs:label "title" .
+
+:description a owl:DatatypeProperty ;
+	rdfs:domain :Ticket ;
+	rdfs:range xsd:string ;
+	rdfs:label "description" .
+
+:createdDate a owl:DatatypeProperty ;
+	rdfs:domain :Ticket ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "created date" .
+
+:updatedDate a owl:DatatypeProperty ;
+	rdfs:domain :Ticket ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "updated date" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:Open a :Status ;
+	rdfs:label "Open" .
+
+:InProgress a :Status ;
+	rdfs:label "In Progress" .
+
+:Closed a :Status ;
+	rdfs:label "Closed" .
+
+:High a :Priority ;
+	rdfs:label "High" .
+
+:Medium a :Priority ;
+	rdfs:label "Medium" .
+
+:Low a :Priority ;
+	rdfs:label "Low" .
+
+:alice a :User ;
+	rdfs:label "Alice" .
+
+:bob a :User ;
+	rdfs:label "Bob" .
+
+:ticket1 a :Ticket ;
+	:title "Login Issue" ;
+	:description "User cannot log in to the system." ;
+	:createdDate "2025-07-24T09:00:00Z"^^xsd:dateTime ;
+	:updatedDate "2025-07-24T10:00:00Z"^^xsd:dateTime ;
+	:createdBy :alice ;
+	:assignedTo :bob ;
+	:hasStatus :Open ;
+	:hasPriority :High .

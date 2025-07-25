@@ -1,0 +1,57 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix goals: <http://example.org/goals#> .
+@prefix wheel: <http://example.org/wheeloflife-goals#> .
+
+wheel:Ontology rdf:type owl:Ontology ;
+    owl:imports goals:Ontology ;
+    rdfs:label "Wheel of Life Goals Ontology" ;
+    rdfs:comment "An ontology for structuring goals based on Wheel of Life categories (Career, Health, Relationships, etc.)." ;
+    owl:versionInfo "1.0" .
+
+# Classes
+wheel:WheelGoal rdf:type owl:Class ;
+    rdfs:label "Wheel Goal" ;
+    rdfs:comment "A goal aligned with a Wheel of Life category." ;
+    rdfs:subClassOf goals:Goal .
+
+wheel:LifeArea rdf:type owl:Class ;
+    rdfs:label "Life Area" ;
+    rdfs:comment "Categories in the Wheel of Life." .
+
+wheel:Career rdf:type wheel:LifeArea ;
+    rdfs:label "Career" .
+
+wheel:Health rdf:type wheel:LifeArea ;
+    rdfs:label "Health" .
+
+wheel:Relationships rdf:type wheel:LifeArea ;
+    rdfs:label "Relationships" .
+
+wheel:Finances rdf:type wheel:LifeArea ;
+    rdfs:label "Finances" .
+
+wheel:PersonalGrowth rdf:type wheel:LifeArea ;
+    rdfs:label "Personal Growth" .
+
+# Properties
+wheel:hasLifeArea rdf:type owl:ObjectProperty ;
+    rdfs:label "has Life Area" ;
+    rdfs:domain wheel:WheelGoal ;
+    rdfs:range wheel:LifeArea ;
+    rdfs:comment "The life area the goal addresses." .
+
+wheel:hasSatisfactionScore rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Satisfaction Score" ;
+    rdfs:domain wheel:WheelGoal ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "User's satisfaction score for the life area (1-10)." .
+
+# Example Instance
+wheel:ExampleWheelGoal rdf:type wheel:WheelGoal ;
+    goals:hasTitle "Improve Fitness" ;
+    wheel:hasLifeArea wheel:Health ;
+    wheel:hasSatisfactionScore 6 ;
+    goals:hasDescription "Exercise 3 times/week" .

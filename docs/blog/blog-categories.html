@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="Smarthr - Bootstrap Admin Template">
+	<meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
+	<meta name="author" content="Dreams technologies - Bootstrap Admin Template">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Smarthr Admin Template</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="/src/assets/img/favicon.png">
+
+	<!-- Apple Touch Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/src/assets/img/apple-touch-icon.png">
+
+	<!-- Theme Script js -->
+	<script src="/src/assets/js/theme-script.js"></script>
+
+	<!-- Feather CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/icons/feather/feather.css">
+
+	<!-- Tabler Icon CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/tabler-icons/tabler-icons.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="/src/assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="/src/assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- Flowbite CSS -->
+	<link rel="stylesheet" href="/src/assets/css/flowbite.min.css">
+
+	<!-- Datatable CSS -->
+	<link rel="stylesheet" href="/src/assets/css/dataTables.tailwindcss.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/select2/css/select2.min.css">
+
+	<!-- Summernote CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/summernote/summernote-lite.min.css">
+
+	<!-- Daterangepikcer CSS -->
+	<link rel="stylesheet" href="/src/assets/plugins/daterangepicker/daterangepicker.css">
+
+	<!-- Bootstrap Tagsinput CSS -->
+    <link rel="stylesheet" href="/src/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
+
+	<!-- Color Picker Css -->
+	<link rel="stylesheet" href="/src/assets/plugins/flatpickr/flatpickr.min.css">
+	<link rel="stylesheet" href="/src/assets/plugins/@simonwep/pickr/themes/nano.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+	<div id="global-loader" style="display: none;">
+		<div class="page-loader"></div>
+	</div>
+
+		<!-- Page Wrapper -->
+		<div class="page-wrapper relative pt-[50px] ml-[252px]">
+			<div class="content p-6">
+
+				<!-- Breadcrumb -->
+				<div class="md:flex block items-center justify-between page-breadcrumb mb-4">
+					<div class="my-auto mb-2">
+						<h2 class="mb-1">Blog Categories</h2>
+						<nav class="flex" aria-label="Breadcrumb">
+							<ol class="inline-flex items-center space-x-1 md:space-x-2">
+							  	<li class="inline-flex items-center">
+									<a href="index.html" class="inline-flex items-center text-xs text-gray-500 hover:text-primary">
+										<i class="ti ti-smart-home"></i>
+									</a>
+								</li>
+								<li>
+									<span class="text-default">/</span>
+								</li>
+								<li class="text-xs text-default">Content</li>	
+								<li>
+									<span class="text-default">/</span>
+								</li>
+								<li aria-current="page" class="text-xs text-gray-900">Blog Categories</li>
+							</ol>
+						</nav>
+					</div>
+					<div class="flex my-xl-auto right-content items-center flex-wrap ">
+                        <div class="mb-2">							
+							<a href="#" data-modal-target="add_blog_category" data-modal-toggle="add_blog_category"
+								class="flex items-center bg-primary text-sm font-medium py-2 rounded text-white px-3 hover:bg-primary-900 hover:text-white"><i
+									class="ti ti-circle-plus me-2"></i>Add Category</a>
+						</div>
+						<div class="head-icons ml-2 mb-2">
+							<a href="javascript:void(0);" class="border flex items-center justify-center rounded bg-white w-9 h-9 hover:bg-primary hover:text-white hover:border-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Collapse" id="collapse-header">
+								<i class="ti ti-chevrons-up"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- /Breadcrumb -->
+
+				<!-- Candidates List -->
+				<div class="card border border-borderColor rounded-[5px] shadow-xs bg-white">
+					<div class="card-header py-4 px-5 border-b border-borderColor flex items-center justify-between flex-wrap gap-3">
+						<h5>Blog Categories List</h5>
+						<div class="flex my-xl-auto right-content items-center flex-wrap gap-3">
+							<div>
+								<a href="javascript:void(0);" class="border rounded p-2 bg-white inline-flex items-center focus:bg-primary focus:border-primary focus:text-white text-gray-900"  data-dropdown-toggle="days-dropdown">
+									Sort By : Last 7 Days<i class="ti ti-chevron-down ml-1"></i>
+								</a>
+								<ul id="days-dropdown" class="hidden p-4 border rounded bg-white shadow-lg w-40 z-[1]">
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Recently Added</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Ascending</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Desending</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Last Month</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="rounded p-2 flex items-center hover:bg-primary-transparent hover:text-primary text-gray-900">Last 7 Days</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card-body p-0">
+						<div class="custom-datatable-filter">
+							<table class="table datatable w-full border-b border-borderColor">
+								<thead class="thead-light">
+									<tr>
+										<th class="no-sort text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor hover:outline-none">
+											<div class="flex items-center">
+												<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox" id="select-all">
+											</div>
+										</th>
+										<th class="text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor">Category</th>
+										<th class="text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor">Created Date</th>
+										<th class="text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor">Status</th>
+										<th class="text-sm leading-normal px-5 py-2.5 bg-gray-200 text-gray-900 border-borderColor"></th>
+									</tr>
+								</thead>
+								<tbody class="bg-white divide-y divide-borderColor">
+									<tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+											</div>
+										</td>
+                                        
+										<td class="px-5 py-2.5 text-gray-500">Security</td>
+										<td class="px-5 py-2.5 text-gray-500">18 Feb 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="action-icon inline-flex">
+												<a href="#" class="me-2 size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="edit_blog_category" data-modal-toggle="edit_blog_category"><i class="ti ti-edit"></i></a>
+												<a href="#" class="size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="delete_modal" data-modal-toggle="delete_modal"><i class="ti ti-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+                                    <tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+											</div>
+										</td>
+                                        
+										<td class="px-5 py-2.5 text-gray-500">Recruitment</td>
+										<td class="px-5 py-2.5 text-gray-500">17 Oct 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="action-icon inline-flex">
+												<a href="#" class="me-2 size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="edit_blog_category" data-modal-toggle="edit_blog_category"><i class="ti ti-edit"></i></a>
+												<a href="#" class="size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="delete_modal" data-modal-toggle="delete_modal"><i class="ti ti-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+                                    <tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+											</div>
+										</td>
+                                        
+										<td class="px-5 py-2.5 text-gray-500">Payroll</td>
+										<td class="px-5 py-2.5 text-gray-500">20 Jul 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="action-icon inline-flex">
+												<a href="#" class="me-2 size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="edit_blog_category" data-modal-toggle="edit_blog_category"><i class="ti ti-edit"></i></a>
+												<a href="#" class="size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="delete_modal" data-modal-toggle="delete_modal"><i class="ti ti-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+                                    <tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+											</div>
+										</td>
+                                        
+										<td class="px-5 py-2.5 text-gray-500">Onboarding</td>
+										<td class="px-5 py-2.5 text-gray-500">22 Feb 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="action-icon inline-flex">
+												<a href="#" class="me-2 size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="edit_blog_category" data-modal-toggle="edit_blog_category"><i class="ti ti-edit"></i></a>
+												<a href="#" class="size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="delete_modal" data-modal-toggle="delete_modal"><i class="ti ti-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+                                    <tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+											</div>
+										</td>
+                                        
+										<td class="px-5 py-2.5 text-gray-500">Management</td>
+										<td class="px-5 py-2.5 text-gray-500">17 Dec 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="action-icon inline-flex">
+												<a href="#" class="me-2 size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="edit_blog_category" data-modal-toggle="edit_blog_category"><i class="ti ti-edit"></i></a>
+												<a href="#" class="size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="delete_modal" data-modal-toggle="delete_modal"><i class="ti ti-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+                                    <tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+											</div>
+										</td>
+                                        
+										<td class="px-5 py-2.5 text-gray-500">Implementation</td>
+										<td class="px-5 py-2.5 text-gray-500">03 Nov 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="action-icon inline-flex">
+												<a href="#" class="me-2 size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="edit_blog_category" data-modal-toggle="edit_blog_category"><i class="ti ti-edit"></i></a>
+												<a href="#" class="size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="delete_modal" data-modal-toggle="delete_modal"><i class="ti ti-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+                                    <tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+											</div>
+										</td>
+                                        
+										<td class="px-5 py-2.5 text-gray-500">Guide</td>
+										<td class="px-5 py-2.5 text-gray-500">24 Oct 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="action-icon inline-flex">
+												<a href="#" class="me-2 size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="edit_blog_category" data-modal-toggle="edit_blog_category"><i class="ti ti-edit"></i></a>
+												<a href="#" class="size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="delete_modal" data-modal-toggle="delete_modal"><i class="ti ti-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+                                    <tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+											</div>
+										</td>
+                                        
+										<td class="px-5 py-2.5 text-gray-500">Evlovution</td>
+										<td class="px-5 py-2.5 text-gray-500">12 Sep 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="action-icon inline-flex">
+												<a href="#" class="me-2 size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="edit_blog_category" data-modal-toggle="edit_blog_category"><i class="ti ti-edit"></i></a>
+												<a href="#" class="size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="delete_modal" data-modal-toggle="delete_modal"><i class="ti ti-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+                                    <tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+											</div>
+										</td>
+                                        
+										<td class="px-5 py-2.5 text-gray-500">Employee</td>
+										<td class="px-5 py-2.5 text-gray-500">29 Aug 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="action-icon inline-flex">
+												<a href="#" class="me-2 size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="edit_blog_category" data-modal-toggle="edit_blog_category"><i class="ti ti-edit"></i></a>
+												<a href="#" class="size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="delete_modal" data-modal-toggle="delete_modal"><i class="ti ti-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+                                    <tr class="even:bg-white dark:even-bg-white">
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="flex items-center">
+												<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0" type="checkbox">
+											</div>
+										</td>
+                                        
+										<td class="px-5 py-2.5 text-gray-500">Benefits</td>
+										<td class="px-5 py-2.5 text-gray-500">10 Apr 2024</td>
+										<td class="px-5 py-2.5 text-gray-500">
+											<span class="bg-success text-white rounded text-[10px] font-medium leading-4 py-0.5 px-1.5 inline-flex items-center badge-xs">
+												<i class="ti ti-point-filled me-1"></i>Active
+											</span>
+										</td>
+										
+										<td class="px-5 py-2.5 text-gray-500">
+											<div class="action-icon inline-flex">
+												<a href="#" class="me-2 size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="edit_blog_category" data-modal-toggle="edit_blog_category"><i class="ti ti-edit"></i></a>
+												<a href="#" class="size-[26px] flex items-center justify-center rounded-[5px] hover:bg-light-900 hover:text-gray-900" data-modal-target="delete_modal" data-modal-toggle="delete_modal"><i class="ti ti-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- /Candidates List -->
+
+			</div>
+
+
+		</div>
+		<!-- /Page Wrapper -->
+
+		<!-- Add Tag -->
+		<div id="add_blog_category" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full  transition-all duration-300 ease-in-out modal p-4">
+            <div class="relative p-4 w-full max-w-[500px] max-h-full">
+                <div class="relative bg-white rounded-defaultradius">
+                    <div class="flex items-center justify-between p-4 border-b border-borderColor">
+                        <h4 class="font-semibold">Add Blog Category</h4>
+                        <button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="add_blog_category">
+							<i class="ti ti-x"></i>
+							<span class="sr-only">Close modal</span>
+						</button>
+                    </div>
+                    <form action="blog-categories.html">
+                        <div class="p-4">
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-6">                               
+                                <div class="md:col-span-12">
+                                    <div class="mb-3">
+                                        <label class="block mb-1 text-sm leading-normal font-medium text-title">Tag</label>
+										<input class="input-tags bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="HRMS,Recruitment,HRTech">
+                                    </div>									
+                                </div>
+								<div class="md:col-span-12">
+									<div class="mb-3 ">
+										<label class="block mb-1 text-sm leading-normal font-medium text-title">Status</label>
+										<select class="select">
+                                            <option>Active</option>
+                                            <option>Inactive</option>                                           
+                                        </select>
+									</div>
+								</div>
+                            </div>
+                        </div>
+						<div class="flex items-center justify-end p-4 border-t border-borderColor">
+							<button data-modal-hide="add_blog_category" type="button" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 font-medium me-2">Cancel</button>
+							<button type="submit" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-900 hover:text-white font-medium">Add Tag</button>
+						</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    	<!-- /Add Tag -->
+
+		<!-- Edit Tag -->
+		<div id="edit_blog_category" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full  transition-all duration-300 ease-in-out modal p-4">
+            <div class="relative p-4 w-full max-w-[500px] max-h-full">
+                <div class="relative bg-white rounded-defaultradius">
+                    <div class="flex items-center justify-between p-4 border-b border-borderColor">
+                        <h4 class="font-semibold">Edit Blog Category</h4>
+                        <button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="edit_blog_category">
+							<i class="ti ti-x"></i>
+							<span class="sr-only">Close modal</span>
+						</button>
+                    </div>
+                    <form action="blog-categories.html">
+                        <div class="p-4">
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-y-4 gap-x-6">                               
+                                <div class="md:col-span-12">
+                                    <div class="mb-3">
+                                        <label class="block mb-1 text-sm leading-normal font-medium text-title">Tag</label>
+										<input class="input-tags bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="Add new" type="text" data-role="tagsinput"  name="Label" value="HRMS,Recruitment,HRTech">
+                                    </div>									
+                                </div>
+								<div class="md:col-span-12">
+									<div class="mb-3 ">
+										<label class="block mb-1 text-sm leading-normal font-medium text-title">Status</label>
+										<select class="select">
+                                            <option>Active</option>
+                                            <option>Inactive</option>                                           
+                                        </select>
+									</div>
+								</div>
+                            </div>
+                        </div>
+						<div class="flex items-center justify-end p-4 border-t border-borderColor">
+							<button data-modal-hide="edit_blog_category" type="button" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 font-medium me-2">Cancel</button>
+							<button type="submit" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-900 hover:text-white font-medium">Save Changes</button>
+						</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    	<!-- /Edit Tag -->
+
+		<!-- Delete Modal -->
+		<div id="delete_modal" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full  transition-all duration-300 ease-in-out modal p-4">
+			<div class="relative p-4 w-full max-w-sm max-h-full">
+			  <div class="relative bg-white rounded-defaultradius">
+				  	<div class="p-4 text-center">
+						<span class="size-[60px] rounded bg-danger-100 text-danger inline-flex items-center justify-center mb-4">
+							<i class="ti ti-trash-x text-4xl leading-normal"></i>
+						</span>
+						<h4 class="mb-1">Confirm Delete</h4>
+						<p class="mb-4">You want to delete all the marked items, this cant be undone once you delete.</p>
+						<div class="flex justify-center">
+							<a href="javascript:void(0);" class="btn bg-light border border-light text-gray-900 text-center hover:bg-light-900 hover:text-gray-900 me-4" data-modal-hide="delete_modal">Cancel</a>
+							<a href="blog-categories.html" class="btn bg-danger border border-danger text-white text-center hover:bg-danger-900 hover:text-white">Yes, Delete</a>
+						</div>
+				  	</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Delete Modal -->
+			
+	</div>
+	<!-- /Main Wrapper -->
+
+	<!-- jQuery -->
+	<script src="/src/assets/js/jquery-3.7.1.min.js"></script>
+
+	<!-- Flowbite JS -->
+	<script src="/src/assets/js/flowbite.min.js"></script>
+
+	<!-- Feather Icon JS -->
+	<script src="/src/assets/js/feather.min.js"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="/src/assets/js/jquery.slimscroll.min.js"></script>
+
+	<!-- Datetimepicker JS -->
+	<script src="/src/assets/js/moment.js"></script>
+	<script src="/src/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Daterangepikcer JS -->
+	<script src="/src/assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+	<!-- Datatable JS -->
+	<script src="/src/assets/js/dataTables.js"></script>
+	<script src="/src/assets/js/dataTables.tailwindcss.js"></script>
+
+	<!-- Summernote JS -->
+	<script src="/src/assets/plugins/summernote/summernote-lite.min.js"></script>
+
+	<!-- Bootstrap Tagsinput JS -->
+    <script src="/src/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+	<!-- Select2 JS -->
+	<script src="/src/assets/plugins/select2/js/select2.min.js"></script>
+
+	<!-- Color Picker JS -->
+	<script src="/src/assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="/src/assets/js/theme-colorpicker.js"></script>
+	<script src="/src/assets/js/script.js"></script>
+
+</body>
+
+</html>

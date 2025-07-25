@@ -1,0 +1,113 @@
+
+@prefix : <http://example.org/project#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Project a owl:Class ;
+	rdfs:label "Project" ;
+	rdfs:comment "A collection of related tasks and resources with a defined goal." .
+
+:Task a owl:Class ;
+	rdfs:label "Task" ;
+	rdfs:comment "A unit of work within a project." .
+
+:User a owl:Class ;
+	rdfs:label "User" ;
+	rdfs:comment "A person involved in a project." .
+
+:Milestone a owl:Class ;
+	rdfs:label "Milestone" ;
+	rdfs:comment "A significant event or achievement in a project." .
+
+:Resource a owl:Class ;
+	rdfs:label "Resource" ;
+	rdfs:comment "A resource allocated to a project (e.g., document, tool, person)." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:hasTask a owl:ObjectProperty ;
+	rdfs:domain :Project ;
+	rdfs:range :Task ;
+	rdfs:label "has task" .
+
+:hasMilestone a owl:ObjectProperty ;
+	rdfs:domain :Project ;
+	rdfs:range :Milestone ;
+	rdfs:label "has milestone" .
+
+:hasResource a owl:ObjectProperty ;
+	rdfs:domain :Project ;
+	rdfs:range :Resource ;
+	rdfs:label "has resource" .
+
+:managedBy a owl:ObjectProperty ;
+	rdfs:domain :Project ;
+	rdfs:range :User ;
+	rdfs:label "managed by" .
+
+:assignedTo a owl:ObjectProperty ;
+	rdfs:domain :Task ;
+	rdfs:range :User ;
+	rdfs:label "assigned to" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:title a owl:DatatypeProperty ;
+	rdfs:domain :Project ;
+	rdfs:range xsd:string ;
+	rdfs:label "title" .
+
+:description a owl:DatatypeProperty ;
+	rdfs:domain :Project ;
+	rdfs:range xsd:string ;
+	rdfs:label "description" .
+
+:startDate a owl:DatatypeProperty ;
+	rdfs:domain :Project ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "start date" .
+
+:endDate a owl:DatatypeProperty ;
+	rdfs:domain :Project ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "end date" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:alice a :User ;
+	rdfs:label "Alice" .
+
+:bob a :User ;
+	rdfs:label "Bob" .
+
+:project1 a :Project ;
+	:title "Website Redesign" ;
+	:description "Redesign the company website for better UX." ;
+	:startDate "2025-07-01T09:00:00Z"^^xsd:dateTime ;
+	:endDate "2025-09-30T17:00:00Z"^^xsd:dateTime ;
+	:managedBy :alice ;
+	:hasResource :resource1 ;
+	:hasMilestone :milestone1 ;
+	:hasTask :task1 .
+
+:task1 a :Task ;
+	rdfs:label "Design homepage" ;
+	:assignedTo :bob .
+
+:milestone1 a :Milestone ;
+	rdfs:label "Homepage Complete" .
+
+:resource1 a :Resource ;
+	rdfs:label "Figma License" .

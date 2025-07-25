@@ -1,0 +1,117 @@
+#
+# Human-related semantics are defined using RDFS classes and properties, distinct from OWL's generic owl:Thing (the universal class) and owl:Nothing (the empty class).
+# This ensures that human-centric concepts are not conflated with the most generic or empty sets in OWL.
+
+# RDFS Human-related Classes
+
+:HumanEntity a rdfs:Class ;
+	rdfs:label "Human Entity" ;
+	rdfs:comment "A class for entities that are human or human-centric, distinct from owl:Thing and owl:Nothing." .
+
+# RDFS Human-related Properties
+
+:hasHumanRelation a rdf:Property ;
+	rdfs:domain :HumanEntity ;
+	rdfs:range :HumanEntity ;
+	rdfs:label "has human relation" ;
+	rdfs:comment "A generic property for relating human entities, not applicable to owl:Thing or owl:Nothing." .
+
+@prefix : <http://example.org/agent#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+#################################################################
+# Classes
+#################################################################
+
+
+# HumanBeing is the fundamental class in human-centric ontologies
+:HumanBeing a owl:Class ;
+	rdfs:label "Human Being" ;
+	rdfs:comment "A human being, the fundamental entity in human-centric ontologies." .
+
+:NaturalPerson a owl:Class ;
+	rdfs:subClassOf :HumanBeing ;
+	rdfs:label "Natural Person" ;
+	rdfs:comment "A human being with legal and social recognition as a person." .
+
+:LegalPerson a owl:Class ;
+	rdfs:label "Legal Person" ;
+	rdfs:comment "An entity recognized by law as a person (e.g., corporation, government)." .
+
+:ArtificialAgent a owl:Class ;
+	rdfs:label "Artificial Agent" ;
+	rdfs:comment "A non-living entity capable of agency, e.g., a bot, software, or robot." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:relatesTo a owl:ObjectProperty ;
+	rdfs:domain :NaturalPerson ;
+	rdfs:range owl:Thing ;
+	rdfs:label "relates to" ;
+	rdfs:comment "A generic relation from a natural person to any entity (including legal persons, artificial agents, or other things)." .
+
+:actsOnBehalfOf a owl:ObjectProperty ;
+	rdfs:domain :ArtificialAgent ;
+	rdfs:range :NaturalPerson ;
+	rdfs:label "acts on behalf of" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:agentName a owl:DatatypeProperty ;
+	rdfs:domain owl:Thing ;
+	rdfs:range xsd:string ;
+	rdfs:label "agent name" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:alice a :NaturalPerson ;
+	:agentName "Alice Example" .
+
+:acme_corp a :LegalPerson ;
+	:agentName "ACME Corporation" .
+
+:bot1 a :ArtificialAgent ;
+	:agentName "SupportBot" ;
+	:actsOnBehalfOf :alice .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:actsOnBehalfOf a owl:ObjectProperty ;
+	rdfs:domain :Agent ;
+	rdfs:range :Agent ;
+	rdfs:label "acts on behalf of" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:agentName a owl:DatatypeProperty ;
+	rdfs:domain :Agent ;
+	rdfs:range xsd:string ;
+	rdfs:label "agent name" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:alice a :NaturalAgent ;
+	:agentName "Alice Example" .
+
+:bot1 a :ArtificialAgent ;
+	:agentName "SupportBot" ;
+	:actsOnBehalfOf :alice .

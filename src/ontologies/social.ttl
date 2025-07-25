@@ -1,0 +1,85 @@
+
+@prefix : <http://example.org/social#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Person a owl:Class ;
+	rdfs:label "Person" ;
+	rdfs:comment "A natural or legal person participating in social interactions." .
+
+:Group a owl:Class ;
+	rdfs:label "Group" ;
+	rdfs:comment "A collection of persons or organizations with a shared purpose." .
+
+:Organization a owl:Class ;
+	rdfs:label "Organization" ;
+	rdfs:comment "A formal group, such as a company or institution." .
+
+:Relationship a owl:Class ;
+	rdfs:label "Relationship" ;
+	rdfs:comment "A social connection between two or more entities." .
+
+:Interaction a owl:Class ;
+	rdfs:label "Interaction" ;
+	rdfs:comment "A social action or communication between entities." .
+
+:Role a owl:Class ;
+	rdfs:label "Role" ;
+	rdfs:comment "A role played by a person or entity in a social context." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:memberOf a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :Group ;
+	rdfs:label "member of" .
+
+:hasRelationship a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :Relationship ;
+	rdfs:label "has relationship" .
+
+:participatesIn a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :Interaction ;
+	rdfs:label "participates in" .
+
+:hasRole a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :Role ;
+	rdfs:label "has role" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:displayName a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string ;
+	rdfs:label "display name" .
+
+:bio a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string ;
+	rdfs:label "biography" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:alice a :Person ;
+	:displayName "Alice Example" ;
+	:bio "Web developer and open web advocate." .
+
+:devGroup a :Group ;
+	rdfs:label "Developers Group" .
+
+:alice :memberOf :devGroup .

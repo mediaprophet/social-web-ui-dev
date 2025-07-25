@@ -1,0 +1,90 @@
+
+@prefix : <http://example.org/subscription#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Subscription a owl:Class ;
+	rdfs:label "Subscription" ;
+	rdfs:comment "A recurring service or product subscription." .
+
+:User a owl:Class ;
+	rdfs:label "User" ;
+	rdfs:comment "A person who subscribes to a service." .
+
+:Service a owl:Class ;
+	rdfs:label "Service" ;
+	rdfs:comment "A service or product that can be subscribed to." .
+
+:Payment a owl:Class ;
+	rdfs:label "Payment" ;
+	rdfs:comment "A payment made for a subscription." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:subscribedBy a owl:ObjectProperty ;
+	rdfs:domain :Subscription ;
+	rdfs:range :User ;
+	rdfs:label "subscribed by" .
+
+:forService a owl:ObjectProperty ;
+	rdfs:domain :Subscription ;
+	rdfs:range :Service ;
+	rdfs:label "for service" .
+
+:hasPayment a owl:ObjectProperty ;
+	rdfs:domain :Subscription ;
+	rdfs:range :Payment ;
+	rdfs:label "has payment" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:startDate a owl:DatatypeProperty ;
+	rdfs:domain :Subscription ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "start date" .
+
+:endDate a owl:DatatypeProperty ;
+	rdfs:domain :Subscription ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "end date" .
+
+:amount a owl:DatatypeProperty ;
+	rdfs:domain :Payment ;
+	rdfs:range xsd:decimal ;
+	rdfs:label "amount" .
+
+:paymentDate a owl:DatatypeProperty ;
+	rdfs:domain :Payment ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "payment date" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:alice a :User ;
+	rdfs:label "Alice" .
+
+:netflix a :Service ;
+	rdfs:label "Netflix" .
+
+:payment1 a :Payment ;
+	:amount 15.99 ;
+	:paymentDate "2025-07-01T00:00:00Z"^^xsd:dateTime .
+
+:sub1 a :Subscription ;
+	:subscribedBy :alice ;
+	:forService :netflix ;
+	:startDate "2025-07-01T00:00:00Z"^^xsd:dateTime ;
+	:endDate "2026-07-01T00:00:00Z"^^xsd:dateTime ;
+	:hasPayment :payment1 .

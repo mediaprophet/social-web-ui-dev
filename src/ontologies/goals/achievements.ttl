@@ -1,0 +1,169 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix goals: <http://example.org/goals#> .
+@prefix proj: <http://example.org/project-goals#> .
+@prefix slicingpie: <http://example.org/slicingpie-goals#> .
+@prefix achieve: <http://example.org/achievements#> .
+
+achieve:Ontology rdf:type owl:Ontology ;
+    owl:imports goals:Ontology, proj:Ontology, slicingpie:Ontology ;
+    rdfs:label "Achievements Ontology" ;
+    rdfs:comment "An ontology for structuring achievements tied to goals, projects, or contributions in the Goals Module, supporting multiple frameworks." ;
+    owl:versionInfo "1.1" .
+
+# Classes
+achieve:Achievement rdf:type owl:Class ;
+    rdfs:label "Achievement" ;
+    rdfs:comment "A recognized milestone, outcome, or success linked to goals, projects, or contributions." ;
+    rdfs:subClassOf owl:Thing .
+
+achieve:AchievementType rdf:type owl:Class ;
+    rdfs:label "Achievement Type" ;
+    rdfs:comment "Categories of achievements (e.g., Goal Completion, Milestone Achieved)." .
+
+achieve:GoalCompletion rdf:type achieve:AchievementType ;
+    rdfs:label "Goal Completion" ;
+    rdfs:comment "Achievement for fully completing a goal." .
+
+achieve:MilestoneAchieved rdf:type achieve:AchievementType ;
+    rdfs:label "Milestone Achieved" ;
+    rdfs:comment "Achievement for reaching a project milestone." .
+
+achieve:ContributionRecognized rdf:type achieve:AchievementType ;
+    rdfs:label "Contribution Recognized" ;
+    rdfs:comment "Achievement for significant contributions, e.g., in Slicing Pie." .
+
+achieve:TeamSuccess rdf:type achieve:AchievementType ;
+    rdfs:label "Team Success" ;
+    rdfs:comment "Achievement for collaborative team outcomes." .
+
+achieve:Criteria rdf:type owl:Class ;
+    rdfs:label "Criteria" ;
+    rdfs:comment "Conditions required to earn an achievement." .
+
+achieve:Reward rdf:type owl:Class ;
+    rdfs:label "Reward" ;
+    rdfs:comment "Tangible or intangible benefits for earning an achievement, e.g., badges or equity slices." .
+
+achieve:RecognitionLevel rdf:type owl:Class ;
+    rdfs:label "Recognition Level" ;
+    rdfs:comment "Scope of achievement visibility (Personal, Team, Public)." .
+
+achieve:Personal rdf:type achieve:RecognitionLevel ;
+    rdfs:label "Personal" .
+
+achieve:Team rdf:type achieve:RecognitionLevel ;
+    rdfs:label "Team" .
+
+achieve:Public rdf:type achieve:RecognitionLevel ;
+    rdfs:label "Public" .
+
+# Properties
+achieve:hasAchievementType rdf:type owl:ObjectProperty ;
+    rdfs:label "has Achievement Type" ;
+    rdfs:domain achieve:Achievement ;
+    rdfs:range achieve:AchievementType ;
+    rdfs:comment "The category of the achievement." .
+
+achieve:hasCriteria rdf:type owl:ObjectProperty ;
+    rdfs:label "has Criteria" ;
+    rdfs:domain achieve:Achievement ;
+    rdfs:range achieve:Criteria ;
+    rdfs:comment "Conditions for earning the achievement." .
+
+achieve:criteriaDescription rdf:type owl:DatatypeProperty ;
+    rdfs:label "criteria Description" ;
+    rdfs:domain achieve:Criteria ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Text describing the criteria for the achievement." .
+
+achieve:hasReward rdf:type owl:ObjectProperty ;
+    rdfs:label "has Reward" ;
+    rdfs:domain achieve:Achievement ;
+    rdfs:range achieve:Reward ;
+    rdfs:comment "The reward granted, e.g., badge or Slicing Pie equity slice." .
+
+achieve:rewardDescription rdf:type owl:DatatypeProperty ;
+    rdfs:label "reward Description" ;
+    rdfs:domain achieve:Reward ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Text describing the reward." .
+
+achieve:hasRecognitionLevel rdf:type owl:ObjectProperty ;
+    rdfs:label "has Recognition Level" ;
+    rdfs:domain achieve:Achievement ;
+    rdfs:range achieve:RecognitionLevel ;
+    rdfs:comment "The visibility scope of the achievement." .
+
+achieve:linkedToGoal rdf:type owl:ObjectProperty ;
+    rdfs:label "linked To Goal" ;
+    rdfs:domain achieve:Achievement ;
+    rdfs:range goals:Goal ;
+    rdfs:comment "The goal associated with the achievement." .
+
+achieve:linkedToProject rdf:type owl:ObjectProperty ;
+    rdfs:label "linked To Project" ;
+    rdfs:domain achieve:Achievement ;
+    rdfs:range goals:Project ;
+    rdfs:comment "The project associated with the achievement." .
+
+achieve:linkedToContribution rdf:type owl:ObjectProperty ;
+    rdfs:label "linked To Contribution" ;
+    rdfs:domain achieve:Achievement ;
+    rdfs:range slicingpie:Contribution ;
+    rdfs:comment "The Slicing Pie contribution associated with the achievement." .
+
+achieve:achievedAt rdf:type owl:DatatypeProperty ;
+    rdfs:label "achieved At" ;
+    rdfs:domain achieve:Achievement ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "Timestamp when the achievement was earned." .
+
+achieve:hasFramework rdf:type owl:DatatypeProperty ;
+    rdfs:label "has Framework" ;
+    rdfs:domain achieve:Achievement ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The goal framework associated with the achievement (e.g., Maslow, SMART, OKR)." .
+
+achieve:hasPriority rdf:type owl:ObjectProperty ;
+    rdfs:label "has Priority" ;
+    rdfs:domain achieve:Achievement ;
+    rdfs:range goals:Priority ;
+    rdfs:comment "The priority level of the achievement, aligned with goal priorities." .
+
+# Example Instances
+achieve:ExampleAchievement1 rdf:type achieve:Achievement ;
+    rdfs:label "Python Course Completion" ;
+    achieve:hasAchievementType achieve:GoalCompletion ;
+    achieve:hasCriteria achieve:ExampleCriteria1 ;
+    achieve:hasReward achieve:ExampleReward1 ;
+    achieve:hasRecognitionLevel achieve:Personal ;
+    achieve:linkedToGoal goals:ExampleGoal1 ;
+    achieve:achievedAt "2025-10-10T12:00:00Z"^^xsd:dateTime ;
+    achieve:hasFramework "SMART" ;
+    achieve:hasPriority goals:HighPriority .
+
+achieve:ExampleCriteria1 rdf:type achieve:Criteria ;
+    achieve:criteriaDescription "Complete 100% of Python course modules" .
+
+achieve:ExampleReward1 rdf:type achieve:Reward ;
+    achieve:rewardDescription "Python Proficiency Badge" .
+
+achieve:ExampleAchievement2 rdf:type achieve:Achievement ;
+    rdfs:label "Community Funding Milestone" ;
+    achieve:hasAchievementType achieve:MilestoneAchieved ;
+    achieve:hasCriteria achieve:ExampleCriteria2 ;
+    achieve:hasReward achieve:ExampleReward2 ;
+    achieve:hasRecognitionLevel achieve:Public ;
+    achieve:linkedToProject proj:ExampleCommunityProject ;
+    achieve:achievedAt "2025-09-25T15:30:00Z"^^xsd:dateTime ;
+    achieve:hasFramework "MMC" ;
+    achieve:hasPriority goals:MediumPriority .
+
+achieve:ExampleCriteria2 rdf:type achieve:Criteria ;
+    achieve:criteriaDescription "Raise $5000 for community project" .
+
+achieve:ExampleReward2 rdf:type achieve:Reward ;
+    achieve:rewardDescription "Community Impact Award" .

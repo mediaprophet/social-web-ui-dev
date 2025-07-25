@@ -1,0 +1,120 @@
+@prefix : <http://example.org/ipfs#> .
+@prefix proto: <http://example.org/protocol#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# IPFS Protocol Ontology
+:IPFS a owl:Class ;
+	rdfs:subClassOf proto:Protocol ;
+	rdfs:label "IPFS Protocol" ;
+	rdfs:comment "InterPlanetary File System protocol for distributed file storage and sharing." .
+
+# Core Entities
+:IPFSNode a owl:Class ;
+	rdfs:label "IPFS Node" ;
+	rdfs:comment "A node participating in the IPFS network." .
+
+:CID a owl:Class ;
+	rdfs:label "Content Identifier (CID)" ;
+	rdfs:comment "A unique identifier for content in IPFS." .
+
+:IPFSFile a owl:Class ;
+	rdfs:label "IPFS File" ;
+	rdfs:comment "A file stored in IPFS." .
+
+:IPFSDirectory a owl:Class ;
+	rdfs:label "IPFS Directory" ;
+	rdfs:comment "A directory stored in IPFS." .
+
+:Pin a owl:Class ;
+	rdfs:label "Pin" ;
+	rdfs:comment "A pin operation to keep content available on a node." .
+
+:Peer a owl:Class ;
+	rdfs:label "Peer" ;
+	rdfs:comment "A peer in the IPFS network." .
+
+# Operations
+:IPFSOperation a owl:Class ;
+	rdfs:label "IPFS Operation" ;
+	rdfs:comment "An operation performed on IPFS (add, cat, get, pin, etc.)." .
+
+# Object Properties
+:hasNode a owl:ObjectProperty ;
+	rdfs:domain :IPFS ;
+	rdfs:range :IPFSNode ;
+	rdfs:label "has node" .
+
+:hasCID a owl:ObjectProperty ;
+	rdfs:domain :IPFSNode ;
+	rdfs:range :CID ;
+	rdfs:label "has CID" .
+
+:hasFile a owl:ObjectProperty ;
+	rdfs:domain :IPFSNode ;
+	rdfs:range :IPFSFile ;
+	rdfs:label "has file" .
+
+:hasDirectory a owl:ObjectProperty ;
+	rdfs:domain :IPFSNode ;
+	rdfs:range :IPFSDirectory ;
+	rdfs:label "has directory" .
+
+:hasPin a owl:ObjectProperty ;
+	rdfs:domain :IPFSNode ;
+	rdfs:range :Pin ;
+	rdfs:label "has pin" .
+
+:hasPeer a owl:ObjectProperty ;
+	rdfs:domain :IPFSNode ;
+	rdfs:range :Peer ;
+	rdfs:label "has peer" .
+
+:performsOperation a owl:ObjectProperty ;
+	rdfs:domain :IPFSNode ;
+	rdfs:range :IPFSOperation ;
+	rdfs:label "performs operation" .
+
+# Data Properties
+:cidString a owl:DatatypeProperty ;
+	rdfs:domain :CID ;
+	rdfs:range xsd:string ;
+	rdfs:label "CID string" .
+
+:fileName a owl:DatatypeProperty ;
+	rdfs:domain :IPFSFile ;
+	rdfs:range xsd:string ;
+	rdfs:label "file name" .
+
+:directoryName a owl:DatatypeProperty ;
+	rdfs:domain :IPFSDirectory ;
+	rdfs:range xsd:string ;
+	rdfs:label "directory name" .
+
+:peerId a owl:DatatypeProperty ;
+	rdfs:domain :Peer ;
+	rdfs:range xsd:string ;
+	rdfs:label "peer id" .
+
+:operationName a owl:DatatypeProperty ;
+	rdfs:domain :IPFSOperation ;
+	rdfs:range xsd:string ;
+	rdfs:label "operation name" .
+
+# Example Individuals
+:ipfsNode1 a :IPFSNode ;
+	:hasFile :file1 ;
+	:hasDirectory :dir1 ;
+	:hasPin :pin1 ;
+	:hasPeer :peer1 ;
+	:performsOperation :add, :cat .
+
+:cid1 a :CID ; :cidString "Qm..." .
+:file1 a :IPFSFile ; :fileName "example.txt" .
+:dir1 a :IPFSDirectory ; :directoryName "docs" .
+:pin1 a :Pin .
+:peer1 a :Peer ; :peerId "12D3KooW..." .
+:add a :IPFSOperation ; :operationName "add" .
+:cat a :IPFSOperation ; :operationName "cat" .

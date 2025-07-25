@@ -1,0 +1,20 @@
+{
+  "name": "smarthr",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/tailwind.css -o ./dist/style.css --watch",
+    "build": "tailwindcss -i ./src/tailwind.css -o ./dist/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "flowbite": "^2.5.2"
+  }
+}

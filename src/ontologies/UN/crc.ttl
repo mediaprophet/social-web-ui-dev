@@ -1,0 +1,45 @@
+@prefix : <http://example.org/crc#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Convention on the Rights of the Child (CRC) Ontology
+:CRC a owl:Class ;
+	rdfs:label "Convention on the Rights of the Child" ;
+	rdfs:comment "The United Nations Convention on the Rights of the Child (CRC)." .
+
+:Article a owl:Class ;
+	rdfs:label "Article" ;
+	rdfs:comment "An article in the CRC." .
+
+:ChildRight a owl:Class ;
+	rdfs:label "Child Right" ;
+	rdfs:comment "A right recognized by the CRC." .
+
+# Object Properties
+:hasArticle a owl:ObjectProperty ;
+	rdfs:domain :CRC ;
+	rdfs:range :Article ;
+	rdfs:label "has article" .
+
+:recognizesRight a owl:ObjectProperty ;
+	rdfs:domain :Article ;
+	rdfs:range :ChildRight ;
+	rdfs:label "recognizes right" .
+
+# Data Properties
+:articleNumber a owl:DatatypeProperty ;
+	rdfs:domain :Article ;
+	rdfs:range xsd:integer ;
+	rdfs:label "article number" .
+
+:rightName a owl:DatatypeProperty ;
+	rdfs:domain :ChildRight ;
+	rdfs:range xsd:string ;
+	rdfs:label "right name" .
+
+# Example Individuals
+:crc1 a :CRC ; :hasArticle :article1 .
+:article1 a :Article ; :articleNumber 1 ; :recognizesRight :right1 .
+:right1 a :ChildRight ; :rightName "Right to Non-Discrimination" .

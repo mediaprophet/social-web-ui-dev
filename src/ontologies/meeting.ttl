@@ -1,0 +1,123 @@
+
+@prefix : <http://example.org/meeting#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Meeting a owl:Class ;
+	rdfs:label "Meeting" ;
+	rdfs:comment "An event where people gather to discuss topics." .
+
+:Participant a owl:Class ;
+	rdfs:label "Participant" ;
+	rdfs:comment "A person attending a meeting." .
+
+:AgendaItem a owl:Class ;
+	rdfs:label "Agenda Item" ;
+	rdfs:comment "A topic to be discussed in a meeting." .
+
+:Location a owl:Class ;
+	rdfs:label "Location" ;
+	rdfs:comment "The place where a meeting is held." .
+
+:ActionItem a owl:Class ;
+	rdfs:label "Action Item" ;
+	rdfs:comment "A task resulting from a meeting." .
+
+:Note a owl:Class ;
+	rdfs:label "Note" ;
+	rdfs:comment "A note or minute from a meeting." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:hasParticipant a owl:ObjectProperty ;
+	rdfs:domain :Meeting ;
+	rdfs:range :Participant ;
+	rdfs:label "has participant" .
+
+:hasAgendaItem a owl:ObjectProperty ;
+	rdfs:domain :Meeting ;
+	rdfs:range :AgendaItem ;
+	rdfs:label "has agenda item" .
+
+:hasLocation a owl:ObjectProperty ;
+	rdfs:domain :Meeting ;
+	rdfs:range :Location ;
+	rdfs:label "has location" .
+
+:hasActionItem a owl:ObjectProperty ;
+	rdfs:domain :Meeting ;
+	rdfs:range :ActionItem ;
+	rdfs:label "has action item" .
+
+:hasNote a owl:ObjectProperty ;
+	rdfs:domain :Meeting ;
+	rdfs:range :Note ;
+	rdfs:label "has note" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:title a owl:DatatypeProperty ;
+	rdfs:domain :Meeting ;
+	rdfs:range xsd:string ;
+	rdfs:label "title" .
+
+:description a owl:DatatypeProperty ;
+	rdfs:domain :Meeting ;
+	rdfs:range xsd:string ;
+	rdfs:label "description" .
+
+:startTime a owl:DatatypeProperty ;
+	rdfs:domain :Meeting ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "start time" .
+
+:endTime a owl:DatatypeProperty ;
+	rdfs:domain :Meeting ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "end time" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:alice a :Participant ;
+	rdfs:label "Alice" .
+
+:bob a :Participant ;
+	rdfs:label "Bob" .
+
+:room101 a :Location ;
+	rdfs:label "Room 101" .
+
+:agenda1 a :AgendaItem ;
+	rdfs:label "Project Updates" .
+
+:agenda2 a :AgendaItem ;
+	rdfs:label "Budget Review" .
+
+:action1 a :ActionItem ;
+	rdfs:label "Send follow-up email" .
+
+:note1 a :Note ;
+	rdfs:label "Discussed project milestones." .
+
+:meeting1 a :Meeting ;
+	:title "Weekly Team Meeting" ;
+	:description "Discuss ongoing projects and next steps." ;
+	:startTime "2025-07-25T09:00:00Z"^^xsd:dateTime ;
+	:endTime "2025-07-25T10:00:00Z"^^xsd:dateTime ;
+	:hasParticipant :alice, :bob ;
+	:hasLocation :room101 ;
+	:hasAgendaItem :agenda1, :agenda2 ;
+	:hasActionItem :action1 ;
+	:hasNote :note1 .

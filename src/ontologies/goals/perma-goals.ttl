@@ -1,0 +1,50 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix goals: <http://example.org/goals#> .
+@prefix perma: <http://example.org/perma-goals#> .
+
+perma:Ontology rdf:type owl:Ontology ;
+    owl:imports goals:Ontology ;
+    rdfs:label "PERMA Goals Ontology" ;
+    rdfs:comment "An ontology for structuring goals based on the PERMA model (Positive Emotion, Engagement, Relationships, Meaning, Accomplishment)." ;
+    owl:versionInfo "1.0" .
+
+# Classes
+perma:PERMAGoal rdf:type owl:Class ;
+    rdfs:label "PERMA Goal" ;
+    rdfs:comment "A goal aligned with PERMA well-being components." ;
+    rdfs:subClassOf goals:Goal .
+
+perma:WellBeingFocus rdf:type owl:Class ;
+    rdfs:label "Well-Being Focus" ;
+    rdfs:comment "PERMA components driving the goal." .
+
+perma:PositiveEmotion rdf:type perma:WellBeingFocus ;
+    rdfs:label "Positive Emotion" .
+
+perma:Engagement rdf:type perma:WellBeingFocus ;
+    rdfs:label "Engagement" .
+
+perma:Relationships rdf:type perma:WellBeingFocus ;
+    rdfs:label "Relationships" .
+
+perma:Meaning rdf:type perma:WellBeingFocus ;
+    rdfs:label "Meaning" .
+
+perma:Accomplishment rdf:type perma:WellBeingFocus ;
+    rdfs:label "Accomplishment" .
+
+# Properties
+perma:hasWellBeingFocus rdf:type owl:ObjectProperty ;
+    rdfs:label "has Well-Being Focus" ;
+    rdfs:domain perma:PERMAGoal ;
+    rdfs:range perma:WellBeingFocus ;
+    rdfs:comment "The PERMA component motivating the goal." .
+
+# Example Instance
+perma:ExamplePERMAGoal rdf:type perma:PERMAGoal ;
+    goals:hasTitle "Volunteer for Charity" ;
+    perma:hasWellBeingFocus perma:Meaning ;
+    goals:hasDescription "Support local community initiatives" .

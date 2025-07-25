@@ -1,0 +1,44 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix goals: <http://example.org/goals#> .
+@prefix sdt: <http://example.org/sdt-goals#> .
+
+sdt:Ontology rdf:type owl:Ontology ;
+    owl:imports goals:Ontology ;
+    rdfs:label "SDT Goals Ontology" ;
+    rdfs:comment "An ontology for structuring goals based on Self-Determination Theory (Autonomy, Competence, Relatedness)." ;
+    owl:versionInfo "1.0" .
+
+# Classes
+sdt:SDTGoal rdf:type owl:Class ;
+    rdfs:label "SDT Goal" ;
+    rdfs:comment "A goal motivated by Autonomy, Competence, or Relatedness." ;
+    rdfs:subClassOf goals:Goal .
+
+sdt:MotivationType rdf:type owl:Class ;
+    rdfs:label "Motivation Type" ;
+    rdfs:comment "Types of motivation per SDT." .
+
+sdt:Autonomy rdf:type sdt:MotivationType ;
+    rdfs:label "Autonomy" .
+
+sdt:Competence rdf:type sdt:MotivationType ;
+    rdfs:label "Competence" .
+
+sdt:Relatedness rdf:type sdt:MotivationType ;
+    rdfs:label "Relatedness" .
+
+# Properties
+sdt:hasMotivationType rdf:type owl:ObjectProperty ;
+    rdfs:label "has Motivation Type" ;
+    rdfs:domain sdt:SDTGoal ;
+    rdfs:range sdt:MotivationType ;
+    rdfs:comment "The SDT motivation driving the goal." .
+
+# Example Instance
+sdt:ExampleSDTGoal rdf:type sdt:SDTGoal ;
+    goals:hasTitle "Learn Guitar" ;
+    sdt:hasMotivationType sdt:Autonomy ;
+    goals:hasDescription "Learn guitar for personal enjoyment" .

@@ -1,0 +1,50 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix goals: <http://example.org/goals#> .
+@prefix schwartz: <http://example.org/schwartz-goals#> .
+
+schwartz:Ontology rdf:type owl:Ontology ;
+    owl:imports goals:Ontology ;
+    rdfs:label "Schwartz Values Goals Ontology" ;
+    rdfs:comment "An ontology for structuring goals based on Schwartz's Theory of Basic Values." ;
+    owl:versionInfo "1.0" .
+
+# Classes
+schwartz:SchwartzGoal rdf:type owl:Class ;
+    rdfs:label "Schwartz Goal" ;
+    rdfs:comment "A goal aligned with Schwartz's human values." ;
+    rdfs:subClassOf goals:Goal .
+
+schwartz:Value rdf:type owl:Class ;
+    rdfs:label "Value" ;
+    rdfs:comment "Schwartz's basic human values." .
+
+schwartz:Achievement rdf:type schwartz:Value ;
+    rdfs:label "Achievement" .
+
+schwartz:Benevolence rdf:type schwartz:Value ;
+    rdfs:label "Benevolence" .
+
+schwartz:Security rdf:type schwartz:Value ;
+    rdfs:label "Security" .
+
+schwartz:SelfDirection rdf:type schwartz:Value ;
+    rdfs:label "Self-Direction" .
+
+schwartz:Universalism rdf:type schwartz:Value ;
+    rdfs:label "Universalism" .
+
+# Properties
+schwartz:hasCoreValue rdf:type owl:ObjectProperty ;
+    rdfs:label "has Core Value" ;
+    rdfs:domain schwartz:SchwartzGoal ;
+    rdfs:range schwartz:Value ;
+    rdfs:comment "The Schwartz value driving the goal." .
+
+# Example Instance
+schwartz:ExampleSchwartzGoal rdf:type schwartz:SchwartzGoal ;
+    goals:hasTitle "Start a Business" ;
+    schwartz:hasCoreValue schwartz:SelfDirection ;
+    goals:hasDescription "Launch a tech startup" .

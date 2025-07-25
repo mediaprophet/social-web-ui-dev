@@ -1,0 +1,69 @@
+
+@prefix : <http://example.org/person#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+:Person a owl:Class ;
+	rdfs:label "Person" ;
+	rdfs:comment "A person, either natural or legal." .
+
+:NaturalPerson a owl:Class ;
+	rdfs:subClassOf :Person ;
+	rdfs:label "Natural Person" ;
+	rdfs:comment "A human being." .
+
+:LegalPerson a owl:Class ;
+	rdfs:subClassOf :Person ;
+	rdfs:label "Legal Person" ;
+	rdfs:comment "An entity recognized by law as a person (e.g., corporation, government)." .
+
+#################################################################
+# Object Properties
+#################################################################
+
+:represents a owl:ObjectProperty ;
+	rdfs:domain :LegalPerson ;
+	rdfs:range :NaturalPerson ;
+	rdfs:label "represents" .
+
+:hasRepresentative a owl:ObjectProperty ;
+	rdfs:domain :NaturalPerson ;
+	rdfs:range :LegalPerson ;
+	rdfs:label "has representative" .
+
+#################################################################
+# Data Properties
+#################################################################
+
+:fullName a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string ;
+	rdfs:label "full name" .
+
+:dateOfBirth a owl:DatatypeProperty ;
+	rdfs:domain :NaturalPerson ;
+	rdfs:range xsd:date ;
+	rdfs:label "date of birth" .
+
+:legalName a owl:DatatypeProperty ;
+	rdfs:domain :LegalPerson ;
+	rdfs:range xsd:string ;
+	rdfs:label "legal name" .
+
+#################################################################
+# Example Individuals
+#################################################################
+
+:alice a :NaturalPerson ;
+	:fullName "Alice Example" ;
+	:dateOfBirth "1990-01-01"^^xsd:date .
+
+:acme_corp a :LegalPerson ;
+	:legalName "ACME Corporation" ;
+	:represents :alice .

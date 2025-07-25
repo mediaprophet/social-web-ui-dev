@@ -1,0 +1,405 @@
+{
+  "script": {
+    "title": "Refactor PersonalDashboard.html for Personal Productivity Dashboard",
+    "description": "Transforms a CRM admin dashboard HTML into a personal productivity dashboard for digital nomads, emphasizing collaborators, contributors, and decentralized project management.",
+    "target_file": "Personaldaskboard.html",
+    "transformations": [
+      {
+        "type": "replace_text",
+        "search": "Admin Dashboard",
+        "replace": "Personal Productivity Dashboard",
+        "description": "Update dashboard title to reflect personal productivity focus"
+      },
+      {
+        "type": "replace_text",
+        "search": "You have 21 Pending Approvals & 14 Leave Requests",
+        "replace": "You have 21 Pending Tasks & 14 Project Invites",
+        "description": "Change pending approvals and leave requests to tasks and project invites"
+      },
+      {
+        "type": "replace_text",
+        "search": "Add Project",
+        "replace": "Start Project",
+        "description": "Change button text to reflect initiating projects"
+      },
+      {
+        "type": "replace_text",
+        "search": "Add Requests",
+        "replace": "Add Invites",
+        "description": "Change button text to reflect inviting collaborators"
+      },
+      {
+        "type": "replace_text",
+        "search": "Attendance Overview",
+        "replace": "Activity Overview",
+        "description": "Rename attendance to activity for productivity focus"
+      },
+      {
+        "type": "replace_text",
+        "search": "Total No of Clients",
+        "replace": "Total No of Collaborators",
+        "description": "Replace clients with collaborators"
+      },
+      {
+        "type": "replace_text",
+        "search": "Earnings",
+        "replace": "My Earnings",
+        "description": "Personalize earnings label"
+      },
+      {
+        "type": "replace_text",
+        "search": "Profit This Week",
+        "replace": "Weekly Earnings",
+        "description": "Change profit to weekly earnings for individual focus"
+      },
+      {
+        "type": "replace_text",
+        "search": "Job Applicants",
+        "replace": "Project Invites",
+        "description": "Replace job applicants with project invites"
+      },
+      {
+        "type": "replace_text",
+        "search": "New Hire",
+        "replace": "New Contributors",
+        "description": "Replace new hires with new contributors"
+      },
+      {
+        "type": "replace_text",
+        "search": "Employees By Department",
+        "replace": "Collaborators By Role",
+        "description": "Change employees and department to collaborators and role"
+      },
+      {
+        "type": "replace_text",
+        "search": "No of Employees increased by +20% from last Week",
+        "replace": "No of Collaborators increased by +20% from last Week",
+        "description": "Update collaborator count metric"
+      },
+      {
+        "type": "replace_text",
+        "search": "Employee Status",
+        "replace": "Contributor Status",
+        "description": "Rename employee status to contributor status"
+      },
+      {
+        "type": "replace_text",
+        "search": "Total Employee",
+        "replace": "Total Contributors",
+        "description": "Replace employee count with contributor count"
+      },
+      {
+        "type": "replace_text",
+        "search": "Fulltime \\(48%\\)",
+        "replace": "Dedicated (48%)",
+        "description": "Change fulltime to dedicated for contributor status"
+      },
+      {
+        "type": "replace_text",
+        "search": "Contract \\(20%\\)",
+        "replace": "Occasional (20%)",
+        "description": "Change contract to occasional"
+      },
+      {
+        "type": "replace_text",
+        "search": "Probation \\(22%\\)",
+        "replace": "Trial (22%)",
+        "description": "Change probation to trial"
+      },
+      {
+        "type": "replace_text",
+        "search": "WFH \\(20%\\)",
+        "replace": "Remote (20%)",
+        "description": "Change WFH to remote"
+      },
+      {
+        "type": "replace_text",
+        "search": "Top Performer",
+        "replace": "Top Contributor",
+        "description": "Rename top performer to top contributor"
+      },
+      {
+        "type": "replace_text",
+        "search": "View All Employees",
+        "replace": "View All Collaborators",
+        "description": "Update link text for collaborators"
+      },
+      {
+        "type": "replace_text",
+        "search": "Total Attendance",
+        "replace": "Total Sessions",
+        "description": "Change attendance to sessions"
+      },
+      {
+        "type": "replace_text",
+        "search": "Present",
+        "replace": "Active",
+        "description": "Change present to active for activity status"
+      },
+      {
+        "type": "replace_text",
+        "search": "Late",
+        "replace": "Delayed",
+        "description": "Change late to delayed"
+      },
+      {
+        "type": "replace_text",
+        "search": "Absent",
+        "replace": "Inactive",
+        "description": "Change absent to inactive"
+      },
+      {
+        "type": "replace_text",
+        "search": "Total Absenties",
+        "replace": "Total Inactives",
+        "description": "Change absentees to inactives"
+      },
+      {
+        "type": "replace_text",
+        "search": "Clock-In/Out",
+        "replace": "Session Log",
+        "description": "Rename clock-in/out to session log"
+      },
+      {
+        "type": "replace_text",
+        "search": "All Departments",
+        "replace": "All Roles",
+        "description": "Replace departments with roles"
+      },
+      {
+        "type": "replace_text",
+        "search": "Project Manager",
+        "replace": "Coordinator",
+        "description": "Change project manager to coordinator"
+      },
+      {
+        "type": "replace_text",
+        "search": "View All Attendance",
+        "replace": "View All Sessions",
+        "description": "Update link text for sessions"
+      },
+      {
+        "type": "replace_text",
+        "search": "Jobs Applicants",
+        "replace": "Project Opportunities",
+        "description": "Rename job applicants to project opportunities"
+      },
+      {
+        "type": "replace_text",
+        "search": "Openings",
+        "replace": "Available Projects",
+        "description": "Change openings to available projects"
+      },
+      {
+        "type": "replace_text",
+        "search": "Applicants",
+        "replace": "Interested Contributors",
+        "description": "Change applicants to interested contributors"
+      },
+      {
+        "type": "replace_text",
+        "search": "No of Openings",
+        "replace": "Slots Available",
+        "description": "Change openings to slots available"
+      },
+      {
+        "type": "replace_text",
+        "search": "Employees",
+        "replace": "Collaborators",
+        "description": "Replace employees with collaborators"
+      },
+      {
+        "type": "replace_text",
+        "search": "Add Meeting  to Client",
+        "replace": "Add Meeting to Collaborator",
+        "description": "Change client meeting to collaborator meeting"
+      },
+      {
+        "type": "replace_text",
+        "search": "Add Payroll",
+        "replace": "Add Payment",
+        "description": "Change payroll to payment"
+      },
+      {
+        "type": "replace_text",
+        "search": "Add Policy for Increment",
+        "replace": "Add Goal for Progress",
+        "description": "Change policy to goal for progress"
+      },
+      {
+        "type": "replace_text",
+        "search": "Sales Overview",
+        "replace": "Progress Overview",
+        "description": "Rename sales to progress overview"
+      },
+      {
+        "type": "replace_text",
+        "search": "Income",
+        "replace": "Achievements",
+        "description": "Change income to achievements"
+      },
+      {
+        "type": "replace_text",
+        "search": "Expenses",
+        "replace": "Challenges",
+        "description": "Change expenses to challenges"
+      },
+      {
+        "type": "replace_text",
+        "search": "Invoices",
+        "replace": "Milestones",
+        "description": "Rename invoices to milestones"
+      },
+      {
+        "type": "replace_text",
+        "search": "Paid",
+        "replace": "Completed",
+        "description": "Change paid to completed for milestones"
+      },
+      {
+        "type": "replace_text",
+        "search": "Unpaid",
+        "replace": "Pending",
+        "description": "Change unpaid to pending"
+      },
+      {
+        "type": "replace_text",
+        "search": "Change on Emp Module",
+        "replace": "Change on Contributor Module",
+        "description": "Update employee module to contributor module"
+      },
+      {
+        "type": "replace_text",
+        "search": "Tasks Statistics",
+        "replace": "Task Statistics",
+        "description": "Fix typo in tasks statistics"
+      },
+      {
+        "type": "replace_text",
+        "search": "Interview Candidates - UI/UX Designer",
+        "replace": "Meet Potential Collaborators - UI/UX Designer",
+        "description": "Change interview to meeting collaborators"
+      },
+      {
+        "type": "replace_text",
+        "search": "Interview Candidates - IOS Developer",
+        "replace": "Meet Potential Collaborators - IOS Developer",
+        "description": "Change interview to meeting collaborators"
+      },
+      {
+        "type": "replace_text",
+        "search": "Join Meeting",
+        "replace": "Join Call",
+        "description": "Change meeting to call"
+      },
+      {
+        "type": "replace_text",
+        "search": "Added New Project HRMS Dashboard",
+        "replace": "Added New Project Dashboard",
+        "description": "Simplify activity description"
+      },
+      {
+        "type": "replace_text",
+        "search": "Approved Task Projects",
+        "replace": "Approved Task Contributions",
+        "description": "Change projects to contributions"
+      },
+      {
+        "type": "replace_text",
+        "search": "Requesting Access to Module Tickets",
+        "replace": "Requesting Access to Project Tasks",
+        "description": "Change module tickets to project tasks"
+      },
+      {
+        "type": "replace_text",
+        "search": "Downloaded App Reportss",
+        "replace": "Downloaded Project Reports",
+        "description": "Fix typo and update to project reports"
+      },
+      {
+        "type": "replace_text",
+        "search": "Completed New Project HMS",
+        "replace": "Completed New Project",
+        "description": "Simplify activity description"
+      },
+      {
+        "type": "replace_text",
+        "search": "2014 - 2025 © SmartHR.",
+        "replace": "2014 - 2025 © ProductivityHub.",
+        "description": "Update footer to reflect new branding"
+      },
+      {
+        "type": "replace_text",
+        "search": "Designed & Developed By Dreams",
+        "replace": "Designed & Developed By xAI",
+        "description": "Update footer developer credit"
+      },
+      {
+        "type": "replace_text",
+        "search": "Add Leaves",
+        "replace": "Add Break",
+        "description": "Change leaves to break for modal"
+      },
+      {
+        "type": "replace_text",
+        "search": "Employee Name",
+        "replace": "Contributor Name",
+        "description": "Change employee to contributor in modal"
+      },
+      {
+        "type": "replace_text",
+        "search": "Leave Type",
+        "replace": "Break Type",
+        "description": "Change leave to break type"
+      },
+      {
+        "type": "replace_text",
+        "search": "Remaining Days",
+        "replace": "Remaining Time",
+        "description": "Change days to time for flexibility"
+      },
+      {
+        "type": "replace_text",
+        "search": "Add\\s+Leave",
+        "replace": "Add Break",
+        "description": "Update button text for adding break"
+      },
+      {
+        "type": "replace_text",
+        "search": "Client",
+        "replace": "Collaborator",
+        "description": "Change client to collaborator in project modal"
+      },
+      {
+        "type": "replace_text",
+        "search": "Team Members",
+        "replace": "Collaborators",
+        "description": "Change team members to collaborators"
+      },
+      {
+        "type": "replace_text",
+        "search": "Team Leader",
+        "replace": "Project Lead",
+        "description": "Change team leader to project lead"
+      },
+      {
+        "type": "replace_text",
+        "search": "Project Manager",
+        "replace": "Coordinator",
+        "description": "Change project manager to coordinator"
+      },
+      {
+        "type": "replace_text",
+        "search": "Add Team Member",
+        "replace": "Add Contributor",
+        "description": "Change team member to contributor in button"
+      },
+      {
+        "type": "replace_text",
+        "search": "Add Assignee",
+        "replace": "Add Collaborator",
+        "description": "Change assignee to collaborator in todo modal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+@prefix : <http://example.org/gun#> .
+@prefix proto: <http://example.org/protocol#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# GUN Protocol Ontology
+:GUN a owl:Class ;
+	rdfs:subClassOf proto:Protocol ;
+	rdfs:label "GUN Protocol" ;
+	rdfs:comment "A decentralized, real-time, graph database protocol (gun.eco)." .
+
+# Core Entities
+:GUNNode a owl:Class ;
+	rdfs:label "GUN Node" ;
+	rdfs:comment "A node in the GUN graph database." .
+
+:GUNPeer a owl:Class ;
+	rdfs:label "GUN Peer" ;
+	rdfs:comment "A peer in the GUN network." .
+
+:GUNData a owl:Class ;
+	rdfs:label "GUN Data" ;
+	rdfs:comment "A data object stored in GUN." .
+
+# Operations
+:GUNOperation a owl:Class ;
+	rdfs:label "GUN Operation" ;
+	rdfs:comment "An operation performed on GUN (put, get, on, once, etc.)." .
+
+# Object Properties
+:hasNode a owl:ObjectProperty ;
+	rdfs:domain :GUN ;
+	rdfs:range :GUNNode ;
+	rdfs:label "has node" .
+
+:hasPeer a owl:ObjectProperty ;
+	rdfs:domain :GUNNode ;
+	rdfs:range :GUNPeer ;
+	rdfs:label "has peer" .
+
+:storesData a owl:ObjectProperty ;
+	rdfs:domain :GUNNode ;
+	rdfs:range :GUNData ;
+	rdfs:label "stores data" .
+
+:performsOperation a owl:ObjectProperty ;
+	rdfs:domain :GUNNode ;
+	rdfs:range :GUNOperation ;
+	rdfs:label "performs operation" .
+
+# Data Properties
+:peerUrl a owl:DatatypeProperty ;
+	rdfs:domain :GUNPeer ;
+	rdfs:range xsd:string ;
+	rdfs:label "peer URL" .
+
+:dataKey a owl:DatatypeProperty ;
+	rdfs:domain :GUNData ;
+	rdfs:range xsd:string ;
+	rdfs:label "data key" .
+
+:dataValue a owl:DatatypeProperty ;
+	rdfs:domain :GUNData ;
+	rdfs:range xsd:string ;
+	rdfs:label "data value" .
+
+:operationName a owl:DatatypeProperty ;
+	rdfs:domain :GUNOperation ;
+	rdfs:range xsd:string ;
+	rdfs:label "operation name" .
+
+# Example Individuals
+:gunNode1 a :GUNNode ;
+	:hasPeer :peer1 ;
+	:storesData :data1 ;
+	:performsOperation :put, :get .
+
+:peer1 a :GUNPeer ; :peerUrl "https://gun-manhattan.herokuapp.com/gun" .
+:data1 a :GUNData ; :dataKey "user/alice" ; :dataValue "{\"name\":\"Alice\"}" .
+:put a :GUNOperation ; :operationName "put" .
+:get a :GUNOperation ; :operationName "get" .
